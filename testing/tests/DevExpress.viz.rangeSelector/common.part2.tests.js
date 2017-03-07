@@ -66,9 +66,6 @@ QUnit.module("Initialization from dataSource", $.extend({}, environmentWithDataS
 }));
 
 QUnit.test("Pass axes to seriesDataSource", function(assert) {
-    sinon.stub(axisModule, "Axis");
-    axisModule.Axis.returns(this.axis);
-
     axisModule.Axis.onSecondCall().returns(new this.StubAxis());
     var rangeSelector = this.createWidget({
         dataSource: [
@@ -911,8 +908,8 @@ QUnit.test("Calculated date format for scale label and slider marker", function(
         size: { width: 600 },
         scale: {
             startValue: new Date(2012, 2, 1),
-            endValue: new Date(2012, 3, 1),
-            tickInterval: 'week',
+            endValue: new Date(2012, 2, 20),
+            tickInterval: { weeks: 1 },
             marker: {
                 visible: true
             }
@@ -954,8 +951,8 @@ QUnit.test("Auto format when scale marker is not visible", function(assert) {
         scale: {
             startValue: new Date(2006, 10, 1),
             endValue: new Date(2007, 5, 1),
-            majorTickInterval: "month",
-            minorTickInterval: "day",
+            majorTickInterval: { months: 1 },
+            minorTickInterval: { days: 1 },
             marker: { visible: false }
         }
     });
@@ -970,8 +967,8 @@ QUnit.test("Slidermarker format have custom format", function(assert) {
         scale: {
             startValue: new Date(2006, 10, 1),
             endValue: new Date(2007, 5, 1),
-            majorTickInterval: 'month',
-            minorTickInterval: 'day',
+            majorTickInterval: { months: 1 },
+            minorTickInterval: { days: 1 },
             marker: { visible: false }
         },
         sliderMarker: {
@@ -987,7 +984,7 @@ QUnit.test("Auto format when scale marker is not visible and minorTickInterval i
         scale: {
             startValue: new Date(2006, 10, 1),
             endValue: new Date(2007, 5, 1),
-            majorTickInterval: "month",
+            majorTickInterval: { months: 1 },
             minorTickInterval: 0,
             marker: { visible: false }
         }
@@ -1003,7 +1000,7 @@ QUnit.test("Auto format when minorTickInterval is auto calculated", function(ass
         scale: {
             startValue: new Date(2006, 10, 1),
             endValue: new Date(2007, 5, 1),
-            majorTickInterval: "month"
+            majorTickInterval: { months: 1 }
         }
     });
 
