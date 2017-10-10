@@ -2,7 +2,6 @@
 
 var vizUtils = require("../core/utils"),
     typeUtils = require("../../core/utils/type"),
-    dateUtils = require("../../core/utils/date"),
     formatHelper = require("../../format_helper"),
     each = require("../../core/utils/iterator").each,
     extend = require("../../core/utils/extend").extend,
@@ -1435,7 +1434,7 @@ Axis.prototype = {
             }
             rangeMinVisible = isDefined(zoomArgs.min) ? zoomArgs.min : rangeMin;
             rangeMaxVisible = isDefined(zoomArgs.max) ? zoomArgs.max : rangeMax;
-            
+
             if(isDefined(synchronizedValue)) {
                 rangeMin = isDefined(rangeMin) && (rangeMin < synchronizedValue) ? rangeMin : synchronizedValue;
                 rangeMax = isDefined(rangeMax) && (rangeMax > synchronizedValue) ? rangeMax : synchronizedValue;

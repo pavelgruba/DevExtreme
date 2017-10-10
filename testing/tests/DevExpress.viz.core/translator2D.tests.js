@@ -1,8 +1,7 @@
 "use strict";
 
 var $ = require("jquery"),
-    translator2DModule = require("viz/translators/translator2d"),
-    vizUtilsModule = require("viz/core/utils");
+    translator2DModule = require("viz/translators/translator2d");
 
 var canvasTemplate = {
         width: 610,
