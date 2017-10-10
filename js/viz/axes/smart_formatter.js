@@ -35,11 +35,11 @@ function smartFormatter(tick, options) {
             } else {
                 tickIntervalIndex = floor(log10(tickInterval));
                 actualIndex = tickIndex = (tick !== 0) ? floor(log10(abs(tick))) : 1;
-                
+
                 if(tickIndex - tickIntervalIndex >= 2) {
                     actualIndex = tickIntervalIndex;
                 }
-                
+
                 if(tickIndex - tickIntervalIndex >= 2) {
                     actualIndex = tickIntervalIndex;
                 }

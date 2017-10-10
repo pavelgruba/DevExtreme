@@ -576,40 +576,41 @@ QUnit.test("measure empty labels", function(assert) {
         x: 0,
         y: 0
     }, "measurements");
-           });
+});
+
 QUnit.test("range data with synchronizedValue. synchronizedValue above max ", function(assert) {
-           var axis = this.createSimpleAxis({
-                                            min: 0,
-                                            max: 100,
-                                            synchronizedValue: 1000
-                                            }),
-           rangeData = axis.getRangeData();
-           
-           assert.strictEqual(rangeData.min, 0);
-           assert.strictEqual(rangeData.max, 1000);
-           });
+    var axis = this.createSimpleAxis({
+            min: 0,
+            max: 100,
+            synchronizedValue: 1000
+        }),
+        rangeData = axis.getRangeData();
+
+    assert.strictEqual(rangeData.min, 0);
+    assert.strictEqual(rangeData.max, 1000);
+});
 
 QUnit.test("range data with synchronizedValue. synchronizedValue less min", function(assert) {
-           var axis = this.createSimpleAxis({
-                                            synchronizedValue: -10,
-                                            min: 0,
-                                            max: 100
-                                            }),
-           rangeData = axis.getRangeData();
-           
-           assert.strictEqual(rangeData.min, -10);
-           assert.strictEqual(rangeData.max, 100);
-           });
+    var axis = this.createSimpleAxis({
+            synchronizedValue: -10,
+            min: 0,
+            max: 100
+        }),
+        rangeData = axis.getRangeData();
+
+    assert.strictEqual(rangeData.min, -10);
+    assert.strictEqual(rangeData.max, 100);
+});
 
 QUnit.test("range data with synchronizedValue and min/max were not set", function(assert) {
-           var axis = this.createSimpleAxis({
-                                            synchronizedValue: 10
-                                            }),
-           rangeData = axis.getRangeData();
-           
-           assert.strictEqual(rangeData.min, 10);
-           assert.strictEqual(rangeData.max, 10);
-           });
+    var axis = this.createSimpleAxis({
+            synchronizedValue: 10
+        }),
+        rangeData = axis.getRangeData();
+
+    assert.strictEqual(rangeData.min, 10);
+    assert.strictEqual(rangeData.max, 10);
+});
 
 QUnit.test("call measure labels after axis draw - use ticks generated on draw", function(assert) {
     this.generatedTicks = [1, 2, 300, 4, 5];
