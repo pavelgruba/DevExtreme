@@ -261,6 +261,10 @@ function calculateMinorTicks(updateTickInterval, addInterval, correctMinValue, c
 
         minorTickInterval = updateTickInterval(minorTickInterval, firstMajor, factor);
 
+        if(minorTickInterval === 0) {
+            return [];
+        }
+
         //min to first tick
         var cur = correctMinValue(min, minorTickInterval, min),
             ticks = [];

@@ -59,9 +59,8 @@ function createAxis(isHorizontal) {
         update: function(range, canvas, options) {
             translator.update(range, canvas, options);
         },
-        getViewport: function() {
-            return undefined;
-        }
+        getViewport: _noop,
+        calculateInterval: _noop
     };
 }
 

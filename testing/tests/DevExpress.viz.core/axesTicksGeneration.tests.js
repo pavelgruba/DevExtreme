@@ -1009,6 +1009,25 @@ QUnit.test("Custom minorAxisDivisionFactor", function(assert) {
     assert.deepEqual(this.axis._minorTickInterval, 0.5);
 });
 
+QUnit.test("Do not generate ticks when screen delta is 0", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "continuous",
+        minorTick: {
+            visible: true
+        }
+    });
+
+    this.axis.setBusinessRange({ minVisible: 1, maxVisible: 2, addRange: function() { } });
+
+    //act
+    this.axis.createTicks(canvas(0));
+
+    assert.deepEqual(this.axis._majorTicks.map(value), [1, 2]);
+    assert.deepEqual(this.axis._minorTicks.map(value), []);
+});
+
 QUnit.module("Logarithmic. Calculate tickInterval", environment);
 
 QUnit.test("0.0001 - 10000, screenDelta 450 - tickInterval 1", function(assert) {
