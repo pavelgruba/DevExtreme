@@ -665,6 +665,7 @@ Axis.prototype = {
                 labelOptions: labelOptions,
                 tickInterval: isDefined(tickInterval) ? tickInterval : this._tickInterval,
                 dataType: this._options.dataType,
+                type: this._options.type,
                 showTransition: !this._options.marker.visible,
                 point: point
             }) || "",
@@ -1059,7 +1060,6 @@ Axis.prototype = {
         ticks = this._getTicks();
 
         if(options.type === constants.discrete && options.dataType === "datetime" && !this._hasLabelFormat && ticks.ticks.length) {
-            //TODO can ve calculate formats later using smart formatter?
             options.label.format = formatHelper.getDateFormatByTicks(ticks.ticks);
         }
 
