@@ -677,7 +677,7 @@ registerTheme({
         },
         argumentAxis: {},
         valueAxis: {
-            endOnTicks: true,
+            endOnTick: true,
             grid: {
                 visible: true
             }

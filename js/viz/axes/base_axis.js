@@ -54,7 +54,7 @@ function getTickGenerator(options, incidentOccurred) {
 
         //TODO new options
         allowDecimals: options.allowDecimals,
-        endOnTicks: options.endOnTicks,
+        endOnTick: options.endOnTick,
 
         incidentOccurred: incidentOccurred,
 

@@ -235,7 +235,7 @@ function addIntervalDate(value, interval) {
 }
 
 function calculateTicks(addInterval, correctMinValue) {
-    return function(min, max, tickInterval, endOnTicks) {
+    return function(min, max, tickInterval, endOnTick) {
         var cur = correctMinValue(min, tickInterval, min),
             ticks = [];
 
@@ -246,7 +246,7 @@ function calculateTicks(addInterval, correctMinValue) {
             ticks.push(cur);
             cur = addInterval(cur, tickInterval);
         }
-        if(endOnTicks || (cur - max === 0)) {
+        if(endOnTick || (cur - max === 0)) {
             ticks.push(cur);
         }
         return ticks;
@@ -336,7 +336,7 @@ function generator(options, getBusinessDelta, calculateTickInterval, calculateMi
         tickInterval = correctUserTickInterval(tickInterval, businessDelta, screenDelta);
 
         tickInterval = calculateTickInterval(businessDelta, screenDelta, tickInterval, forceTickInterval, options.axisDivisionFactor, options.numberMultipliers, options.allowDecimals);
-        ticks.ticks = ticks.ticks.concat(calculateTicks(data.min, data.max, tickInterval, options.endOnTicks));
+        ticks.ticks = ticks.ticks.concat(calculateTicks(data.min, data.max, tickInterval, options.endOnTick));
         ticks.tickInterval = tickInterval;
         return ticks;
     }
@@ -393,8 +393,8 @@ function numericGenerator(options) {
         calculateMinorTickInterval,
         getTickIntervalByCustomTicks(getValue, getValue),
         getValue,
-        calculateTicks(addInterval, options.endOnTicks ? floor : ceil),
-        calculateMinorTicks(getValue, addInterval, options.endOnTicks ? floor : ceil, addInterval, getValue)
+        calculateTicks(addInterval, options.endOnTick ? floor : ceil),
+        calculateMinorTicks(getValue, addInterval, options.endOnTick ? floor : ceil, addInterval, getValue)
     );
 }
 
@@ -417,7 +417,7 @@ function logarithmicGenerator(options) {
         calculateMinorTickInterval,
         getTickIntervalByCustomTicks(log, getValue),
         getValue,
-        calculateTicks(addIntervalLog(base), options.endOnTicks ? floor : ceil),
+        calculateTicks(addIntervalLog(base), options.endOnTick ? floor : ceil),
         calculateMinorTicks(updateTickInterval, addInterval, ceilNumber, ceilNumber, ceil)
     );
 }
@@ -468,8 +468,8 @@ function dateGenerator(options) {
         calculateMinorTickIntervalDateTime,
         getTickIntervalByCustomTicks(getValue, dateUtils.convertMillisecondsToDateUnits),
         dateToMilliseconds,
-        calculateTicks(addIntervalDate, options.endOnTicks ? floor : ceil),
-        calculateMinorTicks(getValue, addIntervalDate, options.endOnTicks ? floor : ceil, addIntervalDate, getValue)
+        calculateTicks(addIntervalDate, options.endOnTick ? floor : ceil),
+        calculateMinorTicks(getValue, addIntervalDate, options.endOnTick ? floor : ceil, addIntervalDate, getValue)
     );
 }
 
@@ -479,7 +479,7 @@ function dateGenerator(options) {
 //     axisDivisionFactor: 30,
 //     minorAxisDivisionFactor: 10,
 //     allowDecimals: true,
-//     endOnTicks: true,
+//     endOnTick: true,
 //     logBase: 2,
 //     calculateMinors: false,
 //     incidentOccurred: () => {},
