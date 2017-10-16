@@ -62,7 +62,7 @@ module.exports = dependencyInjector({
         };
     },
 
-    getDateFormatByDifferences: function(dateDifferences) {
+    getDateFormatByDifferences: function(dateDifferences, intervalFormat) {
         var resultFormat = [];
 
         if(dateDifferences.millisecond) {
@@ -74,8 +74,12 @@ module.exports = dependencyInjector({
         }
 
         if(dateDifferences.year && dateDifferences.month && dateDifferences.day) {
-            resultFormat.unshift('shortdate');
-            return this._normalizeFormat(resultFormat);
+            if(intervalFormat && intervalFormat !== 'year') {
+                return 'monthandyear';
+            } else {
+                resultFormat.unshift('shortdate');
+                return this._normalizeFormat(resultFormat);
+            }
         }
 
         if(dateDifferences.year && dateDifferences.month) {
@@ -99,10 +103,14 @@ module.exports = dependencyInjector({
             return 'month';
         }
         if(dateDifferences.day) {
-            var dayFormatter = function(date) {
-                return dateLocalization.format(date, "dayofweek") + ", " + dateLocalization.format(date, "day");
-            };
-            resultFormat.unshift(dayFormatter);
+            if(intervalFormat) {
+                resultFormat.unshift('day');
+            } else {
+                var dayFormatter = function(date) {
+                    return dateLocalization.format(date, "dayofweek") + ", " + dateLocalization.format(date, "day");
+                };
+                resultFormat.unshift(dayFormatter);
+            }
             return this._normalizeFormat(resultFormat);
         }
 

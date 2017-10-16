@@ -663,6 +663,7 @@ Axis.prototype = {
             value: value,
             valueText: _format(value, {
                 labelOptions: labelOptions,
+                ticks: convertTicksToValues(this._majorTicks),
                 tickInterval: isDefined(tickInterval) ? tickInterval : this._tickInterval,
                 dataType: this._options.dataType,
                 showTransition: !this._options.marker.visible,
