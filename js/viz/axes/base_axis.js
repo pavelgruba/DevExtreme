@@ -1162,7 +1162,8 @@ Axis.prototype = {
     },
 
     _calculateRangeInterval: function(dataLength, interval) {
-        return _min(interval, (this._options.axisDivisionFactor || DEFAULT_AXIS_DIVISION_FACTOR) * dataLength / this._getScreenDelta());
+        var intervalByDivision = (this._options.axisDivisionFactor || DEFAULT_AXIS_DIVISION_FACTOR) * dataLength / this._getScreenDelta();
+        return isDefined(interval) ? _min(interval, intervalByDivision) : intervalByDivision;
     },
 
     _applyMargins: function(range) {
