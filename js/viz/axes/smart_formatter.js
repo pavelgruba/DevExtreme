@@ -115,7 +115,7 @@ function smartFormatter(tick, options) {
         format = options.labelOptions.format,
         ticks = options.ticks;
 
-    if(!isDefined(format) && isDefined(tickInterval)) {
+    if(!isDefined(format) && isDefined(tickInterval) && options.type !== "discrete") {
         if(options.dataType !== "datetime") {
             separatedTickInterval = tickInterval.toString().split(".");
 

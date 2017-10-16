@@ -214,7 +214,9 @@ QUnit.test("format numbers with non zero precision", function(assert) {
 
 QUnit.module("Auto formatting. Tick labels. Datetime.", environment);
 
-QUnit.test("Discrete axis - format is calculated by ticks", function(assert) {
+QUnit.module("Discrete axis.", environment);
+
+QUnit.test("Datetime - single format by ticks", function(assert) {
     this.testFormat(assert, {
         type: "discrete",
         argumentType: "datetime",
@@ -225,11 +227,26 @@ QUnit.test("Discrete axis - format is calculated by ticks", function(assert) {
         new Date(2009, 11, 1),
         new Date(2010, 0, 1),
         new Date(2010, 1, 1)
-    ], undefined,
+    ], 1, //tickGenerator returns that tickInterval for discrete data
     ["December 2009", "January 2010", "February 2010"]);
 });
 
-QUnit.module("Auto formatting. Tick labels. Datetime.Continuous axis", environment);
+QUnit.test("Numeric - no format", function(assert) {
+    this.testFormat(assert, {
+        type: "discrete",
+        argumentType: "numeric",
+        label: {
+            visible: true
+        }
+    }, [
+        10010,
+        11001,
+        20000
+    ], 1, //tickGenerator returns that tickInterval for discrete data
+    ["10010", "11001", "20000"]);
+});
+
+QUnit.module("Auto formatting. Tick labels. Datetime. Continuous axis", environment);
 
 QUnit.test("format is calculated by ticks and tickInterval in years", function(assert) {
     this.testFormat(assert, {

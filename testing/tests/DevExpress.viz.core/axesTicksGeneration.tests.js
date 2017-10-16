@@ -60,7 +60,7 @@ var environment = {
         this.axis.updateOptions($.extend(true, {
             numberMultipliers: undefined,
             allowDecimals: undefined,
-            endOnTicks: undefined,
+            endOnTick: undefined,
             crosshairMargin: 0,
             label: {
                 visible: false, indentFromAxis: 10, overlappingBehavior: { mode: "hide" }
@@ -370,7 +370,7 @@ QUnit.test("forceTickInterval true. No user's tickIntervsal, calculated tickInte
 
 QUnit.module("Numeric. Misc", environment);
 
-QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(assert) {
+QUnit.test("Without endOnTick - calculate ticks inside data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
@@ -387,7 +387,7 @@ QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(a
     assert.deepEqual(this.axis._tickInterval, 1);
 });
 
-QUnit.test("Without endOnTicks - calculate ticks as multipliers of tickInterval", function(assert) {
+QUnit.test("Without endOnTick - calculate ticks as multipliers of tickInterval", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
@@ -404,12 +404,12 @@ QUnit.test("Without endOnTicks - calculate ticks as multipliers of tickInterval"
     assert.deepEqual(this.axis._tickInterval, 3);
 });
 
-QUnit.test("With endOnTicks - calculate ticks outside or on data bounds", function(assert) {
+QUnit.test("With endOnTick - calculate ticks outside or on data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
         type: "continuous",
-        endOnTicks: true,
+        endOnTick: true,
         tickInterval: 3
     });
 
@@ -776,7 +776,7 @@ QUnit.test("tickInterval 20 - minorTickInterval 5", function(assert) {
     assert.deepEqual(this.axis._minorTickInterval, 5);
 });
 
-QUnit.test("Minor ticks do not go beyond bounds if endOnTicks = fasle", function(assert) {
+QUnit.test("Minor ticks do not go beyond bounds if endOnTick = fasle", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
@@ -796,13 +796,13 @@ QUnit.test("Minor ticks do not go beyond bounds if endOnTicks = fasle", function
     assert.deepEqual(this.axis._minorTickInterval, 1);
 });
 
-QUnit.test("Minor ticks go beyond bounds if endOnTicks = true", function(assert) {
+QUnit.test("Minor ticks go beyond bounds if endOnTick = true", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
         type: "continuous",
         tickInterval: 5,
-        endOnTicks: true,
+        endOnTick: true,
         minorTick: {
             visible: true
         }
@@ -1009,6 +1009,25 @@ QUnit.test("Custom minorAxisDivisionFactor", function(assert) {
     assert.deepEqual(this.axis._minorTickInterval, 0.5);
 });
 
+QUnit.test("Do not generate ticks when screen delta is 0", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "continuous",
+        minorTick: {
+            visible: true
+        }
+    });
+
+    this.axis.setBusinessRange({ minVisible: 1, maxVisible: 2, addRange: function() { } });
+
+    //act
+    this.axis.createTicks(canvas(0));
+
+    assert.deepEqual(this.axis._majorTicks.map(value), [1, 2]);
+    assert.deepEqual(this.axis._minorTicks.map(value), []);
+});
+
 QUnit.module("Logarithmic. Calculate tickInterval", environment);
 
 QUnit.test("0.0001 - 10000, screenDelta 450 - tickInterval 1", function(assert) {
@@ -1109,7 +1128,7 @@ QUnit.test("tickInterval can not be less than 1", function(assert) {
 
 QUnit.module("Logarithmic. Misc", environment);
 
-QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(assert) {
+QUnit.test("Without endOnTick - calculate ticks inside data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
@@ -1127,12 +1146,12 @@ QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(a
     assert.strictEqual(this.axis._tickInterval, 1);
 });
 
-QUnit.test("With endOnTicks - calculate ticks outside or on data bounds", function(assert) {
+QUnit.test("With endOnTick - calculate ticks outside or on data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
         type: "logarithmic",
-        endOnTicks: true,
+        endOnTick: true,
         logarithmBase: 10,
         tickInterval: 1
     });
@@ -1151,7 +1170,7 @@ QUnit.test("Force user tick interval if it is too small for given screenDelta an
     this.updateOptions({
         argumentType: "numeric",
         type: "logarithmic",
-        endOnTicks: true,
+        endOnTick: true,
         logarithmBase: 10,
         tickInterval: 2,
         forceUserTickInterval: true
@@ -1240,7 +1259,7 @@ QUnit.test("minorTickInterval as exponent, but ticks not", function(assert) {
     assert.deepEqual(this.axis._minorTickInterval, 0.2);
 });
 
-QUnit.test("Minor ticks do not go beyond bounds if endOnTicks = fasle", function(assert) {
+QUnit.test("Minor ticks do not go beyond bounds if endOnTick = fasle", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
@@ -1261,14 +1280,14 @@ QUnit.test("Minor ticks do not go beyond bounds if endOnTicks = fasle", function
     assert.deepEqual(this.axis._minorTickInterval, 0.2);
 });
 
-QUnit.test("Minor ticks go beyond bounds if endOnTicks = true", function(assert) {
+QUnit.test("Minor ticks go beyond bounds if endOnTick = true", function(assert) {
     this.createAxis();
     this.updateOptions({
         argumentType: "numeric",
         type: "logarithmic",
         logarithmBase: 10,
         tickInterval: 1,
-        endOnTicks: true,
+        endOnTick: true,
         minorTick: {
             visible: true
         }
@@ -1548,7 +1567,7 @@ QUnit.test("Years tickInterval (25)", function(assert) {
 
 QUnit.module("DateTime. Misc", environment);
 
-QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(assert) {
+QUnit.test("Without endOnTick - calculate ticks inside data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         valueType: "datetime",
@@ -1568,13 +1587,13 @@ QUnit.test("Without endOnTicks - calculate ticks inside data bounds", function(a
     assert.deepEqual(this.axis._tickInterval, { "days": 2 });
 });
 
-QUnit.test("With endOnTicks - calculate ticks outside or on data bounds", function(assert) {
+QUnit.test("With endOnTick - calculate ticks outside or on data bounds", function(assert) {
     this.createAxis();
     this.updateOptions({
         valueType: "datetime",
         type: "continuous",
         tickInterval: { "days": 2 },
-        endOnTicks: true
+        endOnTick: true
     });
 
     this.axis.setBusinessRange({ minVisible: new Date(2017, 1, 3, 13, 28, 33), maxVisible: new Date(2017, 1, 11, 5, 3), addRange: function() { } });
@@ -1649,13 +1668,13 @@ QUnit.test("Custom tickInterval with several keys - use bigger key as multiplier
     assert.deepEqual(this.axis._tickInterval, { hours: 2, seconds: 30 });
 });
 
-QUnit.test("endOnTicks true, custom tickInterval with several keys - use bigger key as multiplier", function(assert) {
+QUnit.test("endOnTick true, custom tickInterval with several keys - use bigger key as multiplier", function(assert) {
     this.createAxis();
     this.updateOptions({
         valueType: "datetime",
         type: "continuous",
         tickInterval: { hours: 2, seconds: 30 },
-        endOnTicks: true
+        endOnTick: true
     });
 
     this.axis.setBusinessRange({ minVisible: new Date(2012, 3, 1, 11, 3, 3), maxVisible: new Date(2012, 3, 1, 21), addRange: function() { } });
@@ -1679,7 +1698,7 @@ QUnit.test("customTicks", function(assert) {
         valueType: "datetime",
         type: "continuous",
         tickInterval: { hours: 2, seconds: 30 },
-        endOnTicks: true,
+        endOnTick: true,
         customTicks: [new Date(2011, 3, 10), new Date(2011, 4, 10), new Date(2011, 5, 10), new Date(2011, 6, 10)]
     });
 

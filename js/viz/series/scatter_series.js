@@ -476,6 +476,19 @@ var baseScatterMethods = {
 
     _beginUpdateData: function(data) {
         this._calculateErrorBars(data);
+    },
+
+    _patchMarginOptions: function(options) {
+        var pointOptions = this._getCreatingPointOptions(),
+            styles = pointOptions.styles,
+            maxSize = [styles.normal, styles.hover, styles.selection]
+                .reduce(function(max, style) {
+                    return Math.max(max, style.r * 2 + style["stroke-width"]);
+                }, 0);
+
+        options.size = pointOptions.visible ? maxSize : 0;
+
+        return options;
     }
 };
 
@@ -565,19 +578,6 @@ exports.chart = _extend({}, baseScatterMethods, {
             minY: visibleY.min,
             maxY: visibleY.max
         };
-    },
-
-    _patchMarginOptions: function(options) {
-        var pointOptions = this._getCreatingPointOptions(),
-            styles = pointOptions.styles,
-            maxSize = [styles.normal, styles.hover, styles.selection]
-                .reduce(function(max, style) {
-                    return Math.max(max, style.r * 2 + style["stroke-width"]);
-                }, 0);
-
-        options.size = pointOptions.visible ? maxSize : 0;
-
-        return options;
     }
 });
 

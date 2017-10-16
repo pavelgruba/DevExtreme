@@ -2959,3 +2959,18 @@ QUnit.test("Add max border width", function(assert) {
         percentStick: false
     });
 });
+
+QUnit.test("Polar point. getMarginOptions returns point size", function(assert) {
+    var series = createSeries({
+        type: seriesType,
+        widgetType: "polar",
+        point: {
+            visible: true,
+            size: 6
+        }
+    });
+    assert.deepEqual(series.getMarginOptions(), {
+        size: 6,
+        percentStick: false
+    });
+});
