@@ -168,8 +168,7 @@ var environment = {
                     mode: "ignore"
                 },
                 alignment: "center",
-                indentFromAxis: 10,
-                format: ""
+                indentFromAxis: 10
             };
             this.options.isHorizontal = false;
         }
@@ -2550,7 +2549,7 @@ QUnit.test("no custom format - use auto format based on estimated tickInterval",
 
     axis.estimateMargins(this.canvas);
 
-    assert.strictEqual(this.renderer.text.getCall(0).args[0], "February 2010");
+    assert.strictEqual(this.renderer.text.getCall(0).args[0], "February");
 });
 
 QUnit.module("Coors In", $.extend({}, environment2DTranslator, {

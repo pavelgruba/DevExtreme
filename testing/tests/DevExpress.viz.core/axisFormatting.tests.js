@@ -246,6 +246,481 @@ QUnit.test("Numeric - no format", function(assert) {
     ["10010", "11001", "20000"]);
 });
 
+QUnit.module("Auto formatting. Tick labels. Datetime. Continuous axis", environment);
+
+QUnit.test("format is calculated by ticks and tickInterval in years", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1940, 0, 1),
+        new Date(1950, 0, 1),
+        new Date(1960, 0, 1),
+        new Date(1970, 0, 1),
+        new Date(1980, 0, 1),
+        new Date(1990, 0, 1),
+        new Date(2000, 0, 1),
+        new Date(2010, 0, 1)
+    ], { years: 10 },
+    ["1940", "1950", "1960", "1970", "1980", "1990", "2000", "2010"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in quartes (even)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1949, 3, 1),
+        new Date(1949, 9, 1),
+        new Date(1950, 3, 1),
+        new Date(1950, 9, 1),
+        new Date(1951, 3, 1),
+        new Date(1951, 9, 1),
+        new Date(1952, 3, 1),
+        new Date(1952, 9, 1)
+    ], { quarters: 2 },
+    ["April", "October", "1950", "October", "1951", "October", "1952", "October"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in quartes (odd)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 6, 1),
+        new Date(1951, 3, 1),
+        new Date(1952, 0, 1),
+        new Date(1952, 9, 1),
+        new Date(1953, 6, 1),
+        new Date(1954, 3, 1)
+    ], { quarters: 3 },
+    ["July", "April 1951", "1952", "October", "July 1953", "1954"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in years and months", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2000, 3, 1),
+        new Date(2002, 5, 1),
+        new Date(2004, 7, 1),
+        new Date(2006, 9, 1),
+        new Date(2008, 11, 1),
+        new Date(2010, 1, 1),
+        new Date(2012, 3, 1)
+    ], { years: 2, months: 2 },
+    ["April 2000", "June 2002", "August 2004", "October 2006", "December 2008", "February 2010", "April 2012"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in years, months and days", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2000, 3, 1),
+        new Date(2001, 5, 4),
+        new Date(2002, 7, 7),
+        new Date(2003, 9, 10),
+        new Date(2004, 11, 13),
+        new Date(2005, 1, 16),
+        new Date(2006, 3, 19)
+    ], { years: 1, months: 2, days: 3 },
+    ["4/1/2000", "6/4/2001", "8/7/2002", "10/10/2003", "12/13/2004", "2/16/2005", "4/19/2006"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in months", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2010, 3, 1),
+        new Date(2010, 4, 1),
+        new Date(2010, 5, 1),
+        new Date(2010, 6, 1),
+        new Date(2010, 7, 1),
+        new Date(2010, 8, 1),
+        new Date(2010, 9, 1)
+    ], { months: 1 },
+    ["April", "May", "June", "July", "August", "September", "October"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in months (years changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 3, 1),
+        new Date(1950, 8, 1),
+        new Date(1951, 1, 1),
+        new Date(1951, 6, 1),
+        new Date(1951, 11, 1),
+        new Date(1952, 4, 1),
+        new Date(1952, 9, 1),
+        new Date(1953, 2, 1),
+        new Date(1953, 7, 1)
+    ], { months: 5 },
+    ["April", "September", "1951", "July", "December", "1952", "October", "1953", "August"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in months (years change every tick)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2010, 4, 1),
+        new Date(2010, 11, 1),
+        new Date(2011, 6, 1),
+        new Date(2012, 2, 1),
+        new Date(2012, 9, 1),
+        new Date(2013, 4, 1),
+        new Date(2013, 11, 1)
+    ], { months: 7 },
+    ["May", "December", "July 2011", "2012", "October", "2013", "December"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in months and days (years, months and days changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 0, 16),
+        new Date(1950, 4, 31),
+        new Date(1950, 9, 16),
+        new Date(1951, 2, 3),
+        new Date(1951, 6, 18),
+        new Date(1951, 11, 3),
+        new Date(1952, 3, 18),
+        new Date(1952, 8, 2),
+        new Date(1953, 0, 17),
+        new Date(1953, 5, 1),
+    ], { months: 4, days: 15 },
+    ["January 16", "May 31", "October 16", "1951", "July 18", "December 3", "1952", "September 2", "1953", "June 1"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in weeks", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 1, 5),
+        new Date(1950, 1, 19),
+        new Date(1950, 2, 5),
+        new Date(1950, 2, 19),
+        new Date(1950, 3, 2),
+        new Date(1950, 3, 16),
+        new Date(1950, 3, 30),
+        new Date(1950, 4, 14)
+    ], { weeks: 2 },
+    ["5", "19", "March", "19", "April", "16", "30", "May"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 2, 2),
+        new Date(1950, 2, 5),
+        new Date(1950, 2, 8),
+        new Date(1950, 2, 11),
+        new Date(1950, 2, 14),
+        new Date(1950, 2, 17),
+        new Date(1950, 2, 20)
+    ], { days: 3 },
+    ["2", "5", "8", "11", "14", "17", "20"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days (month changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(1950, 2, 12),
+        new Date(1950, 2, 22),
+        new Date(1950, 3, 1),
+        new Date(1950, 3, 11),
+        new Date(1950, 3, 21),
+        new Date(1950, 4, 1),
+        new Date(1950, 4, 11),
+        new Date(1950, 4, 21)
+    ], { days: 10 },
+    ["12", "22", "April", "11", "21", "May", "11", "21"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days (year, month changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 10, 29),
+        new Date(2015, 11, 6),
+        new Date(2015, 11, 14),
+        new Date(2015, 11, 22),
+        new Date(2015, 11, 30),
+        new Date(2016, 0, 7),
+        new Date(2016, 0, 15),
+        new Date(2016, 0, 23),
+        new Date(2016, 0, 31),
+        new Date(2016, 1, 8)
+    ], { days: 8 },
+    ["29", "December", "14", "22", "30", "January 2016", "15", "23", "31", "February"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in hours", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 14, 2),
+        new Date(2015, 11, 14, 4),
+        new Date(2015, 11, 14, 6),
+        new Date(2015, 11, 14, 8),
+        new Date(2015, 11, 14, 10),
+        new Date(2015, 11, 14, 12),
+        new Date(2015, 11, 14, 14),
+        new Date(2015, 11, 14, 16)
+    ], { hours: 2 },
+    ["2:00 AM", "4:00 AM", "6:00 AM", "8:00 AM", "10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in hours (days changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 14, 10),
+        new Date(2015, 11, 14, 16),
+        new Date(2015, 11, 14, 22),
+        new Date(2015, 11, 15, 4),
+        new Date(2015, 11, 15, 10),
+        new Date(2015, 11, 15, 16),
+        new Date(2015, 11, 15, 22),
+        new Date(2015, 11, 16, 4),
+    ], { hours: 6 },
+    ["10:00 AM", "4:00 PM", "10:00 PM", "15", "10:00 AM", "4:00 PM", "10:00 PM", "16"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days and hours", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 14, 10),
+        new Date(2015, 11, 15, 16),
+        new Date(2015, 11, 16, 22),
+        new Date(2015, 11, 17, 4),
+        new Date(2015, 11, 18, 10),
+        new Date(2015, 11, 19, 16),
+        new Date(2015, 11, 20, 22),
+        new Date(2015, 11, 21, 4),
+    ], { days: 1, hours: 6 },
+    ["14 10:00 AM", "15 4:00 PM", "16 10:00 PM", "17 4:00 AM", "18 10:00 AM", "19 4:00 PM", "20 10:00 PM", "21 4:00 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days and hours (year, month changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 28, 10),
+        new Date(2015, 11, 29, 16),
+        new Date(2015, 11, 30, 22),
+        new Date(2015, 11, 31, 4),
+        new Date(2016, 0, 1, 10),
+        new Date(2016, 0, 2, 16),
+        new Date(2016, 0, 3, 22)
+    ], { days: 1, hours: 6 },
+    ["28 10:00 AM", "29 4:00 PM", "30 10:00 PM", "31 4:00 AM", "January 2016", "2 4:00 PM", "3 10:00 PM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in years, days and hours", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2010, 0, 1, 10),
+        new Date(2011, 0, 3, 16),
+        new Date(2012, 0, 5, 22),
+        new Date(2013, 0, 7, 4),
+        new Date(2014, 0, 9, 10),
+        new Date(2015, 0, 11, 16),
+        new Date(2016, 0, 13, 22)
+    ], { years: 1, days: 2, hours: 6 },
+    ["2010", "2011", "2012", "2013", "2014", "2015", "2016"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in years, months and hours", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2010, 0, 1, 10),
+        new Date(2011, 2, 1, 16),
+        new Date(2012, 4, 1, 22),
+        new Date(2013, 6, 1, 4),
+        new Date(2014, 8, 1, 10),
+        new Date(2015, 10, 1, 16)
+    ], { years: 1, months: 2, hours: 6 },
+    ["January 2010", "March 2011", "May 2012", "July 2013", "September 2014", "November 2015"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in hours and minutes (day changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 14, 18, 10),
+        new Date(2015, 11, 14, 20, 25),
+        new Date(2015, 11, 14, 22, 40),
+        new Date(2015, 11, 15, 0, 55),
+        new Date(2015, 11, 15, 3, 10),
+        new Date(2015, 11, 15, 5, 25)
+    ], { hours: 2, minutes: 15 },
+    ["6:10 PM", "8:25 PM", "10:40 PM", "15", "3:10 AM", "5:25 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in hours and minutes (month changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 4, 31, 18, 10),
+        new Date(2015, 4, 31, 20, 25),
+        new Date(2015, 4, 31, 22, 40),
+        new Date(2015, 5, 1, 0, 55),
+        new Date(2015, 5, 1, 3, 10),
+        new Date(2015, 5, 1, 5, 25)
+    ], { hours: 2, minutes: 15 },
+    ["6:10 PM", "8:25 PM", "10:40 PM", "June 1", "3:10 AM", "5:25 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in days, hours and minutes (years changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 26, 18, 10),
+        new Date(2015, 11, 28, 20, 25),
+        new Date(2015, 11, 30, 22, 40),
+        new Date(2016, 0, 1, 0, 55),
+        new Date(2016, 0, 3, 3, 10),
+        new Date(2016, 0, 5, 5, 25)
+    ], { days: 2, hours: 2, minutes: 15 },
+    ["26 6:10 PM", "28 8:25 PM", "30 10:40 PM", "January 2016", "3 3:10 AM", "5 5:25 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in minutes and seconds", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 26, 18, 10, 10),
+        new Date(2015, 11, 26, 18, 25, 30),
+        new Date(2015, 11, 26, 18, 40, 50),
+        new Date(2015, 11, 26, 18, 56, 10)
+    ], { minutes: 15, seconds: 20 },
+    ["6:10:10 PM", "6:25:30 PM", "6:40:50 PM", "6:56:10 PM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in minutes and seconds (day changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 11, 27, 23, 25, 30),
+        new Date(2015, 11, 27, 23, 40, 50),
+        new Date(2015, 11, 27, 23, 56, 10),
+        new Date(2015, 11, 28, 0, 11, 30),
+        new Date(2015, 11, 28, 0, 26, 50)
+    ], { minutes: 15, seconds: 20 },
+    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "28 12:11 AM", "12:26:50 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in minutes and seconds (month, day changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 4, 31, 23, 25, 30),
+        new Date(2015, 4, 31, 23, 40, 50),
+        new Date(2015, 4, 31, 23, 56, 10),
+        new Date(2015, 5, 1, 0, 11, 30),
+        new Date(2015, 5, 1, 0, 26, 50)
+    ], { minutes: 15, seconds: 20 },
+    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "June 1 12:11 AM", "12:26:50 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in seconds", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 4, 31, 23, 25, 30),
+        new Date(2015, 4, 31, 23, 25, 50),
+        new Date(2015, 4, 31, 23, 26, 10),
+        new Date(2015, 4, 31, 23, 26, 30),
+        new Date(2015, 4, 31, 23, 26, 50),
+        new Date(2015, 4, 31, 23, 27, 10),
+        new Date(2015, 4, 31, 23, 27, 30),
+        new Date(2015, 4, 31, 23, 27, 50),
+        new Date(2015, 4, 31, 23, 28, 10),
+    ], { seconds: 20 },
+    ["11:25:30 PM", "11:25:50 PM", "11:26 PM", "11:26:30 PM", "11:26:50 PM", "11:27 PM", "11:27:30 PM", "11:27:50 PM", "11:28 PM"]);
+});
+
 QUnit.module("Custom formatting. Tick labels", environment);
 
 QUnit.test("Currency format", function(assert) {
