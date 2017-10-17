@@ -50,7 +50,7 @@ function getDatesDifferences(prevDate, curDate, nextDate, tickFormat) {
             for(i = dateUnitsLength - 1; i >= 0; i--) {
                 dateUnitInterval = dateUtils.dateUnitIntervals[i];
                 if(prevDifferences[dateUnitInterval]) {
-                    if(i > tickFormatIndex) {
+                    if(i > tickFormatIndex && tickFormatIndex !== 1) {
                         for(j = tickFormatIndex; j >= 0; j--) {
                             resetDateUnitInterval(prevDifferences, j);
                         }
@@ -70,7 +70,13 @@ function getDatesDifferences(prevDate, curDate, nextDate, tickFormat) {
                 for(j = dateUnitsLength - 1; j > i; j--) {
                     dateUnitInterval = dateUtils.dateUnitIntervals[j];
                     if(prevDifferences[dateUnitInterval] && !nextDifferences[dateUnitInterval]) {
-                        resetDateUnitInterval(prevDifferences, i);
+                        if(i !== 1) {
+                            resetDateUnitInterval(prevDifferences, i);
+                        } else if(j > 4) {
+                            for(j = 3; j >= 0; j--) {
+                                resetDateUnitInterval(prevDifferences, j);
+                            }
+                        }
                         break;
                     }
                 }
