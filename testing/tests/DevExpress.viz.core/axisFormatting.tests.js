@@ -682,7 +682,22 @@ QUnit.test("format is calculated by ticks and tickInterval in minutes and second
         new Date(2015, 11, 28, 0, 11, 30),
         new Date(2015, 11, 28, 0, 26, 50)
     ], { minutes: 15, seconds: 20 },
-    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "28 12:11 AM", "12:26:50 AM"]);
+    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "28 12:11:30 AM", "12:26:50 AM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in minutes and seconds (day changed after first tick)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 4, 27, 23, 56, 10),
+        new Date(2015, 4, 28, 0, 11, 30),
+        new Date(2015, 4, 28, 0, 26, 50),
+        new Date(2015, 4, 28, 0, 42, 10)
+    ], { minutes: 15, seconds: 20 },
+    ["11:56:10 PM", "28 12:11:30 AM", "12:26:50 AM", "12:42:10 AM"]);
 });
 
 QUnit.test("format is calculated by ticks and tickInterval in minutes and seconds (month, day changed)", function(assert) {
@@ -698,10 +713,10 @@ QUnit.test("format is calculated by ticks and tickInterval in minutes and second
         new Date(2015, 5, 1, 0, 11, 30),
         new Date(2015, 5, 1, 0, 26, 50)
     ], { minutes: 15, seconds: 20 },
-    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "June 1 12:11 AM", "12:26:50 AM"]);
+    ["11:25:30 PM", "11:40:50 PM", "11:56:10 PM", "June 1", "12:26:50 AM"]);
 });
 
-QUnit.test("format is calculated by ticks and tickInterval in seconds", function(assert) {
+QUnit.test("format is calculated by ticks and tickInterval in seconds (minutes changed)", function(assert) {
     this.testFormat(assert, {
         argumentType: "datetime",
         label: {
@@ -716,9 +731,29 @@ QUnit.test("format is calculated by ticks and tickInterval in seconds", function
         new Date(2015, 4, 31, 23, 27, 10),
         new Date(2015, 4, 31, 23, 27, 30),
         new Date(2015, 4, 31, 23, 27, 50),
-        new Date(2015, 4, 31, 23, 28, 10),
+        new Date(2015, 4, 31, 23, 28, 10)
     ], { seconds: 20 },
-    ["11:25:30 PM", "11:25:50 PM", "11:26 PM", "11:26:30 PM", "11:26:50 PM", "11:27 PM", "11:27:30 PM", "11:27:50 PM", "11:28 PM"]);
+    ["11:25:30 PM", "11:25:50 PM", "11:26:10 PM", "11:26:30 PM", "11:26:50 PM", "11:27:10 PM", "11:27:30 PM", "11:27:50 PM", "11:28:10 PM"]);
+});
+
+QUnit.test("format is calculated by ticks and tickInterval in milliseconds (day, hour, minute, seconds changed)", function(assert) {
+    this.testFormat(assert, {
+        argumentType: "datetime",
+        label: {
+            visible: true
+        }
+    }, [
+        new Date(2015, 4, 30, 23, 59, 58, 600),
+        new Date(2015, 4, 30, 23, 59, 58, 800),
+        new Date(2015, 4, 30, 23, 59, 59, 0),
+        new Date(2015, 4, 30, 23, 59, 59, 200),
+        new Date(2015, 4, 30, 23, 59, 59, 400),
+        new Date(2015, 4, 30, 23, 59, 59, 600),
+        new Date(2015, 4, 30, 23, 59, 59, 800),
+        new Date(2015, 4, 31, 0, 0, 0, 0),
+        new Date(2015, 4, 31, 0, 0, 0, 200)
+    ], { milliseconds: 200 },
+    ["600", "800", "11:59:59 PM", "200", "400", "600", "800", "31 12:00:00 AM", "200"]);
 });
 
 QUnit.module("Custom formatting. Tick labels", environment);
