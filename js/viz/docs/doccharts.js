@@ -1807,9 +1807,9 @@ var dxChart = {
         * @name dxchartoptions_argumentaxis_axisdivisionfactor
         * @publicName axisDivisionFactor
         * @type number
-        * @default 50
+        * @default 70
         */
-        axisDivisionFactor: 50,
+        axisDivisionFactor: 70,
         /**
         * @name dxchartoptions_argumentaxis_categories
         * @publicName categories
@@ -2105,9 +2105,9 @@ var dxChart = {
         * @name dxchartoptions_valueaxis_axisdivisionfactor
         * @publicName axisDivisionFactor
         * @type number
-        * @default 30
+        * @default 40
         */
-        axisDivisionFactor: 30,
+        axisDivisionFactor: 40,
         /**
         * @name dxchartoptions_valueaxis_categories
         * @publicName categories
