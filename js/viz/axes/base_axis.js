@@ -54,7 +54,7 @@ function getTickGenerator(options, incidentOccurred) {
 
         //TODO new options
         allowDecimals: options.allowDecimals,
-        endOnTicks: options.endOnTicks,
+        endOnTick: options.endOnTick,
 
         incidentOccurred: incidentOccurred,
 
@@ -663,6 +663,7 @@ Axis.prototype = {
             value: value,
             valueText: _format(value, {
                 labelOptions: labelOptions,
+                ticks: convertTicksToValues(this._majorTicks),
                 tickInterval: isDefined(tickInterval) ? tickInterval : this._tickInterval,
                 dataType: this._options.dataType,
                 type: this._options.type,

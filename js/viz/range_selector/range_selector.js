@@ -289,7 +289,7 @@ function updateTickIntervals(scaleOptions, screenDelta, incidentOccurred, range)
             calculateMinors: true,
 
             allowDecimals: scaleOptions.allowDecimals,
-            endOnTicks: scaleOptions.endOnTicks,
+            endOnTick: scaleOptions.endOnTick,
 
             incidentOccurred: incidentOccurred
         })(

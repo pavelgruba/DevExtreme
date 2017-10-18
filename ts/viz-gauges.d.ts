@@ -166,6 +166,9 @@ declare module DevExpress.viz.gauges {
 
         /** @docid basegaugeoptions_scale_startValue */
         startValue?: number;
+
+        /** @docid basegaugeoptions_scale_allowdecimals */
+        allowDecimals?: Boolean;
     }
 
     /**

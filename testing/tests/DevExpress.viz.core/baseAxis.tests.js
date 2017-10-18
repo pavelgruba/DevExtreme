@@ -1404,13 +1404,13 @@ QUnit.test("Calculate ticks on range with margins", function(assert) {
     });
 });
 
-QUnit.test("Margins and endOnTicks = true - extend range with margins to boundary ticks", function(assert) {
+QUnit.test("Margins and endOnTick = true - extend range with margins to boundary ticks", function(assert) {
     this.testMargins(assert, {
         options: {
             valueMarginsEnabled: true,
             minValueMargin: 0.1,
             maxValueMargin: 0.2,
-            endOnTicks: true //emulation, see returned ticks below
+            endOnTick: true //emulation, see returned ticks below
         },
         range: {
             min: 100,
@@ -1698,7 +1698,7 @@ QUnit.test("Margins and skipViewportExtending = true - do not extend range with 
             minValueMargin: 0.1,
             maxValueMargin: 0.2,
             skipViewportExtending: true,
-            endOnTicks: true //emulation, see returned ticks below
+            endOnTick: true //emulation, see returned ticks below
         },
         range: {
             min: 100,
@@ -1918,13 +1918,13 @@ QUnit.test("Argument axis - calculate correct interval by zoom data", function(a
     });
 });
 
-QUnit.test("Argument axis, endOnTicks = true - do not extend range to boundary ticks", function(assert) {
+QUnit.test("Argument axis, endOnTick = true - do not extend range to boundary ticks", function(assert) {
     this.testMargins(assert, {
         options: {
             valueMarginsEnabled: true,
             minValueMargin: 0.1,
             maxValueMargin: 0.2,
-            endOnTicks: true //emulation, see returned ticks below
+            endOnTick: true //emulation, see returned ticks below
         },
         range: {
             min: 100,
@@ -1942,13 +1942,13 @@ QUnit.test("Argument axis, endOnTicks = true - do not extend range to boundary t
     });
 });
 
-QUnit.test("Value axis, endOnTicks = true - extend range to boundary ticks", function(assert) {
+QUnit.test("Value axis, endOnTick = true - extend range to boundary ticks", function(assert) {
     this.testMargins(assert, {
         options: {
             valueMarginsEnabled: true,
             minValueMargin: 0.1,
             maxValueMargin: 0.2,
-            endOnTicks: true //emulation, see returned ticks below
+            endOnTick: true //emulation, see returned ticks below
         },
         range: {
             min: 100,
