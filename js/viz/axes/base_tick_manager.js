@@ -26,9 +26,32 @@ var TickManager,
     TICKS_COUNT_LIMIT = 2000,
     MIN_ARRANGEMENT_TICKS_COUNT = 2;
 
+
+function getPrecision(value) {
+    var stringFraction,
+        stringValue = value.toString(),
+        pointIndex = stringValue.indexOf('.'),
+        startIndex,
+        precision;
+    if(stringValue.indexOf("e") !== -1) {
+        precision = utils.getDecimalOrder(value);
+        if(precision < 0) {
+            return Math.abs(precision);
+        } else {
+            return 0;
+        }
+    }
+    if(pointIndex !== -1) {
+        startIndex = pointIndex + 1;
+        stringFraction = stringValue.substring(startIndex, startIndex + 20);
+        return stringFraction.length;
+    }
+    return 0;
+}
+
 function applyPrecisionByMinDelta(min, delta, value) {
-    var minPrecision = utils.getPrecision(min),
-        deltaPrecision = utils.getPrecision(delta);
+    var minPrecision = getPrecision(min),
+        deltaPrecision = getPrecision(delta);
 
     return utils.roundValue(value, minPrecision < deltaPrecision ? deltaPrecision : minPrecision);
 }

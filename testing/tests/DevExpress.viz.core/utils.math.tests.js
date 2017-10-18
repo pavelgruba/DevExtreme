@@ -94,12 +94,7 @@ QUnit.test('getCosAndSin', function(assert) {
     testGetCosAndSin(765, cos(PI * 17 / 4), sin(PI * 17 / 4));
 });
 
-QUnit.test('getPrecision', function(assert) {
-    assert.equal(vizUtils.getPrecision(0.000024701249938246877), 20, 'valid precision');
-    assert.equal(vizUtils.getPrecision(0.00002470), 7, 'valid precision');
-    assert.equal(vizUtils.getPrecision(3e32), 0, 'valid precision');
-    assert.equal(vizUtils.getPrecision(3e-32), 32, 'valid precision');
-});
+
 
 QUnit.test("getDistance", function(assert) {
     assert.equal(vizUtils.getDistance(0, 0, 3, 4), 5, "egypt triangle");

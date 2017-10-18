@@ -39,7 +39,7 @@ function getPrecision(value) {
     mantissa = str.split(".");
     positionOfDelimiter = mantissa[1].indexOf("e");
 
-    return mantissa[1].length - (positionOfDelimiter >= 0 ? positionOfDelimiter : 0);
+    return positionOfDelimiter >= 0 ? positionOfDelimiter : mantissa[1].length;
 }
 
 exports.sign = sign;

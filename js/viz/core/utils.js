@@ -27,28 +27,6 @@ var cosFunc = Math.cos,
     Number = window.Number,
     NaN = window.NaN;
 
-var getPrecision = function(value) {
-    var stringFraction,
-        stringValue = value.toString(),
-        pointIndex = stringValue.indexOf('.'),
-        startIndex,
-        precision;
-    if(isExponential(value)) {
-        precision = getDecimalOrder(value);
-        if(precision < 0) {
-            return Math.abs(precision);
-        } else {
-            return 0;
-        }
-    }
-    if(pointIndex !== -1) {
-        startIndex = pointIndex + 1;
-        stringFraction = stringValue.substring(startIndex, startIndex + 20);
-        return stringFraction.length;
-    }
-    return 0;
-};
-
 var getLog = function(value, base) {
     if(!value) {
         return NaN;
@@ -411,8 +389,6 @@ extend(exports, {
         return { x: center.x + (isPositive ? dx : dx - bBox.width), y: bBox.y + dy };
     }
 });
-
-exports.getPrecision = getPrecision;
 
 exports.getLog = getLog;
 exports.raiseTo = raiseTo;
