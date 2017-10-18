@@ -3,6 +3,7 @@
 var utils = require("../core/utils"),
     dateUtils = require("../../core/utils/date"),
     typeUtils = require("../../core/utils/type"),
+    adjust = require("../../core/utils/math").adjust,
     vizUtils = require("../core/utils"),
     convertDateUnitToMilliseconds = dateUtils.convertDateUnitToMilliseconds,
     dateToMilliseconds = dateUtils.dateToMilliseconds,
@@ -64,7 +65,7 @@ function raiseTo(base) {
 
 function correctValueByInterval(post, round, getValue) {
     return function(value, interval, min) {
-        return post(round(getValue(value) / interval) * interval);
+        return post(round(adjust(getValue(value) / interval)) * interval);
     };
 }
 
@@ -107,7 +108,7 @@ function calculateTickInterval(businessDelta, screenDelta, tickInterval, forceTi
                 }
                 return r < interval ? m : r;
             }, 0);
-            result = utils.roundValue(result * factor, utils.getPrecision(factor));
+            result = adjust(result * factor, factor);
         }
 
         if(!tickInterval || (!forceTickInterval && tickInterval < result)) {
@@ -216,17 +217,18 @@ function getTickIntervalByCustomTicks(getValue, postProcess) {
         if(!ticks) {
             return undefined;
         }
-        return postProcess(mathAbs(getValue(ticks[1]) - getValue(ticks[0]))) || undefined;
+        return postProcess(mathAbs(adjust(getValue(ticks[1]) - getValue(ticks[0])))) || undefined;
     };
 }
 
 function addInterval(value, interval) {
-    return value + interval;
+    return dateUtils.addInterval(value, interval);
 }
 
 function addIntervalLog(base) {
+    var riseToBase = raiseTo(base);
     return function(value, interval, min) {
-        return raiseTo(base)(getLog(value, base) + interval);
+        return riseToBase(getLog(value, base) + interval);
     };
 }
 

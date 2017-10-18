@@ -6,6 +6,7 @@ var registerComponent = require("../../core/component_registrator"),
     each = require("../../core/utils/iterator").each,
     vizUtils = require("../core/utils"),
     dateUtils = require("../../core/utils/date"),
+    adjust = require("../../core/utils/math").adjust,
     addInterval = dateUtils.addInterval,
     dateToMilliseconds = dateUtils.dateToMilliseconds,
     getSequenceByInterval = dateUtils.getSequenceByInterval,
@@ -544,7 +545,7 @@ function correctValueByInterval(value, isDate, interval) {
     if(_isDefined(value)) {
         value = isDate
             ? dateUtils.correctDateWithUnitBeginning(new Date(value), interval)
-            : _floor(value / interval) * interval;
+            : adjust(_floor(adjust(value / interval)) * interval);
     }
     return value;
 }

@@ -5,7 +5,7 @@ var debug = require("../../core/utils/console").debug,
     _each = require("../../core/utils/iterator").each,
     vizUtils = require("../core/utils"),
     _isDefined = typeUtils.isDefined,
-
+    adjust = require("../../core/utils/math").adjust,
     _math = Math,
     _floor = _math.floor,
     _max = _math.max,
@@ -14,49 +14,6 @@ var debug = require("../../core/utils/console").debug,
     _map = require("../core/utils").map,
 
     MIN_RANGE_FOR_ADJUST_BOUNDS = 0.1; //B254389
-
-function applyPrecisionByMinDelta(min, delta, value) {
-    var minPrecision = vizUtils.getPrecision(min),
-        deltaPrecision = vizUtils.getPrecision(delta);
-
-    return vizUtils.roundValue(value, minPrecision < deltaPrecision ? deltaPrecision : minPrecision);
-}
-
-var getFraction = function(value) {
-    var valueString,
-        dotIndex;
-
-    if(typeUtils.isNumeric(value)) {
-        valueString = value.toString();
-        dotIndex = valueString.indexOf('.');
-
-        if(dotIndex >= 0) {
-            if(typeUtils.isExponential(value)) {
-                return valueString.substr(dotIndex + 1, valueString.indexOf('e') - dotIndex - 1);
-            } else {
-                valueString = value.toFixed(20);
-                return valueString.substr(dotIndex + 1, valueString.length - dotIndex + 1);
-            }
-        }
-    }
-    return '';
-};
-
-var adjustValue = function(value) {
-    var fraction = getFraction(value),
-        nextValue,
-        i;
-
-    if(fraction) {
-        for(i = 1; i <= fraction.length; i++) {
-            nextValue = vizUtils.roundValue(value, i);
-            if(nextValue !== 0 && fraction[i - 2] && fraction[i - 1] && fraction[i - 2] === fraction[i - 1]) {
-                return nextValue;
-            }
-        }
-    }
-    return value;
-};
 
 var getValueAxesPerPanes = function(valueAxes) {
     var result = {};
@@ -101,7 +58,7 @@ var logConverter = {
         return _math.pow(base, tickInterval);
     },
 
-    adjustValue: adjustValue
+    adjustValue: adjust
 };
 
 var convertAxisInfo = function(axisInfo, converter) {
@@ -222,11 +179,11 @@ var updateTickValues = function(axesInfo) {
                 additionalStartTicksCount = _floor((ticksCount - tickValues.length) / 2);
 
                 while(additionalStartTicksCount > 0 && (tickValues[0] !== 0)) {
-                    tickValues.unshift(applyPrecisionByMinDelta(tickValues[0], tickInterval, tickValues[0] - tickInterval));
+                    tickValues.unshift(adjust(tickValues[0] - tickInterval));
                     additionalStartTicksCount--;
                 }
                 while(tickValues.length < ticksCount) {
-                    tickValues.push(applyPrecisionByMinDelta(tickValues[0], tickInterval, tickValues[tickValues.length - 1] + tickInterval));
+                    tickValues.push(adjust(tickValues[tickValues.length - 1] + tickInterval));
                 }
                 axisInfo.tickInterval = tickInterval / ticksMultiplier;
             }
@@ -309,8 +266,8 @@ var correctMinMaxValuesByPaddings = function(axesInfo, paddings) {
         info.minValue -= paddings[inverted ? "end" : "start"] * range;
         info.maxValue += paddings[inverted ? "start" : "end"] * range;
         if(range > MIN_RANGE_FOR_ADJUST_BOUNDS) {
-            info.minValue = _math.min(info.minValue, adjustValue(info.minValue));
-            info.maxValue = _max(info.maxValue, adjustValue(info.maxValue));
+            info.minValue = _math.min(info.minValue, adjust(info.minValue));
+            info.maxValue = _max(info.maxValue, adjust(info.maxValue));
         }
     });
 };
@@ -331,11 +288,11 @@ var updateTickValuesIfSynchronizedValueUsed = function(axesInfo) {
 
         if(hasSynchronizedValue && tickInterval) {
             while(tickValues[0] - tickInterval >= minValue) {
-                tickValues.unshift(adjustValue(tickValues[0] - tickInterval));
+                tickValues.unshift(adjust(tickValues[0] - tickInterval));
             }
             lastTickValue = tickValues[tickValues.length - 1];
             while((lastTickValue = lastTickValue + tickInterval) <= maxValue) {
-                tickValues.push(typeUtils.isExponential(lastTickValue) ? adjustValue(lastTickValue) : applyPrecisionByMinDelta(minValue, tickInterval, lastTickValue));
+                tickValues.push(typeUtils.isExponential(lastTickValue) ? adjust(lastTickValue) : adjust(lastTickValue));
             }
         }
         while(tickValues[0] < minValue) {

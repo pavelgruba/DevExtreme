@@ -1847,6 +1847,12 @@ QUnit.test("isValid, Interval specified", function(assert) {
     assert.strictEqual(translator.isValid(61, 20), false);
 });
 
+QUnit.test("fix double errors issue", function(assert) {
+    var translator = this.createTranslator({ min: 1.4, max: 1.6 });
+
+    assert.strictEqual(translator.isValid(1.3, 0.1), false);
+});
+
 QUnit.module('Translate special cases', {
     beforeEach: function() {
         this.createTranslator = function(range, options) {

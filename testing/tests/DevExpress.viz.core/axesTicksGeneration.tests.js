@@ -679,6 +679,40 @@ QUnit.test("No data - do not generate ticks nor calculate tickInterval", functio
     assert.deepEqual(this.axis._tickInterval, undefined);
 });
 
+QUnit.test("interval correction issue", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "continuous",
+        tickInterval: 0.1,
+        endOnTicks: true
+    });
+
+    this.axis.setBusinessRange({ minVisible: 1.2, maxVisible: 1.3 });
+
+    //act
+    this.axis.createTicks(canvas(1000));
+
+    assert.deepEqual(this.axis._majorTicks.map(value).map(function(tick) { return tick.toFixed(1); }), ["1.2", "1.3"]);
+});
+
+QUnit.test("calculated ticks out of mix/max issue", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "continuous",
+        tickInterval: 0.1,
+        endOnTicks: true
+    });
+
+    this.axis.setBusinessRange({ minVisible: -0.9, maxVisible: -0.7 });
+
+    //act
+    this.axis.createTicks(canvas(1000));
+
+    assert.deepEqual(this.axis._majorTicks.map(value).map(function(tick) { return tick.toFixed(1); }), ["-0.9", "-0.8", "-0.7"]);
+});
+
 QUnit.module("Numeric. Minor ticks", environment);
 
 QUnit.test("minorTick and minorGrid are not visible - do not calculate minor ticks", function(assert) {
@@ -899,6 +933,22 @@ QUnit.test("Custom minorTicks", function(assert) {
 
     assert.deepEqual(this.axis._minorTicks.map(value), [0.1, 0.2, 2.5]);
     assert.deepEqual(this.axis._minorTickInterval, 0.1);
+});
+
+QUnit.test("tickInterval with custom ticks", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "continuous",
+        customTicks: [1.2, 1.3, 1.4]
+    });
+
+    this.axis.setBusinessRange({ minVisible: 0, maxVisible: 12, addRange: function() { } });
+
+    //act
+    this.axis.createTicks(canvas(200));
+
+    assert.strictEqual(this.axis._tickInterval, 0.1);
 });
 
 QUnit.test("Custom minorTicks with minorTick showCalculatedTicks", function(assert) { //DEPRECATED IN 15_2

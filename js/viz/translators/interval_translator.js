@@ -1,13 +1,13 @@
 "use strict";
 
-var utils = require("../core/utils"),
-    typeUtils = require("../../core/utils/type"),
+var typeUtils = require("../../core/utils/type"),
     isNumber = typeUtils.isNumeric,
     isDefined = typeUtils.isDefined,
     dateUtils = require("../../core/utils/date"),
     addInterval = dateUtils.addInterval,
     dateToMilliseconds = dateUtils.dateToMilliseconds,
-    floor = Math.floor;
+    floor = Math.floor,
+    adjust = require("../../core/utils/math").adjust;
 
 module.exports = {
     _intervalize: function(value, interval) {
@@ -22,7 +22,7 @@ module.exports = {
             }
             value = dateUtils.correctDateWithUnitBeginning(value, interval);
         } else {
-            value = utils.roundValue(floor(value / interval) * interval, utils.getPrecision(interval));
+            value = adjust(floor(adjust(value / interval)) * interval, interval);
         }
         return value;
     },

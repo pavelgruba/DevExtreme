@@ -1023,6 +1023,32 @@ QUnit.test("If not set - sliderMarker format depends on minorTickInterval", func
     assert.strictEqual(this.slidersController.update.lastCall.args[4].format, "month");
 });
 
+QUnit.test("start value should be correct", function(assert) {
+    this.createWidget({
+        scale: {
+            type: "semidiscrete",
+            startValue: 1.2,
+            endValue: 2,
+            minRange: 0.1
+        }
+    });
+
+    assert.strictEqual(this.axis.updateOptions.lastCall.args[0].startValue, 1.20, "start value is correct");
+});
+
+QUnit.test("ticks should be correct", function(assert) {
+    this.createWidget({
+        scale: {
+            type: "semidiscrete",
+            startValue: 1.2,
+            endValue: 2,
+            minRange: 0.1
+        }
+    });
+
+    assert.deepEqual(this.axis.updateOptions.lastCall.args[0].customTicks, [1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2], "ticks are correct");
+});
+
 QUnit.module("Initialization", commons.environment);
 
 QUnit.test("Axis creation - check axis parameters", function(assert) {
