@@ -1480,7 +1480,9 @@ Axis.prototype = {
             maxText,
             text,
             box,
-            indent = withIndents ? options.label.indentFromAxis + (options.tick.length * 0.5) : 0;
+            indent = withIndents ? options.label.indentFromAxis + (options.tick.length * 0.5) : 0,
+            tickInterval,
+            viewportRange;
 
         if(!options.label.visible || !that._axisElementsGroup) {
             return { height: widthAxis, width: widthAxis, x: 0, y: 0 };
@@ -1489,19 +1491,21 @@ Axis.prototype = {
         if(that._majorTicks) {
             ticks = convertTicksToValues(that._majorTicks);
         } else {
-            ticks = that._createTicksAndLabelFormat(canvas).ticks;
+            ticks = that._createTicksAndLabelFormat(canvas);
+            tickInterval = ticks.tickInterval;
+            ticks = ticks.ticks;
         }
-        maxText = ticks.reduce(function(prevValue, tick, index) {
-            //TODO get viewPortRange once and pass it to formatLabel
-            var label = that.formatLabel(tick, options.label);
-            if(prevValue[0].length < label.length) {
-                return [label, tick];
+        viewportRange = that._getViewportRange();
+        maxText = ticks.reduce(function(prevLabel, tick, index) {
+            var label = that.formatLabel(tick, options.label, viewportRange, undefined, tickInterval);
+            if(prevLabel.length < label.length) {
+                return label;
             } else {
-                return prevValue;
+                return prevLabel;
             }
-        }, [that.formatLabel(ticks[0], options.label), ticks[0]]);
+        }, that.formatLabel(ticks[0], options.label, viewportRange, undefined, tickInterval));
 
-        text = that._renderer.text(maxText[0], 0, 0).css(that._textFontStyles).attr(that._textOptions).append(that._renderer.root);
+        text = that._renderer.text(maxText, 0, 0).css(that._textFontStyles).attr(that._textOptions).append(that._renderer.root);
         box = text.getBBox();
 
         text.remove();
