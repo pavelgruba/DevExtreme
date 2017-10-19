@@ -182,6 +182,16 @@ QUnit.test("Misc", function(assert) {
     this.testTickLabelFormat(assert, [10000000000000000000], 1000000000000000000, ["1E+19"]);
 });
 
+QUnit.test("format numbers in exponential notation", function(assert) {
+    this.testTickLabelFormat(assert, [0.00000001], 1e-8, ["1.0E-8"]);
+    this.testTickLabelFormat(assert, [0.000000011], 1e-8, ["1.1E-8"]);
+    this.testTickLabelFormat(assert, [0.00000486], 2e-8, ["4.86E-6"]);
+    this.testTickLabelFormat(assert, [0.000001], 5e-7, ["1E-6"]);
+    this.testTickLabelFormat(assert, [0.0000015], 5e-7, ["1.5E-6"]);
+    this.testTickLabelFormat(assert, [4], 5e-7, ["4"]);
+    this.testTickLabelFormat(assert, [0.00000505], 5e-8, ["5.05E-6"]);
+});
+
 QUnit.test("format float number. tickInterval = 2.5", function(assert) {
     this.testTickLabelFormat(assert, [18.5], 2.5, ["18.5"]);
 });
