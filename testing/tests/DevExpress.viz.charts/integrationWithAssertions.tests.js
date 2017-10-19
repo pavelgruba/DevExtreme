@@ -125,6 +125,7 @@ QUnit.test("MultiAxis with title and inverted axis", function(assert) {
         }
         ],
         valueAxis: [{
+            axisDivisionFactor: 50,
             visible: true, //B231173
             min: 0,
             tickInterval: 50,
@@ -141,6 +142,7 @@ QUnit.test("MultiAxis with title and inverted axis", function(assert) {
                 }
             }
         }, {
+            axisDivisionFactor: 50,
             visible: true, //B231173
             name: "axis1",
             min: 0,
@@ -155,6 +157,7 @@ QUnit.test("MultiAxis with title and inverted axis", function(assert) {
                 }
             }
         }, {
+            axisDivisionFactor: 50,
             visible: true, //B231173
             name: "axis3",
             min: 0,
@@ -198,7 +201,7 @@ QUnit.test("Problem with two axis and range", function(assert) {
             arg: new Date(2011, 11, 10),
             val: 8
         }],
-        valueAxis: [{ "label": {}, "placeholderSize": 40 }, { "position": "right", "placeholderSize": 10 }],
+        valueAxis: [{ "label": {}, "placeholderSize": 40, axisDivisionFactor: 30 }, { "position": "right", "placeholderSize": 10, axisDivisionFactor: 30 }],
         series: { type: "bar" }
     });
 

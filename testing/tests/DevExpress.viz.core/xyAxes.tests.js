@@ -621,6 +621,52 @@ QUnit.test("call measure labels after axis draw - use ticks generated on draw", 
     assert.equal(this.renderer.text.getCall(0).args[0], "300", "text of the label");
 });
 
+QUnit.test("Datetime, no custom format - use auto format based on estimated tickInterval", function(assert) {
+    this.generatedTicks = [
+        new Date(2010, 7, 1),
+        new Date(2010, 8, 1),
+        new Date(2010, 9, 1)
+    ];
+    this.generatedTickInterval = "month";
+
+    var axis = this.createSimpleAxis({
+        valueType: "datetime",
+        label: {
+            visible: true
+        }
+    });
+    axis.validate();
+
+    axis.measureLabels(this.canvas);
+
+    assert.strictEqual(this.renderer.text.getCall(0).args[0], "September");
+});
+
+QUnit.test("Datetime, custom format - use provided format", function(assert) {
+    this.generatedTicks = [
+        new Date(2010, 7, 1),
+        new Date(2010, 8, 10),
+        new Date(2010, 9, 25)
+    ];
+    this.generatedTickInterval = "month";
+
+    var axis = this.createSimpleAxis({
+        valueType: "datetime",
+        label: {
+            visible: true,
+            format: {
+                type: "day"
+            }
+        }
+    });
+    axis.validate();
+
+    axis.measureLabels(this.canvas);
+
+    assert.strictEqual(this.renderer.text.getCall(0).args[0], "10");
+});
+
+
 QUnit.module("Label overlapping, 'hide' mode", overlappingEnvironment);
 
 QUnit.test("horizontal axis", function(assert) {

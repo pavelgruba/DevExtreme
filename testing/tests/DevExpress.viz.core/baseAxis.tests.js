@@ -1110,6 +1110,30 @@ QUnit.test("marginOptions.checkInterval, range interval more than spacing factor
     });
 });
 
+QUnit.test("marginOptions.checkInterval, no range interval (one point in series) - apply margins by spacing factor", function(assert) {
+    this.testMargins(assert, {
+        options: {
+            valueMarginsEnabled: true
+        },
+        marginOptions: {
+            checkInterval: true
+        },
+        range: {
+            min: 100,
+            max: 220
+        },
+        ticks: [100, 220],
+        expectedRange: {
+            min: 90,
+            max: 230,
+            minVisible: 90,
+            maxVisible: 230,
+            interval: 20
+        },
+        isArgumentAxis: true
+    });
+});
+
 QUnit.test("marginOptions.checkInterval on valueAxis - ignore interval", function(assert) {
     this.testMargins(assert, {
         options: {

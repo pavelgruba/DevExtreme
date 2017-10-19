@@ -635,7 +635,7 @@ registerTheme({
         },
         horizontalAxis: {
             position: BOTTOM,
-            axisDivisionFactor: 50,
+            axisDivisionFactor: 70,
             label: {
                 rotationAngle: 90,
                 staggeringSpacing: 5,
@@ -657,7 +657,7 @@ registerTheme({
         },
         verticalAxis: {
             position: LEFT,
-            axisDivisionFactor: 30,
+            axisDivisionFactor: 40,
             label: {
                 alignment: RIGHT
             },
