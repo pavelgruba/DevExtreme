@@ -7,10 +7,12 @@ var _format = require("../core/format"),
     getLog = require("../core/utils").getLog,
     isDefined = typeUtils.isDefined,
     isFunction = typeUtils.isFunction,
+    isExponential = typeUtils.isExponential,
     floor = Math.floor,
     adjust = require("../../core/utils/math").adjust,
     abs = Math.abs,
-    formats = ["fixedPoint", "thousands", "millions", "billions", "trillions", "exponential"];
+    EXPONENTIAL = "exponential",
+    formats = ["fixedPoint", "thousands", "millions", "billions", "trillions", EXPONENTIAL];
 
 function log10(value) {
     return adjust(getLog(value, 10));
@@ -135,61 +137,76 @@ function smartFormatter(tick, options) {
         indexOfTick = -1,
         datesDifferences,
         format = options.labelOptions.format,
-        ticks = options.ticks;
+        ticks = options.ticks,
+        log10Tick;
 
     if(!isDefined(format) && isDefined(tickInterval) && options.type !== "discrete") {
         if(options.dataType !== "datetime") {
             separatedTickInterval = tickInterval.toString().split(".");
 
-            if(separatedTickInterval.length > 1 && tickInterval.toString().indexOf("e") === -1) {
-                precision = separatedTickInterval[1].length;
-                typeFormat = formats[indexOfFormat];
-            } else {
-                if(tickInterval.toString().indexOf("e") !== -1 && (stringTick.indexOf(".") !== -1 || stringTick.indexOf("e") !== -1)) {
-                    typeFormat = "exponential";
-                    if(stringTick.indexOf("e") === -1) {
-                        stringTick = stringTick.split(".")[1];
-                        var precisionFromTickInterval = getNoZeroIndex(stringTick);
-
-                        if(stringTick[precisionFromTickInterval + 1] && stringTick[precisionFromTickInterval + 1] !== "0") {
-                            precision = 1;
-                        }
-                        if(stringTick[precisionFromTickInterval + 2] && stringTick[precisionFromTickInterval + 2] !== "0") {
-                            precision = 2;
-                        }
+            if(options.type === "logarithmic") {
+                log10Tick = tick !== 0 ? log10(abs(tick)) : 1;
+                if(log10Tick > 0) {
+                    typeFormat = formats[floor(log10Tick / 3)] || EXPONENTIAL;
+                } else {
+                    if(log10Tick < -4) {
+                        typeFormat = EXPONENTIAL;
                     } else {
+                        tick = adjust(tick);
                         precision = undefined;
                     }
+                }
+            } else {
+                if(separatedTickInterval.length > 1 && !isExponential(tickInterval)) {
+                    precision = separatedTickInterval[1].length;
+                    typeFormat = formats[indexOfFormat];
                 } else {
-                    tickIntervalIndex = floor(log10(tickInterval));
-                    actualIndex = tickIndex = (tick !== 0) ? floor(log10(abs(tick))) : 1;
+                    if(isExponential(tickInterval) && (stringTick.indexOf(".") !== -1 || isExponential(tick))) {
+                        typeFormat = EXPONENTIAL;
+                        if(!isExponential(tick)) {
+                            stringTick = stringTick.split(".")[1];
+                            var precisionFromTickInterval = getNoZeroIndex(stringTick);
 
-                    if(tickIndex - tickIntervalIndex >= 2) {
-                        actualIndex = tickIntervalIndex;
-                    }
-
-                    indexOfFormat = floor(actualIndex / 3);
-                    if(indexOfFormat < 5) {
-                        offset = indexOfFormat * 3;
-                        if(tickIntervalIndex - offset === 2 && tickIndex >= 3) {
-                            indexOfFormat++;
-                            offset = indexOfFormat * 3;
-                        }
-                        typeFormat = formats[indexOfFormat];
-                    } else {
-                        typeFormat = formats[formats.length - 1];
-                    }
-
-                    if(offset !== 0 && stringTick[stringTick.length - offset] !== "0" && typeFormat !== formats[0]) {
-                        precision++;
-                        if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001 && stringTick[stringTick.length - offset + 1] !== "0") {
-                            precision++;
-                        }
-                    } else {
-                        if(precision === 0 && tickIndex - tickIntervalIndex === 1 && floor(tickIndex / 3) !== floor(tickIntervalIndex / 3)) {
-                            precision = 1;
-                            if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001) {
+                            if(stringTick[precisionFromTickInterval + 1] && stringTick[precisionFromTickInterval + 1] !== "0") {
+                                precision = 1;
+                            }
+                            if(stringTick[precisionFromTickInterval + 2] && stringTick[precisionFromTickInterval + 2] !== "0") {
                                 precision = 2;
+                            }
+                        } else {
+                            precision = undefined;
+                        }
+                    } else {
+                        tickIntervalIndex = floor(log10(tickInterval));
+                        actualIndex = tickIndex = (tick !== 0) ? floor(log10(abs(tick))) : 1;
+
+                        if(tickIndex - tickIntervalIndex >= 2) {
+                            actualIndex = tickIntervalIndex;
+                        }
+
+                        indexOfFormat = floor(actualIndex / 3);
+                        if(indexOfFormat < 5) {
+                            offset = indexOfFormat * 3;
+                            if(tickIntervalIndex - offset === 2 && tickIndex >= 3) {
+                                indexOfFormat++;
+                                offset = indexOfFormat * 3;
+                            }
+                            typeFormat = formats[indexOfFormat];
+                        } else {
+                            typeFormat = formats[formats.length - 1];
+                        }
+
+                        if(offset !== 0 && stringTick[stringTick.length - offset] !== "0" && typeFormat !== formats[0]) {
+                            precision++;
+                            if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001 && stringTick[stringTick.length - offset + 1] !== "0") {
+                                precision++;
+                            }
+                        } else {
+                            if(precision === 0 && tickIndex - tickIntervalIndex === 1 && floor(tickIndex / 3) !== floor(tickIntervalIndex / 3)) {
+                                precision = 1;
+                                if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001) {
+                                    precision = 2;
+                                }
                             }
                         }
                     }

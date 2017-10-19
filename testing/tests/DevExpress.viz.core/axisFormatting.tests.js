@@ -206,6 +206,17 @@ QUnit.test("format float number. tickInterval = 2.5", function(assert) {
     this.testTickLabelFormat(assert, [18.5], 2.5, ["18.5"]);
 });
 
+QUnit.test("formatting logarithmic ticks", function(assert) {
+    this.testFormat(assert, {
+        type: "logarithmic",
+        argumentType: "numeric",
+        label: {
+            visible: true
+        }
+    }, [0.00001, 0.0001, 0.001, 0.01, 0.1, 0, 1, 10, 100, 1000, 10000, /*1000000000000000000*/1e18 ], 1,
+    [ "1E-5", "0.0001", "0.001", "0.01", "0.1", "0", "1", "10", "100", "1K", "10K", "1E+18"]);
+});
+
 QUnit.test("Label's hint - use auto formatter", function(assert) {
     //arrange
     var spy = sinon.spy();
