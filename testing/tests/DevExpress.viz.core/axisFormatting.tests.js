@@ -133,11 +133,11 @@ var environment = {
 QUnit.module("Auto formatting. Tick labels. Numeric.", environment);
 
 QUnit.test("formatter should support short notations of numbers", function(assert) {
-    this.testTickLabelFormat(assert, [102, 1000], 100, ["102", "1K"]);
-    this.testTickLabelFormat(assert, [1000000], 100000, ["1M"]);
-    this.testTickLabelFormat(assert, [1000000000], 100000000, ["1B"]);
-    this.testTickLabelFormat(assert, [1000000000000], 100000000000, ["1T"]);
-    this.testTickLabelFormat(assert, [1000000000000000], 100000000000000, ["1E+15"]);
+    this.testTickLabelFormat(assert, [102, 1000], 100, ["102", "1.0K"]);
+    this.testTickLabelFormat(assert, [1000000], 100000, ["1.0M"]);
+    this.testTickLabelFormat(assert, [1000000000], 100000000, ["1.0B"]);
+    this.testTickLabelFormat(assert, [1000000000000], 100000000000, ["1.0T"]);
+    this.testTickLabelFormat(assert, [1000000000000000], 100000000000000, ["1.0E+15"]);
 });
 
 QUnit.test("format numbers with non zero precision", function(assert) {
@@ -148,7 +148,7 @@ QUnit.test("format numbers with non zero precision", function(assert) {
 });
 
 QUnit.test("formatting numbers wtih multiplier of tickInterval === 2.5", function(assert) {
-    this.testTickLabelFormat(assert, [1250, 8000, 160000], 250, ["1.25K", "8K", "160K"]);
+    this.testTickLabelFormat(assert, [1250, 8000, 160000], 250, ["1.25K", "8.00K", "160K"]);
     this.testTickLabelFormat(assert, [2500, 30000], 2500, ["2.5K", "30K"]);
 });
 
@@ -169,7 +169,7 @@ QUnit.test("format values when index of tick above index of tickInterval", funct
 });
 
 QUnit.test("format float numbers", function(assert) {
-    this.testTickLabelFormat(assert, [18, 18.5], 0.5, ["18", "18.5"]);
+    this.testTickLabelFormat(assert, [18, 18.5], 0.5, ["18.0", "18.5"]);
     this.testTickLabelFormat(assert, [18.25], 0.25, ["18.25"]);
 });
 
@@ -896,7 +896,7 @@ QUnit.test("No format specified - use auto format", function(assert) {
 
     var result = this.axis.getFormattedValue(1002);
 
-    assert.strictEqual(result, "1K");
+    assert.strictEqual(result, "1.0K");
 });
 
 QUnit.test("Value is string - retrun as is", function(assert) {

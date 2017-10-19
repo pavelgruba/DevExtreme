@@ -125,8 +125,6 @@ function smartFormatter(tick, options) {
         precision = 0,
         typeFormat,
         typeFormatter,
-        postProcessingRequired = false,
-        result,
         offset = 0,
         separatedTickInterval,
         indexOfFormat = 0,
@@ -142,7 +140,6 @@ function smartFormatter(tick, options) {
             if(separatedTickInterval.length > 1 && tickInterval.toString().indexOf("e") === -1) {
                 precision = separatedTickInterval[1].length;
                 typeFormat = formats[indexOfFormat];
-                postProcessingRequired = true;
             } else {
                 if(tickInterval.toString().indexOf("e") !== -1 && (stringTick.indexOf(".") !== -1 || stringTick.indexOf("e") !== -1)) {
                     typeFormat = "exponential";
@@ -184,6 +181,13 @@ function smartFormatter(tick, options) {
                         if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001 && stringTick[stringTick.length - offset + 1] !== "0") {
                             precision++;
                         }
+                    } else {
+                        if(precision === 0 && tickIndex - tickIntervalIndex === 1 && floor(tickIndex / 3) !== floor(tickIntervalIndex / 3)) {
+                            precision = 1;
+                            if(abs(tickInterval / Math.pow(10, tickIntervalIndex) - 2.5) < 0.0001) {
+                                precision = 2;
+                            }
+                        }
                     }
                 }
             }
@@ -214,9 +218,7 @@ function smartFormatter(tick, options) {
         }
     }
 
-    result = _format(tick, { format: format, precision: options.labelOptions.precision });
-
-    return postProcessingRequired ? result.replace(CORRECT_TAIL, "") : result;
+    return _format(tick, { format: format, precision: options.labelOptions.precision });
 }
 
 exports.smartFormatter = smartFormatter;
