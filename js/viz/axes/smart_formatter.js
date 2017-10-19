@@ -4,13 +4,17 @@ var _format = require("../core/format"),
     formatHelper = require("../../format_helper"),
     typeUtils = require("../../core/utils/type"),
     dateUtils = require("../../core/utils/date"),
+    getLog = require("../core/utils").getLog,
     isDefined = typeUtils.isDefined,
     isFunction = typeUtils.isFunction,
-    log10 = Math.log10,
     floor = Math.floor,
+    adjust = require("../../core/utils/math").adjust,
     abs = Math.abs,
-    CORRECT_TAIL = /\.?0*$/,
     formats = ["fixedPoint", "thousands", "millions", "billions", "trillions", "exponential"];
+
+function log10(value) {
+    return adjust(getLog(value, 10));
+}
 
 function getDatesDifferences(prevDate, curDate, nextDate, tickFormat) {
     var prevDifferences,

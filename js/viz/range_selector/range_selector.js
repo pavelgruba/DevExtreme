@@ -582,7 +582,7 @@ function getPrecisionForSlider(startValue, endValue, screenDelta) {
     var d = Math.abs(endValue - startValue) / screenDelta,
         tail = d - Math.floor(d);
 
-    return tail > 0 ? Math.ceil(Math.abs(Math.log10(tail))) : 0;
+    return tail > 0 ? Math.ceil(Math.abs(adjust(vizUtils.getLog(tail, 10)))) : 0;
 }
 
 var dxRangeSelector = require("../core/base_widget").inherit({

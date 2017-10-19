@@ -11,6 +11,16 @@ var $ = require("jquery"),
         }
     });
 
+function getArray(len) {
+    var i,
+        array = new Array(len);
+
+    for(i = 0; i < len; i++) {
+        array[i] = 0;
+    }
+    return array;
+}
+
 var environment = {
     beforeEach: function() {
         this.canvas = {
@@ -96,7 +106,7 @@ var environment = {
 
         //assert
         var renderer = this.renderer,
-            actualTexts = new Array(texts.length).fill(0).map(function(_, i) {
+            actualTexts = getArray(texts.length).map(function(_, i) {
                 return renderer.text.getCall(i).args[0];
             });
 

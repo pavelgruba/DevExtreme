@@ -11,6 +11,16 @@ var $ = require("jquery"),
         }
     });
 
+function getArray(len, content) {
+    var i,
+        array = new Array(len);
+
+    for(i = 0; i < len; i++) {
+        array[i] = content;
+    }
+    return array;
+}
+
 var environment = {
     beforeEach: function() {
 
@@ -101,7 +111,7 @@ function compareFloatNumbers(ticks, expectedNumbers, assert) {
     ticks.forEach(function(tick, index) {
         var number = tick.value.valueOf();
 
-        assert.strictEqual(parseFloat(number.toFixed(Math.floor(Math.abs(Math.log10(number))) + 1)), expectedNumbers[index], (index + 1) + "tick");
+        assert.strictEqual(parseFloat(number.toFixed(Math.floor(Math.abs(vizUtilsModule.getLog(number, 10))) + 1)), expectedNumbers[index], (index + 1) + "tick");
     });
 }
 
@@ -129,7 +139,7 @@ QUnit.test("Do not calculate tickInterval if ratio of (categories count) to (cou
         type: "discrete"
     });
 
-    this.axis.setBusinessRange({ categories: new Array(79).fill(1).map(function(_, i) { return i; }), addRange: function() { } });
+    this.axis.setBusinessRange({ categories: getArray(79, 1).map(function(_, i) { return i; }), addRange: function() { } });
 
     //act
     this.axis.createTicks(canvas(1000));
@@ -145,7 +155,7 @@ QUnit.test("Calculate tickInterval if ratio of (categories count) to (count by s
         axisDivisionFactor: 110
     });
 
-    this.axis.setBusinessRange({ categories: new Array(82).fill(1).map(function(_, i) { return i; }), addRange: function() { } });
+    this.axis.setBusinessRange({ categories: getArray(82, 1).map(function(_, i) { return i; }), addRange: function() { } });
 
     //act
     this.axis.createTicks(canvas(1000));
