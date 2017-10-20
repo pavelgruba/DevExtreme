@@ -228,12 +228,12 @@ function addInterval(value, interval) {
 function addIntervalLog(base) {
     var riseToBase = raiseTo(base);
     return function(value, interval, min) {
-        return riseToBase(getLog(value, base) + interval);
+        return riseToBase(addInterval(getLog(value, base), interval));
     };
 }
 
 function addIntervalDate(value, interval) {
-    return dateUtils.addInterval(value, interval);
+    return addInterval(value, interval);
 }
 
 function calculateTicks(addInterval, correctMinValue) {

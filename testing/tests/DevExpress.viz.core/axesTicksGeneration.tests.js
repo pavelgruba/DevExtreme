@@ -723,6 +723,25 @@ QUnit.test("calculated ticks out of mix/max issue", function(assert) {
     assert.deepEqual(this.axis._majorTicks.map(value).map(function(tick) { return tick.toFixed(1); }), ["-0.9", "-0.8", "-0.7"]);
 });
 
+QUnit.test("Logarithmic ticks adjusting", function(assert) {
+    this.createAxis();
+    this.updateOptions({
+        argumentType: "numeric",
+        type: "logarithmic",
+        logarithmBase: 10,
+        tickInterval: 1,
+        endOnTicks: true
+    });
+
+    this.axis.setBusinessRange({ minVisible: 1e-9, maxVisible: 1e-7 });
+
+    //act
+    this.axis.createTicks(canvas(1000));
+
+    //assert
+    assert.deepEqual(this.axis._majorTicks.map(value), [1e-9, 1e-8, 1e-7]);
+});
+
 QUnit.module("Numeric. Minor ticks", environment);
 
 QUnit.test("minorTick and minorGrid are not visible - do not calculate minor ticks", function(assert) {

@@ -152,7 +152,6 @@ function smartFormatter(tick, options) {
                     if(log10Tick < -4) {
                         typeFormat = EXPONENTIAL;
                     } else {
-                        tick = adjust(tick);
                         precision = undefined;
                     }
                 }
