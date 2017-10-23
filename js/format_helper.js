@@ -63,13 +63,19 @@ module.exports = dependencyInjector({
     },
 
     getDateFormatByDifferences: function(dateDifferences, intervalFormat) {
-        var resultFormat = [];
+        var resultFormat = [],
+            needSpecialSecondFormatter = intervalFormat && dateDifferences.millisecond && !(dateDifferences.year || dateDifferences.month || dateDifferences.day);
 
-        if(dateDifferences.millisecond) {
+        if(needSpecialSecondFormatter) {
+            var secondFormatter = function(date) {
+                return (date.getSeconds() + date.getMilliseconds() / 1000) + "s";
+            };
+            resultFormat.push(secondFormatter);
+        } else if(dateDifferences.millisecond) {
             resultFormat.push('millisecond');
         }
 
-        if(dateDifferences.hour || dateDifferences.minute || dateDifferences.second) {
+        if(dateDifferences.hour || dateDifferences.minute || (!needSpecialSecondFormatter && dateDifferences.second)) {
             resultFormat.unshift(this.getTimeFormat(dateDifferences.second));
         }
 
@@ -96,7 +102,14 @@ module.exports = dependencyInjector({
         }
 
         if(dateDifferences.month && dateDifferences.day) {
-            resultFormat.unshift('monthandday');
+            if(intervalFormat) {
+                var monthDayFormatter = function(date) {
+                    return dateLocalization.getMonthNames("abbreviated")[date.getMonth()] + " " + dateLocalization.format(date, "day");
+                };
+                resultFormat.unshift(monthDayFormatter);
+            } else {
+                resultFormat.unshift('monthandday');
+            }
             return this._normalizeFormat(resultFormat);
         }
         if(dateDifferences.month) {

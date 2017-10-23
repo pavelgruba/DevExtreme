@@ -12,7 +12,8 @@ var _format = require("../core/format"),
     adjust = require("../../core/utils/math").adjust,
     abs = Math.abs,
     EXPONENTIAL = "exponential",
-    formats = ["fixedPoint", "thousands", "millions", "billions", "trillions", EXPONENTIAL];
+    formats = ["fixedPoint", "thousands", "millions", "billions", "trillions", EXPONENTIAL],
+    dateUnitIntervals = ['millisecond', 'second', 'minute', 'hour', 'day', 'month', 'year'];
 
 function log10(value) {
     return adjust(getLog(value, 10));
@@ -23,7 +24,7 @@ function getDatesDifferences(prevDate, curDate, nextDate, tickFormat) {
         nextDifferences,
         dateUnitInterval,
         tickFormatIndex,
-        dateUnitsLength = dateUtils.dateUnitIntervals.length,
+        dateUnitsLength = dateUnitIntervals.length,
         i,
         j;
 
@@ -37,74 +38,71 @@ function getDatesDifferences(prevDate, curDate, nextDate, tickFormat) {
         tickFormat = "second";
     }
 
+    tickFormatIndex = dateUnitIntervals.indexOf(tickFormat);
+
     if(nextDate) {
         nextDifferences = dateUtils.getDatesDifferences(curDate, nextDate);
-        if(!prevDate && nextDifferences[tickFormat]) {
-            for(i = dateUtils.dateUnitIntervals.length - 1; i >= 0; i--) {
-                if(dateUtils.dateUnitIntervals[i] === tickFormat) {
+        prevDifferences = dateUtils.getDatesDifferences(curDate, prevDate);
+        if(nextDifferences[tickFormat]) {
+            for(i = dateUnitsLength - 1; i >= tickFormatIndex; i--) {
+                dateUnitInterval = dateUnitIntervals[i];
+                if(i === tickFormatIndex) {
+                    setDateUnitInterval(nextDifferences, tickFormatIndex + (nextDifferences["millisecond"] ? 2 : 1));
+                } else if(nextDifferences[dateUnitInterval]) {
+                    resetDateUnitInterval(nextDifferences, i);
                     break;
                 }
-                resetDateUnitInterval(nextDifferences, i);
             }
         }
-    }
-
-    if(prevDate) {
+    } else {
         prevDifferences = dateUtils.getDatesDifferences(prevDate, curDate);
-        if(!nextDate && prevDifferences[tickFormat]) {
-            tickFormatIndex = dateUtils.dateUnitIntervals.indexOf(tickFormat);
-            for(i = dateUnitsLength - 1; i >= 0; i--) {
-                dateUnitInterval = dateUtils.dateUnitIntervals[i];
-                if(prevDifferences[dateUnitInterval]) {
-                    if(i > tickFormatIndex && tickFormatIndex !== 1) {
-                        for(j = tickFormatIndex; j >= 0; j--) {
-                            resetDateUnitInterval(prevDifferences, j);
-                        }
-                        break;
-                    } else if(i === tickFormatIndex) {
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    if(prevDifferences && nextDifferences) {
-        for(i = dateUnitsLength - 1; i >= 0; i--) {
-            dateUnitInterval = dateUtils.dateUnitIntervals[i];
-            if(prevDifferences[dateUnitInterval] && nextDifferences[dateUnitInterval]) {
-                for(j = dateUnitsLength - 1; j > i; j--) {
-                    dateUnitInterval = dateUtils.dateUnitIntervals[j];
-                    if(prevDifferences[dateUnitInterval] && !nextDifferences[dateUnitInterval]) {
-                        if(i !== 1) {
-                            resetDateUnitInterval(prevDifferences, i);
-                        } else if(j > 4) {
-                            for(j = 3; j >= 0; j--) {
-                                resetDateUnitInterval(prevDifferences, j);
-                            }
-                        }
-                        break;
-                    }
-                }
-                for(j = i - 1; j >= 0; j--) {
-                    dateUnitInterval = dateUtils.dateUnitIntervals[j];
-                    if(!nextDifferences[dateUnitInterval]) {
+        for(i = dateUnitsLength - 1; i >= tickFormatIndex; i--) {
+            dateUnitInterval = dateUnitIntervals[i];
+            if(prevDifferences[dateUnitInterval]) {
+                if(i - tickFormatIndex > 1) {
+                    for(j = tickFormatIndex + 1; j >= 0; j--) {
                         resetDateUnitInterval(prevDifferences, j);
                     }
+                    break;
+                } else if(isDateTimeStart(curDate, dateUnitInterval)) {
+                    for(j = i - 1; j > 0; j--) {
+                        resetDateUnitInterval(prevDifferences, j);
+                    }
+                    break;
                 }
             }
         }
     }
+    return nextDate ? nextDifferences : prevDifferences;
+}
 
-    return prevDate ? prevDifferences : nextDifferences;
+function isDateTimeStart(date, dateUnitInterval) {
+    var unitNumbers = [date.getMilliseconds(), date.getSeconds(), date.getMinutes(), date.getHours(), date.getDate(), date.getMonth()],
+        unitIndex = dateUnitIntervals.indexOf(dateUnitInterval),
+        i;
+    for(i = 0; i < unitIndex; i++) {
+        if((i === 4 && unitNumbers[i] !== 1) || (i !== 4 && unitNumbers[i] !== 0)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function resetDateUnitInterval(differences, intervalIndex) {
-    var dateUnitInterval = dateUtils.dateUnitIntervals[intervalIndex];
+    var dateUnitInterval = dateUnitIntervals[intervalIndex];
 
     if(differences[dateUnitInterval]) {
         differences[dateUnitInterval] = false;
         differences.count--;
+    }
+}
+
+function setDateUnitInterval(differences, intervalIndex) {
+    var dateUnitInterval = dateUnitIntervals[intervalIndex];
+
+    if(differences[dateUnitInterval] === false) {
+        differences[dateUnitInterval] = true;
+        differences.count++;
     }
 }
 
@@ -138,7 +136,9 @@ function smartFormatter(tick, options) {
         datesDifferences,
         format = options.labelOptions.format,
         ticks = options.ticks,
-        log10Tick;
+        log10Tick,
+        prevDateIndex,
+        nextDateIndex;
 
     if(!isDefined(format) && isDefined(tickInterval) && options.type !== "discrete") {
         if(options.dataType !== "datetime") {
@@ -221,13 +221,13 @@ function smartFormatter(tick, options) {
             if(options.showTransition && ticks.length) {
                 indexOfTick = ticks.map(Number).indexOf(+tick);
                 if(indexOfTick > -1) {
-                    datesDifferences = getDatesDifferences(ticks[indexOfTick - 1], ticks[indexOfTick], ticks[indexOfTick + 1], typeFormat);
-                    if(datesDifferences) {
-                        typeFormat = formatHelper.getDateFormatByDifferences(datesDifferences, typeFormat);
-                        if(isFunction(typeFormat)) {
-                            typeFormatter = typeFormat;
-                            typeFormat = null;
-                        }
+                    prevDateIndex = indexOfTick === 0 ? ticks.length - 1 : indexOfTick - 1;
+                    nextDateIndex = indexOfTick === 0 ? 1 : -1;
+                    datesDifferences = getDatesDifferences(ticks[prevDateIndex], ticks[indexOfTick], ticks[nextDateIndex], typeFormat);
+                    typeFormat = formatHelper.getDateFormatByDifferences(datesDifferences, typeFormat);
+                    if(isFunction(typeFormat)) {
+                        typeFormatter = typeFormat;
+                        typeFormat = null;
                     }
                 }
             }
