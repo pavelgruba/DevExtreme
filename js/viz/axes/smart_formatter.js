@@ -120,6 +120,24 @@ function getNoZeroIndex(str) {
     return str.split("e")[1].length;
 }
 
+function getTransitionTickIndex(ticks, value) {
+    var i,
+        curDiff,
+        minDiff,
+        nearestTickIndex = 0;
+
+    minDiff = abs(value - ticks[0]);
+    for(i = 1; i < ticks.length; i++) {
+        curDiff = abs(value - ticks[i]);
+        if(curDiff < minDiff) {
+            minDiff = curDiff;
+            nearestTickIndex = i;
+        }
+    }
+
+    return nearestTickIndex;
+}
+
 function smartFormatter(tick, options) {
     var tickInterval = options.tickInterval,
         tickIntervalIndex,
@@ -142,6 +160,11 @@ function smartFormatter(tick, options) {
 
     if(!isDefined(format) && isDefined(tickInterval) && options.type !== "discrete") {
         if(options.dataType !== "datetime") {
+            if(ticks.length && ticks.indexOf(tick) === -1) {
+                indexOfTick = getTransitionTickIndex(ticks, tick);
+                tickInterval = adjust(abs(tick - ticks[indexOfTick]), tick);
+            }
+
             separatedTickInterval = tickInterval.toString().split(".");
 
             if(options.type === "logarithmic") {
@@ -220,15 +243,17 @@ function smartFormatter(tick, options) {
             typeFormat = dateUtils.getDateFormatByTickInterval(tickInterval);
             if(options.showTransition && ticks.length) {
                 indexOfTick = ticks.map(Number).indexOf(+tick);
-                if(indexOfTick > -1) {
+                if(indexOfTick === -1) {
+                    prevDateIndex = getTransitionTickIndex(ticks, tick);
+                } else {
                     prevDateIndex = indexOfTick === 0 ? ticks.length - 1 : indexOfTick - 1;
                     nextDateIndex = indexOfTick === 0 ? 1 : -1;
-                    datesDifferences = getDatesDifferences(ticks[prevDateIndex], ticks[indexOfTick], ticks[nextDateIndex], typeFormat);
-                    typeFormat = formatHelper.getDateFormatByDifferences(datesDifferences, typeFormat);
-                    if(isFunction(typeFormat)) {
-                        typeFormatter = typeFormat;
-                        typeFormat = null;
-                    }
+                }
+                datesDifferences = getDatesDifferences(ticks[prevDateIndex], tick, ticks[nextDateIndex], typeFormat);
+                typeFormat = formatHelper.getDateFormatByDifferences(datesDifferences, typeFormat);
+                if(isFunction(typeFormat)) {
+                    typeFormatter = typeFormat;
+                    typeFormat = null;
                 }
             }
             format = {
