@@ -247,7 +247,9 @@ QUnit.test("Get options", function(assert) {
         hoverMode: "none",
         label: {
             minSpacing: 5,
-            visible: true
+            visible: true,
+            position: "bottom",
+            alignment: "center"
         },
         position: "bottom",
         grid: {},

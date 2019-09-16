@@ -181,12 +181,31 @@ function validateAxisOptions(options) {
         defaultPosition = options.isHorizontal ? BOTTOM : LEFT,
         secondaryPosition = options.isHorizontal ? TOP : RIGHT;
 
+    let labelPosition = labelOptions.position;
+
     if(position !== defaultPosition && position !== secondaryPosition) {
         position = defaultPosition;
     }
 
-    if(position === RIGHT && !labelOptions.userAlignment) {
-        labelOptions.alignment = LEFT;
+    if(!labelPosition || labelPosition === "outside") {
+        labelPosition = position;
+    } else if(labelPosition === "inside") {
+        labelPosition = {
+            [TOP]: BOTTOM,
+            [BOTTOM]: TOP,
+            [LEFT]: RIGHT,
+            [RIGHT]: LEFT
+        }[position];
+    }
+    labelOptions.position = labelPosition;
+
+    if(!labelOptions.userAlignment) {
+        labelOptions.alignment = {
+            [TOP]: CENTER,
+            [BOTTOM]: CENTER,
+            [LEFT]: RIGHT,
+            [RIGHT]: LEFT
+        }[labelPosition];
     }
 
     options.position = position;
@@ -572,11 +591,11 @@ Axis.prototype = {
         var that = this,
             options = that._options,
             box = vizUtils.rotateBBox(tick.labelBBox, [tick.labelCoords.x, tick.labelCoords.y], -tick.labelRotationAngle || 0),
-            position = options.position,
             textAlign = tick.labelAlignment || options.label.alignment,
             isDiscrete = that._options.type === "discrete",
             isFlatLabel = tick.labelRotationAngle % 90 === 0,
             indentFromAxis = options.label.indentFromAxis,
+            labelPosition = options.label.position,
             axisPosition = that._axisPosition,
             labelCoords = tick.labelCoords,
             labelX = labelCoords.x,
@@ -584,7 +603,7 @@ Axis.prototype = {
             translateY;
 
         if(that._isHorizontal) {
-            if(position === BOTTOM) {
+            if(labelPosition === BOTTOM) {
                 translateY = axisPosition + indentFromAxis - box.y + offset;
             } else {
                 translateY = axisPosition - indentFromAxis - (box.y + box.height) - offset;
@@ -599,7 +618,7 @@ Axis.prototype = {
             }
         } else {
             translateY = labelCoords.y - box.y - box.height / 2;
-            if(position === LEFT) {
+            if(labelPosition === LEFT) {
                 if(textAlign === LEFT) {
                     translateX = axisPosition - indentFromAxis - maxWidth - box.x;
                 } else if(textAlign === CENTER) {

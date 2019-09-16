@@ -942,7 +942,13 @@ var dxChart = {
              * @type Enums.VizTextOverflow
              * @default "none"
              */
-            textOverflow: "none"
+            textOverflow: "none",
+            /**
+             * @name dxChartOptions.commonAxisSettings.label.position
+             * @type Enums.RelativePosition | Enums.Position
+             * @default "none"
+             */
+            position: "outside"
         },
         /**
         * @name dxChartOptions.commonAxisSettings.grid
