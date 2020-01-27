@@ -1,127 +1,127 @@
-import { Component, Prop, React } from "../component_declaration/common";
+import { Component, Prop, React, JSXComponent } from "../component_declaration/common";
 import { getImageSourceType } from '../core/utils/icon';
 
-import Widget from './test-widget';
-import JSXConstructor from '../component_declaration/jsx';
-
-const WidgetJSX = JSXConstructor<Widget>(Widget);
+import Widget, { WidgetModel } from './test-widget';
 
 const ICON_CLASS = 'dx-icon';
 const SVG_ICON_CLASS = 'dx-svg-icon';
 
 const getImageContainerJSX = (source: string) => {
     const type = getImageSourceType(source);
-    if(type === 'image')
+    if (type === 'image')
         return (<img src={source} className={ICON_CLASS}></img>);
-    if(type === 'fontIcon')
+    if (type === 'fontIcon')
         return (<i className={`${ICON_CLASS} ${source}`}></i>);
-    if(type === 'dxIcon')
+    if (type === 'dxIcon')
         return (<i className={`${ICON_CLASS} ${ICON_CLASS}-${source}`}></i>);
-    if(type === 'svg')
+    if (type === 'svg')
         return (<i className={`${ICON_CLASS} ${SVG_ICON_CLASS}`}>{source}></i>);
     return null;
 }
 
-const getCssClasses = (model: any) => {
+const getCssClasses = (model: Button) => {
     const classNames = ['dx-button'];
 
-    if (model.stylingMode === 'outlined') {
+    if (model.props.stylingMode === 'outlined') {
         classNames.push('dx-button-mode-outlined');
-    } else if (model.stylingMode === 'text') {
+    } else if (model.props.stylingMode === 'text') {
         classNames.push('dx-button-mode-text');
     } else {
         classNames.push('dx-button-mode-contained');
     }
 
-    if (model.type === 'danger') {
+    if (model.props.type === 'danger') {
         classNames.push('dx-button-danger');
-    } else if (model.type === 'default') {
+    } else if (model.props.type === 'default') {
         classNames.push('dx-button-default');
-    } else if (model.type === 'success') {
+    } else if (model.props.type === 'success') {
         classNames.push('dx-button-success');
-    } else if (model.type === 'back') {
+    } else if (model.props.type === 'back') {
         classNames.push('dx-button-back');
     } else {
         classNames.push('dx-button-normal');
     }
 
-    if (model.text) {
+    if (model.props.text) {
         classNames.push('dx-button-has-text');
     }
-    if(model.icon) {
+    if (model.props.icon) {
         classNames.push('dx-button-has-icon');
     }
-    return classNames.concat(model.classNames).join(" ");
+    return classNames.concat(model.props.classNames!).join(" ");
 }
 
 export const viewModelFunction = (model: Button) => {
     let icon;
-    if(model.icon || model.type === 'back') {
-        icon = getImageContainerJSX(model.icon || 'back');
+    if (model.props.icon || model.props.type === 'back') {
+        icon = getImageContainerJSX(model.props.icon || 'back');
     }
     const supportedKeys = () => {
         const click = e => {
             e.preventDefault();
-            model.onClick && model.onClick(e);
+            model.props.onClick && model.props.onClick(e);
         };
 
         return { space: click, enter: click };
     }
+
     return {
         ...model,
-        elementAttr: { ...model.elementAttr, role: 'button' },
-        aria: { label: model.text && model.text.trim() },
+        elementAttr: { ...model.props.elementAttr, role: 'button' },
+        aria: { label: model.props.text && model.props.text.trim() },
         cssClasses: getCssClasses(model),
         icon,
         supportedKeys,
     };
 }
 
-export const viewFunction = (viewModel: Button) => (
-    <WidgetJSX
+export const viewFunction = (viewModel: any) => (
+    <Widget
+
         className={viewModel.cssClasses}
-        onClick={viewModel.onClick}
-        width={viewModel.width}
-        height={viewModel.height}
-        rtlEnabled={viewModel.rtlEnabled}
-        elementAttr={viewModel.elementAttr}
-        disabled={viewModel.disabled}
-        visible={viewModel.visible}
-        hint={viewModel.hint}
-        tabIndex={viewModel.tabIndex}
-        accessKey={viewModel.accessKey}
-        focusStateEnabled={viewModel.focusStateEnabled}
-        hoverStateEnabled={viewModel.hoverStateEnabled}
-        activeStateEnabled={viewModel.activeStateEnabled}
-        supportedKeys={viewModel.supportedKeys}
-        aria={viewModel.aria}
+        onClick={viewModel.props.onClick}
+        width={viewModel.props.width}
+        height={viewModel.props.height}
+        rtlEnabled={viewModel.props.rtlEnabled}
+        elementAttr={viewModel.props.elementAttr}
+        disabled={viewModel.props.disabled}
+        visible={viewModel.props.visible}
+        hint={viewModel.props.hint}
+        tabIndex={viewModel.props.tabIndex}
+        accessKey={viewModel.props.accessKey}
+        focusStateEnabled={viewModel.props.focusStateEnabled}
+        hoverStateEnabled={viewModel.props.hoverStateEnabled}
+        activeStateEnabled={viewModel.props.activeStateEnabled}
+        supportedKeys={viewModel.props.supportedKeys}
+        aria={viewModel.props.aria}
     >
-        {viewModel.contentRender && (
+        {viewModel.props.contentRender && (
             <div className="dx-button-content">
-                <viewModel.contentRender icon={viewModel.icon} text={viewModel.text} />
+                <viewModel.props.contentRender icon={viewModel.icon} text={viewModel.props.text} />
             </div>
         ) || (
-            <div className="dx-button-content">
-                {viewModel.icon}
-                {viewModel.text && <span className="dx-button-text">{viewModel.text}</span>}
-            </div>
-        )}
-    </WidgetJSX>
+                <div className="dx-button-content">
+                    {viewModel.icon}
+                    {viewModel.props.text && <span className="dx-button-text">{viewModel.props.text}</span>}
+                </div>
+            )}
+    </Widget>
 );
 
-@Component({
-    name: 'Button',
-    components: [],
-    viewModel: viewModelFunction,
-    view: viewFunction,
-})
-
-export default class Button extends Widget {
-    @Prop() classNames?: string[]
+export class ButtonModel extends WidgetModel {
+    @Prop() classNames?: string[];
     @Prop() icon?: string;
     @Prop() pressed?: boolean;
     @Prop() stylingMode?: string;
     @Prop() text?: string;
     @Prop() type?: string;
     @Prop() contentRender?: any;
+}
+
+@Component({
+    name: 'Button',
+    viewModel: viewModelFunction,
+    view: viewFunction
+})
+export default class Button extends JSXComponent<ButtonModel> {
 }

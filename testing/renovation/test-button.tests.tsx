@@ -1,45 +1,42 @@
-import Button, { viewModelFunction, viewFunction } from '../../js/ui/test-button';
+import Button, { ButtonModel } from '../../js/ui/test-button';
+import Widget from '../../js/ui/test-widget';
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 describe('Button', () => {
-    it('should render text', () => {
-        const model = new Button();
-        model.text = 'My button';
 
-        const tree = shallow(viewFunction(viewModelFunction(model)));
+    it('should render text', () => {
+        const model = new ButtonModel();
+        model.text = 'My button';
+        const tree = shallow(<Button {...model}></Button>);
 
         expect(tree.find('.dx-button-text').text()).toBe('My button');
     });
 
     it('should render template', () => {
-        const model = new Button();
+        const model = new ButtonModel();
         model.text = 'My button';
+        model.contentRender = ({text}) => (<div className="custom-content">{text}</div>);
 
-        model.contentRender = ({text}) => (<div className="custom-content">{text+"123"}</div>);
-
-        const tree = shallow(viewFunction(viewModelFunction(model)));
+        const tree = mount(<Button {...model}></Button>);
 
         expect(tree.find('.dx-button-content').children().props().text).toBe('My button');
-        expect(tree.find('.dx-button-content').children().render().text()).toBe('My button123');
+        expect(tree.find('.dx-button-content .custom-content').text()).toBe('My button');
     });
 
-    it('should have dx-button class', () => {
-        const model = new Button();
+    it('should have dx-widget class', () => {
+        const model = new ButtonModel();
+        const tree = shallow(<Button {...model}></Button>);
 
-        const tree = shallow(viewFunction(viewModelFunction(model)));
-
-        expect(tree.is('.dx-button')).toBeTruthy();
+        expect(tree.type()).toBe(Widget);
     });
 
     it('should be of success type', () => {
-        const model = new Button();
+        const model = new ButtonModel();
         model.type = 'success';
-
-        const tree = shallow(viewFunction(viewModelFunction(model)));
+        const tree = shallow(<Button {...model}></Button>);
 
         expect(tree.is('.dx-button.dx-button-success')).toBeTruthy();
     });
-
 });
