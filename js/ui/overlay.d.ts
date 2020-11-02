@@ -194,7 +194,7 @@ export interface dxOverlayOptions<T = dxOverlay> extends WidgetOptions<T> {
 }
 export interface dxOverlayAnimation {
     /**
-     * @docid dxOverlayOptions.animation.hide
+     * @docid
      * @type animationConfig
      * @default { type: "pop", duration: 300, to: { opacity: 0, scale: 0.55 }, from: { opacity: 1, scale: 1 } } }
      * @prevFileNamespace DevExpress.ui
@@ -202,7 +202,7 @@ export interface dxOverlayAnimation {
      */
     hide?: animationConfig;
     /**
-     * @docid dxOverlayOptions.animation.show
+     * @docid
      * @type animationConfig
      * @default { type: "pop", duration: 400, from: { scale: 0.55 } }
      * @prevFileNamespace DevExpress.ui

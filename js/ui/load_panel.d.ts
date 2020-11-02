@@ -125,7 +125,7 @@ export interface dxLoadPanelOptions extends dxOverlayOptions<dxLoadPanel> {
 }
 export interface dxLoadPanelAnimation extends dxOverlayAnimation {
     /**
-     * @docid dxLoadPanelOptions.animation.hide
+     * @docid
      * @type animationConfig
      * @default null
      * @prevFileNamespace DevExpress.ui
@@ -133,7 +133,7 @@ export interface dxLoadPanelAnimation extends dxOverlayAnimation {
      */
     hide?: animationConfig;
     /**
-     * @docid dxLoadPanelOptions.animation.show
+     * @docid
      * @type animationConfig
      * @default null
      * @prevFileNamespace DevExpress.ui

@@ -123,7 +123,7 @@ export interface dxPopoverOptions<T = dxPopover> extends dxPopupOptions<T> {
 }
 export interface dxPopoverAnimation extends dxPopupAnimation {
     /**
-     * @docid dxPopoverOptions.animation.hide
+     * @docid
      * @type animationConfig
      * @default { type: "fade", to: 0 }
      * @prevFileNamespace DevExpress.ui
@@ -131,7 +131,7 @@ export interface dxPopoverAnimation extends dxPopupAnimation {
      */
     hide?: animationConfig;
     /**
-     * @docid dxPopoverOptions.animation.show
+     * @docid
      * @type animationConfig
      * @default { type: "fade", from: 0, to: 1 }
      * @prevFileNamespace DevExpress.ui

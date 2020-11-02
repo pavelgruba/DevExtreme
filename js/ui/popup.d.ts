@@ -169,14 +169,14 @@ export interface dxPopupOptions<T = dxPopup> extends dxOverlayOptions<T> {
 }
 export interface dxPopupAnimation extends dxOverlayAnimation {
     /**
-     * @docid dxPopupOptions.animation.hide
+     * @docid
      * @default { type: 'slide', duration: 400, from: { position: { my: 'center', at: 'center', of: window } }, to: { position: { my: 'top', at: 'bottom', of: window } }} [for](iOS)
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     hide?: animationConfig;
     /**
-     * @docid dxPopupOptions.animation.show
+     * @docid
      * @default { type: 'slide', duration: 400, from: { position: { my: 'top', at: 'bottom', of: window } }, to: { position: { my: 'center', at: 'center', of: window } }} [for](iOS)
      * @prevFileNamespace DevExpress.ui
      * @public
@@ -185,7 +185,7 @@ export interface dxPopupAnimation extends dxOverlayAnimation {
 }
 export interface dxPopupToolbarItem {
     /**
-     * @docid dxPopupOptions.toolbarItems.disabled
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -193,14 +193,14 @@ export interface dxPopupToolbarItem {
      */
     disabled?: boolean;
     /**
-     * @docid dxPopupOptions.toolbarItems.html
+     * @docid
      * @type String
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     html?: string;
     /**
-     * @docid dxPopupOptions.toolbarItems.location
+     * @docid
      * @type Enums.ToolbarItemLocation
      * @default 'center'
      * @prevFileNamespace DevExpress.ui
@@ -208,28 +208,28 @@ export interface dxPopupToolbarItem {
      */
     location?: 'after' | 'before' | 'center';
     /**
-     * @docid dxPopupOptions.toolbarItems.options
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     options?: any;
     /**
-     * @docid dxPopupOptions.toolbarItems.template
+     * @docid
      * @type template
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     template?: template;
     /**
-     * @docid dxPopupOptions.toolbarItems.text
+     * @docid
      * @type String
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     text?: string;
     /**
-     * @docid dxPopupOptions.toolbarItems.toolbar
+     * @docid
      * @type Enums.Toolbar
      * @default 'top'
      * @prevFileNamespace DevExpress.ui
@@ -237,7 +237,7 @@ export interface dxPopupToolbarItem {
      */
     toolbar?: 'bottom' | 'top';
     /**
-     * @docid dxPopupOptions.toolbarItems.visible
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -245,7 +245,7 @@ export interface dxPopupToolbarItem {
      */
     visible?: boolean;
     /**
-     * @docid dxPopupOptions.toolbarItems.widget
+     * @docid
      * @type Enums.ToolbarItemWidget
      * @prevFileNamespace DevExpress.ui
      * @public

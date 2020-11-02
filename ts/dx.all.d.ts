@@ -8648,11 +8648,11 @@ declare module DevExpress.ui {
      */
     export interface dxLoadPanelAnimation extends dxOverlayAnimation {
         /**
-         * [descr:dxLoadPanel.Options.animation.hide]
+         * [descr:dxLoadPanelAnimation.hide]
          */
         hide?: animationConfig;
         /**
-         * [descr:dxLoadPanel.Options.animation.show]
+         * [descr:dxLoadPanelAnimation.show]
          */
         show?: animationConfig;
     }
@@ -9325,11 +9325,11 @@ declare module DevExpress.ui {
      */
     export interface dxOverlayAnimation {
         /**
-         * [descr:dxOverlay.Options.animation.hide]
+         * [descr:dxOverlayAnimation.hide]
          */
         hide?: animationConfig;
         /**
-         * [descr:dxOverlay.Options.animation.show]
+         * [descr:dxOverlayAnimation.show]
          */
         show?: animationConfig;
     }
@@ -9743,11 +9743,11 @@ declare module DevExpress.ui {
      */
     export interface dxPopoverAnimation extends dxPopupAnimation {
         /**
-         * [descr:dxPopover.Options.animation.hide]
+         * [descr:dxPopoverAnimation.hide]
          */
         hide?: animationConfig;
         /**
-         * [descr:dxPopover.Options.animation.show]
+         * [descr:dxPopoverAnimation.show]
          */
         show?: animationConfig;
     }
@@ -9848,11 +9848,11 @@ declare module DevExpress.ui {
      */
     export interface dxPopupAnimation extends dxOverlayAnimation {
         /**
-         * [descr:dxPopup.Options.animation.hide]
+         * [descr:dxPopupAnimation.hide]
          */
         hide?: animationConfig;
         /**
-         * [descr:dxPopup.Options.animation.show]
+         * [descr:dxPopupAnimation.show]
          */
         show?: animationConfig;
     }
@@ -9861,39 +9861,39 @@ declare module DevExpress.ui {
      */
     export interface dxPopupToolbarItem {
         /**
-         * [descr:dxPopup.Options.toolbarItems.disabled]
+         * [descr:dxPopupToolbarItem.disabled]
          */
         disabled?: boolean;
         /**
-         * [descr:dxPopup.Options.toolbarItems.html]
+         * [descr:dxPopupToolbarItem.html]
          */
         html?: string;
         /**
-         * [descr:dxPopup.Options.toolbarItems.location]
+         * [descr:dxPopupToolbarItem.location]
          */
         location?: 'after' | 'before' | 'center';
         /**
-         * [descr:dxPopup.Options.toolbarItems.options]
+         * [descr:dxPopupToolbarItem.options]
          */
         options?: any;
         /**
-         * [descr:dxPopup.Options.toolbarItems.template]
+         * [descr:dxPopupToolbarItem.template]
          */
         template?: DevExpress.core.template;
         /**
-         * [descr:dxPopup.Options.toolbarItems.text]
+         * [descr:dxPopupToolbarItem.text]
          */
         text?: string;
         /**
-         * [descr:dxPopup.Options.toolbarItems.toolbar]
+         * [descr:dxPopupToolbarItem.toolbar]
          */
         toolbar?: 'bottom' | 'top';
         /**
-         * [descr:dxPopup.Options.toolbarItems.visible]
+         * [descr:dxPopupToolbarItem.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxPopup.Options.toolbarItems.widget]
+         * [descr:dxPopupToolbarItem.widget]
          */
         widget?: 'dxAutocomplete' | 'dxButton' | 'dxCheckBox' | 'dxDateBox' | 'dxMenu' | 'dxSelectBox' | 'dxTabs' | 'dxTextBox' | 'dxButtonGroup' | 'dxDropDownButton';
     }
@@ -11600,11 +11600,11 @@ declare module DevExpress.ui {
      */
     export interface dxToastAnimation extends dxOverlayAnimation {
         /**
-         * [descr:dxToast.Options.animation.hide]
+         * [descr:dxToastAnimation.hide]
          */
         hide?: animationConfig;
         /**
-         * [descr:dxToast.Options.animation.show]
+         * [descr:dxToastAnimation.show]
          */
         show?: animationConfig;
     }

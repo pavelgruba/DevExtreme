@@ -124,7 +124,7 @@ export interface dxToastOptions extends dxOverlayOptions<dxToast> {
 }
 export interface dxToastAnimation extends dxOverlayAnimation {
     /**
-     * @docid dxToastOptions.animation.hide
+     * @docid
      * @type animationConfig
      * @default { type: "fade", duration: 400, to: 0 }
      * @prevFileNamespace DevExpress.ui
@@ -132,7 +132,7 @@ export interface dxToastAnimation extends dxOverlayAnimation {
      */
     hide?: animationConfig;
     /**
-     * @docid dxToastOptions.animation.show
+     * @docid
      * @type animationConfig
      * @default { type: "fade", duration: 400, from: 0, to: 1 }
      * @prevFileNamespace DevExpress.ui
