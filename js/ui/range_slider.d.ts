@@ -3,10 +3,10 @@ import {
 } from '../core/element';
 
 import {
+    dxSliderBase,
     dxSliderBaseOptions
 } from './slider';
 
-import dxTrackBar from './track_bar';
 export interface dxRangeSliderOptions extends dxSliderBaseOptions<dxRangeSlider> {
     /**
      * @docid
@@ -69,7 +69,7 @@ export interface dxRangeSliderOptions extends dxSliderBaseOptions<dxRangeSlider>
  * @prevFileNamespace DevExpress.ui
  * @public
  */
-export default class dxRangeSlider extends dxTrackBar {
+export default class dxRangeSlider extends dxSliderBase {
     constructor(element: Element, options?: dxRangeSliderOptions)
     constructor(element: JQuery, options?: dxRangeSliderOptions)
 }

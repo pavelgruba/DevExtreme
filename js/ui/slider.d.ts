@@ -25,7 +25,7 @@ export interface dxSliderOptions extends dxSliderBaseOptions<dxSlider> {
  * @prevFileNamespace DevExpress.ui
  * @public
  */
-export default class dxSlider extends dxTrackBar {
+export default class dxSlider extends dxSliderBase {
     constructor(element: Element, options?: dxSliderOptions)
     constructor(element: JQuery, options?: dxSliderOptions)
 }
@@ -36,7 +36,12 @@ export default class dxSlider extends dxTrackBar {
  * @hidden
  * @prevFileNamespace DevExpress.ui
  */
-export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
+export class dxSliderBase extends dxTrackBar {
+    constructor(element: Element, options?: dxSliderBaseOptions)
+    constructor(element: JQuery, options?: dxSliderBaseOptions)
+}
+
+export interface dxSliderBaseOptions<T = dxSliderBase> extends dxTrackBarOptions<T> {
     /**
      * @docid
      * @type boolean
