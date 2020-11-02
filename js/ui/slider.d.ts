@@ -8,7 +8,7 @@ import {
 
 export interface dxSliderOptions extends dxSliderBaseOptions<dxSlider> {
     /**
-     * @docid dxSliderOptions.value
+     * @docid
      * @type number
      * @default 50
      * @prevFileNamespace DevExpress.ui
@@ -17,7 +17,7 @@ export interface dxSliderOptions extends dxSliderBaseOptions<dxSlider> {
     value?: number;
 }
 /**
- * @docid dxSlider
+ * @docid
  * @isEditor
  * @inherits dxSliderBase
  * @module ui/slider
@@ -31,14 +31,14 @@ export default class dxSlider extends dxTrackBar {
 }
 
 /**
- * @docid dxSliderBase
+ * @docid
  * @inherits dxTrackBar
  * @hidden
  * @prevFileNamespace DevExpress.ui
  */
 export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
     /**
-     * @docid dxSliderBaseOptions.activeStateEnabled
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -46,14 +46,14 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     activeStateEnabled?: boolean;
     /**
-     * @docid dxSliderBaseOptions.focusStateEnabled
+     * @docid
      * @default true [for](desktop)
      * @prevFileNamespace DevExpress.ui
      * @public
      */
     focusStateEnabled?: boolean;
     /**
-     * @docid dxSliderBaseOptions.hoverStateEnabled
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -61,7 +61,7 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     hoverStateEnabled?: boolean;
     /**
-     * @docid dxSliderBaseOptions.keyStep
+     * @docid
      * @type number
      * @default 1
      * @prevFileNamespace DevExpress.ui
@@ -69,14 +69,31 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     keyStep?: number;
     /**
-     * @docid dxSliderBaseOptions.label
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    label?: { format?: format, position?: 'bottom' | 'top', visible?: boolean };
+    label?: {
+      /**
+      * @docid
+      * @default function(value) { return value }
+      */
+      format?: format,
+      /**
+      * @docid
+      * @type Enums.VerticalEdge
+      * @default 'bottom'
+      */
+      position?: 'bottom' | 'top',
+      /**
+      * @docid
+      * @default false
+      */
+      visible?: boolean
+    };
     /**
-     * @docid dxSliderBaseOptions.name
+     * @docid
      * @type string
      * @hidden false
      * @prevFileNamespace DevExpress.ui
@@ -84,7 +101,7 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     name?: string;
     /**
-     * @docid dxSliderBaseOptions.showRange
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -92,7 +109,7 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     showRange?: boolean;
     /**
-     * @docid dxSliderBaseOptions.step
+     * @docid
      * @type number
      * @default 1
      * @prevFileNamespace DevExpress.ui
@@ -100,12 +117,35 @@ export interface dxSliderBaseOptions<T> extends dxTrackBarOptions<T> {
      */
     step?: number;
     /**
-     * @docid dxSliderBaseOptions.tooltip
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    tooltip?: { enabled?: boolean, format?: format, position?: 'bottom' | 'top', showMode?: 'always' | 'onHover' };
+    tooltip?: {
+      /**
+      * @docid
+      * @default false
+      */
+      enabled?: boolean,
+      /**
+      * @docid
+      * @default function(value) { return value }
+      */
+      format?: format,
+      /**
+      * @docid
+      * @type Enums.VerticalEdge
+      * @default 'top'
+      */
+      position?: 'bottom' | 'top',
+      /**
+      * @docid
+      * @type Enums.SliderTooltipShowMode
+      * @default 'onHover'
+      */
+      showMode?: 'always' | 'onHover'
+    };
 }
 
 declare global {

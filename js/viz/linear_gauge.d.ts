@@ -9,28 +9,28 @@ import {
 
 export interface dxLinearGaugeOptions extends BaseGaugeOptions<dxLinearGauge> {
     /**
-     * @docid dxLinearGaugeOptions.geometry
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     geometry?: { orientation?: 'horizontal' | 'vertical' };
     /**
-     * @docid dxLinearGaugeOptions.rangeContainer
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     rangeContainer?: dxLinearGaugeRangeContainer;
     /**
-     * @docid dxLinearGaugeOptions.scale
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     scale?: dxLinearGaugeScale;
     /**
-     * @docid dxLinearGaugeOptions.subvalueIndicator
+     * @docid
      * @type GaugeIndicator
      * @inheritAll
      * @prevFileNamespace DevExpress.viz
@@ -38,7 +38,7 @@ export interface dxLinearGaugeOptions extends BaseGaugeOptions<dxLinearGauge> {
      */
     subvalueIndicator?: GaugeIndicator;
     /**
-     * @docid dxLinearGaugeOptions.valueIndicator
+     * @docid
      * @type GaugeIndicator
      * @inheritAll
      * @prevFileNamespace DevExpress.viz
@@ -115,7 +115,7 @@ export interface dxLinearGaugeScaleLabel extends BaseGaugeScaleLabel {
     indentFromTick?: number;
 }
 /**
- * @docid dxLinearGauge
+ * @docid
  * @inherits BaseGauge
  * @module viz/linear_gauge
  * @export default

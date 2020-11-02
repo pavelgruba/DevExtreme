@@ -9,28 +9,28 @@ import {
 
 export interface dxCircularGaugeOptions extends BaseGaugeOptions<dxCircularGauge> {
     /**
-     * @docid dxCircularGaugeOptions.geometry
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     geometry?: { endAngle?: number, startAngle?: number };
     /**
-     * @docid dxCircularGaugeOptions.rangeContainer
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     rangeContainer?: dxCircularGaugeRangeContainer;
     /**
-     * @docid dxCircularGaugeOptions.scale
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     scale?: dxCircularGaugeScale;
     /**
-     * @docid dxCircularGaugeOptions.subvalueIndicator
+     * @docid
      * @type GaugeIndicator
      * @inheritAll
      * @prevFileNamespace DevExpress.viz
@@ -38,7 +38,7 @@ export interface dxCircularGaugeOptions extends BaseGaugeOptions<dxCircularGauge
      */
     subvalueIndicator?: GaugeIndicator;
     /**
-     * @docid dxCircularGaugeOptions.valueIndicator
+     * @docid
      * @type GaugeIndicator
      * @inheritAll
      * @prevFileNamespace DevExpress.viz
@@ -100,7 +100,7 @@ export interface dxCircularGaugeScaleLabel extends BaseGaugeScaleLabel {
     indentFromTick?: number;
 }
 /**
- * @docid dxCircularGauge
+ * @docid
  * @inherits BaseGauge
  * @module viz/circular_gauge
  * @export default

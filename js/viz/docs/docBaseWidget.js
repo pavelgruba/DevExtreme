@@ -47,7 +47,7 @@ const BaseWidget = {
     print: function() { },
     onDrawn: function() { },
     /**
-     * @name BaseWidgetMethods.defaultOptions
+     * @name BaseWidget.defaultOptions
      * @publicName defaultOptions(rule)
      * @hidden
      */
@@ -257,11 +257,6 @@ const BaseWidget = {
     }
 };
 
-/**
-* @name ScaleBreak
-* @hidden
-* @type object
-*/
 const ScaleBreak = {
     startValue: undefined,
     endValue: undefined
@@ -321,28 +316,13 @@ const tickInterval = {
     milliseconds: undefined
 };
 
-/**
-* @name VizRange
-* @hidden
-* @type object
-*/
 const VizRange = {
     startValue: undefined,
     endValue: undefined,
     length: undefined
 };
 
-/**
- * @name Font
- * @type object
- * @hidden
- */
 
-/**
-* @name BaseLegend
-* @hidden
-* @type object
-*/
 const BaseLegend = {
     horizontalAlignment: 'right',
     verticalAlignment: 'top',
@@ -360,69 +340,19 @@ const BaseLegend = {
     },
     visible: true,
     margin: {
-        /**
-        * @name BaseLegend.margin.top
-        * @type number
-        * @default 10
-        */
         top: 10,
-        /**
-        * @name BaseLegend.margin.bottom
-        * @type number
-        * @default 10
-        */
         bottom: 10,
-        /**
-        * @name BaseLegend.margin.left
-        * @type number
-        * @default 10
-        */
         left: 10,
-        /**
-        * @name BaseLegend.margin.right
-        * @type number
-        * @default 10
-        */
         right: 10
     },
 
     markerSize: 20,
     border: {
-        /**
-        * @name BaseLegend.border.visible
-        * @type boolean
-        * @default false
-        */
         visible: false,
-        /**
-        * @name BaseLegend.border.width
-        * @type number
-        * @default 1
-        */
         width: 1,
-        /**
-        * @name BaseLegend.border.color
-        * @type string
-        * @default '#d3d3d3'
-        */
         color: '#d3d3d3',
-        /**
-        * @name BaseLegend.border.cornerRadius
-        * @type number
-        * @default 0
-        */
         cornerRadius: 0,
-        /**
-        * @name BaseLegend.border.opacity
-        * @type number
-        * @default undefined
-        */
         opacity: undefined,
-        /**
-        * @name BaseLegend.border.dashStyle
-        * @type Enums.DashStyle
-        * @default 'solid'
-        */
         dashStyle: 'solid'
     },
     backgroundColor: undefined,
@@ -433,62 +363,15 @@ const BaseLegend = {
     columnItemSpacing: 20,
     rowItemSpacing: 8,
     title: {
-        /**
-        * @name BaseLegend.title.horizontalAlignment
-        * @type Enums.HorizontalAlignment
-        * @default undefined
-        */
         horizontalAlignment: undefined,
-        /**
-        * @name BaseLegend.title.verticalAlignment
-        * @type Enums.VerticalEdge
-        * @default 'top'
-        */
         verticalAlignment: 'top',
-        /**
-        * @name BaseLegend.title.text
-        * @type string
-        * @default null
-        */
         text: null,
-        /**
-        * @name BaseLegend.title.margin
-        * @type object
-        */
         margin: {
-            /**
-            * @name BaseLegend.title.margin.top
-            * @type number
-            * @default 0
-            */
             top: 0,
-            /**
-            * @name BaseLegend.title.margin.bottom
-            * @type number
-            * @default 9
-            */
             bottom: 9,
-            /**
-            * @name BaseLegend.title.margin.left
-            * @type number
-            * @default 0
-            */
             left: 0,
-            /**
-            * @name BaseLegend.title.margin.right
-            * @type number
-            * @default 0
-            */
             right: 0
         },
-        /**
-        * @name BaseLegend.title.font
-        * @type Font
-        * @default '#232323' @prop color
-        * @default 18 @prop size
-        * @default 200 @prop weight
-        * @extends CommonVizLightFontFamily
-        */
         font: {
             family: undefined,
             weight: 200,
@@ -496,31 +379,9 @@ const BaseLegend = {
             size: 18,
             opacity: undefined
         },
-        /**
-        * @name BaseLegend.title.placeholderSize
-        * @type number
-        * @default undefined
-        */
         placeholderSize: undefined,
-        /**
-        * @name BaseLegend.title.subtitle
-        * @type object|string
-        */
         subtitle: {
-            /**
-            * @name BaseLegend.title.subtitle.text
-            * @type string
-            * @default null
-            */
             text: null,
-            /**
-            * @name BaseLegend.title.subtitle.font
-            * @type Font
-            * @default '#232323' @prop color
-            * @default 14 @prop size
-            * @default 200 @prop weight
-            * @extends CommonVizLightFontFamily
-            */
             font: {
                 family: undefined,
                 weight: 200,
@@ -528,51 +389,22 @@ const BaseLegend = {
                 size: 14,
                 opacity: undefined
             },
-            /**
-            * @name BaseLegend.title.subtitle.offset
-            * @type number
-            * @default 0
-            */
             offset: 0
         }
     }
 };
 
-/**
-* @name BaseLegendItem
-* @hidden
-* @type object
-*/
 const legendItem = {
     text: undefined,
     visible: true,
     marker: {
-        /**
-        * @name BaseLegendItem.marker.fill
-        * @type string
-        */
         fill: "#fff",
-        /**
-        * @name BaseLegendItem.marker.opacity
-        * @type number
-        */
         opacity: 1,
-        /**
-        * @name BaseLegendItem.marker.size
-        * @type number
-        */
         size: 10,
-        /**
-        * @name BaseLegendItem.marker.state
-        * @type Enums.LegendMarkerState
-        */
         state: "normal"
     }
 };
-/**
-* @name BaseWidgetAnnotationConfig
-* @type object
-*/
+
 const BaseWidgetAnnotationConfig = {
     type: undefined,
     x: undefined,
@@ -583,42 +415,11 @@ const BaseWidgetAnnotationConfig = {
     color: '#ffffff',
     opacity: 0.9,
     border: {
-        /**
-        * @name BaseWidgetAnnotationConfig.border.width
-        * @default 1
-        * @type number
-        */
         width: 1,
-        /**
-        * @name BaseWidgetAnnotationConfig.border.color
-        * @type string
-        * @default '#dddddd'
-        */
         color: '#dddddd',
-        /**
-        * @name BaseWidgetAnnotationConfig.border.dashStyle
-        * @type Enums.DashStyle
-        * @default 'solid'
-        */
         dashStyle: 'solid',
-        /**
-        * @name BaseWidgetAnnotationConfig.border.opacity
-        * @type number
-        * @default undefined
-        */
         opacity: undefined,
-        /**
-        * @name BaseWidgetAnnotationConfig.border.visible
-        * @type boolean
-        * @default true
-        */
         visible: true,
-        /**
-        * @name BaseWidgetAnnotationConfig.border.cornerRadius
-        * @type number
-        * @default 0
-        * @default 4 @for Material
-        */
         cornerRadius: 0
     },
     font: {
@@ -629,55 +430,15 @@ const BaseWidgetAnnotationConfig = {
     paddingLeftRight: 10,
     paddingTopBottom: 10,
     shadow: {
-        /**
-        * @name BaseWidgetAnnotationConfig.shadow.opacity
-        * @type number
-        * @default 0.15
-        */
         opacity: 0.15,
-        /**
-        * @name BaseWidgetAnnotationConfig.shadow.color
-        * @type string
-        * @default '#000000'
-        */
         color: '#000000',
-        /**
-        * @name BaseWidgetAnnotationConfig.shadow.offsetX
-        * @type number
-        * @default 0
-        */
         offsetX: 0,
-        /**
-        * @name BaseWidgetAnnotationConfig.shadow.offsetY
-        * @type number
-        * @default 1
-        */
         offsetY: 1,
-        /**
-        * @name BaseWidgetAnnotationConfig.shadow.blur
-        * @type number
-        * @default 4
-        */
         blur: 4
     },
     image: {
-        /**
-        * @name BaseWidgetAnnotationConfig.image.url
-        * @type string
-        * @default undefined
-        */
         url: undefined,
-        /**
-        * @name BaseWidgetAnnotationConfig.image.width
-        * @type number
-        * @default 30
-        */
         width: 30,
-        /**
-        * @name BaseWidgetAnnotationConfig.image.height
-        * @type number
-        * @default 30
-        */
         height: 30
     },
     text: undefined,

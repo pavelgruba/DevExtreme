@@ -44,7 +44,7 @@ export type ChartSingleValueSeriesAggregationMethodType = 'avg' | 'count' | 'max
 
 export interface baseLabelObject {
     /**
-     * @docid baseLabelObjectMethods.getBoundingRect
+     * @docid
      * @publicName getBoundingRect()
      * @return object
      * @prevFileNamespace DevExpress.viz
@@ -52,14 +52,14 @@ export interface baseLabelObject {
      */
     getBoundingRect(): any;
     /**
-     * @docid baseLabelObjectMethods.hide
+     * @docid
      * @publicName hide()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     hide(): void;
     /**
-     * @docid baseLabelObjectMethods.hide
+     * @docid
      * @publicName hide(holdInvisible)
      * @param1 holdInvisible:boolean
      * @prevFileNamespace DevExpress.viz
@@ -67,7 +67,7 @@ export interface baseLabelObject {
      */
     hide(holdInvisible: boolean): void;
     /**
-     * @docid baseLabelObjectMethods.isVisible
+     * @docid
      * @publicName isVisible()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -75,14 +75,14 @@ export interface baseLabelObject {
      */
     isVisible(): boolean;
     /**
-     * @docid baseLabelObjectMethods.show
+     * @docid
      * @publicName show()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     show(): void;
     /**
-     * @docid baseLabelObjectMethods.show
+     * @docid
      * @publicName show(holdVisible)
      * @param1 holdVisible:boolean
      * @prevFileNamespace DevExpress.viz
@@ -93,35 +93,35 @@ export interface baseLabelObject {
 
 export interface basePointObject {
     /**
-     * @docid basePointObjectMethods.clearHover
+     * @docid
      * @publicName clearHover()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     clearHover(): void;
     /**
-     * @docid basePointObjectMethods.clearSelection
+     * @docid
      * @publicName clearSelection()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     clearSelection(): void;
     /**
-     * @docid basePointObjectFields.data
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     data?: any;
     /**
-     * @docid basePointObjectFields.fullState
+     * @docid
      * @type number
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     fullState?: number;
     /**
-     * @docid basePointObjectMethods.getColor
+     * @docid
      * @publicName getColor()
      * @return string
      * @prevFileNamespace DevExpress.viz
@@ -129,7 +129,7 @@ export interface basePointObject {
      */
     getColor(): string;
     /**
-     * @docid basePointObjectMethods.getLabel
+     * @docid
      * @publicName getLabel()
      * @return baseLabelObject|Array<baseLabelObject>
      * @prevFileNamespace DevExpress.viz
@@ -137,21 +137,21 @@ export interface basePointObject {
      */
     getLabel(): baseLabelObject & Array<baseLabelObject>;
     /**
-     * @docid basePointObjectMethods.hideTooltip
+     * @docid
      * @publicName hideTooltip()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     hideTooltip(): void;
     /**
-     * @docid basePointObjectMethods.hover
+     * @docid
      * @publicName hover()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     hover(): void;
     /**
-     * @docid basePointObjectMethods.isHovered
+     * @docid
      * @publicName isHovered()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -159,7 +159,7 @@ export interface basePointObject {
      */
     isHovered(): boolean;
     /**
-     * @docid basePointObjectMethods.isSelected
+     * @docid
      * @publicName isSelected()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -167,42 +167,42 @@ export interface basePointObject {
      */
     isSelected(): boolean;
     /**
-     * @docid basePointObjectFields.originalArgument
+     * @docid
      * @type string|number|date
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalArgument?: string | number | Date;
     /**
-     * @docid basePointObjectFields.originalValue
+     * @docid
      * @type string|number|date
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalValue?: string | number | Date;
     /**
-     * @docid basePointObjectMethods.select
+     * @docid
      * @publicName select()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     select(): void;
     /**
-     * @docid basePointObjectFields.series
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     series?: any;
     /**
-     * @docid basePointObjectMethods.showTooltip
+     * @docid
      * @publicName showTooltip()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     showTooltip(): void;
     /**
-     * @docid basePointObjectFields.tag
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -212,21 +212,21 @@ export interface basePointObject {
 
 export interface baseSeriesObject {
     /**
-     * @docid baseSeriesObjectMethods.clearHover
+     * @docid
      * @publicName clearHover()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     clearHover(): void;
     /**
-     * @docid baseSeriesObjectMethods.clearSelection
+     * @docid
      * @publicName clearSelection()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     clearSelection(): void;
     /**
-     * @docid baseSeriesObjectMethods.deselectPoint
+     * @docid
      * @publicName deselectPoint(point)
      * @param1 point:basePointObject
      * @prevFileNamespace DevExpress.viz
@@ -234,14 +234,14 @@ export interface baseSeriesObject {
      */
     deselectPoint(point: basePointObject): void;
     /**
-     * @docid baseSeriesObjectFields.fullState
+     * @docid
      * @type number
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     fullState?: number;
     /**
-     * @docid baseSeriesObjectMethods.getAllPoints
+     * @docid
      * @publicName getAllPoints()
      * @return Array<basePointObject>
      * @prevFileNamespace DevExpress.viz
@@ -249,7 +249,7 @@ export interface baseSeriesObject {
      */
     getAllPoints(): Array<basePointObject>;
     /**
-     * @docid baseSeriesObjectMethods.getColor
+     * @docid
      * @publicName getColor()
      * @return string
      * @prevFileNamespace DevExpress.viz
@@ -257,7 +257,7 @@ export interface baseSeriesObject {
      */
     getColor(): string;
     /**
-     * @docid baseSeriesObjectMethods.getPointByPos
+     * @docid
      * @publicName getPointByPos(positionIndex)
      * @param1 positionIndex:number
      * @return basePointObject
@@ -266,7 +266,7 @@ export interface baseSeriesObject {
      */
     getPointByPos(positionIndex: number): basePointObject;
     /**
-     * @docid baseSeriesObjectMethods.getPointsByArg
+     * @docid
      * @publicName getPointsByArg(pointArg)
      * @param1 pointArg:number|string|date
      * @return Array<basePointObject>
@@ -275,7 +275,7 @@ export interface baseSeriesObject {
      */
     getPointsByArg(pointArg: number | string | Date): Array<basePointObject>;
     /**
-     * @docid baseSeriesObjectMethods.getVisiblePoints
+     * @docid
      * @publicName getVisiblePoints()
      * @return Array<basePointObject>
      * @prevFileNamespace DevExpress.viz
@@ -283,21 +283,21 @@ export interface baseSeriesObject {
      */
     getVisiblePoints(): Array<basePointObject>;
     /**
-     * @docid baseSeriesObjectMethods.hide
+     * @docid
      * @publicName hide()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     hide(): void;
     /**
-     * @docid baseSeriesObjectMethods.hover
+     * @docid
      * @publicName hover()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     hover(): void;
     /**
-     * @docid baseSeriesObjectMethods.isHovered
+     * @docid
      * @publicName isHovered()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -305,7 +305,7 @@ export interface baseSeriesObject {
      */
     isHovered(): boolean;
     /**
-     * @docid baseSeriesObjectMethods.isSelected
+     * @docid
      * @publicName isSelected()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -313,7 +313,7 @@ export interface baseSeriesObject {
      */
     isSelected(): boolean;
     /**
-     * @docid baseSeriesObjectMethods.isVisible
+     * @docid
      * @publicName isVisible()
      * @return boolean
      * @prevFileNamespace DevExpress.viz
@@ -321,21 +321,21 @@ export interface baseSeriesObject {
      */
     isVisible(): boolean;
     /**
-     * @docid baseSeriesObjectFields.name
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     name?: any;
     /**
-     * @docid baseSeriesObjectMethods.select
+     * @docid
      * @publicName select()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     select(): void;
     /**
-     * @docid baseSeriesObjectMethods.selectPoint
+     * @docid
      * @publicName selectPoint(point)
      * @param1 point:basePointObject
      * @prevFileNamespace DevExpress.viz
@@ -343,21 +343,21 @@ export interface baseSeriesObject {
      */
     selectPoint(point: basePointObject): void;
     /**
-     * @docid baseSeriesObjectMethods.show
+     * @docid
      * @publicName show()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     show(): void;
     /**
-     * @docid baseSeriesObjectFields.tag
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     tag?: any;
     /**
-     * @docid baseSeriesObjectFields.type
+     * @docid
      * @type string
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -367,7 +367,7 @@ export interface baseSeriesObject {
 
 export interface chartAxisObject {
     /**
-     * @docid chartAxisObjectMethods.visualRange
+     * @docid
      * @publicName visualRange()
      * @return VizRange
      * @prevFileNamespace DevExpress.viz
@@ -375,7 +375,7 @@ export interface chartAxisObject {
      */
     visualRange(): VizRange;
     /**
-     * @docid chartAxisObjectMethods.visualRange
+     * @docid
      * @publicName visualRange(visualRange)
      * @param1 visualRange:Array<number,string,Date> | VizRange
      * @prevFileNamespace DevExpress.viz
@@ -386,28 +386,28 @@ export interface chartAxisObject {
 
 export interface chartPointAggregationInfoObject {
     /**
-     * @docid chartPointAggregationInfoObject.aggregationInterval
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     aggregationInterval?: any;
     /**
-     * @docid chartPointAggregationInfoObject.data
+     * @docid
      * @type Array<any>
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     data?: Array<any>;
     /**
-     * @docid chartPointAggregationInfoObject.intervalEnd
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     intervalEnd?: any;
     /**
-     * @docid chartPointAggregationInfoObject.intervalStart
+     * @docid
      * @type any
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -417,14 +417,14 @@ export interface chartPointAggregationInfoObject {
 
 export interface chartPointObject extends basePointObject {
     /**
-     * @docid chartPointObjectFields.aggregationInfo
+     * @docid
      * @type chartPointAggregationInfoObject
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     aggregationInfo?: chartPointAggregationInfoObject;
     /**
-     * @docid chartPointObjectmethods.getBoundingRect
+     * @docid
      * @publicName getBoundingRect()
      * @return object
      * @prevFileNamespace DevExpress.viz
@@ -432,42 +432,42 @@ export interface chartPointObject extends basePointObject {
      */
     getBoundingRect(): any;
     /**
-     * @docid chartPointObjectFields.originalCloseValue
+     * @docid
      * @type number|string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalCloseValue?: number | string;
     /**
-     * @docid chartPointObjectFields.originalHighValue
+     * @docid
      * @type number|string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalHighValue?: number | string;
     /**
-     * @docid chartPointObjectFields.originalLowValue
+     * @docid
      * @type number|string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalLowValue?: number | string;
     /**
-     * @docid chartPointObjectFields.originalMinValue
+     * @docid
      * @type string|number|date
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalMinValue?: string | number | Date;
     /**
-     * @docid chartPointObjectFields.originalOpenValue
+     * @docid
      * @type number|string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     originalOpenValue?: number | string;
     /**
-     * @docid chartPointObjectFields.size
+     * @docid
      * @type number|string
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -477,21 +477,21 @@ export interface chartPointObject extends basePointObject {
 
 export interface chartSeriesObject extends baseSeriesObject {
     /**
-     * @docid chartSeriesObjectFields.axis
+     * @docid
      * @type string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     axis?: string;
     /**
-     * @docid chartSeriesObjectFields.barOverlapGroup
+     * @docid
      * @type string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     barOverlapGroup?: string;
     /**
-     * @docid chartSeriesObjectMethods.getArgumentAxis
+     * @docid
      * @publicName getArgumentAxis()
      * @return chartAxisObject
      * @prevFileNamespace DevExpress.viz
@@ -499,7 +499,7 @@ export interface chartSeriesObject extends baseSeriesObject {
      */
     getArgumentAxis(): chartAxisObject;
     /**
-     * @docid chartSeriesObjectMethods.getValueAxis
+     * @docid
      * @publicName getValueAxis()
      * @return chartAxisObject
      * @prevFileNamespace DevExpress.viz
@@ -507,14 +507,14 @@ export interface chartSeriesObject extends baseSeriesObject {
      */
     getValueAxis(): chartAxisObject;
     /**
-     * @docid chartSeriesObjectFields.pane
+     * @docid
      * @type string
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     pane?: string;
     /**
-     * @docid chartSeriesObjectFields.stack
+     * @docid
      * @type string
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -524,7 +524,7 @@ export interface chartSeriesObject extends baseSeriesObject {
 
 export interface dxChartOptions extends BaseChartOptions<dxChart> {
     /**
-     * @docid dxChartOptions.adjustOnZoom
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -532,7 +532,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     adjustOnZoom?: boolean;
     /**
-     * @docid dxChartOptions.annotations
+     * @docid
      * @type Array<dxChartAnnotationConfig,object>
      * @inherits dxChartOptions.commonAnnotationSettings
      * @prevFileNamespace DevExpress.viz
@@ -540,7 +540,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     annotations?: Array<dxChartAnnotationConfig | any>;
     /**
-     * @docid dxChartOptions.argumentAxis
+     * @docid
      * @type object
      * @inherits dxChartOptions.commonAxisSettings
      * @prevFileNamespace DevExpress.viz
@@ -548,7 +548,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     argumentAxis?: dxChartArgumentAxis;
     /**
-     * @docid dxChartOptions.autoHidePointMarkers
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -556,7 +556,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     autoHidePointMarkers?: boolean;
     /**
-     * @docid dxChartOptions.barGroupPadding
+     * @docid
      * @type number
      * @default 0.3
      * @propertyOf dxChartSeriesTypes.BarSeries,dxChartSeriesTypes.StackedBarSeries,dxChartSeriesTypes.FullStackedBarSeries,dxChartSeriesTypes.RangeBarSeries
@@ -565,7 +565,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     barGroupPadding?: number;
     /**
-     * @docid dxChartOptions.barGroupWidth
+     * @docid
      * @type number
      * @default undefined
      * @propertyOf dxChartSeriesTypes.BarSeries,dxChartSeriesTypes.StackedBarSeries,dxChartSeriesTypes.FullStackedBarSeries,dxChartSeriesTypes.RangeBarSeries
@@ -574,28 +574,28 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     barGroupWidth?: number;
     /**
-     * @docid dxChartOptions.commonAnnotationSettings
+     * @docid
      * @type dxChartCommonAnnotationConfig
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     commonAnnotationSettings?: dxChartCommonAnnotationConfig;
     /**
-     * @docid dxChartOptions.commonAxisSettings
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     commonAxisSettings?: dxChartCommonAxisSettings;
     /**
-     * @docid dxChartOptions.commonPaneSettings
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     commonPaneSettings?: dxChartCommonPaneSettings;
     /**
-     * @docid dxChartOptions.commonSeriesSettings
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @hideDefaults true
@@ -605,7 +605,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     commonSeriesSettings?: dxChartCommonSeriesSettings;
     /**
-     * @docid dxChartOptions.containerBackgroundColor
+     * @docid
      * @type string
      * @default '#FFFFFF'
      * @prevFileNamespace DevExpress.viz
@@ -613,14 +613,14 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     containerBackgroundColor?: string;
     /**
-     * @docid dxChartOptions.crosshair
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     crosshair?: { color?: string, dashStyle?: DashStyleType, enabled?: boolean, horizontalLine?: { color?: string, dashStyle?: DashStyleType, label?: { backgroundColor?: string, customizeText?: ((info: { value?: Date | number | string, valueText?: string, point?: chartPointObject }) => string), font?: Font, format?: format, visible?: boolean }, opacity?: number, visible?: boolean, width?: number } | boolean, label?: { backgroundColor?: string, customizeText?: ((info: { value?: Date | number | string, valueText?: string, point?: chartPointObject }) => string), font?: Font, format?: format, visible?: boolean }, opacity?: number, verticalLine?: { color?: string, dashStyle?: DashStyleType, label?: { backgroundColor?: string, customizeText?: ((info: { value?: Date | number | string, valueText?: string, point?: chartPointObject }) => string), font?: Font, format?: format, visible?: boolean }, opacity?: number, visible?: boolean, width?: number } | boolean, width?: number };
     /**
-     * @docid dxChartOptions.customizeAnnotation
+     * @docid
      * @type function(annotation)
      * @type_function_param1 annotation:dxChartAnnotationConfig|any
      * @type_function_return dxChartAnnotationConfig
@@ -631,14 +631,14 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     customizeAnnotation?: ((annotation: dxChartAnnotationConfig | any) => dxChartAnnotationConfig);
     /**
-     * @docid dxChartOptions.dataPrepareSettings
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     dataPrepareSettings?: { checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | ((a: any, b: any) => number) };
     /**
-     * @docid dxChartOptions.defaultPane
+     * @docid
      * @type string
      * @default undefined
      * @notUsedInTheme
@@ -647,14 +647,14 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     defaultPane?: string;
     /**
-     * @docid dxChartOptions.legend
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     legend?: dxChartLegend;
     /**
-     * @docid dxChartOptions.maxBubbleSize
+     * @docid
      * @default 0.2
      * @type number
      * @propertyOf dxChartSeriesTypes.BubbleSeries
@@ -663,7 +663,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     maxBubbleSize?: number;
     /**
-     * @docid dxChartOptions.minBubbleSize
+     * @docid
      * @default 12
      * @type number
      * @propertyOf dxChartSeriesTypes.BubbleSeries
@@ -672,7 +672,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     minBubbleSize?: number;
     /**
-     * @docid dxChartOptions.negativesAsZeroes
+     * @docid
      * @type boolean
      * @default false
      * @propertyOf dxChartSeriesTypes.StackedBarSeries,dxChartSeriesTypes.FullStackedBarSeries,dxChartSeriesTypes.StackedAreaSeries,dxChartSeriesTypes.FullStackedAreaSeries,dxChartSeriesTypes.StackedLineSeries,dxChartSeriesTypes.FullStackedLineSeries,dxChartSeriesTypes.StackedSplineSeries,dxChartSeriesTypes.FullStackedSplineSeries,dxChartSeriesTypes.StackedSplineAreaSeries,dxChartSeriesTypes.FullStackedSplineAreaSeries
@@ -681,7 +681,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     negativesAsZeroes?: boolean;
     /**
-     * @docid dxChartOptions.onArgumentAxisClick
+     * @docid
      * @extends Action
      * @type function(e)|string
      * @type_function_param1 e:object
@@ -694,7 +694,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onArgumentAxisClick?: ((e: { component?: dxChart, element?: dxElement, model?: any, event?: event, argument?: Date | number | string }) => any) | string;
     /**
-     * @docid dxChartOptions.onLegendClick
+     * @docid
      * @extends Action
      * @type function(e)|string
      * @type_function_param1 e:object
@@ -707,7 +707,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onLegendClick?: ((e: { component?: dxChart, element?: dxElement, model?: any, event?: event, target?: chartSeriesObject }) => any) | string;
     /**
-     * @docid dxChartOptions.onSeriesClick
+     * @docid
      * @extends Action
      * @type function(e)|string
      * @type_function_param1 e:object
@@ -720,7 +720,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onSeriesClick?: ((e: { component?: dxChart, element?: dxElement, model?: any, event?: event, target?: chartSeriesObject }) => any) | string;
     /**
-     * @docid dxChartOptions.onSeriesHoverChanged
+     * @docid
      * @extends Action
      * @type function(e)
      * @type_function_param1 e:object
@@ -732,7 +732,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onSeriesHoverChanged?: ((e: { component?: dxChart, element?: dxElement, model?: any, target?: chartSeriesObject }) => any);
     /**
-     * @docid dxChartOptions.onSeriesSelectionChanged
+     * @docid
      * @extends Action
      * @type function(e)
      * @type_function_param1 e:object
@@ -744,7 +744,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onSeriesSelectionChanged?: ((e: { component?: dxChart, element?: dxElement, model?: any, target?: chartSeriesObject }) => any);
     /**
-     * @docid dxChartOptions.onZoomEnd
+     * @docid
      * @extends Action
      * @type function(e)
      * @type_function_param1 e:object
@@ -765,7 +765,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onZoomEnd?: ((e: { component?: dxChart, element?: dxElement, model?: any, event?: event, rangeStart?: Date | number, rangeEnd?: Date | number, axis?: chartAxisObject, range?: VizRange, previousRange?: VizRange, cancel?: boolean, actionType?: 'zoom' | 'pan', zoomFactor?: number, shift?: number }) => any);
     /**
-     * @docid dxChartOptions.onZoomStart
+     * @docid
      * @extends Action
      * @type function(e)
      * @type_function_param1 e:object
@@ -781,7 +781,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     onZoomStart?: ((e: { component?: dxChart, element?: dxElement, model?: any, event?: event, axis?: chartAxisObject, range?: VizRange, cancel?: boolean, actionType?: 'zoom' | 'pan' }) => any);
     /**
-     * @docid dxChartOptions.panes
+     * @docid
      * @type Object|Array<Object>
      * @inherits dxChartOptions.commonPaneSettings
      * @notUsedInTheme
@@ -790,7 +790,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     panes?: dxChartPanes | Array<dxChartPanes>;
     /**
-     * @docid dxChartOptions.resizePanesOnZoom
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -798,7 +798,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     resizePanesOnZoom?: boolean;
     /**
-     * @docid dxChartOptions.resolveLabelOverlapping
+     * @docid
      * @type Enums.ChartResolveLabelOverlapping
      * @default "none"
      * @prevFileNamespace DevExpress.viz
@@ -806,7 +806,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     resolveLabelOverlapping?: 'hide' | 'none' | 'stack';
     /**
-     * @docid dxChartOptions.rotated
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -814,14 +814,14 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     rotated?: boolean;
     /**
-     * @docid dxChartOptions.scrollBar
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     scrollBar?: { color?: string, offset?: number, opacity?: number, position?: 'bottom' | 'left' | 'right' | 'top', visible?: boolean, width?: number };
     /**
-     * @docid dxChartOptions.series
+     * @docid
      * @type ChartSeries|Array<ChartSeries>
      * @default undefined
      * @hideDefaults true
@@ -832,7 +832,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     series?: ChartSeries | Array<ChartSeries>;
     /**
-     * @docid dxChartOptions.seriesSelectionMode
+     * @docid
      * @type Enums.ChartElementSelectionMode
      * @default 'single'
      * @prevFileNamespace DevExpress.viz
@@ -840,7 +840,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     seriesSelectionMode?: 'multiple' | 'single';
     /**
-     * @docid dxChartOptions.seriesTemplate
+     * @docid
      * @type object
      * @default undefined
      * @notUsedInTheme
@@ -849,7 +849,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     seriesTemplate?: { customizeSeries?: ((seriesName: any) => ChartSeries), nameField?: string };
     /**
-     * @docid dxChartOptions.stickyHovering
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -857,7 +857,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     stickyHovering?: boolean;
     /**
-     * @docid dxChartOptions.synchronizeMultiAxes
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -865,14 +865,14 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     synchronizeMultiAxes?: boolean;
     /**
-     * @docid dxChartOptions.tooltip
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     tooltip?: dxChartTooltip;
     /**
-     * @docid dxChartOptions.valueAxis
+     * @docid
      * @type Object|Array<Object>
      * @inherits dxChartOptions.commonAxisSettings
      * @prevFileNamespace DevExpress.viz
@@ -880,7 +880,7 @@ export interface dxChartOptions extends BaseChartOptions<dxChart> {
      */
     valueAxis?: dxChartValueAxis | Array<dxChartValueAxis>;
     /**
-     * @docid dxChartOptions.zoomAndPan
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -2423,7 +2423,7 @@ export interface dxChartValueAxisTitle extends dxChartCommonAxisSettingsTitle {
     text?: string;
 }
 /**
- * @docid dxChart
+ * @docid
  * @inherits BaseChart
  * @module viz/chart
  * @export default
@@ -2434,7 +2434,7 @@ export default class dxChart extends BaseChart {
     constructor(element: Element, options?: dxChartOptions)
     constructor(element: JQuery, options?: dxChartOptions)
     /**
-     * @docid dxchartmethods.getArgumentAxis
+     * @docid
      * @publicName getArgumentAxis()
      * @return chartAxisObject
      * @prevFileNamespace DevExpress.viz
@@ -2442,7 +2442,7 @@ export default class dxChart extends BaseChart {
      */
     getArgumentAxis(): chartAxisObject;
     /**
-     * @docid dxchartmethods.getValueAxis
+     * @docid
      * @publicName getValueAxis()
      * @return chartAxisObject
      * @prevFileNamespace DevExpress.viz
@@ -2450,7 +2450,7 @@ export default class dxChart extends BaseChart {
      */
     getValueAxis(): chartAxisObject;
     /**
-     * @docid dxchartmethods.getValueAxis(name)
+     * @docid
      * @publicName getValueAxis(name)
      * @param1 name:string
      * @return chartAxisObject
@@ -2459,14 +2459,14 @@ export default class dxChart extends BaseChart {
      */
     getValueAxis(name: string): chartAxisObject;
     /**
-     * @docid dxchartmethods.resetVisualRange
+     * @docid
      * @publicName resetVisualRange()
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     resetVisualRange(): void;
     /**
-     * @docid dxchartmethods.zoomArgument
+     * @docid
      * @publicName zoomArgument(startValue,endValue)
      * @param1 startValue:Number|Date|string
      * @param2 endValue:Number|Date|string
@@ -2478,7 +2478,7 @@ export default class dxChart extends BaseChart {
 
 export interface dxChartAnnotationConfig extends dxChartCommonAnnotationConfig {
     /**
-     * @docid dxChartAnnotationConfig.name
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.viz
@@ -2489,51 +2489,51 @@ export interface dxChartAnnotationConfig extends dxChartCommonAnnotationConfig {
 
 export interface dxChartCommonAnnotationConfig extends BaseChartAnnotationConfig {
     /**
-     * @docid dxChartCommonAnnotationConfig.axis
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     axis?: string;
-    /**	
-     * @docid dxChartCommonAnnotationConfig.customizeTooltip	
-     * @type function(annotation)	
-     * @type_function_param1 annotation:dxChartAnnotationConfig|any	
-     * @type_function_return object	
-     * @default undefined	
-     * @notUsedInTheme	
-     * @prevFileNamespace DevExpress.viz	
-     * @public	
-     */	
+    /**
+     * @docid
+     * @type function(annotation)
+     * @type_function_param1 annotation:dxChartAnnotationConfig|any
+     * @type_function_return object
+     * @default undefined
+     * @notUsedInTheme
+     * @prevFileNamespace DevExpress.viz
+     * @public
+     */
     customizeTooltip?: ((annotation: dxChartAnnotationConfig | any) => any);
-    /**	
-     * @docid dxChartCommonAnnotationConfig.template	
-     * @type template|function	
-     * @default undefined	
-     * @type_function_param1 annotation:dxChartAnnotationConfig|any	
-     * @type_function_param2 element:SVGGElement	
-     * @type_function_return string|SVGElement|jQuery	
-     * @prevFileNamespace DevExpress.viz	
-     * @public	
-     */	
+    /**
+     * @docid
+     * @type template|function
+     * @default undefined
+     * @type_function_param1 annotation:dxChartAnnotationConfig|any
+     * @type_function_param2 element:SVGGElement
+     * @type_function_return string|SVGElement|jQuery
+     * @prevFileNamespace DevExpress.viz
+     * @public
+     */
     template?: template | ((annotation: dxChartAnnotationConfig | any, element: SVGGElement) => string | SVGElement | JQuery);
-    /**	
-     * @docid dxChartCommonAnnotationConfig.tooltipTemplate	
-     * @type template|function(annotation, element)	
-     * @type_function_param1 annotation:dxChartAnnotationConfig|any	
-     * @type_function_param2 element:dxElement	
-     * @type_function_return string|Element|jQuery	
-     * @default undefined	
-     * @prevFileNamespace DevExpress.viz	
-     * @public	
-     */	
+    /**
+     * @docid
+     * @type template|function(annotation, element)
+     * @type_function_param1 annotation:dxChartAnnotationConfig|any
+     * @type_function_param2 element:dxElement
+     * @type_function_return string|Element|jQuery
+     * @default undefined
+     * @prevFileNamespace DevExpress.viz
+     * @public
+     */
     tooltipTemplate?: template | ((annotation: dxChartAnnotationConfig | any, element: dxElement) => string | Element | JQuery);
 }
 
 export interface dxChartSeriesTypes {
     /**
-     * @docid dxChartSeriesTypes.AreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2541,7 +2541,7 @@ export interface dxChartSeriesTypes {
      */
     AreaSeries?: dxChartSeriesTypesAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.BarSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2549,7 +2549,7 @@ export interface dxChartSeriesTypes {
      */
     BarSeries?: dxChartSeriesTypesBarSeries;
     /**
-     * @docid dxChartSeriesTypes.BubbleSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2557,7 +2557,7 @@ export interface dxChartSeriesTypes {
      */
     BubbleSeries?: dxChartSeriesTypesBubbleSeries;
     /**
-     * @docid dxChartSeriesTypes.CandleStickSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2565,14 +2565,14 @@ export interface dxChartSeriesTypes {
      */
     CandleStickSeries?: dxChartSeriesTypesCandleStickSeries;
     /**
-     * @docid dxChartSeriesTypes.CommonSeries
+     * @docid
      * @type object
      * @hidden
      * @prevFileNamespace DevExpress.viz
      */
     CommonSeries?: dxChartSeriesTypesCommonSeries;
     /**
-     * @docid dxChartSeriesTypes.FullStackedAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2580,7 +2580,7 @@ export interface dxChartSeriesTypes {
      */
     FullStackedAreaSeries?: dxChartSeriesTypesFullStackedAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.FullStackedBarSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2588,7 +2588,7 @@ export interface dxChartSeriesTypes {
      */
     FullStackedBarSeries?: dxChartSeriesTypesFullStackedBarSeries;
     /**
-     * @docid dxChartSeriesTypes.FullStackedLineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2596,7 +2596,7 @@ export interface dxChartSeriesTypes {
      */
     FullStackedLineSeries?: dxChartSeriesTypesFullStackedLineSeries;
     /**
-     * @docid dxChartSeriesTypes.FullStackedSplineAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2604,7 +2604,7 @@ export interface dxChartSeriesTypes {
      */
     FullStackedSplineAreaSeries?: dxChartSeriesTypesFullStackedSplineAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.FullStackedSplineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2612,7 +2612,7 @@ export interface dxChartSeriesTypes {
      */
     FullStackedSplineSeries?: dxChartSeriesTypesFullStackedSplineSeries;
     /**
-     * @docid dxChartSeriesTypes.LineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2620,7 +2620,7 @@ export interface dxChartSeriesTypes {
      */
     LineSeries?: dxChartSeriesTypesLineSeries;
     /**
-     * @docid dxChartSeriesTypes.RangeAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2628,7 +2628,7 @@ export interface dxChartSeriesTypes {
      */
     RangeAreaSeries?: dxChartSeriesTypesRangeAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.RangeBarSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2636,7 +2636,7 @@ export interface dxChartSeriesTypes {
      */
     RangeBarSeries?: dxChartSeriesTypesRangeBarSeries;
     /**
-     * @docid dxChartSeriesTypes.ScatterSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2644,7 +2644,7 @@ export interface dxChartSeriesTypes {
      */
     ScatterSeries?: dxChartSeriesTypesScatterSeries;
     /**
-     * @docid dxChartSeriesTypes.SplineAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2652,7 +2652,7 @@ export interface dxChartSeriesTypes {
      */
     SplineAreaSeries?: dxChartSeriesTypesSplineAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.SplineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2660,7 +2660,7 @@ export interface dxChartSeriesTypes {
      */
     SplineSeries?: dxChartSeriesTypesSplineSeries;
     /**
-     * @docid dxChartSeriesTypes.StackedAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2668,7 +2668,7 @@ export interface dxChartSeriesTypes {
      */
     StackedAreaSeries?: dxChartSeriesTypesStackedAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.StackedBarSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2676,7 +2676,7 @@ export interface dxChartSeriesTypes {
      */
     StackedBarSeries?: dxChartSeriesTypesStackedBarSeries;
     /**
-     * @docid dxChartSeriesTypes.StackedLineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2684,7 +2684,7 @@ export interface dxChartSeriesTypes {
      */
     StackedLineSeries?: dxChartSeriesTypesStackedLineSeries;
     /**
-     * @docid dxChartSeriesTypes.StackedSplineAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2692,7 +2692,7 @@ export interface dxChartSeriesTypes {
      */
     StackedSplineAreaSeries?: dxChartSeriesTypesStackedSplineAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.StackedSplineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2700,7 +2700,7 @@ export interface dxChartSeriesTypes {
      */
     StackedSplineSeries?: dxChartSeriesTypesStackedSplineSeries;
     /**
-     * @docid dxChartSeriesTypes.StepAreaSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2708,7 +2708,7 @@ export interface dxChartSeriesTypes {
      */
     StepAreaSeries?: dxChartSeriesTypesStepAreaSeries;
     /**
-     * @docid dxChartSeriesTypes.StepLineSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz
@@ -2716,7 +2716,7 @@ export interface dxChartSeriesTypes {
      */
     StepLineSeries?: dxChartSeriesTypesStepLineSeries;
     /**
-     * @docid dxChartSeriesTypes.StockSeries
+     * @docid
      * @type object
      * @inherits dxChartSeriesTypes.CommonSeries
      * @prevFileNamespace DevExpress.viz

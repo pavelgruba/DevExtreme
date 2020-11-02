@@ -208,11 +208,6 @@ const TreeViewBase = HierarchicalCollectionWidget.inherit({
             * @name dxTreeViewOptions.selectedIndex
             * @hidden
             */
-            /**
-            * @name dxTreeViewItem
-            * @inherits CollectionWidgetItem
-            * @type object
-            */
         });
     },
 
@@ -1558,12 +1553,6 @@ const TreeViewBase = HierarchicalCollectionWidget.inherit({
     collapseItem: function(itemElement) {
         return this._toggleExpandedState(itemElement, false);
     },
-
-    /**
-         * @name dxTreeViewNode
-         * @type object
-         */
-
 
     getNodes: function() {
         return this._dataAdapter.getTreeNodes();

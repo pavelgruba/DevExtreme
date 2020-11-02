@@ -13,7 +13,7 @@ import BaseWidget, {
 
 export interface BaseSparklineOptions<T = BaseSparkline> extends BaseWidgetOptions<T> {
     /**
-     * @docid BaseSparklineOptions.onTooltipHidden
+     * @docid
      * @extends Action
      * @notUsedInTheme
      * @action
@@ -22,7 +22,7 @@ export interface BaseSparklineOptions<T = BaseSparkline> extends BaseWidgetOptio
      */
     onTooltipHidden?: ((e: { component?: T, element?: dxElement, model?: any }) => any);
     /**
-     * @docid BaseSparklineOptions.onTooltipShown
+     * @docid
      * @extends Action
      * @notUsedInTheme
      * @action
@@ -31,7 +31,7 @@ export interface BaseSparklineOptions<T = BaseSparkline> extends BaseWidgetOptio
      */
     onTooltipShown?: ((e: { component?: T, element?: dxElement, model?: any }) => any);
     /**
-     * @docid BaseSparklineOptions.tooltip
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
@@ -79,7 +79,7 @@ export interface BaseSparklineTooltip extends BaseWidgetTooltip {
     interactive?: boolean;
 }
 /**
- * @docid BaseSparkline
+ * @docid
  * @type object
  * @hidden
  * @inherits BaseWidget

@@ -1,9 +1,4 @@
-/**
-* @name piePointObject
-* @publicName Point
-* @type object
-* @inherits basePointObject
-*/
+
 const piePointObject = {
     percent: null,
     isVisible: function() { },
@@ -19,19 +14,19 @@ const piePointObject = {
 */
 const pieChartSeriesObject = {
     /**
-    * @name pieChartSeriesObjectMethods.hover
+    * @name pieChartSeriesObject.hover
     * @publicName hover()
     * @hidden
     */
     hover: function () { },
     /**
-    * @name pieChartSeriesObjectMethods.clearHover
+    * @name pieChartSeriesObject.clearHover
     * @publicName clearHover()
     * @hidden
     */
     clearHover: function () { },
     /**
-    * @name pieChartSeriesObjectMethods.isHovered
+    * @name pieChartSeriesObject.isHovered
     * @publicName isHovered()
     * @hidden
     */
@@ -39,11 +34,6 @@ const pieChartSeriesObject = {
 };
 
 
-/**
-* @name PieChartLegendItem
-* @type object
-* @inherits BaseLegendItem
-*/
 const legendItem = {
     text: undefined,
     points: [],
