@@ -367,12 +367,11 @@ export interface BaseGaugeTooltip extends BaseWidgetTooltip {
  * @inherits BaseWidget
  * @prevFileNamespace DevExpress.viz
  */
-export type BaseGauge = dxBaseGauge;
-export class dxBaseGauge extends BaseWidget {
+export class BaseGauge extends BaseWidget {
     constructor(element: Element, options?: BaseGaugeOptions)
     constructor(element: JQuery, options?: BaseGaugeOptions)
     /**
-     * @docid BaseGauge.subvalues
+     * @docid
      * @publicName subvalues()
      * @return Array<number>
      * @prevFileNamespace DevExpress.viz
@@ -380,7 +379,7 @@ export class dxBaseGauge extends BaseWidget {
      */
     subvalues(): Array<number>;
     /**
-     * @docid BaseGauge.subvalues
+     * @docid
      * @publicName subvalues(subvalues)
      * @param1 subvalues:Array<number>
      * @prevFileNamespace DevExpress.viz
@@ -388,7 +387,7 @@ export class dxBaseGauge extends BaseWidget {
      */
     subvalues(subvalues: Array<number>): void;
     /**
-     * @docid BaseGauge.value
+     * @docid
      * @publicName value()
      * @return number
      * @prevFileNamespace DevExpress.viz
@@ -396,7 +395,7 @@ export class dxBaseGauge extends BaseWidget {
      */
     value(): number;
     /**
-     * @docid BaseGauge.value
+     * @docid
      * @publicName value(value)
      * @param1 value:number
      * @prevFileNamespace DevExpress.viz

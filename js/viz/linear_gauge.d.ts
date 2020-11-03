@@ -1,5 +1,5 @@
 import {
-    dxBaseGauge,
+    BaseGauge,
     BaseGaugeOptions,
     BaseGaugeRangeContainer,
     BaseGaugeScale,
@@ -122,7 +122,7 @@ export interface dxLinearGaugeScaleLabel extends BaseGaugeScaleLabel {
  * @prevFileNamespace DevExpress.viz
  * @public
  */
-export default class dxLinearGauge extends dxBaseGauge {
+export default class dxLinearGauge extends BaseGauge {
     constructor(element: Element, options?: dxLinearGaugeOptions)
     constructor(element: JQuery, options?: dxLinearGaugeOptions)
 }

@@ -1,5 +1,5 @@
 import {
-    dxBaseGauge,
+    BaseGauge,
     BaseGaugeOptions,
     BaseGaugeRangeContainer,
     BaseGaugeScale,
@@ -107,7 +107,7 @@ export interface dxCircularGaugeScaleLabel extends BaseGaugeScaleLabel {
  * @prevFileNamespace DevExpress.viz
  * @public
  */
-export default class dxCircularGauge extends dxBaseGauge {
+export default class dxCircularGauge extends BaseGauge {
     constructor(element: Element, options?: dxCircularGaugeOptions)
     constructor(element: JQuery, options?: dxCircularGaugeOptions)
 }
