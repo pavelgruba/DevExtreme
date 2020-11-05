@@ -344,6 +344,12 @@ export interface BaseLegendItem {
     visible?: boolean;
 }
 
+/**
+ * @docid
+ * @type object
+ * @inherits dxChartSeriesTypes.CommonSeries
+ * @hidden
+ */
 export interface ChartSeries extends dxChartSeriesTypesCommonSeries {
     /**
      * @docid

@@ -40,6 +40,11 @@ import BaseWidget, {
     VizTextOverflowType
 } from './core/base_widget';
 
+/**
+* @docid
+* @type object
+* @inherits BaseLegendItem
+*/
 export interface FunnelLegendItem extends BaseLegendItem {
     /**
      * @docid
@@ -57,7 +62,23 @@ export interface dxFunnelOptions extends BaseWidgetOptions<dxFunnel> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    adaptiveLayout?: { height?: number, keepLabels?: boolean, width?: number };
+    adaptiveLayout?: {
+      /**
+      * @docid
+      * @default 80
+      */
+      height?: number,
+      /**
+      * @docid
+      * @default true
+      */
+      keepLabels?: boolean,
+      /**
+      * @docid
+      * @default 80
+      */
+      width?: number
+    };
     /**
      * @docid
      * @type Enums.FunnelAlgorithm
@@ -111,14 +132,256 @@ export interface dxFunnelOptions extends BaseWidgetOptions<dxFunnel> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    item?: { border?: { color?: string, visible?: boolean, width?: number }, hoverStyle?: { border?: { color?: string, visible?: boolean, width?: number }, hatching?: { direction?: HatchingDirectionType, opacity?: number, step?: number, width?: number } }, selectionStyle?: { border?: { color?: string, visible?: boolean, width?: number }, hatching?: { direction?: HatchingDirectionType, opacity?: number, step?: number, width?: number } } };
+    item?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default #ffffff
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default false
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 2
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      */
+      hoverStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          visible?: boolean,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        */
+        hatching?: {
+          /**
+          * @docid
+          * @type Enums.HatchingDirection
+          * @default 'right'
+          */
+          direction?: HatchingDirectionType,
+          /**
+          * @docid
+          * @default 0.75
+          */
+          opacity?: number,
+          /**
+          * @docid
+          * @default 6
+          */
+          step?: number,
+          /**
+          * @docid
+          * @default 2
+          */
+          width?: number
+        }
+      },
+      /**
+      * @docid
+      */
+      selectionStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          visible?: boolean,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        */
+        hatching?: {
+          /**
+          * @docid
+          * @type Enums.HatchingDirection
+          * @default "right"
+          */
+          direction?: HatchingDirectionType,
+          /**
+          * @docid
+          * @default 0.5
+          */
+          opacity?: number,
+          /**
+          * @docid
+          * @default 6
+          */
+          step?: number,
+          /**
+          * @docid
+          * @default 2
+          */
+          width?: number
+        }
+      }
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    label?: { backgroundColor?: string, border?: { color?: string, dashStyle?: DashStyleType, visible?: boolean, width?: number }, connector?: { color?: string, opacity?: number, visible?: boolean, width?: number }, customizeText?: ((itemInfo: { item?: dxFunnelItem, value?: number, valueText?: string, percent?: number, percentText?: string }) => string), font?: Font, format?: format, horizontalAlignment?: 'left' | 'right', horizontalOffset?: number, position?: 'columns' | 'inside' | 'outside', showForZeroValues?: boolean, textOverflow?: VizTextOverflowType, visible?: boolean, wordWrap?: WordWrapType };
+    label?: {
+      /**
+      * @docid
+      */
+      backgroundColor?: string,
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default '#d3d3d3'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @type Enums.DashStyle
+        * @default 'solid'
+        */
+        dashStyle?: DashStyleType,
+        /**
+        * @docid
+        * @default false
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      */
+      connector?: {
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 0.5
+        */
+        opacity?: number,
+        /**
+        * @docid
+        * @default true
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @type function(itemInfo)
+      * @type_function_param1 itemInfo:object
+      * @type_function_param1_field1 item:dxFunnelItem
+      * @type_function_param1_field2 value:Number
+      * @type_function_param1_field3 valueText:string
+      * @type_function_param1_field4 percent:Number
+      * @type_function_param1_field5 percentText:string
+      * @type_function_return string
+      * @notUsedInTheme
+      */
+      customizeText?: ((itemInfo: { item?: dxFunnelItem, value?: number, valueText?: string, percent?: number, percentText?: string }) => string),
+      /**
+      * @docid
+      * @type Font
+      * @default '#767676' [prop](color)
+      */
+      font?: Font,
+      /**
+      * @docid
+      * @extends CommonVizFormat
+      */
+      format?: format,
+      /**
+      * @docid
+      * @type Enums.HorizontalEdge
+      * @default 'right'
+      */
+      horizontalAlignment?: 'left' | 'right',
+      /**
+      * @docid
+      * @default 0
+      */
+      horizontalOffset?: number,
+      /**
+      * @docid
+      * @type Enums.FunnelLabelPosition
+      * @default 'columns'
+      */
+      position?: 'columns' | 'inside' | 'outside',
+      /**
+      * @docid
+      * @default false
+      */
+      showForZeroValues?: boolean,
+      /**
+      * @docid
+      * @type Enums.VizTextOverflow
+      * @default 'ellipsis'
+      */
+      textOverflow?: VizTextOverflowType,
+      /**
+      * @docid
+      * @default true
+      */
+      visible?: boolean,
+      /**
+       * @docid
+       * @type Enums.VizWordWrap
+       * @default 'normal'
+       */
+      wordWrap?: WordWrapType
+    };
     /**
      * @docid
      * @inherits BaseLegend
@@ -250,7 +513,7 @@ export interface dxFunnelOptions extends BaseWidgetOptions<dxFunnel> {
 }
 export interface dxFunnelLegend extends BaseLegend {
     /**
-     * @docid dxFunnelOptions.legend.customizeHint
+     * @docid
      * @type function(itemInfo)
      * @type_function_param1 itemInfo:object
      * @type_function_param1_field1 item:dxFunnelItem
@@ -261,7 +524,7 @@ export interface dxFunnelLegend extends BaseLegend {
      */
     customizeHint?: ((itemInfo: { item?: dxFunnelItem, text?: string }) => string);
     /**
-     * @docid dxFunnelOptions.legend.customizeItems
+     * @docid
      * @type function(items)
      * @type_function_param1 items:Array<FunnelLegendItem>
      * @type_function_return Array<FunnelLegendItem>
@@ -270,7 +533,7 @@ export interface dxFunnelLegend extends BaseLegend {
      */
     customizeItems?: ((items: Array<FunnelLegendItem>) => Array<FunnelLegendItem>);
     /**
-     * @docid dxFunnelOptions.legend.customizeText
+     * @docid
      * @type function(itemInfo)
      * @type_function_param1 itemInfo:object
      * @type_function_param1_field1 item:dxFunnelItem
@@ -282,7 +545,7 @@ export interface dxFunnelLegend extends BaseLegend {
      */
     customizeText?: ((itemInfo: { item?: dxFunnelItem, text?: string }) => string);
     /**
-     * @docid dxFunnelOptions.legend.markerTemplate
+     * @docid
      * @type template|function
      * @default undefined
      * @type_function_param1 legendItem:FunnelLegendItem
@@ -293,7 +556,7 @@ export interface dxFunnelLegend extends BaseLegend {
      */
     markerTemplate?: template | ((legendItem: FunnelLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
     /**
-     * @docid dxFunnelOptions.legend.visible
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -303,7 +566,7 @@ export interface dxFunnelLegend extends BaseLegend {
 }
 export interface dxFunnelTooltip extends BaseWidgetTooltip {
     /**
-     * @docid dxFunnelOptions.tooltip.contentTemplate
+     * @docid
      * @type template|function(info, element)
      * @type_function_param1 info:object
      * @type_function_param1_field1 item:dxFunnelItem
@@ -319,7 +582,7 @@ export interface dxFunnelTooltip extends BaseWidgetTooltip {
      */
     contentTemplate?: template | ((info: { item?: dxFunnelItem, value?: number, valueText?: string, percent?: number, percentText?: string }, element: dxElement) => string | Element | JQuery);
     /**
-     * @docid dxFunnelOptions.tooltip.customizeTooltip
+     * @docid
      * @default undefined
      * @type function(info)
      * @type_function_param1 info:object
@@ -370,6 +633,10 @@ export default class dxFunnel extends BaseWidget {
     hideTooltip(): void;
 }
 
+/**
+* @docid
+* @publicName Item
+*/
 export interface dxFunnelItem {
     /**
      * @docid

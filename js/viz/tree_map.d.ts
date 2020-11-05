@@ -52,7 +52,40 @@ export interface dxTreeMapOptions extends BaseWidgetOptions<dxTreeMap> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    colorizer?: { colorCodeField?: string, colorizeGroups?: boolean, palette?: Array<string> | PaletteType, paletteExtensionMode?: PaletteExtensionModeType, range?: Array<number>, type?: 'discrete' | 'gradient' | 'none' | 'range' };
+    colorizer?: {
+      /**
+      * @docid
+      * @default undefined
+      */
+      colorCodeField?: string,
+      /**
+      * @docid
+      * @default false
+      */
+      colorizeGroups?: boolean,
+      /**
+      * @docid
+      * @extends CommonVizPalette
+      */
+      palette?: Array<string> | PaletteType,
+      /**
+     * @docid
+     * @type Enums.VizPaletteExtensionMode
+     * @default 'blend'
+     */
+      paletteExtensionMode?: PaletteExtensionModeType,
+      /**
+      * @docid
+      * @default undefined
+      */
+      range?: Array<number>,
+      /**
+      * @docid
+      * @type Enums.TreeMapColorizerType
+      * @default undefined
+      */
+      type?: 'discrete' | 'gradient' | 'none' | 'range'
+    };
     /**
      * @docid
      * @extends CommonVizDataSource
@@ -66,7 +99,111 @@ export interface dxTreeMapOptions extends BaseWidgetOptions<dxTreeMap> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    group?: { border?: { color?: string, width?: number }, color?: string, headerHeight?: number, hoverEnabled?: boolean, hoverStyle?: { border?: { color?: string, width?: number }, color?: string }, label?: { font?: Font, textOverflow?: VizTextOverflowType, visible?: boolean }, selectionStyle?: { border?: { color?: string, width?: number }, color?: string } };
+    group?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default "#d3d3d3"
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @default "#eeeeee"
+      */
+      color?: string,
+      /**
+      * @docid
+      * @default undefined
+      */
+      headerHeight?: number,
+      /**
+      * @docid
+      * @default undefined
+      */
+      hoverEnabled?: boolean,
+      /**
+      * @docid
+      */
+      hoverStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string
+      },
+      /**
+      * @docid
+      */
+      label?: {
+        /**
+        * @docid
+        * @type Font
+        * @default '#767676' [prop](color)
+        * @default 600 [prop](weight)
+        */
+        font?: Font,
+        /**
+        * @docid
+        * @type Enums.VizTextOverflow
+        * @default "ellipsis"
+        */
+        textOverflow?: VizTextOverflowType,
+        /**
+        * @docid
+        * @default true
+        */
+        visible?: boolean
+      },
+      /**
+      * @docid
+      */
+      selectionStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default "#232323"
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string
+      }
+    };
     /**
      * @docid
      * @type boolean
@@ -222,7 +359,107 @@ export interface dxTreeMapOptions extends BaseWidgetOptions<dxTreeMap> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    tile?: { border?: { color?: string, width?: number }, color?: string, hoverStyle?: { border?: { color?: string, width?: number }, color?: string }, label?: { font?: Font, textOverflow?: VizTextOverflowType, visible?: boolean, wordWrap?: WordWrapType }, selectionStyle?: { border?: { color?: string, width?: number }, color?: string } };
+    tile?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default "#000000"
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @default "#$5f8b95"
+      */
+      color?: string,
+      /**
+      * @docid
+      */
+      hoverStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string
+      },
+      /**
+      * @docid
+      */
+      label?: {
+        /**
+        * @docid
+        * @type Font
+        * @default '#FFFFFF' [prop](color)
+        * @default 300 [prop](weight)
+        */
+        font?: Font,
+        /**
+        * @docid
+        * @type Enums.VizTextOverflow
+        * @default "ellipsis"
+        */
+        textOverflow?: VizTextOverflowType,
+        /**
+        * @docid
+        * @defaultValue true
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @type Enums.VizWordWrap
+        * @default "normal"
+        */
+        wordWrap?: WordWrapType
+      },
+      /**
+      * @docid
+      */
+      selectionStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default "#232323"
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string
+      }
+    };
     /**
      * @docid
      * @type object
@@ -241,7 +478,7 @@ export interface dxTreeMapOptions extends BaseWidgetOptions<dxTreeMap> {
 }
 export interface dxTreeMapTooltip extends BaseWidgetTooltip {
     /**
-     * @docid dxTreeMapOptions.tooltip.contentTemplate
+     * @docid
      * @type template|function(info, element)
      * @type_function_param1 info:object
      * @type_function_param1_field1 value:Number
@@ -255,7 +492,7 @@ export interface dxTreeMapTooltip extends BaseWidgetTooltip {
      */
     contentTemplate?: template | ((info: { value?: number, valueText?: string, node?: dxTreeMapNode }, element: dxElement) => string | Element | JQuery);
     /**
-     * @docid dxTreeMapOptions.tooltip.customizeTooltip
+     * @docid
      * @default undefined
      * @type function(info)
      * @type_function_param1 info:object
@@ -326,6 +563,10 @@ export default class dxTreeMap extends BaseWidget {
     resetDrillDown(): void;
 }
 
+/**
+* @docid
+* @publicName Node
+*/
 export interface dxTreeMapNode {
     /**
      * @docid

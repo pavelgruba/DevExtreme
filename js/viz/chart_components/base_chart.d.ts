@@ -59,12 +59,34 @@ export interface BaseChartOptions<T = BaseChart> extends BaseWidgetOptions<T> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    animation?: { duration?: number, easing?: 'easeOutCubic' | 'linear', enabled?: boolean, maxPointCountSupported?: number } | boolean;
+    animation?: {
+      /**
+      * @docid
+      * @default 1000
+      */
+      duration?: number,
+      /**
+      * @docid
+      * @type Enums.VizAnimationEasing
+      * @default 'easeOutCubic'
+      */
+      easing?: 'easeOutCubic' | 'linear',
+      /**
+      * @docid
+      * @default true
+      */
+      enabled?: boolean,
+      /**
+      * @docid
+      * @default 300
+      */
+      maxPointCountSupported?: number
+    } | boolean;
     /**
      * @docid
      * @type function(pointInfo)
      * @type_function_param1 pointInfo:object
-     * @type_function_return dxChartSeriesTypes.CommonSeries.label
+     * @type_function_return dxChartSeriesTypesCommonSeries.label
      * @prevFileNamespace DevExpress.viz
      * @public
      */
@@ -73,7 +95,7 @@ export interface BaseChartOptions<T = BaseChart> extends BaseWidgetOptions<T> {
      * @docid
      * @type function(pointInfo)
      * @type_function_param1 pointInfo:object
-     * @type_function_return dxChartSeriesTypes.CommonSeries.point
+     * @type_function_return dxChartSeriesTypesCommonSeries.point
      * @prevFileNamespace DevExpress.viz
      * @public
      */
@@ -208,7 +230,7 @@ export interface BaseChartOptions<T = BaseChart> extends BaseWidgetOptions<T> {
 }
 export interface BaseChartAdaptiveLayout {
     /**
-     * @docid BaseChartOptions.adaptiveLayout.height
+     * @docid
      * @type number
      * @default 80
      * @prevFileNamespace DevExpress.viz
@@ -216,7 +238,7 @@ export interface BaseChartAdaptiveLayout {
      */
     height?: number;
     /**
-     * @docid BaseChartOptions.adaptiveLayout.keepLabels
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -224,7 +246,7 @@ export interface BaseChartAdaptiveLayout {
      */
     keepLabels?: boolean;
     /**
-     * @docid BaseChartOptions.adaptiveLayout.width
+     * @docid
      * @type number
      * @default 80
      * @prevFileNamespace DevExpress.viz
@@ -234,7 +256,7 @@ export interface BaseChartAdaptiveLayout {
 }
 export interface BaseChartLegend extends BaseLegend {
     /**
-     * @docid BaseChartOptions.legend.customizeItems
+     * @docid
      * @type function(items)
      * @type_function_param1 items:Array<BaseChartLegendItem>
      * @type_function_return Array<BaseChartLegendItem>
@@ -243,7 +265,7 @@ export interface BaseChartLegend extends BaseLegend {
      */
     customizeItems?: ((items: Array<BaseChartLegendItem>) => Array<BaseChartLegendItem>);
     /**
-     * @docid BaseChartOptions.legend.markerTemplate
+     * @docid
      * @type template|function
      * @default undefined
      * @type_function_param1 legendItem:BaseChartLegendItem
@@ -256,14 +278,14 @@ export interface BaseChartLegend extends BaseLegend {
 }
 export interface BaseChartTooltip extends BaseWidgetTooltip {
     /**
-     * @docid BaseChartOptions.tooltip.argumentFormat
+     * @docid
      * @extends CommonVizFormat
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     argumentFormat?: format;
     /**
-     * @docid BaseChartOptions.tooltip.contentTemplate
+     * @docid
      * @type template|function(pointInfo, element)
      * @type_function_param1 pointInfo:object
      * @type_function_param2 element:dxElement
@@ -274,7 +296,7 @@ export interface BaseChartTooltip extends BaseWidgetTooltip {
      */
     contentTemplate?: template | ((pointInfo: any, element: dxElement) => string | Element | JQuery);
     /**
-     * @docid BaseChartOptions.tooltip.customizeTooltip
+     * @docid
      * @type function(pointInfo)
      * @type_function_param1 pointInfo:object
      * @type_function_return object
@@ -285,7 +307,7 @@ export interface BaseChartTooltip extends BaseWidgetTooltip {
      */
     customizeTooltip?: ((pointInfo: any) => any);
     /**
-     * @docid BaseChartOptions.tooltip.shared
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -293,7 +315,7 @@ export interface BaseChartTooltip extends BaseWidgetTooltip {
      */
     shared?: boolean;
     /**
-     * @docid BaseChartOptions.tooltip.interactive
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -370,6 +392,11 @@ export class BaseChart extends BaseWidget {
     render(renderOptions: any): void;
 }
 
+/**
+* @docid
+* @type object
+* @inherits BaseLegendItem
+*/
 export interface BaseChartLegendItem extends BaseLegendItem {
     /**
      * @docid
@@ -380,6 +407,11 @@ export interface BaseChartLegendItem extends BaseLegendItem {
     series?: baseSeriesObject;
 }
 
+/**
+* @docid
+* @type object
+* @inherits BaseWidgetAnnotationConfig
+*/
 export interface BaseChartAnnotationConfig extends BaseWidgetAnnotationConfig {
     /**
      * @docid

@@ -12716,15 +12716,15 @@ declare module DevExpress.viz {
      */
     interface BaseChartAdaptiveLayout {
         /**
-         * [descr:BaseChart.Options.adaptiveLayout.height]
+         * [descr:BaseChartAdaptiveLayout.height]
          */
         height?: number;
         /**
-         * [descr:BaseChart.Options.adaptiveLayout.keepLabels]
+         * [descr:BaseChartAdaptiveLayout.keepLabels]
          */
         keepLabels?: boolean;
         /**
-         * [descr:BaseChart.Options.adaptiveLayout.width]
+         * [descr:BaseChartAdaptiveLayout.width]
          */
         width?: number;
     }
@@ -12733,11 +12733,11 @@ declare module DevExpress.viz {
      */
     interface BaseChartLegend extends BaseLegend {
         /**
-         * [descr:BaseChart.Options.legend.customizeItems]
+         * [descr:BaseChartLegend.customizeItems]
          */
         customizeItems?: ((items: Array<BaseChartLegendItem>) => Array<BaseChartLegendItem>);
         /**
-         * [descr:BaseChart.Options.legend.markerTemplate]
+         * [descr:BaseChartLegend.markerTemplate]
          */
         markerTemplate?: DevExpress.core.template | ((legendItem: BaseChartLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
     }
@@ -12746,23 +12746,23 @@ declare module DevExpress.viz {
      */
     interface BaseChartTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:BaseChart.Options.tooltip.argumentFormat]
+         * [descr:BaseChartTooltip.argumentFormat]
          */
         argumentFormat?: DevExpress.ui.format;
         /**
-         * [descr:BaseChart.Options.tooltip.contentTemplate]
+         * [descr:BaseChartTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((pointInfo: any, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:BaseChart.Options.tooltip.customizeTooltip]
+         * [descr:BaseChartTooltip.customizeTooltip]
          */
         customizeTooltip?: ((pointInfo: any) => any);
         /**
-         * [descr:BaseChart.Options.tooltip.interactive]
+         * [descr:BaseChartTooltip.interactive]
          */
         interactive?: boolean;
         /**
-         * [descr:BaseChart.Options.tooltip.shared]
+         * [descr:BaseChartTooltip.shared]
          */
         shared?: boolean;
     }
@@ -12885,15 +12885,15 @@ declare module DevExpress.viz {
      */
     interface BaseGaugeAnimation {
         /**
-         * [descr:BaseGauge.Options.animation.duration]
+         * [descr:BaseGaugeAnimation.duration]
          */
         duration?: number;
         /**
-         * [descr:BaseGauge.Options.animation.easing]
+         * [descr:BaseGaugeAnimation.easing]
          */
         easing?: 'easeOutCubic' | 'linear';
         /**
-         * [descr:BaseGauge.Options.animation.enabled]
+         * [descr:BaseGaugeAnimation.enabled]
          */
         enabled?: boolean;
     }
@@ -12907,23 +12907,23 @@ declare module DevExpress.viz {
      */
     interface BaseGaugeRangeContainer {
         /**
-         * [descr:BaseGauge.Options.rangeContainer.backgroundColor]
+         * [descr:BaseGaugeRangeContainer.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:BaseGauge.Options.rangeContainer.offset]
+         * [descr:BaseGaugeRangeContainer.offset]
          */
         offset?: number;
         /**
-         * [descr:BaseGauge.Options.rangeContainer.palette]
+         * [descr:BaseGaugeRangeContainer.palette]
          */
         palette?: Array<string> | 'Bright' | 'Harmony Light' | 'Ocean' | 'Pastel' | 'Soft' | 'Soft Pastel' | 'Vintage' | 'Violet' | 'Carmine' | 'Dark Moon' | 'Dark Violet' | 'Green Mist' | 'Soft Blue' | 'Material' | 'Office';
         /**
-         * [descr:BaseGauge.Options.rangeContainer.paletteExtensionMode]
+         * [descr:BaseGaugeRangeContainer.paletteExtensionMode]
          */
         paletteExtensionMode?: 'alternate' | 'blend' | 'extrapolate';
         /**
-         * [descr:BaseGauge.Options.rangeContainer.ranges]
+         * [descr:BaseGaugeRangeContainer.ranges]
          */
         ranges?: Array<{ color?: string, endValue?: number, startValue?: number }>;
     }
@@ -12932,76 +12932,76 @@ declare module DevExpress.viz {
      */
     interface BaseGaugeScale {
         /**
-         * [descr:BaseGauge.Options.scale.allowDecimals]
+         * [descr:BaseGaugeScale.allowDecimals]
          */
         allowDecimals?: boolean;
         /**
-         * [descr:BaseGauge.Options.scale.customMinorTicks]
+         * [descr:BaseGaugeScale.customMinorTicks]
          */
         customMinorTicks?: Array<number>;
         /**
-         * [descr:BaseGauge.Options.scale.customTicks]
+         * [descr:BaseGaugeScale.customTicks]
          */
         customTicks?: Array<number>;
         /**
-         * [descr:BaseGauge.Options.scale.endValue]
+         * [descr:BaseGaugeScale.endValue]
          */
         endValue?: number;
         /**
-         * [descr:BaseGauge.Options.scale.label]
+         * [descr:BaseGaugeScale.label]
          */
         label?: BaseGaugeScaleLabel;
         /**
-         * [descr:BaseGauge.Options.scale.minorTick]
+         * [descr:BaseGaugeScale.minorTick]
          */
         minorTick?: { color?: string, length?: number, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:BaseGauge.Options.scale.minorTickInterval]
+         * [descr:BaseGaugeScale.minorTickInterval]
          */
         minorTickInterval?: number;
         /**
-         * [descr:BaseGauge.Options.scale.scaleDivisionFactor]
+         * [descr:BaseGaugeScale.scaleDivisionFactor]
          */
         scaleDivisionFactor?: number;
         /**
-         * [descr:BaseGauge.Options.scale.startValue]
+         * [descr:BaseGaugeScale.startValue]
          */
         startValue?: number;
         /**
-         * [descr:BaseGauge.Options.scale.tick]
+         * [descr:BaseGaugeScale.tick]
          */
         tick?: { color?: string, length?: number, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:BaseGauge.Options.scale.tickInterval]
+         * [descr:BaseGaugeScale.tickInterval]
          */
         tickInterval?: number;
     }
     /**
-     * [descr:BaseGauge.Options.scale.label]
+     * [descr:BaseGaugeScale.label]
      */
     interface BaseGaugeScaleLabel {
         /**
-         * [descr:BaseGauge.Options.scale.label.customizeText]
+         * [descr:BaseGaugeScaleLabel.customizeText]
          */
         customizeText?: ((scaleValue: { value?: number, valueText?: string }) => string);
         /**
-         * [descr:BaseGauge.Options.scale.label.font]
+         * [descr:BaseGaugeScaleLabel.font]
          */
         font?: Font;
         /**
-         * [descr:BaseGauge.Options.scale.label.format]
+         * [descr:BaseGaugeScaleLabel.format]
          */
         format?: DevExpress.ui.format;
         /**
-         * [descr:BaseGauge.Options.scale.label.overlappingBehavior]
+         * [descr:BaseGaugeScaleLabel.overlappingBehavior]
          */
         overlappingBehavior?: 'hide' | 'none';
         /**
-         * [descr:BaseGauge.Options.scale.label.useRangeColors]
+         * [descr:BaseGaugeScaleLabel.useRangeColors]
          */
         useRangeColors?: boolean;
         /**
-         * [descr:BaseGauge.Options.scale.label.visible]
+         * [descr:BaseGaugeScaleLabel.visible]
          */
         visible?: boolean;
     }
@@ -13010,15 +13010,15 @@ declare module DevExpress.viz {
      */
     interface BaseGaugeTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:BaseGauge.Options.tooltip.contentTemplate]
+         * [descr:BaseGaugeTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((scaleValue: { value?: number, valueText?: string }, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:BaseGauge.Options.tooltip.customizeTooltip]
+         * [descr:BaseGaugeTooltip.customizeTooltip]
          */
         customizeTooltip?: ((scaleValue: { value?: number, valueText?: string }) => any);
         /**
-         * [descr:BaseGauge.Options.tooltip.interactive]
+         * [descr:BaseGaugeTooltip.interactive]
          */
         interactive?: boolean;
     }
@@ -13161,19 +13161,19 @@ declare module DevExpress.viz {
      */
     interface BaseSparklineTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:BaseSparkline.Options.tooltip.contentTemplate]
+         * [descr:BaseSparklineTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((pointsInfo: any, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:BaseSparkline.Options.tooltip.customizeTooltip]
+         * [descr:BaseSparklineTooltip.customizeTooltip]
          */
         customizeTooltip?: ((pointsInfo: any) => any);
         /**
-         * [descr:BaseSparkline.Options.tooltip.enabled]
+         * [descr:BaseSparklineTooltip.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:BaseSparkline.Options.tooltip.interactive]
+         * [descr:BaseSparklineTooltip.interactive]
          */
         interactive?: boolean;
     }
@@ -13258,36 +13258,36 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetExport {
         /**
-         * [descr:BaseWidget.Options.export.backgroundColor]
+         * [descr:BaseWidgetExport.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:BaseWidget.Options.export.enabled]
+         * [descr:BaseWidgetExport.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:BaseWidget.Options.export.fileName]
+         * [descr:BaseWidgetExport.fileName]
          */
         fileName?: string;
         /**
-         * [descr:BaseWidget.Options.export.formats]
+         * [descr:BaseWidgetExport.formats]
          */
         formats?: Array<'GIF' | 'JPEG' | 'PDF' | 'PNG' | 'SVG'>;
         /**
-         * [descr:BaseWidget.Options.export.margin]
+         * [descr:BaseWidgetExport.margin]
          */
         margin?: number;
         /**
-         * [descr:BaseWidget.Options.export.printingEnabled]
+         * [descr:BaseWidgetExport.printingEnabled]
          */
         printingEnabled?: boolean;
         /**
-         * [descr:BaseWidget.Options.export.proxyUrl]
-         * @deprecated [depNote:BaseWidget.Options.export.proxyUrl]
+         * [descr:BaseWidgetExport.proxyUrl]
+         * @deprecated [depNote:BaseWidgetExport.proxyUrl]
          */
         proxyUrl?: string;
         /**
-         * [descr:BaseWidget.Options.export.svgToCanvas]
+         * [descr:BaseWidgetExport.svgToCanvas]
          */
         svgToCanvas?: ((svg: SVGElement, canvas: HTMLCanvasElement) => Promise<void> | JQueryPromise<void>);
     }
@@ -13296,23 +13296,23 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetLoadingIndicator {
         /**
-         * [descr:BaseWidget.Options.loadingIndicator.backgroundColor]
+         * [descr:BaseWidgetLoadingIndicator.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:BaseWidget.Options.loadingIndicator.enabled]
+         * [descr:BaseWidgetLoadingIndicator.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:BaseWidget.Options.loadingIndicator.font]
+         * [descr:BaseWidgetLoadingIndicator.font]
          */
         font?: Font;
         /**
-         * [descr:BaseWidget.Options.loadingIndicator.show]
+         * [descr:BaseWidgetLoadingIndicator.show]
          */
         show?: boolean;
         /**
-         * [descr:BaseWidget.Options.loadingIndicator.text]
+         * [descr:BaseWidgetLoadingIndicator.text]
          */
         text?: string;
     }
@@ -13321,19 +13321,19 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetMargin {
         /**
-         * [descr:BaseWidget.Options.margin.bottom]
+         * [descr:BaseWidgetMargin.bottom]
          */
         bottom?: number;
         /**
-         * [descr:BaseWidget.Options.margin.left]
+         * [descr:BaseWidgetMargin.left]
          */
         left?: number;
         /**
-         * [descr:BaseWidget.Options.margin.right]
+         * [descr:BaseWidgetMargin.right]
          */
         right?: number;
         /**
-         * [descr:BaseWidget.Options.margin.top]
+         * [descr:BaseWidgetMargin.top]
          */
         top?: number;
     }
@@ -13342,11 +13342,11 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetSize {
         /**
-         * [descr:BaseWidget.Options.size.height]
+         * [descr:BaseWidgetSize.height]
          */
         height?: number;
         /**
-         * [descr:BaseWidget.Options.size.width]
+         * [descr:BaseWidgetSize.width]
          */
         width?: number;
     }
@@ -13355,39 +13355,39 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetTitle {
         /**
-         * [descr:BaseWidget.Options.title.font]
+         * [descr:BaseWidgetTitle.font]
          */
         font?: Font;
         /**
-         * [descr:BaseWidget.Options.title.horizontalAlignment]
+         * [descr:BaseWidgetTitle.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:BaseWidget.Options.title.margin]
+         * [descr:BaseWidgetTitle.margin]
          */
         margin?: number | { bottom?: number, left?: number, right?: number, top?: number };
         /**
-         * [descr:BaseWidget.Options.title.placeholderSize]
+         * [descr:BaseWidgetTitle.placeholderSize]
          */
         placeholderSize?: number;
         /**
-         * [descr:BaseWidget.Options.title.subtitle]
+         * [descr:BaseWidgetTitle.subtitle]
          */
         subtitle?: { font?: Font, offset?: number, text?: string, textOverflow?: 'ellipsis' | 'hide' | 'none', wordWrap?: 'normal' | 'breakWord' | 'none' } | string;
         /**
-         * [descr:BaseWidget.Options.title.text]
+         * [descr:BaseWidgetTitle.text]
          */
         text?: string;
         /**
-         * [descr:BaseWidget.Options.title.textOverflow]
+         * [descr:BaseWidgetTitle.textOverflow]
          */
         textOverflow?: 'ellipsis' | 'hide' | 'none';
         /**
-         * [descr:BaseWidget.Options.title.verticalAlignment]
+         * [descr:BaseWidgetTitle.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'top';
         /**
-         * [descr:BaseWidget.Options.title.wordWrap]
+         * [descr:BaseWidgetTitle.wordWrap]
          */
         wordWrap?: 'normal' | 'breakWord' | 'none';
     }
@@ -13396,55 +13396,55 @@ declare module DevExpress.viz {
      */
     interface BaseWidgetTooltip {
         /**
-         * [descr:BaseWidget.Options.tooltip.arrowLength]
+         * [descr:BaseWidgetTooltip.arrowLength]
          */
         arrowLength?: number;
         /**
-         * [descr:BaseWidget.Options.tooltip.border]
+         * [descr:BaseWidgetTooltip.border]
          */
         border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:BaseWidget.Options.tooltip.color]
+         * [descr:BaseWidgetTooltip.color]
          */
         color?: string;
         /**
-         * [descr:BaseWidget.Options.tooltip.container]
+         * [descr:BaseWidgetTooltip.container]
          */
         container?: string | Element | JQuery;
         /**
-         * [descr:BaseWidget.Options.tooltip.cornerRadius]
+         * [descr:BaseWidgetTooltip.cornerRadius]
          */
         cornerRadius?: number;
         /**
-         * [descr:BaseWidget.Options.tooltip.enabled]
+         * [descr:BaseWidgetTooltip.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:BaseWidget.Options.tooltip.font]
+         * [descr:BaseWidgetTooltip.font]
          */
         font?: Font;
         /**
-         * [descr:BaseWidget.Options.tooltip.format]
+         * [descr:BaseWidgetTooltip.format]
          */
         format?: DevExpress.ui.format;
         /**
-         * [descr:BaseWidget.Options.tooltip.opacity]
+         * [descr:BaseWidgetTooltip.opacity]
          */
         opacity?: number;
         /**
-         * [descr:BaseWidget.Options.tooltip.paddingLeftRight]
+         * [descr:BaseWidgetTooltip.paddingLeftRight]
          */
         paddingLeftRight?: number;
         /**
-         * [descr:BaseWidget.Options.tooltip.paddingTopBottom]
+         * [descr:BaseWidgetTooltip.paddingTopBottom]
          */
         paddingTopBottom?: number;
         /**
-         * [descr:BaseWidget.Options.tooltip.shadow]
+         * [descr:BaseWidgetTooltip.shadow]
          */
         shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number };
         /**
-         * [descr:BaseWidget.Options.tooltip.zIndex]
+         * [descr:BaseWidgetTooltip.zIndex]
          */
         zIndex?: number;
     }
@@ -14299,27 +14299,27 @@ declare module DevExpress.viz {
      */
     export interface dxBarGaugeLegend extends BaseLegend {
         /**
-         * [descr:dxBarGauge.Options.legend.customizeHint]
+         * [descr:dxBarGaugeLegend.customizeHint]
          */
         customizeHint?: ((arg: { item?: BarGaugeBarInfo, text?: string }) => string);
         /**
-         * [descr:dxBarGauge.Options.legend.customizeItems]
+         * [descr:dxBarGaugeLegend.customizeItems]
          */
         customizeItems?: ((items: Array<BarGaugeLegendItem>) => Array<BarGaugeLegendItem>);
         /**
-         * [descr:dxBarGauge.Options.legend.customizeText]
+         * [descr:dxBarGaugeLegend.customizeText]
          */
         customizeText?: ((arg: { item?: BarGaugeBarInfo, text?: string }) => string);
         /**
-         * [descr:dxBarGauge.Options.legend.itemTextFormat]
+         * [descr:dxBarGaugeLegend.itemTextFormat]
          */
         itemTextFormat?: DevExpress.ui.format;
         /**
-         * [descr:dxBarGauge.Options.legend.markerTemplate]
+         * [descr:dxBarGaugeLegend.markerTemplate]
          */
         markerTemplate?: DevExpress.core.template | ((legendItem: BarGaugeLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
         /**
-         * [descr:dxBarGauge.Options.legend.visible]
+         * [descr:dxBarGaugeLegend.visible]
          */
         visible?: boolean;
     }
@@ -14333,15 +14333,15 @@ declare module DevExpress.viz {
      */
     export interface dxBarGaugeTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:dxBarGauge.Options.tooltip.contentTemplate]
+         * [descr:dxBarGaugeTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((scaleValue: { value?: number, valueText?: string, index?: number }, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:dxBarGauge.Options.tooltip.customizeTooltip]
+         * [descr:dxBarGaugeTooltip.customizeTooltip]
          */
         customizeTooltip?: ((scaleValue: { value?: number, valueText?: string, index?: number }) => any);
         /**
-         * [descr:dxBarGauge.Options.tooltip.interactive]
+         * [descr:dxBarGaugeTooltip.interactive]
          */
         interactive?: boolean;
     }
@@ -14574,247 +14574,247 @@ declare module DevExpress.viz {
      */
     export interface dxChartArgumentAxis extends dxChartCommonAxisSettings {
         /**
-         * [descr:dxChart.Options.argumentAxis.aggregateByCategory]
+         * [descr:dxChartArgumentAxis.aggregateByCategory]
          */
         aggregateByCategory?: boolean;
         /**
-         * [descr:dxChart.Options.argumentAxis.aggregationGroupWidth]
+         * [descr:dxChartArgumentAxis.aggregationGroupWidth]
          */
         aggregationGroupWidth?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.aggregationInterval]
+         * [descr:dxChartArgumentAxis.aggregationInterval]
          */
         aggregationInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.argumentAxis.argumentType]
+         * [descr:dxChartArgumentAxis.argumentType]
          */
         argumentType?: 'datetime' | 'numeric' | 'string';
         /**
-         * [descr:dxChart.Options.argumentAxis.axisDivisionFactor]
+         * [descr:dxChartArgumentAxis.axisDivisionFactor]
          */
         axisDivisionFactor?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.breaks]
+         * [descr:dxChartArgumentAxis.breaks]
          */
         breaks?: Array<ScaleBreak>;
         /**
-         * [descr:dxChart.Options.argumentAxis.categories]
+         * [descr:dxChartArgumentAxis.categories]
          */
         categories?: Array<number | string | Date>;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLineStyle]
+         * [descr:dxChartArgumentAxis.constantLineStyle]
          */
         constantLineStyle?: dxChartArgumentAxisConstantLineStyle;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines]
+         * [descr:dxChartArgumentAxis.constantLines]
          */
         constantLines?: Array<dxChartArgumentAxisConstantLines>;
         /**
-         * [descr:dxChart.Options.argumentAxis.customPosition]
+         * [descr:dxChartArgumentAxis.customPosition]
          */
         customPosition?: number | Date | string;
         /**
-         * [descr:dxChart.Options.argumentAxis.customPositionAxis]
+         * [descr:dxChartArgumentAxis.customPositionAxis]
          */
         customPositionAxis?: string;
         /**
-         * [descr:dxChart.Options.argumentAxis.endOnTick]
+         * [descr:dxChartArgumentAxis.endOnTick]
          */
         endOnTick?: boolean;
         /**
-         * [descr:dxChart.Options.argumentAxis.holidays]
+         * [descr:dxChartArgumentAxis.holidays]
          */
         holidays?: Array<Date | string> | Array<number>;
         /**
-         * [descr:dxChart.Options.argumentAxis.hoverMode]
+         * [descr:dxChartArgumentAxis.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChart.Options.argumentAxis.label]
+         * [descr:dxChartArgumentAxis.label]
          */
         label?: dxChartArgumentAxisLabel;
         /**
-         * [descr:dxChart.Options.argumentAxis.linearThreshold]
+         * [descr:dxChartArgumentAxis.linearThreshold]
          */
         linearThreshold?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.logarithmBase]
+         * [descr:dxChartArgumentAxis.logarithmBase]
          */
         logarithmBase?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.minVisualRangeLength]
+         * [descr:dxChartArgumentAxis.minVisualRangeLength]
          */
         minVisualRangeLength?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.argumentAxis.minorTickCount]
+         * [descr:dxChartArgumentAxis.minorTickCount]
          */
         minorTickCount?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.minorTickInterval]
+         * [descr:dxChartArgumentAxis.minorTickInterval]
          */
         minorTickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.argumentAxis.offset]
+         * [descr:dxChartArgumentAxis.offset]
          */
         offset?: number;
         /**
-         * [descr:dxChart.Options.argumentAxis.position]
+         * [descr:dxChartArgumentAxis.position]
          */
         position?: 'bottom' | 'left' | 'right' | 'top';
         /**
-         * [descr:dxChart.Options.argumentAxis.singleWorkdays]
+         * [descr:dxChartArgumentAxis.singleWorkdays]
          */
         singleWorkdays?: Array<Date | string> | Array<number>;
         /**
-         * [descr:dxChart.Options.argumentAxis.strips]
+         * [descr:dxChartArgumentAxis.strips]
          */
         strips?: Array<dxChartArgumentAxisStrips>;
         /**
-         * [descr:dxChart.Options.argumentAxis.tickInterval]
+         * [descr:dxChartArgumentAxis.tickInterval]
          */
         tickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.argumentAxis.title]
+         * [descr:dxChartArgumentAxis.title]
          */
         title?: dxChartArgumentAxisTitle;
         /**
-         * [descr:dxChart.Options.argumentAxis.type]
+         * [descr:dxChartArgumentAxis.type]
          */
         type?: 'continuous' | 'discrete' | 'logarithmic';
         /**
-         * [descr:dxChart.Options.argumentAxis.visualRange]
+         * [descr:dxChartArgumentAxis.visualRange]
          */
         visualRange?: VizRange | Array<number | string | Date>;
         /**
-         * [descr:dxChart.Options.argumentAxis.visualRangeUpdateMode]
+         * [descr:dxChartArgumentAxis.visualRangeUpdateMode]
          */
         visualRangeUpdateMode?: 'auto' | 'keep' | 'reset' | 'shift';
         /**
-         * [descr:dxChart.Options.argumentAxis.wholeRange]
+         * [descr:dxChartArgumentAxis.wholeRange]
          */
         wholeRange?: VizRange | Array<number | string | Date>;
         /**
-         * [descr:dxChart.Options.argumentAxis.workWeek]
+         * [descr:dxChartArgumentAxis.workWeek]
          */
         workWeek?: Array<number>;
         /**
-         * [descr:dxChart.Options.argumentAxis.workdaysOnly]
+         * [descr:dxChartArgumentAxis.workdaysOnly]
          */
         workdaysOnly?: boolean;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.constantLineStyle]
+     * [descr:dxChartArgumentAxis.constantLineStyle]
      */
     export interface dxChartArgumentAxisConstantLineStyle extends dxChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLineStyle.label]
+         * [descr:dxChartArgumentAxisConstantLineStyle.label]
          */
         label?: dxChartArgumentAxisConstantLineStyleLabel;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.constantLineStyle.label]
+     * [descr:dxChartArgumentAxisConstantLineStyle.label]
      */
     export interface dxChartArgumentAxisConstantLineStyleLabel extends dxChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLineStyle.label.horizontalAlignment]
+         * [descr:dxChartArgumentAxisConstantLineStyleLabel.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLineStyle.label.verticalAlignment]
+         * [descr:dxChartArgumentAxisConstantLineStyleLabel.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.constantLines]
+     * [descr:dxChartArgumentAxis.constantLines]
      */
     export interface dxChartArgumentAxisConstantLines extends dxChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.displayBehindSeries]
+         * [descr:dxChartArgumentAxisConstantLines.displayBehindSeries]
          */
         displayBehindSeries?: boolean;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.extendAxis]
+         * [descr:dxChartArgumentAxisConstantLines.extendAxis]
          */
         extendAxis?: boolean;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.label]
+         * [descr:dxChartArgumentAxisConstantLines.label]
          */
         label?: dxChartArgumentAxisConstantLinesLabel;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.value]
+         * [descr:dxChartArgumentAxisConstantLines.value]
          */
         value?: number | Date | string;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.constantLines.label]
+     * [descr:dxChartArgumentAxisConstantLines.label]
      */
     export interface dxChartArgumentAxisConstantLinesLabel extends dxChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.label.horizontalAlignment]
+         * [descr:dxChartArgumentAxisConstantLinesLabel.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.label.text]
+         * [descr:dxChartArgumentAxisConstantLinesLabel.text]
          */
         text?: string;
         /**
-         * [descr:dxChart.Options.argumentAxis.constantLines.label.verticalAlignment]
+         * [descr:dxChartArgumentAxisConstantLinesLabel.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.label]
+     * [descr:dxChartArgumentAxis.label]
      */
     export interface dxChartArgumentAxisLabel extends dxChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxChart.Options.argumentAxis.label.customizeHint]
+         * [descr:dxChartArgumentAxisLabel.customizeHint]
          */
         customizeHint?: ((argument: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxChart.Options.argumentAxis.label.customizeText]
+         * [descr:dxChartArgumentAxisLabel.customizeText]
          */
         customizeText?: ((argument: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxChart.Options.argumentAxis.label.format]
+         * [descr:dxChartArgumentAxisLabel.format]
          */
         format?: DevExpress.ui.format;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.strips]
+     * [descr:dxChartArgumentAxis.strips]
      */
     export interface dxChartArgumentAxisStrips extends dxChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxChart.Options.argumentAxis.strips.color]
+         * [descr:dxChartArgumentAxisStrips.color]
          */
         color?: string;
         /**
-         * [descr:dxChart.Options.argumentAxis.strips.endValue]
+         * [descr:dxChartArgumentAxisStrips.endValue]
          */
         endValue?: number | Date | string;
         /**
-         * [descr:dxChart.Options.argumentAxis.strips.label]
+         * [descr:dxChartArgumentAxisStrips.label]
          */
         label?: dxChartArgumentAxisStripsLabel;
         /**
-         * [descr:dxChart.Options.argumentAxis.strips.startValue]
+         * [descr:dxChartArgumentAxisStrips.startValue]
          */
         startValue?: number | Date | string;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.strips.label]
+     * [descr:dxChartArgumentAxisStrips.label]
      */
     export interface dxChartArgumentAxisStripsLabel extends dxChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxChart.Options.argumentAxis.strips.label.text]
+         * [descr:dxChartArgumentAxisStripsLabel.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxChart.Options.argumentAxis.title]
+     * [descr:dxChartArgumentAxis.title]
      */
     export interface dxChartArgumentAxisTitle extends dxChartCommonAxisSettingsTitle {
         /**
-         * [descr:dxChart.Options.argumentAxis.title.text]
+         * [descr:dxChartArgumentAxisTitle.text]
          */
         text?: string;
     }
@@ -14823,245 +14823,245 @@ declare module DevExpress.viz {
      */
     export interface dxChartCommonAxisSettings {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.allowDecimals]
+         * [descr:dxChartCommonAxisSettings.allowDecimals]
          */
         allowDecimals?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.breakStyle]
+         * [descr:dxChartCommonAxisSettings.breakStyle]
          */
         breakStyle?: { color?: string, line?: 'straight' | 'waved', width?: number };
         /**
-         * [descr:dxChart.Options.commonAxisSettings.color]
+         * [descr:dxChartCommonAxisSettings.color]
          */
         color?: string;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle]
+         * [descr:dxChartCommonAxisSettings.constantLineStyle]
          */
         constantLineStyle?: dxChartCommonAxisSettingsConstantLineStyle;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.discreteAxisDivisionMode]
+         * [descr:dxChartCommonAxisSettings.discreteAxisDivisionMode]
          */
         discreteAxisDivisionMode?: 'betweenLabels' | 'crossLabels';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.endOnTick]
+         * [descr:dxChartCommonAxisSettings.endOnTick]
          */
         endOnTick?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.grid]
+         * [descr:dxChartCommonAxisSettings.grid]
          */
         grid?: { color?: string, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxChart.Options.commonAxisSettings.inverted]
+         * [descr:dxChartCommonAxisSettings.inverted]
          */
         inverted?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label]
+         * [descr:dxChartCommonAxisSettings.label]
          */
         label?: dxChartCommonAxisSettingsLabel;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.maxValueMargin]
+         * [descr:dxChartCommonAxisSettings.maxValueMargin]
          */
         maxValueMargin?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.minValueMargin]
+         * [descr:dxChartCommonAxisSettings.minValueMargin]
          */
         minValueMargin?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.minorGrid]
+         * [descr:dxChartCommonAxisSettings.minorGrid]
          */
         minorGrid?: { color?: string, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxChart.Options.commonAxisSettings.minorTick]
+         * [descr:dxChartCommonAxisSettings.minorTick]
          */
         minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxChart.Options.commonAxisSettings.opacity]
+         * [descr:dxChartCommonAxisSettings.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.placeholderSize]
+         * [descr:dxChartCommonAxisSettings.placeholderSize]
          */
         placeholderSize?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle]
+         * [descr:dxChartCommonAxisSettings.stripStyle]
          */
         stripStyle?: dxChartCommonAxisSettingsStripStyle;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.tick]
+         * [descr:dxChartCommonAxisSettings.tick]
          */
         tick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title]
+         * [descr:dxChartCommonAxisSettings.title]
          */
         title?: dxChartCommonAxisSettingsTitle;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.valueMarginsEnabled]
+         * [descr:dxChartCommonAxisSettings.valueMarginsEnabled]
          */
         valueMarginsEnabled?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.visible]
+         * [descr:dxChartCommonAxisSettings.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.width]
+         * [descr:dxChartCommonAxisSettings.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.constantLineStyle]
+     * [descr:dxChartCommonAxisSettings.constantLineStyle]
      */
     export interface dxChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.color]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.color]
          */
         color?: string;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.dashStyle]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.label]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.label]
          */
         label?: dxChartCommonAxisSettingsConstantLineStyleLabel;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.paddingLeftRight]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.paddingLeftRight]
          */
         paddingLeftRight?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.paddingTopBottom]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.paddingTopBottom]
          */
         paddingTopBottom?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.width]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyle.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.label]
+     * [descr:dxChartCommonAxisSettingsConstantLineStyle.label]
      */
     export interface dxChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.label.font]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyleLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.label.position]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyleLabel.position]
          */
         position?: 'inside' | 'outside';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.constantLineStyle.label.visible]
+         * [descr:dxChartCommonAxisSettingsConstantLineStyleLabel.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.label]
+     * [descr:dxChartCommonAxisSettings.label]
      */
     export interface dxChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.alignment]
+         * [descr:dxChartCommonAxisSettingsLabel.alignment]
          */
         alignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.displayMode]
+         * [descr:dxChartCommonAxisSettingsLabel.displayMode]
          */
         displayMode?: 'rotate' | 'stagger' | 'standard';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.font]
+         * [descr:dxChartCommonAxisSettingsLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.indentFromAxis]
+         * [descr:dxChartCommonAxisSettingsLabel.indentFromAxis]
          */
         indentFromAxis?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.overlappingBehavior]
+         * [descr:dxChartCommonAxisSettingsLabel.overlappingBehavior]
          */
         overlappingBehavior?: 'rotate' | 'stagger' | 'none' | 'hide';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.position]
+         * [descr:dxChartCommonAxisSettingsLabel.position]
          */
         position?: 'inside' | 'outside' | 'bottom' | 'left' | 'right' | 'top';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.rotationAngle]
+         * [descr:dxChartCommonAxisSettingsLabel.rotationAngle]
          */
         rotationAngle?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.staggeringSpacing]
+         * [descr:dxChartCommonAxisSettingsLabel.staggeringSpacing]
          */
         staggeringSpacing?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.template]
+         * [descr:dxChartCommonAxisSettingsLabel.template]
          */
         template?: DevExpress.core.template | ((data: { value?: Date | number | string, valueText?: string }, element: SVGGElement) => string | SVGElement | JQuery);
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.textOverflow]
+         * [descr:dxChartCommonAxisSettingsLabel.textOverflow]
          */
         textOverflow?: 'ellipsis' | 'hide' | 'none';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.visible]
+         * [descr:dxChartCommonAxisSettingsLabel.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.label.wordWrap]
+         * [descr:dxChartCommonAxisSettingsLabel.wordWrap]
          */
         wordWrap?: 'normal' | 'breakWord' | 'none';
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.stripStyle]
+     * [descr:dxChartCommonAxisSettings.stripStyle]
      */
     export interface dxChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.label]
+         * [descr:dxChartCommonAxisSettingsStripStyle.label]
          */
         label?: dxChartCommonAxisSettingsStripStyleLabel;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.paddingLeftRight]
+         * [descr:dxChartCommonAxisSettingsStripStyle.paddingLeftRight]
          */
         paddingLeftRight?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.paddingTopBottom]
+         * [descr:dxChartCommonAxisSettingsStripStyle.paddingTopBottom]
          */
         paddingTopBottom?: number;
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.stripStyle.label]
+     * [descr:dxChartCommonAxisSettingsStripStyle.label]
      */
     export interface dxChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.label.font]
+         * [descr:dxChartCommonAxisSettingsStripStyleLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.label.horizontalAlignment]
+         * [descr:dxChartCommonAxisSettingsStripStyleLabel.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.stripStyle.label.verticalAlignment]
+         * [descr:dxChartCommonAxisSettingsStripStyleLabel.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxChart.Options.commonAxisSettings.title]
+     * [descr:dxChartCommonAxisSettings.title]
      */
     export interface dxChartCommonAxisSettingsTitle {
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title.alignment]
+         * [descr:dxChartCommonAxisSettingsTitle.alignment]
          */
         alignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title.font]
+         * [descr:dxChartCommonAxisSettingsTitle.font]
          */
         font?: Font;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title.margin]
+         * [descr:dxChartCommonAxisSettingsTitle.margin]
          */
         margin?: number;
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title.textOverflow]
+         * [descr:dxChartCommonAxisSettingsTitle.textOverflow]
          */
         textOverflow?: 'ellipsis' | 'hide' | 'none';
         /**
-         * [descr:dxChart.Options.commonAxisSettings.title.wordWrap]
+         * [descr:dxChartCommonAxisSettingsTitle.wordWrap]
          */
         wordWrap?: 'normal' | 'breakWord' | 'none';
     }
@@ -15070,11 +15070,11 @@ declare module DevExpress.viz {
      */
     export interface dxChartCommonPaneSettings {
         /**
-         * [descr:dxChart.Options.commonPaneSettings.backgroundColor]
+         * [descr:dxChartCommonPaneSettings.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:dxChart.Options.commonPaneSettings.border]
+         * [descr:dxChartCommonPaneSettings.border]
          */
         border?: { bottom?: boolean, color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', left?: boolean, opacity?: number, right?: boolean, top?: boolean, visible?: boolean, width?: number };
     }
@@ -15083,99 +15083,99 @@ declare module DevExpress.viz {
      */
     export interface dxChartCommonSeriesSettings extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.area]
+         * [descr:dxChartCommonSeriesSettings.area]
          */
         area?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.bar]
+         * [descr:dxChartCommonSeriesSettings.bar]
          */
         bar?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.bubble]
+         * [descr:dxChartCommonSeriesSettings.bubble]
          */
         bubble?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.candlestick]
+         * [descr:dxChartCommonSeriesSettings.candlestick]
          */
         candlestick?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.fullstackedarea]
+         * [descr:dxChartCommonSeriesSettings.fullstackedarea]
          */
         fullstackedarea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.fullstackedbar]
+         * [descr:dxChartCommonSeriesSettings.fullstackedbar]
          */
         fullstackedbar?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.fullstackedline]
+         * [descr:dxChartCommonSeriesSettings.fullstackedline]
          */
         fullstackedline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.fullstackedspline]
+         * [descr:dxChartCommonSeriesSettings.fullstackedspline]
          */
         fullstackedspline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.fullstackedsplinearea]
+         * [descr:dxChartCommonSeriesSettings.fullstackedsplinearea]
          */
         fullstackedsplinearea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.line]
+         * [descr:dxChartCommonSeriesSettings.line]
          */
         line?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.rangearea]
+         * [descr:dxChartCommonSeriesSettings.rangearea]
          */
         rangearea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.rangebar]
+         * [descr:dxChartCommonSeriesSettings.rangebar]
          */
         rangebar?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.scatter]
+         * [descr:dxChartCommonSeriesSettings.scatter]
          */
         scatter?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.spline]
+         * [descr:dxChartCommonSeriesSettings.spline]
          */
         spline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.splinearea]
+         * [descr:dxChartCommonSeriesSettings.splinearea]
          */
         splinearea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stackedarea]
+         * [descr:dxChartCommonSeriesSettings.stackedarea]
          */
         stackedarea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stackedbar]
+         * [descr:dxChartCommonSeriesSettings.stackedbar]
          */
         stackedbar?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stackedline]
+         * [descr:dxChartCommonSeriesSettings.stackedline]
          */
         stackedline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stackedspline]
+         * [descr:dxChartCommonSeriesSettings.stackedspline]
          */
         stackedspline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stackedsplinearea]
+         * [descr:dxChartCommonSeriesSettings.stackedsplinearea]
          */
         stackedsplinearea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.steparea]
+         * [descr:dxChartCommonSeriesSettings.steparea]
          */
         steparea?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stepline]
+         * [descr:dxChartCommonSeriesSettings.stepline]
          */
         stepline?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.stock]
+         * [descr:dxChartCommonSeriesSettings.stock]
          */
         stock?: any;
         /**
-         * [descr:dxChart.Options.commonSeriesSettings.type]
+         * [descr:dxChartCommonSeriesSettings.type]
          */
         type?: 'area' | 'bar' | 'bubble' | 'candlestick' | 'fullstackedarea' | 'fullstackedbar' | 'fullstackedline' | 'fullstackedspline' | 'fullstackedsplinearea' | 'line' | 'rangearea' | 'rangebar' | 'scatter' | 'spline' | 'splinearea' | 'stackedarea' | 'stackedbar' | 'stackedline' | 'stackedspline' | 'stackedsplinearea' | 'steparea' | 'stepline' | 'stock';
     }
@@ -15184,19 +15184,19 @@ declare module DevExpress.viz {
      */
     export interface dxChartLegend extends BaseChartLegend {
         /**
-         * [descr:dxChart.Options.legend.customizeHint]
+         * [descr:dxChartLegend.customizeHint]
          */
         customizeHint?: ((seriesInfo: { seriesName?: any, seriesIndex?: number, seriesColor?: string }) => string);
         /**
-         * [descr:dxChart.Options.legend.customizeText]
+         * [descr:dxChartLegend.customizeText]
          */
         customizeText?: ((seriesInfo: { seriesName?: any, seriesIndex?: number, seriesColor?: string }) => string);
         /**
-         * [descr:dxChart.Options.legend.hoverMode]
+         * [descr:dxChartLegend.hoverMode]
          */
         hoverMode?: 'excludePoints' | 'includePoints' | 'none';
         /**
-         * [descr:dxChart.Options.legend.position]
+         * [descr:dxChartLegend.position]
          */
         position?: 'inside' | 'outside';
     }
@@ -15205,11 +15205,11 @@ declare module DevExpress.viz {
      */
     export interface dxChartPanes extends dxChartCommonPaneSettings {
         /**
-         * [descr:dxChart.Options.panes.height]
+         * [descr:dxChartPanes.height]
          */
         height?: number | string;
         /**
-         * [descr:dxChart.Options.panes.name]
+         * [descr:dxChartPanes.name]
          */
         name?: string;
     }
@@ -15218,7 +15218,7 @@ declare module DevExpress.viz {
      */
     export interface dxChartTooltip extends BaseChartTooltip {
         /**
-         * [descr:dxChart.Options.tooltip.location]
+         * [descr:dxChartTooltip.location]
          */
         location?: 'center' | 'edge';
     }
@@ -15227,239 +15227,239 @@ declare module DevExpress.viz {
      */
     export interface dxChartValueAxis extends dxChartCommonAxisSettings {
         /**
-         * [descr:dxChart.Options.valueAxis.autoBreaksEnabled]
+         * [descr:dxChartValueAxis.autoBreaksEnabled]
          */
         autoBreaksEnabled?: boolean;
         /**
-         * [descr:dxChart.Options.valueAxis.axisDivisionFactor]
+         * [descr:dxChartValueAxis.axisDivisionFactor]
          */
         axisDivisionFactor?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.breaks]
+         * [descr:dxChartValueAxis.breaks]
          */
         breaks?: Array<ScaleBreak>;
         /**
-         * [descr:dxChart.Options.valueAxis.categories]
+         * [descr:dxChartValueAxis.categories]
          */
         categories?: Array<number | string | Date>;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLineStyle]
+         * [descr:dxChartValueAxis.constantLineStyle]
          */
         constantLineStyle?: dxChartValueAxisConstantLineStyle;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines]
+         * [descr:dxChartValueAxis.constantLines]
          */
         constantLines?: Array<dxChartValueAxisConstantLines>;
         /**
-         * [descr:dxChart.Options.valueAxis.customPosition]
+         * [descr:dxChartValueAxis.customPosition]
          */
         customPosition?: number | Date | string;
         /**
-         * [descr:dxChart.Options.valueAxis.endOnTick]
+         * [descr:dxChartValueAxis.endOnTick]
          */
         endOnTick?: boolean;
         /**
-         * [descr:dxChart.Options.valueAxis.label]
+         * [descr:dxChartValueAxis.label]
          */
         label?: dxChartValueAxisLabel;
         /**
-         * [descr:dxChart.Options.valueAxis.linearThreshold]
+         * [descr:dxChartValueAxis.linearThreshold]
          */
         linearThreshold?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.logarithmBase]
+         * [descr:dxChartValueAxis.logarithmBase]
          */
         logarithmBase?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.maxAutoBreakCount]
+         * [descr:dxChartValueAxis.maxAutoBreakCount]
          */
         maxAutoBreakCount?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.minVisualRangeLength]
+         * [descr:dxChartValueAxis.minVisualRangeLength]
          */
         minVisualRangeLength?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.valueAxis.minorTickCount]
+         * [descr:dxChartValueAxis.minorTickCount]
          */
         minorTickCount?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.minorTickInterval]
+         * [descr:dxChartValueAxis.minorTickInterval]
          */
         minorTickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.valueAxis.multipleAxesSpacing]
+         * [descr:dxChartValueAxis.multipleAxesSpacing]
          */
         multipleAxesSpacing?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.name]
+         * [descr:dxChartValueAxis.name]
          */
         name?: string;
         /**
-         * [descr:dxChart.Options.valueAxis.offset]
+         * [descr:dxChartValueAxis.offset]
          */
         offset?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.pane]
+         * [descr:dxChartValueAxis.pane]
          */
         pane?: string;
         /**
-         * [descr:dxChart.Options.valueAxis.position]
+         * [descr:dxChartValueAxis.position]
          */
         position?: 'bottom' | 'left' | 'right' | 'top';
         /**
-         * [descr:dxChart.Options.valueAxis.showZero]
+         * [descr:dxChartValueAxis.showZero]
          */
         showZero?: boolean;
         /**
-         * [descr:dxChart.Options.valueAxis.strips]
+         * [descr:dxChartValueAxis.strips]
          */
         strips?: Array<dxChartValueAxisStrips>;
         /**
-         * [descr:dxChart.Options.valueAxis.synchronizedValue]
+         * [descr:dxChartValueAxis.synchronizedValue]
          */
         synchronizedValue?: number;
         /**
-         * [descr:dxChart.Options.valueAxis.tickInterval]
+         * [descr:dxChartValueAxis.tickInterval]
          */
         tickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxChart.Options.valueAxis.title]
+         * [descr:dxChartValueAxis.title]
          */
         title?: dxChartValueAxisTitle;
         /**
-         * [descr:dxChart.Options.valueAxis.type]
+         * [descr:dxChartValueAxis.type]
          */
         type?: 'continuous' | 'discrete' | 'logarithmic';
         /**
-         * [descr:dxChart.Options.valueAxis.valueType]
+         * [descr:dxChartValueAxis.valueType]
          */
         valueType?: 'datetime' | 'numeric' | 'string';
         /**
-         * [descr:dxChart.Options.valueAxis.visualRange]
+         * [descr:dxChartValueAxis.visualRange]
          */
         visualRange?: VizRange | Array<number | string | Date>;
         /**
-         * [descr:dxChart.Options.valueAxis.visualRangeUpdateMode]
+         * [descr:dxChartValueAxis.visualRangeUpdateMode]
          */
         visualRangeUpdateMode?: 'auto' | 'keep' | 'reset' | 'shift';
         /**
-         * [descr:dxChart.Options.valueAxis.wholeRange]
+         * [descr:dxChartValueAxis.wholeRange]
          */
         wholeRange?: VizRange | Array<number | string | Date>;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.constantLineStyle]
+     * [descr:dxChartValueAxis.constantLineStyle]
      */
     export interface dxChartValueAxisConstantLineStyle extends dxChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxChart.Options.valueAxis.constantLineStyle.label]
+         * [descr:dxChartValueAxisConstantLineStyle.label]
          */
         label?: dxChartValueAxisConstantLineStyleLabel;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.constantLineStyle.label]
+     * [descr:dxChartValueAxisConstantLineStyle.label]
      */
     export interface dxChartValueAxisConstantLineStyleLabel extends dxChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxChart.Options.valueAxis.constantLineStyle.label.horizontalAlignment]
+         * [descr:dxChartValueAxisConstantLineStyleLabel.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.valueAxis.constantLineStyle.label.verticalAlignment]
+         * [descr:dxChartValueAxisConstantLineStyleLabel.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxChart.Options.valueAxis.constantLines]
+     * [descr:dxChartValueAxis.constantLines]
      */
     export interface dxChartValueAxisConstantLines extends dxChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.displayBehindSeries]
+         * [descr:dxChartValueAxisConstantLines.displayBehindSeries]
          */
         displayBehindSeries?: boolean;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.extendAxis]
+         * [descr:dxChartValueAxisConstantLines.extendAxis]
          */
         extendAxis?: boolean;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.label]
+         * [descr:dxChartValueAxisConstantLines.label]
          */
         label?: dxChartValueAxisConstantLinesLabel;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.value]
+         * [descr:dxChartValueAxisConstantLines.value]
          */
         value?: number | Date | string;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.constantLines.label]
+     * [descr:dxChartValueAxisConstantLines.label]
      */
     export interface dxChartValueAxisConstantLinesLabel extends dxChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.label.horizontalAlignment]
+         * [descr:dxChartValueAxisConstantLinesLabel.horizontalAlignment]
          */
         horizontalAlignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.label.text]
+         * [descr:dxChartValueAxisConstantLinesLabel.text]
          */
         text?: string;
         /**
-         * [descr:dxChart.Options.valueAxis.constantLines.label.verticalAlignment]
+         * [descr:dxChartValueAxisConstantLinesLabel.verticalAlignment]
          */
         verticalAlignment?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxChart.Options.valueAxis.label]
+     * [descr:dxChartValueAxis.label]
      */
     export interface dxChartValueAxisLabel extends dxChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxChart.Options.valueAxis.label.customizeHint]
+         * [descr:dxChartValueAxisLabel.customizeHint]
          */
         customizeHint?: ((axisValue: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxChart.Options.valueAxis.label.customizeText]
+         * [descr:dxChartValueAxisLabel.customizeText]
          */
         customizeText?: ((axisValue: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxChart.Options.valueAxis.label.format]
+         * [descr:dxChartValueAxisLabel.format]
          */
         format?: DevExpress.ui.format;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.strips]
+     * [descr:dxChartValueAxis.strips]
      */
     export interface dxChartValueAxisStrips extends dxChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxChart.Options.valueAxis.strips.color]
+         * [descr:dxChartValueAxisStrips.color]
          */
         color?: string;
         /**
-         * [descr:dxChart.Options.valueAxis.strips.endValue]
+         * [descr:dxChartValueAxisStrips.endValue]
          */
         endValue?: number | Date | string;
         /**
-         * [descr:dxChart.Options.valueAxis.strips.label]
+         * [descr:dxChartValueAxisStrips.label]
          */
         label?: dxChartValueAxisStripsLabel;
         /**
-         * [descr:dxChart.Options.valueAxis.strips.startValue]
+         * [descr:dxChartValueAxisStrips.startValue]
          */
         startValue?: number | Date | string;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.strips.label]
+     * [descr:dxChartValueAxisStrips.label]
      */
     export interface dxChartValueAxisStripsLabel extends dxChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxChart.Options.valueAxis.strips.label.text]
+         * [descr:dxChartValueAxisStripsLabel.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxChart.Options.valueAxis.title]
+     * [descr:dxChartValueAxis.title]
      */
     export interface dxChartValueAxisTitle extends dxChartCommonAxisSettingsTitle {
         /**
-         * [descr:dxChart.Options.valueAxis.title.text]
+         * [descr:dxChartValueAxisTitle.text]
          */
         text?: string;
     }
@@ -15626,50 +15626,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.label]
+         * [descr:dxChartSeriesTypesAreaSeries.label]
          */
         label?: dxChartSeriesTypesAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.point]
+         * [descr:dxChartSeriesTypesAreaSeries.point]
          */
         point?: dxChartSeriesTypesAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.AreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.AreaSeries.label]
+     * [descr:dxChartSeriesTypesAreaSeries.label]
      */
     interface dxChartSeriesTypesAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.AreaSeries.point]
+     * [descr:dxChartSeriesTypesAreaSeries.point]
      */
     interface dxChartSeriesTypesAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.AreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -15678,37 +15678,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesBarSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.aggregation]
+         * [descr:dxChartSeriesTypesBarSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesBarSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.hoverMode]
+         * [descr:dxChartSeriesTypesBarSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.label]
+         * [descr:dxChartSeriesTypesBarSeries.label]
          */
         label?: dxChartSeriesTypesBarSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.selectionMode]
+         * [descr:dxChartSeriesTypesBarSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.BarSeries.aggregation]
+     * [descr:dxChartSeriesTypesBarSeries.aggregation]
      */
     interface dxChartSeriesTypesBarSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesBarSeries.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.BarSeries.label]
+     * [descr:dxChartSeriesTypesBarSeries.label]
      */
     interface dxChartSeriesTypesBarSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.BarSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesBarSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -15717,37 +15717,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesBubbleSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.aggregation]
+         * [descr:dxChartSeriesTypesBubbleSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesBubbleSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.hoverMode]
+         * [descr:dxChartSeriesTypesBubbleSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.label]
+         * [descr:dxChartSeriesTypesBubbleSeries.label]
          */
         label?: dxChartSeriesTypesBubbleSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.selectionMode]
+         * [descr:dxChartSeriesTypesBubbleSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.BubbleSeries.aggregation]
+     * [descr:dxChartSeriesTypesBubbleSeries.aggregation]
      */
     interface dxChartSeriesTypesBubbleSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesBubbleSeriesAggregation.method]
          */
         method?: 'avg' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.BubbleSeries.label]
+     * [descr:dxChartSeriesTypesBubbleSeries.label]
      */
     interface dxChartSeriesTypesBubbleSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.BubbleSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesBubbleSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -15756,85 +15756,85 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesCandleStickSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.aggregation]
+         * [descr:dxChartSeriesTypesCandleStickSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesCandleStickSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.argumentField]
+         * [descr:dxChartSeriesTypesCandleStickSeries.argumentField]
          */
         argumentField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.hoverMode]
+         * [descr:dxChartSeriesTypesCandleStickSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.hoverStyle]
+         * [descr:dxChartSeriesTypesCandleStickSeries.hoverStyle]
          */
         hoverStyle?: dxChartSeriesTypesCandleStickSeriesHoverStyle;
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.label]
+         * [descr:dxChartSeriesTypesCandleStickSeries.label]
          */
         label?: dxChartSeriesTypesCandleStickSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.selectionMode]
+         * [descr:dxChartSeriesTypesCandleStickSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.selectionStyle]
+         * [descr:dxChartSeriesTypesCandleStickSeries.selectionStyle]
          */
         selectionStyle?: dxChartSeriesTypesCandleStickSeriesSelectionStyle;
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.aggregation]
+     * [descr:dxChartSeriesTypesCandleStickSeries.aggregation]
      */
     interface dxChartSeriesTypesCandleStickSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesCandleStickSeriesAggregation.method]
          */
         method?: 'ohlc' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.hoverStyle]
+     * [descr:dxChartSeriesTypesCandleStickSeries.hoverStyle]
      */
     interface dxChartSeriesTypesCandleStickSeriesHoverStyle extends dxChartSeriesTypesCommonSeriesHoverStyle {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.hoverStyle.hatching]
+         * [descr:dxChartSeriesTypesCandleStickSeriesHoverStyle.hatching]
          */
         hatching?: dxChartSeriesTypesCandleStickSeriesHoverStyleHatching;
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.hoverStyle.hatching]
+     * [descr:dxChartSeriesTypesCandleStickSeriesHoverStyle.hatching]
      */
     interface dxChartSeriesTypesCandleStickSeriesHoverStyleHatching extends dxChartSeriesTypesCommonSeriesHoverStyleHatching {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.hoverStyle.hatching.direction]
+         * [descr:dxChartSeriesTypesCandleStickSeriesHoverStyleHatching.hatching.direction]
          */
         direction?: 'left' | 'none' | 'right';
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.label]
+     * [descr:dxChartSeriesTypesCandleStickSeries.label]
      */
     interface dxChartSeriesTypesCandleStickSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesCandleStickSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.selectionStyle]
+     * [descr:dxChartSeriesTypesCandleStickSeries.selectionStyle]
      */
     interface dxChartSeriesTypesCandleStickSeriesSelectionStyle extends dxChartSeriesTypesCommonSeriesSelectionStyle {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.selectionStyle.hatching]
+         * [descr:dxChartSeriesTypesCandleStickSeriesSelectionStyle.hatching]
          */
         hatching?: dxChartSeriesTypesCandleStickSeriesSelectionStyleHatching;
     }
     /**
-     * [descr:dxChartSeriesTypes.CandleStickSeries.selectionStyle.hatching]
+     * [descr:dxChartSeriesTypesCandleStickSeriesSelectionStyle.hatching]
      */
     interface dxChartSeriesTypesCandleStickSeriesSelectionStyleHatching extends dxChartSeriesTypesCommonSeriesSelectionStyleHatching {
         /**
-         * [descr:dxChartSeriesTypes.CandleStickSeries.selectionStyle.hatching.direction]
+         * [descr:dxChartSeriesTypesCandleStickSeriesSelectionStyleHatching.direction]
          */
         direction?: 'left' | 'none' | 'right';
     }
@@ -15843,429 +15843,429 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.aggregation]
+         * [descr:dxChartSeriesTypesCommonSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesCommonSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.argumentField]
+         * [descr:dxChartSeriesTypesCommonSeries.argumentField]
          */
         argumentField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.axis]
+         * [descr:dxChartSeriesTypesCommonSeries.axis]
          */
         axis?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.barOverlapGroup]
+         * [descr:dxChartSeriesTypesCommonSeries.barOverlapGroup]
          */
         barOverlapGroup?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.barPadding]
+         * [descr:dxChartSeriesTypesCommonSeries.barPadding]
          */
         barPadding?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.barWidth]
+         * [descr:dxChartSeriesTypesCommonSeries.barWidth]
          */
         barWidth?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.border]
+         * [descr:dxChartSeriesTypesCommonSeries.border]
          */
         border?: dxChartSeriesTypesCommonSeriesBorder;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.closeValueField]
+         * [descr:dxChartSeriesTypesCommonSeries.closeValueField]
          */
         closeValueField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.color]
+         * [descr:dxChartSeriesTypesCommonSeries.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.cornerRadius]
+         * [descr:dxChartSeriesTypesCommonSeries.cornerRadius]
          */
         cornerRadius?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeries.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.highValueField]
+         * [descr:dxChartSeriesTypesCommonSeries.highValueField]
          */
         highValueField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverMode]
+         * [descr:dxChartSeriesTypesCommonSeries.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'excludePoints' | 'includePoints' | 'nearestPoint' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle]
+         * [descr:dxChartSeriesTypesCommonSeries.hoverStyle]
          */
         hoverStyle?: dxChartSeriesTypesCommonSeriesHoverStyle;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.ignoreEmptyPoints]
+         * [descr:dxChartSeriesTypesCommonSeries.ignoreEmptyPoints]
          */
         ignoreEmptyPoints?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.innerColor]
+         * [descr:dxChartSeriesTypesCommonSeries.innerColor]
          */
         innerColor?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label]
+         * [descr:dxChartSeriesTypesCommonSeries.label]
          */
         label?: dxChartSeriesTypesCommonSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.lowValueField]
+         * [descr:dxChartSeriesTypesCommonSeries.lowValueField]
          */
         lowValueField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.maxLabelCount]
+         * [descr:dxChartSeriesTypesCommonSeries.maxLabelCount]
          */
         maxLabelCount?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.minBarSize]
+         * [descr:dxChartSeriesTypesCommonSeries.minBarSize]
          */
         minBarSize?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.opacity]
+         * [descr:dxChartSeriesTypesCommonSeries.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.openValueField]
+         * [descr:dxChartSeriesTypesCommonSeries.openValueField]
          */
         openValueField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.pane]
+         * [descr:dxChartSeriesTypesCommonSeries.pane]
          */
         pane?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point]
+         * [descr:dxChartSeriesTypesCommonSeries.point]
          */
         point?: dxChartSeriesTypesCommonSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.rangeValue1Field]
+         * [descr:dxChartSeriesTypesCommonSeries.rangeValue1Field]
          */
         rangeValue1Field?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.rangeValue2Field]
+         * [descr:dxChartSeriesTypesCommonSeries.rangeValue2Field]
          */
         rangeValue2Field?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.reduction]
+         * [descr:dxChartSeriesTypesCommonSeries.reduction]
          */
         reduction?: { color?: string, level?: 'close' | 'high' | 'low' | 'open' };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionMode]
+         * [descr:dxChartSeriesTypesCommonSeries.selectionMode]
          */
         selectionMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'excludePoints' | 'includePoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle]
+         * [descr:dxChartSeriesTypesCommonSeries.selectionStyle]
          */
         selectionStyle?: dxChartSeriesTypesCommonSeriesSelectionStyle;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.showInLegend]
+         * [descr:dxChartSeriesTypesCommonSeries.showInLegend]
          */
         showInLegend?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.sizeField]
+         * [descr:dxChartSeriesTypesCommonSeries.sizeField]
          */
         sizeField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.stack]
+         * [descr:dxChartSeriesTypesCommonSeries.stack]
          */
         stack?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.tagField]
+         * [descr:dxChartSeriesTypesCommonSeries.tagField]
          */
         tagField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.valueErrorBar]
+         * [descr:dxChartSeriesTypesCommonSeries.valueErrorBar]
          */
         valueErrorBar?: { color?: string, displayMode?: 'auto' | 'high' | 'low' | 'none', edgeLength?: number, highValueField?: string, lineWidth?: number, lowValueField?: string, opacity?: number, type?: 'fixed' | 'percent' | 'stdDeviation' | 'stdError' | 'variance', value?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.valueField]
+         * [descr:dxChartSeriesTypesCommonSeries.valueField]
          */
         valueField?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.visible]
+         * [descr:dxChartSeriesTypesCommonSeries.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.width]
+         * [descr:dxChartSeriesTypesCommonSeries.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.aggregation]
+     * [descr:dxChartSeriesTypesCommonSeries.aggregation]
      */
     interface dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.aggregation.calculate]
+         * [descr:dxChartSeriesTypesCommonSeriesAggregation.calculate]
          */
         calculate?: ((aggregationInfo: chartPointAggregationInfoObject, series: chartSeriesObject) => any | Array<any>);
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.aggregation.enabled]
+         * [descr:dxChartSeriesTypesCommonSeriesAggregation.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesCommonSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'ohlc' | 'range' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.border]
+     * [descr:dxChartSeriesTypesCommonSeries.border]
      */
     interface dxChartSeriesTypesCommonSeriesBorder {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.border.color]
+         * [descr:dxChartSeriesTypesCommonSeriesBorder.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.border.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesBorder.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.border.visible]
+         * [descr:dxChartSeriesTypesCommonSeriesBorder.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.border.width]
+         * [descr:dxChartSeriesTypesCommonSeriesBorder.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle]
+     * [descr:dxChartSeriesTypesCommonSeries.hoverStyle]
      */
     interface dxChartSeriesTypesCommonSeriesHoverStyle {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.border]
          */
         border?: dxChartSeriesTypesCommonSeriesHoverStyleBorder;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.color]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.hatching]
          */
         hatching?: dxChartSeriesTypesCommonSeriesHoverStyleHatching;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.width]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border]
+     * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.border]
      */
     interface dxChartSeriesTypesCommonSeriesHoverStyleBorder {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border.color]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleBorder.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleBorder.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border.visible]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleBorder.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.border.width]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleBorder.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching]
+     * [descr:dxChartSeriesTypesCommonSeriesHoverStyle.hatching]
      */
     interface dxChartSeriesTypesCommonSeriesHoverStyleHatching {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching.direction]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleHatching.direction]
          */
         direction?: 'left' | 'none' | 'right';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching.opacity]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleHatching.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching.step]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleHatching.step]
          */
         step?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.hoverStyle.hatching.width]
+         * [descr:dxChartSeriesTypesCommonSeriesHoverStyleHatching.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.label]
+     * [descr:dxChartSeriesTypesCommonSeries.label]
      */
     interface dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.alignment]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.alignment]
          */
         alignment?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.argumentFormat]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.argumentFormat]
          */
         argumentFormat?: DevExpress.ui.format;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.backgroundColor]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.border]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.border]
          */
         border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.connector]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.connector]
          */
         connector?: { color?: string, visible?: boolean, width?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.font]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.format]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.format]
          */
         format?: DevExpress.ui.format;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.horizontalOffset]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.horizontalOffset]
          */
         horizontalOffset?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.position]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.position]
          */
         position?: 'inside' | 'outside';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.rotationAngle]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.rotationAngle]
          */
         rotationAngle?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.showForZeroValues]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.showForZeroValues]
          */
         showForZeroValues?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.verticalOffset]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.verticalOffset]
          */
         verticalOffset?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.label.visible]
+         * [descr:dxChartSeriesTypesCommonSeriesLabel.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.point]
+     * [descr:dxChartSeriesTypesCommonSeries.point]
      */
     interface dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.border]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.border]
          */
         border?: { color?: string, visible?: boolean, width?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.color]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.hoverMode]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.hoverStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.hoverStyle]
          */
         hoverStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, size?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.image]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.image]
          */
         image?: string | { height?: number | { rangeMaxPoint?: number, rangeMinPoint?: number }, url?: string | { rangeMaxPoint?: string, rangeMinPoint?: string }, width?: number | { rangeMaxPoint?: number, rangeMinPoint?: number } };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.selectionMode]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.selectionMode]
          */
         selectionMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.selectionStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.selectionStyle]
          */
         selectionStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, size?: number };
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.size]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.size]
          */
         size?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.symbol]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.symbol]
          */
         symbol?: 'circle' | 'cross' | 'polygon' | 'square' | 'triangleDown' | 'triangleUp';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.point.visible]
+         * [descr:dxChartSeriesTypesCommonSeriesPoint.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle]
+     * [descr:dxChartSeriesTypesCommonSeries.selectionStyle]
      */
     interface dxChartSeriesTypesCommonSeriesSelectionStyle {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.border]
          */
         border?: dxChartSeriesTypesCommonSeriesSelectionStyleBorder;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.color]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.hatching]
          */
         hatching?: dxChartSeriesTypesCommonSeriesSelectionStyleHatching;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.width]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border]
+     * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.border]
      */
     interface dxChartSeriesTypesCommonSeriesSelectionStyleBorder {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border.color]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleBorder.color]
          */
         color?: string;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border.dashStyle]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleBorder.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border.visible]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleBorder.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.border.width]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleBorder.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching]
+     * [descr:dxChartSeriesTypesCommonSeriesSelectionStyle.hatching]
      */
     interface dxChartSeriesTypesCommonSeriesSelectionStyleHatching {
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching.direction]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleHatching.direction]
          */
         direction?: 'left' | 'none' | 'right';
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching.opacity]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleHatching.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching.step]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleHatching.step]
          */
         step?: number;
         /**
-         * [descr:dxChartSeriesTypes.CommonSeries.selectionStyle.hatching.width]
+         * [descr:dxChartSeriesTypesCommonSeriesSelectionStyleHatching.width]
          */
         width?: number;
     }
@@ -16274,50 +16274,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesFullStackedAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesFullStackedAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.label]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeries.label]
          */
         label?: dxChartSeriesTypesFullStackedAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.point]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeries.point]
          */
         point?: dxChartSeriesTypesFullStackedAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesFullStackedAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesFullStackedAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedAreaSeries.label]
+     * [descr:dxChartSeriesTypesFullStackedAreaSeries.label]
      */
     interface dxChartSeriesTypesFullStackedAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedAreaSeries.point]
+     * [descr:dxChartSeriesTypesFullStackedAreaSeries.point]
      */
     interface dxChartSeriesTypesFullStackedAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesFullStackedAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16326,41 +16326,41 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesFullStackedBarSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.aggregation]
+         * [descr:dxChartSeriesTypesFullStackedBarSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesFullStackedBarSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.hoverMode]
+         * [descr:dxChartSeriesTypesFullStackedBarSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.label]
+         * [descr:dxChartSeriesTypesFullStackedBarSeries.label]
          */
         label?: dxChartSeriesTypesFullStackedBarSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.selectionMode]
+         * [descr:dxChartSeriesTypesFullStackedBarSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedBarSeries.aggregation]
+     * [descr:dxChartSeriesTypesFullStackedBarSeries.aggregation]
      */
     interface dxChartSeriesTypesFullStackedBarSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesFullStackedBarSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedBarSeries.label]
+     * [descr:dxChartSeriesTypesFullStackedBarSeries.label]
      */
     interface dxChartSeriesTypesFullStackedBarSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesFullStackedBarSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
         /**
-         * [descr:dxChartSeriesTypes.FullStackedBarSeries.label.position]
+         * [descr:dxChartSeriesTypesFullStackedBarSeriesLabel.position]
          */
         position?: 'inside' | 'outside';
     }
@@ -16369,37 +16369,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesFullStackedLineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.aggregation]
+         * [descr:dxChartSeriesTypesFullStackedLineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesFullStackedLineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesFullStackedLineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.label]
+         * [descr:dxChartSeriesTypesFullStackedLineSeries.label]
          */
         label?: dxChartSeriesTypesFullStackedLineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesFullStackedLineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedLineSeries.aggregation]
+     * [descr:dxChartSeriesTypesFullStackedLineSeries.aggregation]
      */
     interface dxChartSeriesTypesFullStackedLineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesFullStackedLineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedLineSeries.label]
+     * [descr:dxChartSeriesTypesFullStackedLineSeries.label]
      */
     interface dxChartSeriesTypesFullStackedLineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedLineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesFullStackedLineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16408,50 +16408,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesFullStackedSplineAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesFullStackedSplineAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.label]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.label]
          */
         label?: dxChartSeriesTypesFullStackedSplineAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.point]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.point]
          */
         point?: dxChartSeriesTypesFullStackedSplineAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesFullStackedSplineAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.label]
+     * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.label]
      */
     interface dxChartSeriesTypesFullStackedSplineAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.point]
+     * [descr:dxChartSeriesTypesFullStackedSplineAreaSeries.point]
      */
     interface dxChartSeriesTypesFullStackedSplineAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesFullStackedSplineAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16460,37 +16460,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesFullStackedSplineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.aggregation]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesFullStackedSplineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.label]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeries.label]
          */
         label?: dxChartSeriesTypesFullStackedSplineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedSplineSeries.aggregation]
+     * [descr:dxChartSeriesTypesFullStackedSplineSeries.aggregation]
      */
     interface dxChartSeriesTypesFullStackedSplineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.FullStackedSplineSeries.label]
+     * [descr:dxChartSeriesTypesFullStackedSplineSeries.label]
      */
     interface dxChartSeriesTypesFullStackedSplineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.FullStackedSplineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesFullStackedSplineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16499,37 +16499,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesLineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.aggregation]
+         * [descr:dxChartSeriesTypesLineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesLineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesLineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.label]
+         * [descr:dxChartSeriesTypesLineSeries.label]
          */
         label?: dxChartSeriesTypesLineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesLineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.LineSeries.aggregation]
+     * [descr:dxChartSeriesTypesLineSeries.aggregation]
      */
     interface dxChartSeriesTypesLineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesLineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.LineSeries.label]
+     * [descr:dxChartSeriesTypesLineSeries.label]
      */
     interface dxChartSeriesTypesLineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.LineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesLineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16538,50 +16538,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesRangeAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesRangeAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesRangeAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesRangeAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.label]
+         * [descr:dxChartSeriesTypesRangeAreaSeries.label]
          */
         label?: dxChartSeriesTypesRangeAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.point]
+         * [descr:dxChartSeriesTypesRangeAreaSeries.point]
          */
         point?: dxChartSeriesTypesRangeAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesRangeAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.RangeAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesRangeAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesRangeAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesRangeAreaSeriesAggregation.method]
          */
         method?: 'range' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.RangeAreaSeries.label]
+     * [descr:dxChartSeriesTypesRangeAreaSeries.label]
      */
     interface dxChartSeriesTypesRangeAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesRangeAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.RangeAreaSeries.point]
+     * [descr:dxChartSeriesTypesRangeAreaSeries.point]
      */
     interface dxChartSeriesTypesRangeAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.RangeAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesRangeAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16590,37 +16590,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesRangeBarSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.aggregation]
+         * [descr:dxChartSeriesTypesRangeBarSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesRangeBarSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.hoverMode]
+         * [descr:dxChartSeriesTypesRangeBarSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.label]
+         * [descr:dxChartSeriesTypesRangeBarSeries.label]
          */
         label?: dxChartSeriesTypesRangeBarSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.selectionMode]
+         * [descr:dxChartSeriesTypesRangeBarSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.RangeBarSeries.aggregation]
+     * [descr:dxChartSeriesTypesRangeBarSeries.aggregation]
      */
     interface dxChartSeriesTypesRangeBarSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesRangeBarSeriesAggregation.method]
          */
         method?: 'range' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.RangeBarSeries.label]
+     * [descr:dxChartSeriesTypesRangeBarSeries.label]
      */
     interface dxChartSeriesTypesRangeBarSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.RangeBarSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesRangeBarSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16629,29 +16629,29 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesScatterSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.ScatterSeries.aggregation]
+         * [descr:dxChartSeriesTypesScatterSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesScatterSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.ScatterSeries.label]
+         * [descr:dxChartSeriesTypesScatterSeries.label]
          */
         label?: dxChartSeriesTypesScatterSeriesLabel;
     }
     /**
-     * [descr:dxChartSeriesTypes.ScatterSeries.aggregation]
+     * [descr:dxChartSeriesTypesScatterSeries.aggregation]
      */
     interface dxChartSeriesTypesScatterSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.ScatterSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesScatterSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.ScatterSeries.label]
+     * [descr:dxChartSeriesTypesScatterSeries.label]
      */
     interface dxChartSeriesTypesScatterSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.ScatterSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesScatterSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16660,50 +16660,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesSplineAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesSplineAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesSplineAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesSplineAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.label]
+         * [descr:dxChartSeriesTypesSplineAreaSeries.label]
          */
         label?: dxChartSeriesTypesSplineAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.point]
+         * [descr:dxChartSeriesTypesSplineAreaSeries.point]
          */
         point?: dxChartSeriesTypesSplineAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesSplineAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.SplineAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesSplineAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesSplineAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesSplineAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.SplineAreaSeries.label]
+     * [descr:dxChartSeriesTypesSplineAreaSeries.label]
      */
     interface dxChartSeriesTypesSplineAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesSplineAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.SplineAreaSeries.point]
+     * [descr:dxChartSeriesTypesSplineAreaSeries.point]
      */
     interface dxChartSeriesTypesSplineAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.SplineAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesSplineAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16712,37 +16712,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesSplineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.aggregation]
+         * [descr:dxChartSeriesTypesSplineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesSplineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesSplineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.label]
+         * [descr:dxChartSeriesTypesSplineSeries.label]
          */
         label?: dxChartSeriesTypesSplineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesSplineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.SplineSeries.aggregation]
+     * [descr:dxChartSeriesTypesSplineSeries.aggregation]
      */
     interface dxChartSeriesTypesSplineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesSplineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.SplineSeries.label]
+     * [descr:dxChartSeriesTypesSplineSeries.label]
      */
     interface dxChartSeriesTypesSplineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.SplineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesSplineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16751,50 +16751,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStackedAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesStackedAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStackedAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStackedAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.label]
+         * [descr:dxChartSeriesTypesStackedAreaSeries.label]
          */
         label?: dxChartSeriesTypesStackedAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.point]
+         * [descr:dxChartSeriesTypesStackedAreaSeries.point]
          */
         point?: dxChartSeriesTypesStackedAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStackedAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesStackedAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesStackedAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStackedAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedAreaSeries.label]
+     * [descr:dxChartSeriesTypesStackedAreaSeries.label]
      */
     interface dxChartSeriesTypesStackedAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStackedAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedAreaSeries.point]
+     * [descr:dxChartSeriesTypesStackedAreaSeries.point]
      */
     interface dxChartSeriesTypesStackedAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.StackedAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesStackedAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16803,41 +16803,41 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStackedBarSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.aggregation]
+         * [descr:dxChartSeriesTypesStackedBarSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStackedBarSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStackedBarSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.label]
+         * [descr:dxChartSeriesTypesStackedBarSeries.label]
          */
         label?: dxChartSeriesTypesStackedBarSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStackedBarSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedBarSeries.aggregation]
+     * [descr:dxChartSeriesTypesStackedBarSeries.aggregation]
      */
     interface dxChartSeriesTypesStackedBarSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStackedBarSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedBarSeries.label]
+     * [descr:dxChartSeriesTypesStackedBarSeries.label]
      */
     interface dxChartSeriesTypesStackedBarSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStackedBarSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
         /**
-         * [descr:dxChartSeriesTypes.StackedBarSeries.label.position]
+         * [descr:dxChartSeriesTypesStackedBarSeriesLabel.position]
          */
         position?: 'inside' | 'outside';
     }
@@ -16846,37 +16846,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStackedLineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.aggregation]
+         * [descr:dxChartSeriesTypesStackedLineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStackedLineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStackedLineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.label]
+         * [descr:dxChartSeriesTypesStackedLineSeries.label]
          */
         label?: dxChartSeriesTypesStackedLineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStackedLineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedLineSeries.aggregation]
+     * [descr:dxChartSeriesTypesStackedLineSeries.aggregation]
      */
     interface dxChartSeriesTypesStackedLineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStackedLineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedLineSeries.label]
+     * [descr:dxChartSeriesTypesStackedLineSeries.label]
      */
     interface dxChartSeriesTypesStackedLineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StackedLineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStackedLineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16885,50 +16885,50 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStackedSplineAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStackedSplineAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.label]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeries.label]
          */
         label?: dxChartSeriesTypesStackedSplineAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.point]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeries.point]
          */
         point?: dxChartSeriesTypesStackedSplineAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesStackedSplineAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesStackedSplineAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.label]
+     * [descr:dxChartSeriesTypesStackedSplineAreaSeries.label]
      */
     interface dxChartSeriesTypesStackedSplineAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.point]
+     * [descr:dxChartSeriesTypesStackedSplineAreaSeries.point]
      */
     interface dxChartSeriesTypesStackedSplineAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesStackedSplineAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -16937,37 +16937,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStackedSplineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.aggregation]
+         * [descr:dxChartSeriesTypesStackedSplineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStackedSplineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStackedSplineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.label]
+         * [descr:dxChartSeriesTypesStackedSplineSeries.label]
          */
         label?: dxChartSeriesTypesStackedSplineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStackedSplineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedSplineSeries.aggregation]
+     * [descr:dxChartSeriesTypesStackedSplineSeries.aggregation]
      */
     interface dxChartSeriesTypesStackedSplineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStackedSplineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StackedSplineSeries.label]
+     * [descr:dxChartSeriesTypesStackedSplineSeries.label]
      */
     interface dxChartSeriesTypesStackedSplineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StackedSplineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStackedSplineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -16976,107 +16976,107 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStepAreaSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.aggregation]
+         * [descr:dxChartSeriesTypesStepAreaSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStepAreaSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.border]
+         * [descr:dxChartSeriesTypesStepAreaSeries.border]
          */
         border?: dxChartSeriesTypesStepAreaSeriesBorder;
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStepAreaSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.hoverStyle]
+         * [descr:dxChartSeriesTypesStepAreaSeries.hoverStyle]
          */
         hoverStyle?: dxChartSeriesTypesStepAreaSeriesHoverStyle;
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.label]
+         * [descr:dxChartSeriesTypesStepAreaSeries.label]
          */
         label?: dxChartSeriesTypesStepAreaSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.point]
+         * [descr:dxChartSeriesTypesStepAreaSeries.point]
          */
         point?: dxChartSeriesTypesStepAreaSeriesPoint;
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStepAreaSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.selectionStyle]
+         * [descr:dxChartSeriesTypesStepAreaSeries.selectionStyle]
          */
         selectionStyle?: dxChartSeriesTypesStepAreaSeriesSelectionStyle;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.aggregation]
+     * [descr:dxChartSeriesTypesStepAreaSeries.aggregation]
      */
     interface dxChartSeriesTypesStepAreaSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStepAreaSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.border]
+     * [descr:dxChartSeriesTypesStepAreaSeries.border]
      */
     interface dxChartSeriesTypesStepAreaSeriesBorder extends dxChartSeriesTypesCommonSeriesBorder {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.border.visible]
+         * [descr:dxChartSeriesTypesStepAreaSeriesBorder.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.hoverStyle]
+     * [descr:dxChartSeriesTypesStepAreaSeries.hoverStyle]
      */
     interface dxChartSeriesTypesStepAreaSeriesHoverStyle extends dxChartSeriesTypesCommonSeriesHoverStyle {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.hoverStyle.border]
+         * [descr:dxChartSeriesTypesStepAreaSeriesHoverStyle.border]
          */
         border?: dxChartSeriesTypesStepAreaSeriesHoverStyleBorder;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.hoverStyle.border]
+     * [descr:dxChartSeriesTypesStepAreaSeriesHoverStyle.border]
      */
     interface dxChartSeriesTypesStepAreaSeriesHoverStyleBorder extends dxChartSeriesTypesCommonSeriesHoverStyleBorder {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.hoverStyle.border.visible]
+         * [descr:dxChartSeriesTypesStepAreaSeriesHoverStyleBorder.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.label]
+     * [descr:dxChartSeriesTypesStepAreaSeries.label]
      */
     interface dxChartSeriesTypesStepAreaSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStepAreaSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.point]
+     * [descr:dxChartSeriesTypesStepAreaSeries.point]
      */
     interface dxChartSeriesTypesStepAreaSeriesPoint extends dxChartSeriesTypesCommonSeriesPoint {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.point.visible]
+         * [descr:dxChartSeriesTypesStepAreaSeriesPoint.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.selectionStyle]
+     * [descr:dxChartSeriesTypesStepAreaSeries.selectionStyle]
      */
     interface dxChartSeriesTypesStepAreaSeriesSelectionStyle extends dxChartSeriesTypesCommonSeriesSelectionStyle {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.selectionStyle.border]
+         * [descr:dxChartSeriesTypesStepAreaSeriesSelectionStyle.border]
          */
         border?: dxChartSeriesTypesStepAreaSeriesSelectionStyleBorder;
     }
     /**
-     * [descr:dxChartSeriesTypes.StepAreaSeries.selectionStyle.border]
+     * [descr:dxChartSeriesTypesStepAreaSeriesSelectionStyle.border]
      */
     interface dxChartSeriesTypesStepAreaSeriesSelectionStyleBorder extends dxChartSeriesTypesCommonSeriesSelectionStyleBorder {
         /**
-         * [descr:dxChartSeriesTypes.StepAreaSeries.selectionStyle.border.visible]
+         * [descr:dxChartSeriesTypesStepAreaSeriesSelectionStyleBorder.visible]
          */
         visible?: boolean;
     }
@@ -17085,37 +17085,37 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStepLineSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.aggregation]
+         * [descr:dxChartSeriesTypesStepLineSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStepLineSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStepLineSeries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.label]
+         * [descr:dxChartSeriesTypesStepLineSeries.label]
          */
         label?: dxChartSeriesTypesStepLineSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStepLineSeries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StepLineSeries.aggregation]
+     * [descr:dxChartSeriesTypesStepLineSeries.aggregation]
      */
     interface dxChartSeriesTypesStepLineSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStepLineSeriesAggregation.method]
          */
         method?: 'avg' | 'count' | 'max' | 'min' | 'sum' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StepLineSeries.label]
+     * [descr:dxChartSeriesTypesStepLineSeries.label]
      */
     interface dxChartSeriesTypesStepLineSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StepLineSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStepLineSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -17124,41 +17124,41 @@ declare module DevExpress.viz {
      */
     interface dxChartSeriesTypesStockSeries extends dxChartSeriesTypesCommonSeries {
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.aggregation]
+         * [descr:dxChartSeriesTypesStockSeries.aggregation]
          */
         aggregation?: dxChartSeriesTypesStockSeriesAggregation;
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.argumentField]
+         * [descr:dxChartSeriesTypesStockSeries.argumentField]
          */
         argumentField?: string;
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.hoverMode]
+         * [descr:dxChartSeriesTypesStockSeries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.label]
+         * [descr:dxChartSeriesTypesStockSeries.label]
          */
         label?: dxChartSeriesTypesStockSeriesLabel;
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.selectionMode]
+         * [descr:dxChartSeriesTypesStockSeries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxChartSeriesTypes.StockSeries.aggregation]
+     * [descr:dxChartSeriesTypesStockSeries.aggregation]
      */
     interface dxChartSeriesTypesStockSeriesAggregation extends dxChartSeriesTypesCommonSeriesAggregation {
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.aggregation.method]
+         * [descr:dxChartSeriesTypesStockSeriesAggregation.method]
          */
         method?: 'ohlc' | 'custom';
     }
     /**
-     * [descr:dxChartSeriesTypes.StockSeries.label]
+     * [descr:dxChartSeriesTypesStockSeries.label]
      */
     interface dxChartSeriesTypesStockSeriesLabel extends dxChartSeriesTypesCommonSeriesLabel {
         /**
-         * [descr:dxChartSeriesTypes.StockSeries.label.customizeText]
+         * [descr:dxChartSeriesTypesStockSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
     }
@@ -17192,11 +17192,11 @@ declare module DevExpress.viz {
      */
     export interface dxCircularGaugeRangeContainer extends BaseGaugeRangeContainer {
         /**
-         * [descr:dxCircularGauge.Options.rangeContainer.orientation]
+         * [descr:dxCircularGaugeRangeContainer.orientation]
          */
         orientation?: 'center' | 'inside' | 'outside';
         /**
-         * [descr:dxCircularGauge.Options.rangeContainer.width]
+         * [descr:dxCircularGaugeRangeContainer.width]
          */
         width?: number;
     }
@@ -17205,24 +17205,24 @@ declare module DevExpress.viz {
      */
     export interface dxCircularGaugeScale extends BaseGaugeScale {
         /**
-         * [descr:dxCircularGauge.Options.scale.label]
+         * [descr:dxCircularGaugeScale.label]
          */
         label?: dxCircularGaugeScaleLabel;
         /**
-         * [descr:dxCircularGauge.Options.scale.orientation]
+         * [descr:dxCircularGaugeScale.orientation]
          */
         orientation?: 'center' | 'inside' | 'outside';
     }
     /**
-     * [descr:dxCircularGauge.Options.scale.label]
+     * [descr:dxCircularGaugeScale.label]
      */
     export interface dxCircularGaugeScaleLabel extends BaseGaugeScaleLabel {
         /**
-         * [descr:dxCircularGauge.Options.scale.label.hideFirstOrLast]
+         * [descr:dxCircularGaugeScaleLabel.hideFirstOrLast]
          */
         hideFirstOrLast?: 'first' | 'last';
         /**
-         * [descr:dxCircularGauge.Options.scale.label.indentFromTick]
+         * [descr:dxCircularGaugeScaleLabel.indentFromTick]
          */
         indentFromTick?: number;
     }
@@ -17335,23 +17335,23 @@ declare module DevExpress.viz {
      */
     export interface dxFunnelLegend extends BaseLegend {
         /**
-         * [descr:dxFunnel.Options.legend.customizeHint]
+         * [descr:dxFunnelLegend.customizeHint]
          */
         customizeHint?: ((itemInfo: { item?: dxFunnelItem, text?: string }) => string);
         /**
-         * [descr:dxFunnel.Options.legend.customizeItems]
+         * [descr:dxFunnelLegend.customizeItems]
          */
         customizeItems?: ((items: Array<FunnelLegendItem>) => Array<FunnelLegendItem>);
         /**
-         * [descr:dxFunnel.Options.legend.customizeText]
+         * [descr:dxFunnelLegend.customizeText]
          */
         customizeText?: ((itemInfo: { item?: dxFunnelItem, text?: string }) => string);
         /**
-         * [descr:dxFunnel.Options.legend.markerTemplate]
+         * [descr:dxFunnelLegend.markerTemplate]
          */
         markerTemplate?: DevExpress.core.template | ((legendItem: FunnelLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
         /**
-         * [descr:dxFunnel.Options.legend.visible]
+         * [descr:dxFunnelLegend.visible]
          */
         visible?: boolean;
     }
@@ -17360,11 +17360,11 @@ declare module DevExpress.viz {
      */
     export interface dxFunnelTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:dxFunnel.Options.tooltip.contentTemplate]
+         * [descr:dxFunnelTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((info: { item?: dxFunnelItem, value?: number, valueText?: string, percent?: number, percentText?: string }, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:dxFunnel.Options.tooltip.customizeTooltip]
+         * [descr:dxFunnelTooltip.customizeTooltip]
          */
         customizeTooltip?: ((info: { item?: dxFunnelItem, value?: number, valueText?: string, percent?: number, percentText?: string }) => any);
     }
@@ -17466,15 +17466,15 @@ declare module DevExpress.viz {
      */
     export interface dxLinearGaugeRangeContainer extends BaseGaugeRangeContainer {
         /**
-         * [descr:dxLinearGauge.Options.rangeContainer.horizontalOrientation]
+         * [descr:dxLinearGaugeRangeContainer.horizontalOrientation]
          */
         horizontalOrientation?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxLinearGauge.Options.rangeContainer.verticalOrientation]
+         * [descr:ddxLinearGaugeRangeContainer.verticalOrientation]
          */
         verticalOrientation?: 'bottom' | 'center' | 'top';
         /**
-         * [descr:dxLinearGauge.Options.rangeContainer.width]
+         * [descr:dxLinearGaugeRangeContainer.width]
          */
         width?: { end?: number, start?: number } | number;
     }
@@ -17483,28 +17483,28 @@ declare module DevExpress.viz {
      */
     export interface dxLinearGaugeScale extends BaseGaugeScale {
         /**
-         * [descr:dxLinearGauge.Options.scale.horizontalOrientation]
+         * [descr:dxLinearGaugeScale.horizontalOrientation]
          */
         horizontalOrientation?: 'center' | 'left' | 'right';
         /**
-         * [descr:dxLinearGauge.Options.scale.label]
+         * [descr:dxLinearGaugeScale.label]
          */
         label?: dxLinearGaugeScaleLabel;
         /**
-         * [descr:dxLinearGauge.Options.scale.scaleDivisionFactor]
+         * [descr:dxLinearGaugeScale.scaleDivisionFactor]
          */
         scaleDivisionFactor?: number;
         /**
-         * [descr:dxLinearGauge.Options.scale.verticalOrientation]
+         * [descr:dxLinearGaugeScale.verticalOrientation]
          */
         verticalOrientation?: 'bottom' | 'center' | 'top';
     }
     /**
-     * [descr:dxLinearGauge.Options.scale.label]
+     * [descr:dxLinearGaugeScale.label]
      */
     export interface dxLinearGaugeScaleLabel extends BaseGaugeScaleLabel {
         /**
-         * [descr:dxLinearGauge.Options.scale.label.indentFromTick]
+         * [descr:dxLinearGaugeScaleLabel.indentFromTick]
          */
         indentFromTick?: number;
     }
@@ -17601,7 +17601,7 @@ declare module DevExpress.viz {
      */
     export interface dxPieChartAdaptiveLayout extends BaseChartAdaptiveLayout {
         /**
-         * [descr:dxPieChart.Options.adaptiveLayout.keepLabels]
+         * [descr:dxPieChartAdaptiveLayout.keepLabels]
          */
         keepLabels?: boolean;
     }
@@ -17610,23 +17610,23 @@ declare module DevExpress.viz {
      */
     export interface dxPieChartLegend extends BaseChartLegend {
         /**
-         * [descr:dxPieChart.Options.legend.customizeHint]
+         * [descr:dxPieChartLegend.customizeHint]
          */
         customizeHint?: ((pointInfo: { pointName?: any, pointIndex?: number, pointColor?: string }) => string);
         /**
-         * [descr:dxPieChart.Options.legend.customizeItems]
+         * [descr:dxPieChartLegend.customizeItems]
          */
         customizeItems?: ((items: Array<PieChartLegendItem>) => Array<PieChartLegendItem>);
         /**
-         * [descr:dxPieChart.Options.legend.customizeText]
+         * [descr:dxPieChartLegend.customizeText]
          */
         customizeText?: ((pointInfo: { pointName?: any, pointIndex?: number, pointColor?: string }) => string);
         /**
-         * [descr:dxPieChart.Options.legend.hoverMode]
+         * [descr:dxPieChartLegend.hoverMode]
          */
         hoverMode?: 'none' | 'allArgumentPoints';
         /**
-         * [descr:dxPieChart.Options.legend.markerTemplate]
+         * [descr:dxPieChartLegend.markerTemplate]
          */
         markerTemplate?: DevExpress.core.template | ((legendItem: PieChartLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
     }
@@ -17701,59 +17701,59 @@ declare module DevExpress.viz {
      */
     export interface dxPieChartSeriesTypesCommonPieChartSeries {
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.argumentField]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.argumentField]
          */
         argumentField?: string;
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.argumentType]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.argumentType]
          */
         argumentType?: 'datetime' | 'numeric' | 'string';
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.border]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.border]
          */
         border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number };
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.color]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.color]
          */
         color?: string;
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.hoverMode]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.hoverMode]
          */
         hoverMode?: 'none' | 'onlyPoint';
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.hoverStyle]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.hoverStyle]
          */
         hoverStyle?: { border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number }, color?: string, hatching?: { direction?: 'left' | 'none' | 'right', opacity?: number, step?: number, width?: number } };
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.label]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.label]
          */
         label?: { argumentFormat?: DevExpress.ui.format, backgroundColor?: string, border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number }, connector?: { color?: string, visible?: boolean, width?: number }, customizeText?: ((pointInfo: any) => string), font?: Font, format?: DevExpress.ui.format, position?: 'columns' | 'inside' | 'outside', radialOffset?: number, rotationAngle?: number, textOverflow?: 'ellipsis' | 'hide' | 'none', visible?: boolean, wordWrap?: 'normal' | 'breakWord' | 'none' };
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.maxLabelCount]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.maxLabelCount]
          */
         maxLabelCount?: number;
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.minSegmentSize]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.minSegmentSize]
          */
         minSegmentSize?: number;
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.selectionMode]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.selectionMode]
          */
         selectionMode?: 'none' | 'onlyPoint';
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.selectionStyle]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.selectionStyle]
          */
         selectionStyle?: { border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number }, color?: string, hatching?: { direction?: 'left' | 'none' | 'right', opacity?: number, step?: number, width?: number } };
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.smallValuesGrouping]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.smallValuesGrouping]
          */
         smallValuesGrouping?: { groupName?: string, mode?: 'none' | 'smallValueThreshold' | 'topN', threshold?: number, topCount?: number };
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.tagField]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.tagField]
          */
         tagField?: string;
         /**
-         * [descr:dxPieChartSeriesTypes.CommonPieChartSeries.valueField]
+         * [descr:dxPieChartSeriesTypesCommonPieChartSeries.valueField]
          */
         valueField?: string;
     }
@@ -17875,11 +17875,11 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartAdaptiveLayout extends BaseChartAdaptiveLayout {
         /**
-         * [descr:dxPolarChart.Options.adaptiveLayout.height]
+         * [descr:dxPolarChartAdaptiveLayout.height]
          */
         height?: number;
         /**
-         * [descr:dxPolarChart.Options.adaptiveLayout.width]
+         * [descr:dxPolarChartAdaptiveLayout.width]
          */
         width?: number;
     }
@@ -17888,174 +17888,174 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartArgumentAxis extends dxPolarChartCommonAxisSettings {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.argumentType]
+         * [descr:dxPolarChartArgumentAxis.argumentType]
          */
         argumentType?: 'datetime' | 'numeric' | 'string';
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.axisDivisionFactor]
+         * [descr:dxPolarChartArgumentAxis.axisDivisionFactor]
          */
         axisDivisionFactor?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.categories]
+         * [descr:dxPolarChartArgumentAxis.categories]
          */
         categories?: Array<number | string | Date>;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines]
+         * [descr:dxPolarChartArgumentAxis.constantLines]
          */
         constantLines?: Array<dxPolarChartArgumentAxisConstantLines>;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.firstPointOnStartAngle]
+         * [descr:dxPolarChartArgumentAxis.firstPointOnStartAngle]
          */
         firstPointOnStartAngle?: boolean;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.hoverMode]
+         * [descr:dxPolarChartArgumentAxis.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.label]
+         * [descr:dxPolarChartArgumentAxis.label]
          */
         label?: dxPolarChartArgumentAxisLabel;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.linearThreshold]
+         * [descr:dxPolarChartArgumentAxis.linearThreshold]
          */
         linearThreshold?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.logarithmBase]
+         * [descr:dxPolarChartArgumentAxis.logarithmBase]
          */
         logarithmBase?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.minorTick]
+         * [descr:dxPolarChartArgumentAxis.minorTick]
          */
         minorTick?: dxPolarChartArgumentAxisMinorTick;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.minorTickCount]
+         * [descr:dxPolarChartArgumentAxis.minorTickCount]
          */
         minorTickCount?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.minorTickInterval]
+         * [descr:dxPolarChartArgumentAxis.minorTickInterval]
          */
         minorTickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.originValue]
+         * [descr:dxPolarChartArgumentAxis.originValue]
          */
         originValue?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.period]
+         * [descr:dxPolarChartArgumentAxis.period]
          */
         period?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.startAngle]
+         * [descr:dxPolarChartArgumentAxis.startAngle]
          */
         startAngle?: number;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips]
+         * [descr:dxPolarChartArgumentAxis.strips]
          */
         strips?: Array<dxPolarChartArgumentAxisStrips>;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.tick]
+         * [descr:dxPolarChartArgumentAxis.tick]
          */
         tick?: dxPolarChartArgumentAxisTick;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.tickInterval]
+         * [descr:dxPolarChartArgumentAxis.tickInterval]
          */
         tickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.type]
+         * [descr:dxPolarChartArgumentAxis.type]
          */
         type?: 'continuous' | 'discrete' | 'logarithmic';
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.constantLines]
+     * [descr:dxPolarChartArgumentAxis.constantLines]
      */
     export interface dxPolarChartArgumentAxisConstantLines extends dxPolarChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines.displayBehindSeries]
+         * [descr:dxPolarChartArgumentAxisConstantLines.displayBehindSeries]
          */
         displayBehindSeries?: boolean;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines.extendAxis]
+         * [descr:dxPolarChartArgumentAxisConstantLines.extendAxis]
          */
         extendAxis?: boolean;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines.label]
+         * [descr:dxPolarChartArgumentAxisConstantLines.label]
          */
         label?: dxPolarChartArgumentAxisConstantLinesLabel;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines.value]
+         * [descr:dxPolarChartArgumentAxisConstantLines.value]
          */
         value?: number | Date | string;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.constantLines.label]
+     * [descr:dxPolarChartArgumentAxisConstantLines.label]
      */
     export interface dxPolarChartArgumentAxisConstantLinesLabel extends dxPolarChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.constantLines.label.text]
+         * [descr:dxPolarChartArgumentAxisConstantLinesLabel.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.label]
+     * [descr:dxPolarChartArgumentAxis.label]
      */
     export interface dxPolarChartArgumentAxisLabel extends dxPolarChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.label.customizeHint]
+         * [descr:dxPolarChartArgumentAxisLabel.customizeHint]
          */
         customizeHint?: ((argument: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.label.customizeText]
+         * [descr:dxPolarChartArgumentAxisLabel.customizeText]
          */
         customizeText?: ((argument: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.label.format]
+         * [descr:dxPolarChartArgumentAxisLabel.format]
          */
         format?: DevExpress.ui.format;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.minorTick]
+     * [descr:dxPolarChartArgumentAxis.minorTick]
      */
     export interface dxPolarChartArgumentAxisMinorTick extends dxPolarChartCommonAxisSettingsMinorTick {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.minorTick.shift]
+         * [descr:dxPolarChartArgumentAxisMinorTick.shift]
          */
         shift?: number;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.strips]
+     * [descr:dxPolarChartArgumentAxis.strips]
      */
     export interface dxPolarChartArgumentAxisStrips extends dxPolarChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips.color]
+         * [descr:dxPolarChartArgumentAxisStrips.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips.endValue]
+         * [descr:dxPolarChartArgumentAxisStrips.endValue]
          */
         endValue?: number | Date | string;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips.label]
+         * [descr:dxPolarChartArgumentAxisStrips.label]
          */
         label?: dxPolarChartArgumentAxisStripsLabel;
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips.startValue]
+         * [descr:dxPolarChartArgumentAxisStrips.startValue]
          */
         startValue?: number | Date | string;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.strips.label]
+     * [descr:dxPolarChartArgumentAxisStrips.label]
      */
     export interface dxPolarChartArgumentAxisStripsLabel extends dxPolarChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.strips.label.text]
+         * [descr:dxPolarChartArgumentAxisStripsLabel.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxPolarChart.Options.argumentAxis.tick]
+     * [descr:dxPolarChartArgumentAxis.tick]
      */
     export interface dxPolarChartArgumentAxisTick extends dxPolarChartCommonAxisSettingsTick {
         /**
-         * [descr:dxPolarChart.Options.argumentAxis.tick.shift]
+         * [descr:dxPolarChartArgumentAxisTick.shift]
          */
         shift?: number;
     }
@@ -18064,186 +18064,186 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartCommonAxisSettings {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.allowDecimals]
+         * [descr:dxPolarChartCommonAxisSettings.allowDecimals]
          */
         allowDecimals?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.color]
+         * [descr:dxPolarChartCommonAxisSettings.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle]
+         * [descr:dxPolarChartCommonAxisSettings.constantLineStyle]
          */
         constantLineStyle?: dxPolarChartCommonAxisSettingsConstantLineStyle;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.discreteAxisDivisionMode]
+         * [descr:dxPolarChartCommonAxisSettings.discreteAxisDivisionMode]
          */
         discreteAxisDivisionMode?: 'betweenLabels' | 'crossLabels';
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.endOnTick]
+         * [descr:dxPolarChartCommonAxisSettings.endOnTick]
          */
         endOnTick?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.grid]
+         * [descr:dxPolarChartCommonAxisSettings.grid]
          */
         grid?: { color?: string, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.inverted]
+         * [descr:dxPolarChartCommonAxisSettings.inverted]
          */
         inverted?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.label]
+         * [descr:dxPolarChartCommonAxisSettings.label]
          */
         label?: dxPolarChartCommonAxisSettingsLabel;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorGrid]
+         * [descr:dxPolarChartCommonAxisSettings.minorGrid]
          */
         minorGrid?: { color?: string, opacity?: number, visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick]
+         * [descr:dxPolarChartCommonAxisSettings.minorTick]
          */
         minorTick?: dxPolarChartCommonAxisSettingsMinorTick;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.opacity]
+         * [descr:dxPolarChartCommonAxisSettings.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.stripStyle]
+         * [descr:dxPolarChartCommonAxisSettings.stripStyle]
          */
         stripStyle?: dxPolarChartCommonAxisSettingsStripStyle;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick]
+         * [descr:dxPolarChartCommonAxisSettings.tick]
          */
         tick?: dxPolarChartCommonAxisSettingsTick;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.visible]
+         * [descr:dxPolarChartCommonAxisSettings.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.width]
+         * [descr:dxPolarChartCommonAxisSettings.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle]
+     * [descr:dxPolarChartCommonAxisSettings.constantLineStyle]
      */
     export interface dxPolarChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.color]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyle.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.dashStyle]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyle.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.label]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyle.label]
          */
         label?: dxPolarChartCommonAxisSettingsConstantLineStyleLabel;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.width]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyle.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.label]
+     * [descr:dxPolarChartCommonAxisSettingsConstantLineStyle.label]
      */
     export interface dxPolarChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.label.font]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyleLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.constantLineStyle.label.visible]
+         * [descr:dxPolarChartCommonAxisSettingsConstantLineStyleLabel.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.label]
+     * [descr:dxPolarChartCommonAxisSettings.label]
      */
     export interface dxPolarChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.label.font]
+         * [descr:dxPolarChartCommonAxisSettingsLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.label.indentFromAxis]
+         * [descr:dxPolarChartCommonAxisSettingsLabel.indentFromAxis]
          */
         indentFromAxis?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.label.overlappingBehavior]
+         * [descr:dxPolarChartCommonAxisSettingsLabel.overlappingBehavior]
          */
         overlappingBehavior?: 'none' | 'hide';
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.label.visible]
+         * [descr:dxPolarChartCommonAxisSettingsLabel.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.minorTick]
+     * [descr:dxPolarChartCommonAxisSettings.minorTick]
      */
     export interface dxPolarChartCommonAxisSettingsMinorTick {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick.color]
+         * [descr:dxPolarChartCommonAxisSettingsMinorTick.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick.length]
+         * [descr:dxPolarChartCommonAxisSettingsMinorTick.length]
          */
         length?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick.opacity]
+         * [descr:dxPolarChartCommonAxisSettingsMinorTick.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick.visible]
+         * [descr:dxPolarChartCommonAxisSettingsMinorTick.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.minorTick.width]
+         * [descr:dxPolarChartCommonAxisSettingsMinorTick.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.stripStyle]
+     * [descr:dxPolarChartCommonAxisSettings.stripStyle]
      */
     export interface dxPolarChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.stripStyle.label]
+         * [descr:dxPolarChartCommonAxisSettingsStripStyle.label]
          */
         label?: dxPolarChartCommonAxisSettingsStripStyleLabel;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.stripStyle.label]
+     * [descr:dxPolarChartCommonAxisSettingsStripStyle.label]
      */
     export interface dxPolarChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.stripStyle.label.font]
+         * [descr:dxPolarChartCommonAxisSettingsStripStyleLabel.font]
          */
         font?: Font;
     }
     /**
-     * [descr:dxPolarChart.Options.commonAxisSettings.tick]
+     * [descr:dxPolarChartCommonAxisSettings.tick]
      */
     export interface dxPolarChartCommonAxisSettingsTick {
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick.color]
+         * [descr:dxPolarChartCommonAxisSettingsTick.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick.length]
+         * [descr:dxPolarChartCommonAxisSettingsTick.length]
          */
         length?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick.opacity]
+         * [descr:dxPolarChartCommonAxisSettingsTick.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick.visible]
+         * [descr:dxPolarChartCommonAxisSettingsTick.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxPolarChart.Options.commonAxisSettings.tick.width]
+         * [descr:dxPolarChartCommonAxisSettingsTick.width]
          */
         width?: number;
     }
@@ -18252,27 +18252,27 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartCommonSeriesSettings extends dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.area]
+         * [descr:dxPolarChartCommonSeriesSettings.area]
          */
         area?: any;
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.bar]
+         * [descr:dxPolarChartCommonSeriesSettings.bar]
          */
         bar?: any;
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.line]
+         * [descr:dxPolarChartCommonSeriesSettings.line]
          */
         line?: any;
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.scatter]
+         * [descr:dxPolarChartCommonSeriesSettings.scatter]
          */
         scatter?: any;
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.stackedbar]
+         * [descr:dxPolarChartCommonSeriesSettings.stackedbar]
          */
         stackedbar?: any;
         /**
-         * [descr:dxPolarChart.Options.commonSeriesSettings.type]
+         * [descr:dxPolarChartCommonSeriesSettings.type]
          */
         type?: 'area' | 'bar' | 'line' | 'scatter' | 'stackedbar';
     }
@@ -18281,15 +18281,15 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartLegend extends BaseChartLegend {
         /**
-         * [descr:dxPolarChart.Options.legend.customizeHint]
+         * [descr:dxPolarChartLegend.customizeHint]
          */
         customizeHint?: ((seriesInfo: { seriesName?: any, seriesIndex?: number, seriesColor?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.legend.customizeText]
+         * [descr:dxPolarChartLegend.customizeText]
          */
         customizeText?: ((seriesInfo: { seriesName?: any, seriesIndex?: number, seriesColor?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.legend.hoverMode]
+         * [descr:dxPolarChartLegend.hoverMode]
          */
         hoverMode?: 'excludePoints' | 'includePoints' | 'none';
     }
@@ -18298,7 +18298,7 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartTooltip extends BaseChartTooltip {
         /**
-         * [descr:dxPolarChart.Options.tooltip.shared]
+         * [descr:dxPolarChartTooltip.shared]
          */
         shared?: boolean;
     }
@@ -18307,177 +18307,177 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartValueAxis extends dxPolarChartCommonAxisSettings {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.axisDivisionFactor]
+         * [descr:dxPolarChartValueAxis.axisDivisionFactor]
          */
         axisDivisionFactor?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.categories]
+         * [descr:dxPolarChartValueAxis.categories]
          */
         categories?: Array<number | string | Date>;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines]
+         * [descr:dxPolarChartValueAxis.constantLines]
          */
         constantLines?: Array<dxPolarChartValueAxisConstantLines>;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.endOnTick]
+         * [descr:dxPolarChartValueAxis.endOnTick]
          */
         endOnTick?: boolean;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.label]
+         * [descr:dxPolarChartValueAxis.label]
          */
         label?: dxPolarChartValueAxisLabel;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.linearThreshold]
+         * [descr:dxPolarChartValueAxis.linearThreshold]
          */
         linearThreshold?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.logarithmBase]
+         * [descr:dxPolarChartValueAxis.logarithmBase]
          */
         logarithmBase?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.maxValueMargin]
+         * [descr:dxPolarChartValueAxis.maxValueMargin]
          */
         maxValueMargin?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.minValueMargin]
+         * [descr:dxPolarChartValueAxis.minValueMargin]
          */
         minValueMargin?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.minVisualRangeLength]
+         * [descr:dxPolarChartValueAxis.minVisualRangeLength]
          */
         minVisualRangeLength?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.minorTickCount]
+         * [descr:dxPolarChartValueAxis.minorTickCount]
          */
         minorTickCount?: number;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.minorTickInterval]
+         * [descr:dxPolarChartValueAxis.minorTickInterval]
          */
         minorTickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.showZero]
+         * [descr:dxPolarChartValueAxis.showZero]
          */
         showZero?: boolean;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips]
+         * [descr:dxPolarChartValueAxis.strips]
          */
         strips?: Array<dxPolarChartValueAxisStrips>;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.tick]
+         * [descr:dxPolarChartValueAxis.tick]
          */
         tick?: dxPolarChartValueAxisTick;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.tickInterval]
+         * [descr:dxPolarChartValueAxis.tickInterval]
          */
         tickInterval?: number | any | 'day' | 'hour' | 'millisecond' | 'minute' | 'month' | 'quarter' | 'second' | 'week' | 'year';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.type]
+         * [descr:dxPolarChartValueAxis.type]
          */
         type?: 'continuous' | 'discrete' | 'logarithmic';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.valueMarginsEnabled]
+         * [descr:dxPolarChartValueAxis.valueMarginsEnabled]
          */
         valueMarginsEnabled?: boolean;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.valueType]
+         * [descr:dxPolarChartValueAxis.valueType]
          */
         valueType?: 'datetime' | 'numeric' | 'string';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.visualRange]
+         * [descr:dxPolarChartValueAxis.visualRange]
          */
         visualRange?: VizRange | Array<number | string | Date>;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.visualRangeUpdateMode]
+         * [descr:dxPolarChartValueAxis.visualRangeUpdateMode]
          */
         visualRangeUpdateMode?: 'auto' | 'keep' | 'reset';
         /**
-         * [descr:dxPolarChart.Options.valueAxis.wholeRange]
+         * [descr:dxPolarChartValueAxis.wholeRange]
          */
         wholeRange?: VizRange | Array<number | string | Date>;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.constantLines]
+     * [descr:dxPolarChartValueAxis.constantLines]
      */
     export interface dxPolarChartValueAxisConstantLines extends dxPolarChartCommonAxisSettingsConstantLineStyle {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines.displayBehindSeries]
+         * [descr:dxPolarChartValueAxisConstantLines.displayBehindSeries]
          */
         displayBehindSeries?: boolean;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines.extendAxis]
+         * [descr:dxPolarChartValueAxisConstantLines.extendAxis]
          */
         extendAxis?: boolean;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines.label]
+         * [descr:dxPolarChartValueAxisConstantLines.label]
          */
         label?: dxPolarChartValueAxisConstantLinesLabel;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines.value]
+         * [descr:dxPolarChartValueAxisConstantLines.value]
          */
         value?: number | Date | string;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.constantLines.label]
+     * [descr:dxPolarChartValueAxisConstantLines.label]
      */
     export interface dxPolarChartValueAxisConstantLinesLabel extends dxPolarChartCommonAxisSettingsConstantLineStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.constantLines.label.text]
+         * [descr:dxPolarChartValueAxisConstantLines.label.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.label]
+     * [descr:dxPolarChartValueAxis.label]
      */
     export interface dxPolarChartValueAxisLabel extends dxPolarChartCommonAxisSettingsLabel {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.label.customizeHint]
+         * [descr:dxPolarChartValueAxisLabel.customizeHint]
          */
         customizeHint?: ((axisValue: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.valueAxis.label.customizeText]
+         * [descr:dxPolarChartValueAxisLabel.customizeText]
          */
         customizeText?: ((axisValue: { value?: Date | number | string, valueText?: string }) => string);
         /**
-         * [descr:dxPolarChart.Options.valueAxis.label.format]
+         * [descr:dxPolarChartValueAxisLabel.format]
          */
         format?: DevExpress.ui.format;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.strips]
+     * [descr:dxPolarChartValueAxis.strips]
      */
     export interface dxPolarChartValueAxisStrips extends dxPolarChartCommonAxisSettingsStripStyle {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips.color]
+         * [descr:dxPolarChartValueAxisStrips.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips.endValue]
+         * [descr:dxPolarChartValueAxisStrips.endValue]
          */
         endValue?: number | Date | string;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips.label]
+         * [descr:dxPolarChartValueAxisStrips.label]
          */
         label?: dxPolarChartValueAxisStripsLabel;
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips.startValue]
+         * [descr:dxPolarChartValueAxisStrips.startValue]
          */
         startValue?: number | Date | string;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.strips.label]
+     * [descr:dxPolarChartValueAxisStrips.label]
      */
     export interface dxPolarChartValueAxisStripsLabel extends dxPolarChartCommonAxisSettingsStripStyleLabel {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.strips.label.text]
+         * [descr:dxPolarChartValueAxisStrips.label.text]
          */
         text?: string;
     }
     /**
-     * [descr:dxPolarChart.Options.valueAxis.tick]
+     * [descr:dxPolarChartValueAxis.tick]
      */
     export interface dxPolarChartValueAxisTick extends dxPolarChartCommonAxisSettingsTick {
         /**
-         * [descr:dxPolarChart.Options.valueAxis.tick.visible]
+         * [descr:dxPolarChartValueAxisTick.visible]
          */
         visible?: boolean;
     }
@@ -18564,193 +18564,193 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.argumentField]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.argumentField]
          */
         argumentField?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.barPadding]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.barPadding]
          */
         barPadding?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.barWidth]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.barWidth]
          */
         barWidth?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.border]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.border]
          */
         border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.closed]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.closed]
          */
         closed?: boolean;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.color]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.dashStyle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.dashStyle]
          */
         dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.hoverMode]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'excludePoints' | 'includePoints' | 'nearestPoint' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.hoverStyle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.hoverStyle]
          */
         hoverStyle?: { border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number }, color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', hatching?: { direction?: 'left' | 'none' | 'right', opacity?: number, step?: number, width?: number }, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.ignoreEmptyPoints]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.ignoreEmptyPoints]
          */
         ignoreEmptyPoints?: boolean;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.label]
          */
         label?: dxPolarChartSeriesTypesCommonPolarChartSeriesLabel;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.maxLabelCount]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.maxLabelCount]
          */
         maxLabelCount?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.minBarSize]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.minBarSize]
          */
         minBarSize?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.opacity]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.opacity]
          */
         opacity?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.point]
          */
         point?: dxPolarChartSeriesTypesCommonPolarChartSeriesPoint;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.selectionMode]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.selectionMode]
          */
         selectionMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'excludePoints' | 'includePoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.selectionStyle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.selectionStyle]
          */
         selectionStyle?: { border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number }, color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', hatching?: { direction?: 'left' | 'none' | 'right', opacity?: number, step?: number, width?: number }, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.showInLegend]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.showInLegend]
          */
         showInLegend?: boolean;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.stack]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.stack]
          */
         stack?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.tagField]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.tagField]
          */
         tagField?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.valueErrorBar]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.valueErrorBar]
          */
         valueErrorBar?: { color?: string, displayMode?: 'auto' | 'high' | 'low' | 'none', edgeLength?: number, highValueField?: string, lineWidth?: number, lowValueField?: string, opacity?: number, type?: 'fixed' | 'percent' | 'stdDeviation' | 'stdError' | 'variance', value?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.valueField]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.valueField]
          */
         valueField?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.visible]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.visible]
          */
         visible?: boolean;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.width]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.width]
          */
         width?: number;
     }
     /**
-     * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label]
+     * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.label]
      */
     export interface dxPolarChartSeriesTypesCommonPolarChartSeriesLabel {
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.argumentFormat]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.argumentFormat]
          */
         argumentFormat?: DevExpress.ui.format;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.backgroundColor]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.backgroundColor]
          */
         backgroundColor?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.border]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.border]
          */
         border?: { color?: string, dashStyle?: 'dash' | 'dot' | 'longDash' | 'solid', visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.connector]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.connector]
          */
         connector?: { color?: string, visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.customizeText]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.customizeText]
          */
         customizeText?: ((pointInfo: any) => string);
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.font]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.font]
          */
         font?: Font;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.format]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.format]
          */
         format?: DevExpress.ui.format;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.position]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.position]
          */
         position?: 'inside' | 'outside';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.rotationAngle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.rotationAngle]
          */
         rotationAngle?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.showForZeroValues]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.showForZeroValues]
          */
         showForZeroValues?: boolean;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.label.visible]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesLabel.visible]
          */
         visible?: boolean;
     }
     /**
-     * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point]
+     * [descr:dxPolarChartSeriesTypesCommonPolarChartSeries.point]
      */
     export interface dxPolarChartSeriesTypesCommonPolarChartSeriesPoint {
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.border]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.border]
          */
         border?: { color?: string, visible?: boolean, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.color]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.color]
          */
         color?: string;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.hoverMode]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.hoverMode]
          */
         hoverMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.hoverStyle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.hoverStyle]
          */
         hoverStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, size?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.image]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.image]
          */
         image?: string | { height?: number, url?: string, width?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.selectionMode]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.selectionMode]
          */
         selectionMode?: 'allArgumentPoints' | 'allSeriesPoints' | 'none' | 'onlyPoint';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.selectionStyle]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.selectionStyle]
          */
         selectionStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, size?: number };
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.size]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.size]
          */
         size?: number;
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.symbol]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.symbol]
          */
         symbol?: 'circle' | 'cross' | 'polygon' | 'square' | 'triangle';
         /**
-         * [descr:dxPolarChartSeriesTypes.CommonPolarChartSeries.point.visible]
+         * [descr:dxPolarChartSeriesTypesCommonPolarChartSeriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -18759,24 +18759,24 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartSeriesTypesAreapolarseries extends dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChartSeriesTypes.areapolarseries.hoverMode]
+         * [descr:dxPolarChartSeriesTypesAreapolarseries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxPolarChartSeriesTypes.areapolarseries.point]
+         * [descr:dxPolarChartSeriesTypesAreapolarseries.point]
          */
         point?: dxPolarChartSeriesTypesAreapolarseriesPoint;
         /**
-         * [descr:dxPolarChartSeriesTypes.areapolarseries.selectionMode]
+         * [descr:dxPolarChartSeriesTypesAreapolarseries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
     /**
-     * [descr:dxPolarChartSeriesTypes.areapolarseries.point]
+     * [descr:dxPolarChartSeriesTypesAreapolarseries.point]
      */
     export interface dxPolarChartSeriesTypesAreapolarseriesPoint extends dxPolarChartSeriesTypesCommonPolarChartSeriesPoint {
         /**
-         * [descr:dxPolarChartSeriesTypes.areapolarseries.point.visible]
+         * [descr:dxPolarChartSeriesTypesAreapolarseriesPoint.visible]
          */
         visible?: boolean;
     }
@@ -18785,11 +18785,11 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartSeriesTypesBarpolarseries extends dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChartSeriesTypes.barpolarseries.hoverMode]
+         * [descr:dxPolarChartSeriesTypesBarpolarseries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxPolarChartSeriesTypes.barpolarseries.selectionMode]
+         * [descr:dxPolarChartSeriesTypesBarpolarseries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
@@ -18798,11 +18798,11 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartSeriesTypesLinepolarseries extends dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChartSeriesTypes.linepolarseries.hoverMode]
+         * [descr:dxPolarChartSeriesTypesLinepolarseries.hoverMode]
          */
         hoverMode?: 'nearestPoint' | 'includePoints' | 'excludePoints' | 'none';
         /**
-         * [descr:dxPolarChartSeriesTypes.linepolarseries.selectionMode]
+         * [descr:dxPolarChartSeriesTypesLinepolarseries.selectionMode]
          */
         selectionMode?: 'includePoints' | 'excludePoints' | 'none';
     }
@@ -18811,24 +18811,24 @@ declare module DevExpress.viz {
      */
     export interface dxPolarChartSeriesTypesStackedbarpolarseries extends dxPolarChartSeriesTypesCommonPolarChartSeries {
         /**
-         * [descr:dxPolarChartSeriesTypes.stackedbarpolarseries.hoverMode]
+         * [descr:dxPolarChartSeriesTypesStackedbarpolarseries.hoverMode]
          */
         hoverMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
         /**
-         * [descr:dxPolarChartSeriesTypes.stackedbarpolarseries.label]
+         * [descr:dxPolarChartSeriesTypesStackedbarpolarseries.label]
          */
         label?: dxPolarChartSeriesTypesStackedbarpolarseriesLabel;
         /**
-         * [descr:dxPolarChartSeriesTypes.stackedbarpolarseries.selectionMode]
+         * [descr:dxPolarChartSeriesTypesStackedbarpolarseries.selectionMode]
          */
         selectionMode?: 'onlyPoint' | 'allSeriesPoints' | 'allArgumentPoints' | 'none';
     }
     /**
-     * [descr:dxPolarChartSeriesTypes.stackedbarpolarseries.label]
+     * [descr:dxPolarChartSeriesTypesStackedbarpolarseries.label]
      */
     export interface dxPolarChartSeriesTypesStackedbarpolarseriesLabel extends dxPolarChartSeriesTypesCommonPolarChartSeriesLabel {
         /**
-         * [descr:dxPolarChartSeriesTypes.stackedbarpolarseries.label.position]
+         * [descr:dxPolarChartSeriesTypesStackedbarpolarseriesLabel.position]
          */
         position?: 'inside' | 'outside';
     }
@@ -19006,23 +19006,23 @@ declare module DevExpress.viz {
      */
     export interface dxSankeyTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:dxSankey.Options.tooltip.customizeLinkTooltip]
+         * [descr:dxSankeyTooltip.customizeLinkTooltip]
          */
         customizeLinkTooltip?: ((info: { source?: string, target?: string, weight?: number }) => any);
         /**
-         * [descr:dxSankey.Options.tooltip.customizeNodeTooltip]
+         * [descr:dxSankeyTooltip.customizeNodeTooltip]
          */
         customizeNodeTooltip?: ((info: { title?: string, label?: string, weightIn?: number, weightOut?: number }) => any);
         /**
-         * [descr:dxSankey.Options.tooltip.enabled]
+         * [descr:dxSankeyTooltip.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:dxSankey.Options.tooltip.linkTooltipTemplate]
+         * [descr:dxSankeyTooltip.linkTooltipTemplate]
          */
         linkTooltipTemplate?: DevExpress.core.template | ((info: { source?: string, target?: string, weight?: number }, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:dxSankey.Options.tooltip.nodeTooltipTemplate]
+         * [descr:dxSankeyTooltip.nodeTooltipTemplate]
          */
         nodeTooltipTemplate?: DevExpress.core.template | ((info: { label?: string, weightIn?: number, weightOut?: number }, element: DevExpress.core.dxElement) => string | Element | JQuery);
     }
@@ -19335,11 +19335,11 @@ declare module DevExpress.viz {
      */
     export interface dxTreeMapTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:dxTreeMap.Options.tooltip.contentTemplate]
+         * [descr:dxTreeMapTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((info: { value?: number, valueText?: string, node?: dxTreeMapNode }, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:dxTreeMap.Options.tooltip.customizeTooltip]
+         * [descr:dxTreeMapTooltip.customizeTooltip]
          */
         customizeTooltip?: ((info: { value?: number, valueText?: string, node?: dxTreeMapNode }) => any);
     }
@@ -19565,39 +19565,39 @@ declare module DevExpress.viz {
      */
     export interface dxVectorMapLegends extends BaseLegend {
         /**
-         * [descr:dxVectorMap.Options.legends.customizeHint]
+         * [descr:dxVectorMapLegends.customizeHint]
          */
         customizeHint?: ((itemInfo: { start?: number, end?: number, index?: number, color?: string, size?: number }) => string);
         /**
-         * [descr:dxVectorMap.Options.legends.customizeItems]
+         * [descr:dxVectorMapLegends.customizeItems]
          */
         customizeItems?: ((items: Array<VectorMapLegendItem>) => Array<VectorMapLegendItem>);
         /**
-         * [descr:dxVectorMap.Options.legends.customizeText]
+         * [descr:dxVectorMapLegends.customizeText]
          */
         customizeText?: ((itemInfo: { start?: number, end?: number, index?: number, color?: string, size?: number }) => string);
         /**
-         * [descr:dxVectorMap.Options.legends.font]
+         * [descr:dxVectorMapLegends.font]
          */
         font?: Font;
         /**
-         * [descr:dxVectorMap.Options.legends.markerColor]
+         * [descr:dxVectorMapLegends.markerColor]
          */
         markerColor?: string;
         /**
-         * [descr:dxVectorMap.Options.legends.markerShape]
+         * [descr:dxVectorMapLegends.markerShape]
          */
         markerShape?: 'circle' | 'square';
         /**
-         * [descr:dxVectorMap.Options.legends.markerSize]
+         * [descr:dxVectorMapLegends.markerSize]
          */
         markerSize?: number;
         /**
-         * [descr:dxVectorMap.Options.legends.markerTemplate]
+         * [descr:dxVectorMapLegends.markerTemplate]
          */
         markerTemplate?: DevExpress.core.template | ((legendItem: VectorMapLegendItem, element: SVGGElement) => string | SVGElement | JQuery);
         /**
-         * [descr:dxVectorMap.Options.legends.source]
+         * [descr:dxVectorMapLegends.source]
          */
         source?: { grouping?: string, layer?: string };
     }
@@ -19606,11 +19606,11 @@ declare module DevExpress.viz {
      */
     export interface dxVectorMapTooltip extends BaseWidgetTooltip {
         /**
-         * [descr:dxVectorMap.Options.tooltip.contentTemplate]
+         * [descr:dxVectorMapTooltip.contentTemplate]
          */
         contentTemplate?: DevExpress.core.template | ((info: MapLayerElement, element: DevExpress.core.dxElement) => string | Element | JQuery);
         /**
-         * [descr:dxVectorMap.Options.tooltip.customizeTooltip]
+         * [descr:dxVectorMapTooltip.customizeTooltip]
          */
         customizeTooltip?: ((info: MapLayerElement) => any);
     }

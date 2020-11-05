@@ -34,7 +34,23 @@ export interface dxSankeyOptions extends BaseWidgetOptions<dxSankey> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    adaptiveLayout?: { height?: number, keepLabels?: boolean, width?: number };
+    adaptiveLayout?: {
+      /**
+      * @docid
+      * @default 80
+      */
+      height?: number,
+      /**
+      * @docid
+      * @default true
+      */
+      keepLabels?: boolean,
+      /**
+      * @docid
+      * @default 80
+      */
+      width?: number
+    };
     /**
      * @docid
      * @type Enums.VerticalAlignment|Array<Enums.VerticalAlignment>
@@ -64,21 +80,312 @@ export interface dxSankeyOptions extends BaseWidgetOptions<dxSankey> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    label?: { border?: { color?: string, visible?: boolean, width?: number }, customizeText?: ((itemInfo: dxSankeyNode) => string), font?: Font, horizontalOffset?: number, overlappingBehavior?: 'ellipsis' | 'hide' | 'none', shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, useNodeColors?: boolean, verticalOffset?: number, visible?: boolean };
+    label?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default false
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 2
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @type function(itemInfo)
+      * @type_function_param1 itemInfo: dxSankeyNode
+      * @type_function_return string
+      * @notUsedInTheme
+      */
+      customizeText?: ((itemInfo: dxSankeyNode) => string),
+      /**
+      * @docid
+      * @type Font
+      * @default '#FFFFFF' [prop](color)
+      */
+      font?: Font,
+      /**
+      * @docid
+      * @default 5
+      */
+      horizontalOffset?: number,
+      /**
+      * @docid
+      * @type Enums.SankeyLabelOverlappingBehavior
+      * @default 'ellipsis'
+      */
+      overlappingBehavior?: 'ellipsis' | 'hide' | 'none',
+      /**
+      * @docid
+      */
+      shadow?: {
+        /**
+        * @docid
+        * @default 1
+        */
+        blur?: number,
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 0
+        */
+        offsetX?: number,
+        /**
+        * @docid
+        * @default 1
+        */
+        offsetY?: number,
+        /**
+        * @docid
+        * @default 0
+        */
+        opacity?: number
+      },
+      /**
+      * @docid
+      * @default false
+      */
+      useNodeColors?: boolean,
+      /**
+      * @docid
+      * @default 0
+      */
+      verticalOffset?: number,
+      /**
+      * @docid
+      * @default true
+      */
+      visible?: boolean
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    link?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, colorMode?: 'none' | 'source' | 'target' | 'gradient', hoverStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, hatching?: { direction?: HatchingDirectionType, opacity?: number, step?: number, width?: number }, opacity?: number }, opacity?: number };
+    link?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default false
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 2
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @default '#000000'
+      */
+      color?: string,
+      /**
+      * @docid
+      * @type Enums.SankeyColorMode
+      * @default 'none'
+      */
+      colorMode?: 'none' | 'source' | 'target' | 'gradient',
+      /**
+      * @docid
+      */
+      hoverStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          visible?: boolean,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string,
+        /**
+        * @docid
+        */
+        hatching?: {
+          /**
+          * @docid
+          * @type Enums.HatchingDirection
+          * @default 'right'
+          */
+          direction?: HatchingDirectionType,
+          /**
+          * @docid
+          * @default 0.75
+          */
+          opacity?: number,
+          /**
+          * @docid
+          * @default 6
+          */
+          step?: number,
+          /**
+          * @docid
+          * @default 2
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default 0.5
+        */
+        opacity?: number
+      },
+      /**
+      * @docid
+      * @default 0.3
+      */
+      opacity?: number
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    node?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, hoverStyle?: { border?: { color?: string, visible?: boolean, width?: number }, color?: string, hatching?: { direction?: HatchingDirectionType, opacity?: number, step?: number, width?: number }, opacity?: number }, opacity?: number, padding?: number, width?: number };
+    node?: {
+      /**
+      * @docid
+      */
+      border?: {
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default false
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @default undefined
+      */
+      color?: string,
+      /**
+      * @docid
+      */
+      hoverStyle?: {
+        /**
+        * @docid
+        */
+        border?: {
+          /**
+          * @docid
+          * @default undefined
+          */
+          color?: string,
+          /**
+          * @docid
+          * @default undefined
+          */
+          visible?: boolean,
+          /**
+          * @docid
+          * @default undefined
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        color?: string,
+        /**
+        * @docid
+        */
+        hatching?: {
+          /**
+          * @docid
+          * @type Enums.HatchingDirection
+          * @default 'right'
+          */
+          direction?: HatchingDirectionType,
+          /**
+          * @docid
+          * @default 0.75
+          */
+          opacity?: number,
+          /**
+          * @docid
+          * @default 6
+          */
+          step?: number,
+          /**
+          * @docid
+          * @default 2
+          */
+          width?: number
+        },
+        /**
+        * @docid
+        * @default undefined
+        */
+        opacity?: number
+      },
+      /**
+      * @docid
+      * @default 1
+      */
+      opacity?: number,
+      /**
+      * @docid
+      * @default 30
+      */
+      padding?: number,
+      /**
+      * @docid
+      * @default 15
+      */
+      width?: number
+    };
     /**
      * @docid
      * @extends Action
@@ -186,7 +493,7 @@ export interface dxSankeyOptions extends BaseWidgetOptions<dxSankey> {
 }
 export interface dxSankeyTooltip extends BaseWidgetTooltip {
     /**
-     * @docid dxSankeyOptions.tooltip.customizeLinkTooltip
+     * @docid
      * @default undefined
      * @type function(info)
      * @type_function_param1 info:object
@@ -199,7 +506,7 @@ export interface dxSankeyTooltip extends BaseWidgetTooltip {
      */
     customizeLinkTooltip?: ((info: { source?: string, target?: string, weight?: number }) => any);
     /**
-     * @docid dxSankeyOptions.tooltip.customizeNodeTooltip
+     * @docid
      * @default undefined
      * @type function(info)
      * @type_function_param1 info:object
@@ -213,7 +520,7 @@ export interface dxSankeyTooltip extends BaseWidgetTooltip {
      */
     customizeNodeTooltip?: ((info: { title?: string, label?: string, weightIn?: number, weightOut?: number }) => any);
     /**
-     * @docid dxSankeyOptions.tooltip.enabled
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -221,7 +528,7 @@ export interface dxSankeyTooltip extends BaseWidgetTooltip {
      */
     enabled?: boolean;
     /**
-     * @docid dxSankeyOptions.tooltip.linkTooltipTemplate
+     * @docid
      * @type template|function(info, element)
      * @type_function_param1 info:object
      * @type_function_param1_field1 source:string
@@ -235,7 +542,7 @@ export interface dxSankeyTooltip extends BaseWidgetTooltip {
      */
     linkTooltipTemplate?: template | ((info: { source?: string, target?: string, weight?: number }, element: dxElement) => string | Element | JQuery);
     /**
-     * @docid dxSankeyOptions.tooltip.nodeTooltipTemplate
+     * @docid
      * @type template|function(info, element)
      * @type_function_param1 info:object
      * @type_function_param1_field1 label:string
@@ -286,6 +593,11 @@ export default class dxSankey extends BaseWidget {
     hideTooltip(): void;
 }
 
+/**
+* @docid
+* @publicName connection
+* @type object
+*/
 export interface dxSankeyConnectionInfoObject {
     /**
      * @docid
@@ -310,6 +622,10 @@ export interface dxSankeyConnectionInfoObject {
     weight?: number;
 }
 
+/**
+* @docid
+* @publicName Link
+*/
 export interface dxSankeyLink {
     /**
      * @docid
@@ -350,6 +666,10 @@ export interface dxSankeyLink {
     showTooltip(): void;
 }
 
+/**
+* @docid
+* @publicName Node
+*/
 export interface dxSankeyNode {
     /**
      * @docid

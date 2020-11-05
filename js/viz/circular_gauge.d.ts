@@ -14,7 +14,20 @@ export interface dxCircularGaugeOptions extends BaseGaugeOptions<dxCircularGauge
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    geometry?: { endAngle?: number, startAngle?: number };
+    geometry?: {
+      /**
+       * @docid
+       * @type number
+       * @default 315
+       */
+      endAngle?: number,
+      /**
+       * @docid
+       * @type number
+       * @default 225
+       */
+      startAngle?: number
+    };
     /**
      * @docid
      * @type object
@@ -48,7 +61,7 @@ export interface dxCircularGaugeOptions extends BaseGaugeOptions<dxCircularGauge
 }
 export interface dxCircularGaugeRangeContainer extends BaseGaugeRangeContainer {
     /**
-     * @docid dxCircularGaugeOptions.rangeContainer.orientation
+     * @docid
      * @type Enums.CircularGaugeElementOrientation
      * @default 'outside'
      * @prevFileNamespace DevExpress.viz
@@ -56,7 +69,7 @@ export interface dxCircularGaugeRangeContainer extends BaseGaugeRangeContainer {
      */
     orientation?: 'center' | 'inside' | 'outside';
     /**
-     * @docid dxCircularGaugeOptions.rangeContainer.width
+     * @docid
      * @type number
      * @default 5
      * @prevFileNamespace DevExpress.viz
@@ -66,14 +79,14 @@ export interface dxCircularGaugeRangeContainer extends BaseGaugeRangeContainer {
 }
 export interface dxCircularGaugeScale extends BaseGaugeScale {
     /**
-     * @docid dxCircularGaugeOptions.scale.label
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     label?: dxCircularGaugeScaleLabel;
     /**
-     * @docid dxCircularGaugeOptions.scale.orientation
+     * @docid
      * @type Enums.CircularGaugeElementOrientation
      * @default 'outside'
      * @prevFileNamespace DevExpress.viz
@@ -83,7 +96,7 @@ export interface dxCircularGaugeScale extends BaseGaugeScale {
 }
 export interface dxCircularGaugeScaleLabel extends BaseGaugeScaleLabel {
     /**
-     * @docid dxCircularGaugeOptions.scale.label.hideFirstOrLast
+     * @docid
      * @type Enums.GaugeOverlappingBehavior
      * @default 'last'
      * @prevFileNamespace DevExpress.viz
@@ -91,7 +104,7 @@ export interface dxCircularGaugeScaleLabel extends BaseGaugeScaleLabel {
      */
     hideFirstOrLast?: 'first' | 'last';
     /**
-     * @docid dxCircularGaugeOptions.scale.label.indentFromTick
+     * @docid
      * @type number
      * @default 10
      * @prevFileNamespace DevExpress.viz

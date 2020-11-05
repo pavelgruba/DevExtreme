@@ -14,7 +14,14 @@ export interface dxLinearGaugeOptions extends BaseGaugeOptions<dxLinearGauge> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    geometry?: { orientation?: 'horizontal' | 'vertical' };
+    geometry?: {
+      /**
+       * @docid
+       * @type Enums.Orientation
+       * @default 'horizontal'
+       */
+      orientation?: 'horizontal' | 'vertical'
+    };
     /**
      * @docid
      * @type object
@@ -48,7 +55,7 @@ export interface dxLinearGaugeOptions extends BaseGaugeOptions<dxLinearGauge> {
 }
 export interface dxLinearGaugeRangeContainer extends BaseGaugeRangeContainer {
     /**
-     * @docid dxLinearGaugeOptions.rangeContainer.horizontalOrientation
+     * @docid
      * @type Enums.HorizontalAlignment
      * @default 'right'
      * @prevFileNamespace DevExpress.viz
@@ -56,7 +63,7 @@ export interface dxLinearGaugeRangeContainer extends BaseGaugeRangeContainer {
      */
     horizontalOrientation?: 'center' | 'left' | 'right';
     /**
-     * @docid dxLinearGaugeOptions.rangeContainer.verticalOrientation
+     * @docid
      * @type Enums.VerticalAlignment
      * @default 'bottom'
      * @prevFileNamespace DevExpress.viz
@@ -64,16 +71,29 @@ export interface dxLinearGaugeRangeContainer extends BaseGaugeRangeContainer {
      */
     verticalOrientation?: 'bottom' | 'center' | 'top';
     /**
-     * @docid dxLinearGaugeOptions.rangeContainer.width
+     * @docid
      * @type object|number
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    width?: { end?: number, start?: number } | number;
+    width?: {
+      /**
+       * @docid
+       * @type number
+       * @default 5
+       */
+      start?: number,
+      /**
+       * @docid
+       * @type number
+       * @default 5
+       */
+      end?: number
+    } | number;
 }
 export interface dxLinearGaugeScale extends BaseGaugeScale {
     /**
-     * @docid dxLinearGaugeOptions.scale.horizontalOrientation
+     * @docid
      * @type Enums.HorizontalAlignment
      * @default 'right'
      * @prevFileNamespace DevExpress.viz
@@ -81,14 +101,14 @@ export interface dxLinearGaugeScale extends BaseGaugeScale {
      */
     horizontalOrientation?: 'center' | 'left' | 'right';
     /**
-     * @docid dxLinearGaugeOptions.scale.label
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     label?: dxLinearGaugeScaleLabel;
     /**
-     * @docid dxLinearGaugeOptions.scale.scaleDivisionFactor
+     * @docid
      * @type number
      * @default 25
      * @prevFileNamespace DevExpress.viz
@@ -96,7 +116,7 @@ export interface dxLinearGaugeScale extends BaseGaugeScale {
      */
     scaleDivisionFactor?: number;
     /**
-     * @docid dxLinearGaugeOptions.scale.verticalOrientation
+     * @docid
      * @type Enums.VerticalAlignment
      * @default 'bottom'
      * @prevFileNamespace DevExpress.viz
@@ -106,7 +126,7 @@ export interface dxLinearGaugeScale extends BaseGaugeScale {
 }
 export interface dxLinearGaugeScaleLabel extends BaseGaugeScaleLabel {
     /**
-     * @docid dxLinearGaugeOptions.scale.label.indentFromTick
+     * @docid
      * @type number
      * @default -10
      * @prevFileNamespace DevExpress.viz

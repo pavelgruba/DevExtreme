@@ -113,7 +113,7 @@ export interface BaseGaugeOptions<T = BaseGauge> extends BaseWidgetOptions<T> {
 }
 export interface BaseGaugeAnimation {
     /**
-     * @docid BaseGaugeOptions.animation.duration
+     * @docid
      * @type number
      * @default 1000
      * @prevFileNamespace DevExpress.viz
@@ -121,7 +121,7 @@ export interface BaseGaugeAnimation {
      */
     duration?: number;
     /**
-     * @docid BaseGaugeOptions.animation.easing
+     * @docid
      * @type Enums.VizAnimationEasing
      * @default 'easeOutCubic'
      * @prevFileNamespace DevExpress.viz
@@ -129,7 +129,7 @@ export interface BaseGaugeAnimation {
      */
     easing?: 'easeOutCubic' | 'linear';
     /**
-     * @docid BaseGaugeOptions.animation.enabled
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -138,10 +138,16 @@ export interface BaseGaugeAnimation {
     enabled?: boolean;
 }
 export interface BaseGaugeLoadingIndicator extends BaseWidgetLoadingIndicator {
+  /**
+   * @docid
+   * @type boolean
+   * @hidden
+   */
+  enabled?: boolean;
 }
 export interface BaseGaugeRangeContainer {
     /**
-     * @docid BaseGaugeOptions.rangeContainer.backgroundColor
+     * @docid
      * @type string
      * @default '#808080'
      * @prevFileNamespace DevExpress.viz
@@ -149,7 +155,7 @@ export interface BaseGaugeRangeContainer {
      */
     backgroundColor?: string;
     /**
-     * @docid BaseGaugeOptions.rangeContainer.offset
+     * @docid
      * @type number
      * @default 0
      * @prevFileNamespace DevExpress.viz
@@ -157,14 +163,14 @@ export interface BaseGaugeRangeContainer {
      */
     offset?: number;
     /**
-     * @docid BaseGaugeOptions.rangeContainer.palette
+     * @docid
      * @extends CommonVizPalette
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     palette?: Array<string> | PaletteType;
     /**
-     * @docid BaseGaugeOptions.rangeContainer.paletteExtensionMode
+     * @docid
      * @type Enums.VizPaletteExtensionMode
      * @default 'blend'
      * @prevFileNamespace DevExpress.viz
@@ -172,18 +178,31 @@ export interface BaseGaugeRangeContainer {
      */
     paletteExtensionMode?: PaletteExtensionModeType;
     /**
-     * @docid BaseGaugeOptions.rangeContainer.ranges
+     * @docid
      * @type Array<Object>
      * @default []
      * @notUsedInTheme
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    ranges?: Array<{ color?: string, endValue?: number, startValue?: number }>;
+    ranges?: Array<{
+      /**
+       * @docid
+       */
+      color?: string,
+      /**
+       * @docid
+       */
+      endValue?: number,
+      /**
+       * @docid
+       */
+      startValue?: number
+    }>;
 }
 export interface BaseGaugeScale {
     /**
-     * @docid BaseGaugeOptions.scale.allowDecimals
+     * @docid
      * @type boolean
      * @default undefined
      * @prevFileNamespace DevExpress.viz
@@ -191,7 +210,7 @@ export interface BaseGaugeScale {
      */
     allowDecimals?: boolean;
     /**
-     * @docid BaseGaugeOptions.scale.customMinorTicks
+     * @docid
      * @type Array<number>
      * @default undefined
      * @notUsedInTheme
@@ -200,7 +219,7 @@ export interface BaseGaugeScale {
      */
     customMinorTicks?: Array<number>;
     /**
-     * @docid BaseGaugeOptions.scale.customTicks
+     * @docid
      * @type Array<number>
      * @default undefined
      * @notUsedInTheme
@@ -209,7 +228,7 @@ export interface BaseGaugeScale {
      */
     customTicks?: Array<number>;
     /**
-     * @docid BaseGaugeOptions.scale.endValue
+     * @docid
      * @type number
      * @default 100
      * @notUsedInTheme
@@ -218,21 +237,52 @@ export interface BaseGaugeScale {
      */
     endValue?: number;
     /**
-     * @docid BaseGaugeOptions.scale.label
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     label?: BaseGaugeScaleLabel;
     /**
-     * @docid BaseGaugeOptions.scale.minorTick
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    minorTick?: { color?: string, length?: number, opacity?: number, visible?: boolean, width?: number };
+    minorTick?: {
+      /**
+       * @docid
+       * @type string
+       * @default '#FFFFFF'
+       */
+      color?: string,
+      /**
+       * @docid
+       * @type number
+       * @default 3
+       */
+      length?: number,
+      /**
+       * @docid
+       * @type number
+       * @default 1
+       */
+      opacity?: number,
+      /**
+       * @docid
+       * @type boolean
+       * @default false
+       */
+      visible?: boolean,
+      /**
+       * @docid
+       * @type number
+       * @default 1
+       */
+      width?: number
+    };
     /**
-     * @docid BaseGaugeOptions.scale.minorTickInterval
+     * @docid
      * @type number
      * @default undefined
      * @prevFileNamespace DevExpress.viz
@@ -240,7 +290,7 @@ export interface BaseGaugeScale {
      */
     minorTickInterval?: number;
     /**
-     * @docid BaseGaugeOptions.scale.scaleDivisionFactor
+     * @docid
      * @type number
      * @default 17
      * @prevFileNamespace DevExpress.viz
@@ -248,7 +298,7 @@ export interface BaseGaugeScale {
      */
     scaleDivisionFactor?: number;
     /**
-     * @docid BaseGaugeOptions.scale.startValue
+     * @docid
      * @type number
      * @default 0
      * @notUsedInTheme
@@ -257,14 +307,45 @@ export interface BaseGaugeScale {
      */
     startValue?: number;
     /**
-     * @docid BaseGaugeOptions.scale.tick
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    tick?: { color?: string, length?: number, opacity?: number, visible?: boolean, width?: number };
+    tick?: {
+      /**
+       * @docid
+       * @type string
+       * @default '#FFFFFF'
+       */
+      color?: string,
+      /**
+       * @docid
+       * @type number
+       * @default 5
+       */
+      length?: number,
+      /**
+       * @docid
+       * @type number
+       * @default 1
+       */
+      opacity?: number,
+      /**
+       * @docid
+       * @type boolean
+       * @default true
+       */
+      visible?: boolean,
+      /**
+       * @docid
+       * @type number
+       * @default 2
+       */
+      width?: number
+    };
     /**
-     * @docid BaseGaugeOptions.scale.tickInterval
+     * @docid
      * @type number
      * @default undefined
      * @prevFileNamespace DevExpress.viz
@@ -274,7 +355,7 @@ export interface BaseGaugeScale {
 }
 export interface BaseGaugeScaleLabel {
     /**
-     * @docid BaseGaugeOptions.scale.label.customizeText
+     * @docid
      * @type function(scaleValue)
      * @type_function_param1 scaleValue:object
      * @type_function_param1_field1 value:Number
@@ -286,7 +367,7 @@ export interface BaseGaugeScaleLabel {
      */
     customizeText?: ((scaleValue: { value?: number, valueText?: string }) => string);
     /**
-     * @docid BaseGaugeOptions.scale.label.font
+     * @docid
      * @type Font
      * @default '#767676' [prop](color)
      * @prevFileNamespace DevExpress.viz
@@ -294,14 +375,14 @@ export interface BaseGaugeScaleLabel {
      */
     font?: Font;
     /**
-     * @docid BaseGaugeOptions.scale.label.format
+     * @docid
      * @extends CommonVizFormat
      * @prevFileNamespace DevExpress.viz
      * @public
      */
     format?: format;
     /**
-     * @docid BaseGaugeOptions.scale.label.overlappingBehavior
+     * @docid
      * @type Enums.ScaleLabelOverlappingBehavior
      * @default 'hide'
      * @prevFileNamespace DevExpress.viz
@@ -309,7 +390,7 @@ export interface BaseGaugeScaleLabel {
      */
     overlappingBehavior?: 'hide' | 'none';
     /**
-     * @docid BaseGaugeOptions.scale.label.useRangeColors
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -317,7 +398,7 @@ export interface BaseGaugeScaleLabel {
      */
     useRangeColors?: boolean;
     /**
-     * @docid BaseGaugeOptions.scale.label.visible
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.viz
@@ -327,7 +408,7 @@ export interface BaseGaugeScaleLabel {
 }
 export interface BaseGaugeTooltip extends BaseWidgetTooltip {
     /**
-     * @docid BaseGaugeOptions.tooltip.contentTemplate
+     * @docid
      * @type template|function(scaleValue, element)
      * @type_function_param1 scaleValue:object
      * @type_function_param1_field1 value:Number
@@ -340,7 +421,7 @@ export interface BaseGaugeTooltip extends BaseWidgetTooltip {
      */
     contentTemplate?: template | ((scaleValue: { value?: number, valueText?: string }, element: dxElement) => string | Element | JQuery);
     /**
-     * @docid BaseGaugeOptions.tooltip.customizeTooltip
+     * @docid
      * @default undefined
      * @type function(scaleValue)
      * @type_function_param1 scaleValue:object
@@ -352,7 +433,7 @@ export interface BaseGaugeTooltip extends BaseWidgetTooltip {
      */
     customizeTooltip?: ((scaleValue: { value?: number, valueText?: string }) => any);
     /**
-     * @docid BaseGaugeOptions.tooltip.interactive
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.viz
@@ -404,6 +485,12 @@ export class BaseGauge extends BaseWidget {
     value(value: number): void;
 }
 
+/**
+* @docid
+* @section CommonIndicators
+* @type object
+* @hidden
+*/
 export interface CommonIndicator {
     /**
      * @docid
@@ -543,7 +630,39 @@ export interface CommonIndicator {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    text?: { customizeText?: ((indicatedValue: { value?: number, valueText?: string }) => string), font?: Font, format?: format, indent?: number };
+    text?: {
+      /**
+      * @docid
+      * @type function(indicatedValue)
+      * @type_function_param1 indicatedValue:object
+      * @type_function_param1_field1 value:Number
+      * @type_function_param1_field2 valueText:string
+      * @type_function_return string
+      * @notUsedInTheme
+      * @default undefined
+      * @propertyOf circularRangeBar,linearRangeBar,circularTextCloud,linearTextCloud
+      */
+      customizeText?: ((indicatedValue: { value?: number, valueText?: string }) => string),
+      /**
+      * @docid
+      * @propertyOf circularRangeBar,linearRangeBar,circularTextCloud,linearTextCloud
+      * @type Font
+      * @default 14 [prop](size)
+      */
+      font?: Font,
+      /**
+      * @docid
+      * @extends CommonVizFormat
+      * @propertyOf circularRangeBar,linearRangeBar,circularTextCloud,linearTextCloud
+      */
+      format?: format,
+      /**
+      * @docid
+      * @default 0
+      * @propertyOf circularRangeBar,linearRangeBar
+      */
+      indent?: number
+    };
     /**
      * @docid
      * @type Enums.VerticalEdge
@@ -565,6 +684,12 @@ export interface CommonIndicator {
     width?: number;
 }
 export type GaugeIndicatorType = 'circle' | 'rangeBar' | 'rectangle' | 'rectangleNeedle' | 'rhombus' | 'textCloud' | 'triangleMarker' | 'triangleNeedle' | 'twoColorNeedle';
+
+/**
+ * @docid
+ * @inherits CommonIndicator
+ * @hidden
+ */
 export interface GaugeIndicator extends CommonIndicator {
     /**
      * @docid

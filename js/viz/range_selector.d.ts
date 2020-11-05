@@ -42,21 +42,226 @@ export interface dxRangeSelectorOptions extends BaseWidgetOptions<dxRangeSelecto
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    background?: { color?: string, image?: { location?: 'center' | 'centerBottom' | 'centerTop' | 'full' | 'leftBottom' | 'leftCenter' | 'leftTop' | 'rightBottom' | 'rightCenter' | 'rightTop', url?: string }, visible?: boolean };
+    background?: {
+      /**
+      * @docid
+      * @default '#C0BAE1'
+      */
+      color?: string,
+      /**
+      * @docid
+      */
+      image?: {
+        /**
+        * @docid
+        * @type Enums.BackgroundImageLocation
+        * @default 'full'
+        */
+        location?: 'center' | 'centerBottom' | 'centerTop' | 'full' | 'leftBottom' | 'leftCenter' | 'leftTop' | 'rightBottom' | 'rightCenter' | 'rightTop',
+        /**
+        * @docid
+        * @default undefined
+        */
+        url?: string
+      },
+      /**
+      * @docid
+      * @default true
+      */
+      visible?: boolean
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    behavior?: { allowSlidersSwap?: boolean, animationEnabled?: boolean, callValueChanged?: 'onMoving' | 'onMovingComplete', manualRangeSelectionEnabled?: boolean, moveSelectedRangeByClick?: boolean, snapToTicks?: boolean };
+    behavior?: {
+      /**
+      * @docid
+      * @default true
+      */
+      allowSlidersSwap?: boolean,
+      /**
+      * @docid
+      * @default true
+      */
+      animationEnabled?: boolean,
+      /**
+      * @docid
+      * @type Enums.ValueChangedCallMode
+      * @default 'onMovingComplete'
+      */
+      callValueChanged?: 'onMoving' | 'onMovingComplete',
+      /**
+      * @docid
+      * @default true
+      */
+      manualRangeSelectionEnabled?: boolean,
+      /**
+      * @docid
+      * @default true
+      */
+      moveSelectedRangeByClick?: boolean,
+      /**
+      * @docid
+      * @default true
+      */
+      snapToTicks?: boolean
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    chart?: { barGroupPadding?: number, barGroupWidth?: number, bottomIndent?: number, commonSeriesSettings?: dxChartCommonSeriesSettings, dataPrepareSettings?: { checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | ((a: { arg?: Date | number | string, val?: Date | number | string }, b: { arg?: Date | number | string, val?: Date | number | string }) => number) }, maxBubbleSize?: number, minBubbleSize?: number, negativesAsZeroes?: boolean, palette?: Array<string> | PaletteType, paletteExtensionMode?: PaletteExtensionModeType, series?: ChartSeries | Array<ChartSeries>, seriesTemplate?: { customizeSeries?: ((seriesName: any) => ChartSeries), nameField?: string }, topIndent?: number, valueAxis?: { inverted?: boolean, logarithmBase?: number, max?: number, min?: number, type?: 'continuous' | 'logarithmic', valueType?: 'datetime' | 'numeric' | 'string' } };
+    chart?: {
+      /**
+      * @docid
+      * @default 0.3
+      * @propertyOf dxChartSeriesTypes.BarSeries,dxChartSeriesTypes.StackedBarSeries,dxChartSeriesTypes.FullStackedBarSeries,dxChartSeriesTypes.RangeBarSeries
+      */
+      barGroupPadding?: number,
+      /**
+      * @docid
+      * @default undefined
+      * @propertyOf dxChartSeriesTypes.BarSeries,dxChartSeriesTypes.StackedBarSeries,dxChartSeriesTypes.FullStackedBarSeries,dxChartSeriesTypes.RangeBarSeries
+      */
+      barGroupWidth?: number,
+      /**
+      * @docid
+      * @default 0
+      */
+      bottomIndent?: number,
+      /**
+      * @docid
+      * @type dxChartOptions.commonSeriesSettings
+      */
+      commonSeriesSettings?: dxChartCommonSeriesSettings,
+      /**
+      * @docid
+      */
+      dataPrepareSettings?: {
+        /**
+        * @docid
+        * @default false
+        */
+        checkTypeForAllData?: boolean,
+        /**
+        * @docid
+        * @default true
+        */
+        convertToAxisDataType?: boolean,
+        /**
+        * @docid
+        * @type Boolean|function(a,b)
+        * @type_function_param1 a:object
+        * @type_function_param1_field1 arg:Date|Number|string
+        * @type_function_param1_field2 val:Date|Number|string
+        * @type_function_param2 b:object
+        * @type_function_param2_field1 arg:Date|Number|string
+        * @type_function_param2_field2 val:Date|Number|string
+        * @type_function_return Number
+        * @default true
+        */
+        sortingMethod?: boolean | ((a: { arg?: Date | number | string, val?: Date | number | string }, b: { arg?: Date | number | string, val?: Date | number | string }) => number)
+      },
+      /**
+      * @docid
+      * @default 0.2
+      * @propertyOf dxChartSeriesTypes.BubbleSeries
+      */
+      maxBubbleSize?: number,
+      /**
+      * @docid
+      * @default 12
+      * @propertyOf dxChartSeriesTypes.BubbleSeries
+      */
+      minBubbleSize?: number,
+      /**
+      * @docid
+      * @default false
+      */
+      negativesAsZeroes?: boolean,
+      /**
+      * @docid
+      * @extends CommonVizPalette
+      */
+      palette?: Array<string> | PaletteType,
+      /**
+      * @docid
+      * @type Enums.VizPaletteExtensionMode
+      * @default 'blend'
+      */
+      paletteExtensionMode?: PaletteExtensionModeType,
+      /**
+      * @docid
+      * @type ChartSeries|Array<ChartSeries>
+      * @default undefined
+      * @notUsedInTheme
+      */
+      series?: ChartSeries | Array<ChartSeries>,
+      /**
+      * @docid
+      * @default undefined
+      */
+      seriesTemplate?: {
+        /**
+        * @docid
+        * @type function(seriesName)
+        * @type_function_param1 seriesName:any
+        * @type_function_return ChartSeries
+        */
+        customizeSeries?: ((seriesName: any) => ChartSeries),
+        /**
+        * @docid
+        * @default 'series'
+        */
+        nameField?: string
+      },
+      /**
+      * @docid
+      * @default 0.1
+      */
+      topIndent?: number,
+      /**
+      * @docid
+      */
+      valueAxis?: {
+        /**
+        * @docid
+        * @default false
+        */
+        inverted?: boolean,
+        /**
+        * @docid
+        * @default 10
+        */
+        logarithmBase?: number,
+        /**
+        * @docid
+        * @default undefined
+        */
+        max?: number,
+        /**
+        * @docid
+        * @default undefined
+        */
+        min?: number,
+        /**
+        * @docid
+        * @type Enums.RangeSelectorChartAxisScaleType
+        * @default undefined
+        */
+        type?: 'continuous' | 'logarithmic',
+        /**
+        * @docid
+        * @type Enums.ChartDataType
+        * @default undefined
+        */
+        valueType?: 'datetime' | 'numeric' | 'string'
+      }
+    };
     /**
      * @docid
      * @type string
@@ -86,7 +291,20 @@ export interface dxRangeSelectorOptions extends BaseWidgetOptions<dxRangeSelecto
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    indent?: { left?: number, right?: number };
+    indent?: {
+      /**
+      * @docid
+      * @default undefined
+      * @notUsedInTheme
+      */
+      left?: number,
+      /**
+      * @docid
+      * @default undefined
+      * @notUsedInTheme
+      */
+      right?: number
+    };
     /**
      * @docid
      * @extends Action
@@ -108,7 +326,295 @@ export interface dxRangeSelectorOptions extends BaseWidgetOptions<dxRangeSelecto
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    scale?: { aggregateByCategory?: boolean, aggregationGroupWidth?: number, aggregationInterval?: number | any | TimeIntervalType, allowDecimals?: boolean, breakStyle?: { color?: string, line?: 'straight' | 'waved', width?: number }, breaks?: Array<ScaleBreak>, categories?: Array<number | string | Date>, endOnTick?: boolean, endValue?: number | Date | string, holidays?: Array<Date | string> | Array<number>, label?: { customizeText?: ((scaleValue: { value?: Date | number | string, valueText?: string }) => string), font?: Font, format?: format, overlappingBehavior?: 'hide' | 'none', topIndent?: number, visible?: boolean }, linearThreshold?: number, logarithmBase?: number, marker?: { label?: { customizeText?: ((markerValue: { value?: Date | number, valueText?: string }) => string), format?: format }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }, maxRange?: number | any | TimeIntervalType, minRange?: number | any | TimeIntervalType, minorTick?: { color?: string, opacity?: number, visible?: boolean, width?: number }, minorTickCount?: number, minorTickInterval?: number | any | TimeIntervalType, placeholderHeight?: number, showCustomBoundaryTicks?: boolean, singleWorkdays?: Array<Date | string> | Array<number>, startValue?: number | Date | string, tick?: { color?: string, opacity?: number, width?: number }, tickInterval?: number | any | TimeIntervalType, type?: 'continuous' | 'discrete' | 'logarithmic' | 'semidiscrete', valueType?: 'datetime' | 'numeric' | 'string', workWeek?: Array<number>, workdaysOnly?: boolean };
+    scale?: {
+      /**
+      * @docid
+      * @default false
+      */
+      aggregateByCategory?: boolean,
+      /**
+      * @docid
+      * @default undefined
+      */
+      aggregationGroupWidth?: number,
+      /**
+      * @docid
+      * @inherits VizTimeInterval
+      */
+      aggregationInterval?: number | any | TimeIntervalType,
+      /**
+      * @docid
+      * @default undefined
+      */
+      allowDecimals?: boolean,
+      /**
+      * @docid
+      */
+      breakStyle?: {
+        /**
+        * @docid
+        * @default "#ababab"
+        */
+        color?: string,
+        /**
+        * @docid
+        * @type Enums.ScaleBreakLineStyle
+        * @default "waved"
+        */
+        line?: 'straight' | 'waved',
+        /**
+        * @docid
+        * @default 5
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @inherits ScaleBreak
+      * @default undefined
+      * @notUsedInTheme
+      */
+      breaks?: Array<ScaleBreak>,
+      /**
+      * @docid
+      * @type Array<number,string,Date>
+      */
+      categories?: Array<number | string | Date>,
+      /**
+      * @docid
+      * @default false
+      */
+      endOnTick?: boolean,
+      /**
+      * @docid
+      * @default undefined
+      * @notUsedInTheme
+      */
+      endValue?: number | Date | string,
+      /**
+      * @docid
+      * @type Array<Date, string>| Array<number>
+      * @default undefined
+      */
+      holidays?: Array<Date | string> | Array<number>,
+      /**
+      * @docid
+      */
+      label?: {
+        /**
+        * @docid
+        * @type function(scaleValue)
+        * @type_function_param1 scaleValue:object
+        * @type_function_param1_field1 value:Date|Number|string
+        * @type_function_param1_field2 valueText:string
+        * @type_function_return string
+        * @notUsedInTheme
+        */
+        customizeText?: ((scaleValue: { value?: Date | number | string, valueText?: string }) => string),
+        /**
+        * @docid
+        * @type Font
+        * @default '#767676' [prop](color)
+        * @default 11 [prop](size)
+        */
+        font?: Font,
+        /**
+        * @docid
+        * @extends CommonVizFormat
+        */
+        format?: format,
+        /**
+        * @docid
+        * @type Enums.ScaleLabelOverlappingBehavior
+        * @default "hide"
+        */
+        overlappingBehavior?: 'hide' | 'none',
+        /**
+        * @docid
+        * @default 7
+        */
+        topIndent?: number,
+        /**
+       * @docid
+       * @default true
+       */
+        visible?: boolean
+      },
+      /**
+      * @docid
+      * @default 0
+      */
+      linearThreshold?: number,
+      /**
+      * @docid
+      * @default 10
+      */
+      logarithmBase?: number,
+      /**
+      * @docid
+      */
+      marker?: {
+        /**
+        * @docid
+        */
+        label?: {
+          /**
+          * @docid
+          * @type function(markerValue)
+          * @type_function_param1 markerValue:object
+          * @type_function_param1_field1 value:Date|Number
+          * @type_function_param1_field2 valueText:string
+          * @type_function_return string
+          * @notUsedInTheme
+          */
+          customizeText?: ((markerValue: { value?: Date | number, valueText?: string }) => string),
+          /**
+          * @docid
+          * @extends CommonVizFormat
+          */
+          format?: format
+        },
+        /**
+        * @docid
+        * @default 33
+        */
+        separatorHeight?: number,
+        /**
+        * @docid
+        * @default 7
+        */
+        textLeftIndent?: number,
+        /**
+        * @docid
+        * @default 11
+        */
+        textTopIndent?: number,
+        /**
+        * @docid
+        * @default 10
+        */
+        topIndent?: number,
+        /**
+        * @docid
+        * @default true
+        */
+        visible?: boolean
+      },
+      /**
+      * @docid
+      * @inherits VizTimeInterval
+      */
+      maxRange?: number | any | TimeIntervalType,
+      /**
+      * @docid
+      * @inherits VizTimeInterval
+      */
+      minRange?: number | any | TimeIntervalType,
+      /**
+      * @docid
+      */
+      minorTick?: {
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 0.06
+        */
+        opacity?: number,
+        /**
+        * @docid
+        * @default true
+        */
+        visible?: boolean,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @default undefined
+      */
+      minorTickCount?: number,
+      /**
+      * @docid
+      * @inherits VizTimeInterval
+      */
+      minorTickInterval?: number | any | TimeIntervalType,
+      /**
+      * @docid
+      * @default undefined
+      */
+      placeholderHeight?: number,
+      /**
+      * @docid
+      * @default true
+      */
+      showCustomBoundaryTicks?: boolean,
+      /**
+      * @docid
+      * @type Array<Date, string> | Array<number>
+      * @default undefined
+      */
+      singleWorkdays?: Array<Date | string> | Array<number>,
+      /**
+      * @docid
+      * @default undefined
+      * @notUsedInTheme
+      */
+      startValue?: number | Date | string,
+      /**
+      * @docid
+      */
+      tick?: {
+        /**
+        * @docid
+        * @default '#000000'
+        */
+        color?: string,
+        /**
+        * @docid
+        * @default 0.1
+        */
+        opacity?: number,
+        /**
+        * @docid
+        * @default 1
+        */
+        width?: number
+      },
+      /**
+      * @docid
+      * @inherits VizTimeInterval
+      */
+      tickInterval?: number | any | TimeIntervalType,
+      /**
+      * @docid
+      * @type Enums.RangeSelectorAxisScaleType
+      * @default undefined
+      */
+      type?: 'continuous' | 'discrete' | 'logarithmic' | 'semidiscrete',
+      /**
+      * @docid
+      * @type Enums.ChartDataType
+      * @default undefined
+      */
+      valueType?: 'datetime' | 'numeric' | 'string',
+      /**
+      * @docid
+      * @default [1, 2, 3, 4, 5]
+      */
+      workWeek?: Array<number>,
+      /**
+      * @docid
+      * @default false
+      */
+      workdaysOnly?: boolean
+    };
     /**
      * @docid
      * @type string
@@ -131,21 +637,102 @@ export interface dxRangeSelectorOptions extends BaseWidgetOptions<dxRangeSelecto
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    shutter?: { color?: string, opacity?: number };
+    shutter?: {
+      /**
+      * @docid
+      * @default undefined
+      */
+      color?: string,
+      /**
+      * @docid
+      * @default 0.75
+      */
+      opacity?: number
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    sliderHandle?: { color?: string, opacity?: number, width?: number };
+    sliderHandle?: {
+      /**
+      * @docid
+      * @default '#000000'
+      */
+      color?: string,
+      /**
+      * @docid
+      * @default 0.2
+      */
+      opacity?: number,
+      /**
+      * @docid
+      * @default 1
+      */
+      width?: number
+    };
     /**
      * @docid
      * @type object
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    sliderMarker?: { color?: string, customizeText?: ((scaleValue: { value?: Date | number | string, valueText?: string }) => string), font?: Font, format?: format, invalidRangeColor?: string, paddingLeftRight?: number, paddingTopBottom?: number, placeholderHeight?: number, visible?: boolean };
+    sliderMarker?: {
+      /**
+      * @docid
+      * @default '#9B9B9B'
+      */
+      color?: string,
+      /**
+      * @docid
+      * @type function(scaleValue)
+      * @type_function_param1 scaleValue:object
+      * @type_function_param1_field1 value:Date|Number|string
+      * @type_function_param1_field2 valueText:string
+      * @type_function_return string
+      * @notUsedInTheme
+      */
+      customizeText?: ((scaleValue: { value?: Date | number | string, valueText?: string }) => string),
+      /**
+      * @docid
+      * @type Font
+      * @default '#FFFFFF' [prop](color)
+      * @default 14 [prop](size)
+      */
+      font?: Font,
+      /**
+      * @docid
+      * @extends CommonVizFormat
+      */
+      format?: format,
+      /**
+      * @docid
+      * @default 'red'
+      */
+      invalidRangeColor?: string,
+      /**
+      * @docid
+      * @default 4
+      */
+      paddingLeftRight?: number,
+      /**
+      * @docid
+      * @default 2
+      */
+      paddingTopBottom?: number,
+      /**
+      * @docid
+      * @default undefined
+      * @notUsedInTheme
+      */
+      placeholderHeight?: number,
+      /**
+      * @docid
+      * @default true
+      */
+      visible?: boolean
+    };
     /**
      * @docid
      * @type Array<number,string,Date> | VizRange
