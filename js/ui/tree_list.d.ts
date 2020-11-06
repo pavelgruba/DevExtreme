@@ -449,7 +449,26 @@ export interface dxTreeListOptions extends GridBaseOptions<dxTreeList> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    remoteOperations?: { filtering?: boolean, grouping?: boolean, sorting?: boolean } | 'auto';
+    remoteOperations?: {
+      /**
+       * @docid
+       * @type boolean
+       * @default false
+       */
+      filtering?: boolean,
+      /**
+       * @docid
+       * @type boolean
+       * @default false
+       */
+      grouping?: boolean,
+      /**
+       * @docid
+       * @type boolean
+       * @default false
+       */
+      sorting?: boolean
+    } | 'auto';
     /**
      * @docid
      * @type any
@@ -475,7 +494,7 @@ export interface dxTreeListOptions extends GridBaseOptions<dxTreeList> {
 }
 export interface dxTreeListEditing extends GridBaseEditing {
     /**
-     * @docid dxTreeListOptions.editing.allowAdding
+     * @docid
      * @type boolean|function
      * @default false
      * @type_function_param1 options:object
@@ -487,7 +506,7 @@ export interface dxTreeListEditing extends GridBaseEditing {
      */
     allowAdding?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
     /**
-     * @docid dxTreeListOptions.editing.allowDeleting
+     * @docid
      * @type boolean|function
      * @default false
      * @type_function_param1 options:object
@@ -499,7 +518,7 @@ export interface dxTreeListEditing extends GridBaseEditing {
      */
     allowDeleting?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
     /**
-     * @docid dxTreeListOptions.editing.allowUpdating
+     * @docid
      * @type boolean|function
      * @default false
      * @type_function_param1 options:object
@@ -511,7 +530,7 @@ export interface dxTreeListEditing extends GridBaseEditing {
      */
     allowUpdating?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
     /**
-     * @docid dxTreeListOptions.editing.texts
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.ui
      * @public
@@ -520,7 +539,7 @@ export interface dxTreeListEditing extends GridBaseEditing {
 }
 export interface dxTreeListEditingTexts extends GridBaseEditingTexts {
     /**
-     * @docid dxTreeListOptions.editing.texts.addRowToNode
+     * @docid
      * @type string
      * @default "Add"
      * @prevFileNamespace DevExpress.ui
@@ -530,7 +549,7 @@ export interface dxTreeListEditingTexts extends GridBaseEditingTexts {
 }
 export interface dxTreeListPaging extends GridBasePaging {
     /**
-     * @docid dxTreeListOptions.paging.enabled
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -540,7 +559,7 @@ export interface dxTreeListPaging extends GridBasePaging {
 }
 export interface dxTreeListScrolling extends GridBaseScrolling {
     /**
-     * @docid dxTreeListOptions.scrolling.mode
+     * @docid
      * @type Enums.TreeListScrollingMode
      * @default "virtual"
      * @prevFileNamespace DevExpress.ui
@@ -550,7 +569,7 @@ export interface dxTreeListScrolling extends GridBaseScrolling {
 }
 export interface dxTreeListSelection extends GridBaseSelection {
     /**
-     * @docid dxTreeListOptions.selection.recursive
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -810,6 +829,11 @@ export default class dxTreeList extends Widget implements GridBase {
     updateDimensions(): void;
 }
 
+/**
+ * @docid
+ * @inherits GridBaseColumn
+ * @type Object
+ */
 export interface dxTreeListColumn extends GridBaseColumn {
     /**
      * @docid
@@ -890,6 +914,11 @@ export interface dxTreeListColumn extends GridBaseColumn {
     type?: 'adaptive' | 'buttons';
 }
 
+/**
+ * @docid
+ * @inherits GridBaseColumnButton
+ * @type Object
+ */
 export interface dxTreeListColumnButton extends GridBaseColumnButton {
     /**
      * @docid
@@ -945,6 +974,10 @@ export interface dxTreeListColumnButton extends GridBaseColumnButton {
     visible?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject, column?: dxTreeListColumn }) => boolean);
 }
 
+/**
+ * @docid
+ * @type object
+ */
 export interface dxTreeListNode {
     /**
      * @docid
@@ -997,6 +1030,10 @@ export interface dxTreeListNode {
     visible?: boolean;
 }
 
+/**
+ * @docid
+ * @type object
+ */
 export interface dxTreeListRowObject {
     /**
      * @docid

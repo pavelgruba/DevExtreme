@@ -1862,159 +1862,159 @@ declare module DevExpress.data {
      */
     export interface PivotGridDataSourceField {
         /**
-         * [descr:PivotGridDataSource.Options.fields.allowCrossGroupCalculation]
+         * [descr:PivotGridDataSourceField.allowCrossGroupCalculation]
          */
         allowCrossGroupCalculation?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.allowExpandAll]
+         * [descr:PivotGridDataSourceField.allowExpandAll]
          */
         allowExpandAll?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.allowFiltering]
+         * [descr:PivotGridDataSourceField.allowFiltering]
          */
         allowFiltering?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.allowSorting]
+         * [descr:PivotGridDataSourceField.allowSorting]
          */
         allowSorting?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.allowSortingBySummary]
+         * [descr:PivotGridDataSourceField.allowSortingBySummary]
          */
         allowSortingBySummary?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.area]
+         * [descr:PivotGridDataSourceField.area]
          */
         area?: 'column' | 'data' | 'filter' | 'row' | undefined;
         /**
-         * [descr:PivotGridDataSource.Options.fields.areaIndex]
+         * [descr:PivotGridDataSourceField.areaIndex]
          */
         areaIndex?: number;
         /**
-         * [descr:PivotGridDataSource.Options.fields.calculateCustomSummary]
+         * [descr:PivotGridDataSourceField.calculateCustomSummary]
          */
         calculateCustomSummary?: ((options: { summaryProcess?: string, value?: any, totalValue?: any }) => any);
         /**
-         * [descr:PivotGridDataSource.Options.fields.calculateSummaryValue]
+         * [descr:PivotGridDataSourceField.calculateSummaryValue]
          */
         calculateSummaryValue?: ((e: DevExpress.ui.dxPivotGridSummaryCell) => number);
         /**
-         * [descr:PivotGridDataSource.Options.fields.caption]
+         * [descr:PivotGridDataSourceField.caption]
          */
         caption?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.customizeText]
+         * [descr:PivotGridDataSourceField.customizeText]
          */
         customizeText?: ((cellInfo: { value?: string | number | Date, valueText?: string }) => string);
         /**
-         * [descr:PivotGridDataSource.Options.fields.dataField]
+         * [descr:PivotGridDataSourceField.dataField]
          */
         dataField?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.dataType]
+         * [descr:PivotGridDataSourceField.dataType]
          */
         dataType?: 'date' | 'number' | 'string';
         /**
-         * [descr:PivotGridDataSource.Options.fields.displayFolder]
+         * [descr:PivotGridDataSourceField.displayFolder]
          */
         displayFolder?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.expanded]
+         * [descr:PivotGridDataSourceField.expanded]
          */
         expanded?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.filterType]
+         * [descr:PivotGridDataSourceField.filterType]
          */
         filterType?: 'exclude' | 'include';
         /**
-         * [descr:PivotGridDataSource.Options.fields.filterValues]
+         * [descr:PivotGridDataSourceField.filterValues]
          */
         filterValues?: Array<any>;
         /**
-         * [descr:PivotGridDataSource.Options.fields.format]
+         * [descr:PivotGridDataSourceField.format]
          */
         format?: DevExpress.ui.format;
         /**
-         * [descr:PivotGridDataSource.Options.fields.groupIndex]
+         * [descr:PivotGridDataSourceField.groupIndex]
          */
         groupIndex?: number;
         /**
-         * [descr:PivotGridDataSource.Options.fields.groupInterval]
+         * [descr:PivotGridDataSourceField.groupInterval]
          */
         groupInterval?: 'day' | 'dayOfWeek' | 'month' | 'quarter' | 'year' | number;
         /**
-         * [descr:PivotGridDataSource.Options.fields.groupName]
+         * [descr:PivotGridDataSourceField.groupName]
          */
         groupName?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.headerFilter]
+         * [descr:PivotGridDataSourceField.headerFilter]
          */
         headerFilter?: { allowSearch?: boolean, height?: number, width?: number };
         /**
-         * [descr:PivotGridDataSource.Options.fields.isMeasure]
+         * [descr:PivotGridDataSourceField.isMeasure]
          */
         isMeasure?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.name]
+         * [descr:PivotGridDataSourceField.name]
          */
         name?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.runningTotal]
+         * [descr:PivotGridDataSourceField.runningTotal]
          */
         runningTotal?: 'column' | 'row';
         /**
-         * [descr:PivotGridDataSource.Options.fields.selector]
+         * [descr:PivotGridDataSourceField.selector]
          */
         selector?: Function;
         /**
-         * [descr:PivotGridDataSource.Options.fields.showGrandTotals]
+         * [descr:PivotGridDataSourceField.showGrandTotals]
          */
         showGrandTotals?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.showTotals]
+         * [descr:PivotGridDataSourceField.showTotals]
          */
         showTotals?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.showValues]
+         * [descr:PivotGridDataSourceField.showValues]
          */
         showValues?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.sortBy]
+         * [descr:PivotGridDataSourceField.sortBy]
          */
         sortBy?: 'displayText' | 'value' | 'none';
         /**
-         * [descr:PivotGridDataSource.Options.fields.sortBySummaryField]
+         * [descr:PivotGridDataSourceField.sortBySummaryField]
          */
         sortBySummaryField?: string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.sortBySummaryPath]
+         * [descr:PivotGridDataSourceField.sortBySummaryPath]
          */
         sortBySummaryPath?: Array<number | string>;
         /**
-         * [descr:PivotGridDataSource.Options.fields.sortOrder]
+         * [descr:PivotGridDataSourceField.sortOrder]
          */
         sortOrder?: 'asc' | 'desc';
         /**
-         * [descr:PivotGridDataSource.Options.fields.sortingMethod]
+         * [descr:PivotGridDataSourceField.sortingMethod]
          */
         sortingMethod?: ((a: { value?: string | number, children?: Array<any> }, b: { value?: string | number, children?: Array<any> }) => number);
         /**
-         * [descr:PivotGridDataSource.Options.fields.summaryDisplayMode]
+         * [descr:PivotGridDataSourceField.summaryDisplayMode]
          */
         summaryDisplayMode?: 'absoluteVariation' | 'percentOfColumnGrandTotal' | 'percentOfColumnTotal' | 'percentOfGrandTotal' | 'percentOfRowGrandTotal' | 'percentOfRowTotal' | 'percentVariation';
         /**
-         * [descr:PivotGridDataSource.Options.fields.summaryType]
+         * [descr:PivotGridDataSourceField.summaryType]
          */
         summaryType?: 'avg' | 'count' | 'custom' | 'max' | 'min' | 'sum' | string;
         /**
-         * [descr:PivotGridDataSource.Options.fields.visible]
+         * [descr:PivotGridDataSourceField.visible]
          */
         visible?: boolean;
         /**
-         * [descr:PivotGridDataSource.Options.fields.width]
+         * [descr:PivotGridDataSourceField.width]
          */
         width?: number;
         /**
-         * [descr:PivotGridDataSource.Options.fields.wordWrapEnabled]
+         * [descr:PivotGridDataSourceField.wordWrapEnabled]
          */
         wordWrapEnabled?: boolean;
     }
@@ -3711,100 +3711,100 @@ declare module DevExpress.ui {
      */
     export interface GridBaseEditing {
         /**
-         * [descr:GridBase.Options.editing.changes]
+         * [descr:GridBaseEditing.changes]
          */
         changes?: Array<any>;
         /**
-         * [descr:GridBase.Options.editing.confirmDelete]
+         * [descr:GridBaseEditing.confirmDelete]
          */
         confirmDelete?: boolean;
         /**
-         * [descr:GridBase.Options.editing.editColumnName]
+         * [descr:GridBaseEditing.editColumnName]
          */
         editColumnName?: string;
         /**
-         * [descr:GridBase.Options.editing.editRowKey]
+         * [descr:GridBaseEditing.editRowKey]
          */
         editRowKey?: any;
         /**
-         * [descr:GridBase.Options.editing.form]
+         * [descr:GridBaseEditing.form]
          */
         form?: dxFormOptions;
         /**
-         * [descr:GridBase.Options.editing.mode]
+         * [descr:GridBaseEditing.mode]
          */
         mode?: 'batch' | 'cell' | 'row' | 'form' | 'popup';
         /**
-         * [descr:GridBase.Options.editing.popup]
+         * [descr:GridBaseEditing.popup]
          */
         popup?: dxPopupOptions;
         /**
-         * [descr:GridBase.Options.editing.refreshMode]
+         * [descr:GridBaseEditing.refreshMode]
          */
         refreshMode?: 'full' | 'reshape' | 'repaint';
         /**
-         * [descr:GridBase.Options.editing.selectTextOnEditStart]
+         * [descr:GridBaseEditing.selectTextOnEditStart]
          */
         selectTextOnEditStart?: boolean;
         /**
-         * [descr:GridBase.Options.editing.startEditAction]
+         * [descr:GridBaseEditing.startEditAction]
          */
         startEditAction?: 'click' | 'dblClick';
         /**
-         * [descr:GridBase.Options.editing.texts]
+         * [descr:GridBaseEditing.texts]
          */
         texts?: GridBaseEditingTexts;
         /**
-         * [descr:GridBase.Options.editing.useIcons]
+         * [descr:GridBaseEditing.useIcons]
          */
         useIcons?: boolean;
     }
     /**
-     * [descr:GridBase.Options.editing.texts]
+     * [descr:GridBaseEditing.texts]
      */
     export interface GridBaseEditingTexts {
         /**
-         * [descr:GridBase.Options.editing.texts.addRow]
+         * [descr:GridBaseEditingTexts.addRow]
          */
         addRow?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.cancelAllChanges]
+         * [descr:GridBaseEditingTexts.cancelAllChanges]
          */
         cancelAllChanges?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.cancelRowChanges]
+         * [descr:GridBaseEditingTexts.cancelRowChanges]
          */
         cancelRowChanges?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.confirmDeleteMessage]
+         * [descr:GridBaseEditingTexts.confirmDeleteMessage]
          */
         confirmDeleteMessage?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.confirmDeleteTitle]
+         * [descr:GridBaseEditingTexts.confirmDeleteTitle]
          */
         confirmDeleteTitle?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.deleteRow]
+         * [descr:GridBaseEditingTexts.deleteRow]
          */
         deleteRow?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.editRow]
+         * [descr:GridBaseEditingTexts.editRow]
          */
         editRow?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.saveAllChanges]
+         * [descr:GridBaseEditingTexts.saveAllChanges]
          */
         saveAllChanges?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.saveRowChanges]
+         * [descr:GridBaseEditingTexts.saveRowChanges]
          */
         saveRowChanges?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.undeleteRow]
+         * [descr:GridBaseEditingTexts.undeleteRow]
          */
         undeleteRow?: string;
         /**
-         * [descr:GridBase.Options.editing.texts.validationCancelChanges]
+         * [descr:GridBaseEditingTexts.validationCancelChanges]
          */
         validationCancelChanges?: string;
     }
@@ -3813,15 +3813,15 @@ declare module DevExpress.ui {
      */
     export interface GridBasePaging {
         /**
-         * [descr:GridBase.Options.paging.enabled]
+         * [descr:GridBasePaging.enabled]
          */
         enabled?: boolean;
         /**
-         * [descr:GridBase.Options.paging.pageIndex]
+         * [descr:GridBasePaging.pageIndex]
          */
         pageIndex?: number;
         /**
-         * [descr:GridBase.Options.paging.pageSize]
+         * [descr:GridBasePaging.pageSize]
          */
         pageSize?: number;
     }
@@ -3830,31 +3830,31 @@ declare module DevExpress.ui {
      */
     export interface GridBaseScrolling {
         /**
-         * [descr:GridBase.Options.scrolling.columnRenderingMode]
+         * [descr:GridBaseScrolling.columnRenderingMode]
          */
         columnRenderingMode?: 'standard' | 'virtual';
         /**
-         * [descr:GridBase.Options.scrolling.preloadEnabled]
+         * [descr:GridBaseScrolling.preloadEnabled]
          */
         preloadEnabled?: boolean;
         /**
-         * [descr:GridBase.Options.scrolling.rowRenderingMode]
+         * [descr:GridBaseScrolling.rowRenderingMode]
          */
         rowRenderingMode?: 'standard' | 'virtual';
         /**
-         * [descr:GridBase.Options.scrolling.scrollByContent]
+         * [descr:GridBaseScrolling.scrollByContent]
          */
         scrollByContent?: boolean;
         /**
-         * [descr:GridBase.Options.scrolling.scrollByThumb]
+         * [descr:GridBaseScrolling.scrollByThumb]
          */
         scrollByThumb?: boolean;
         /**
-         * [descr:GridBase.Options.scrolling.showScrollbar]
+         * [descr:GridBaseScrolling.showScrollbar]
          */
         showScrollbar?: 'always' | 'never' | 'onHover' | 'onScroll';
         /**
-         * [descr:GridBase.Options.scrolling.useNative]
+         * [descr:GridBaseScrolling.useNative]
          */
         useNative?: boolean | 'auto';
     }
@@ -3863,11 +3863,11 @@ declare module DevExpress.ui {
      */
     export interface GridBaseSelection {
         /**
-         * [descr:GridBase.Options.selection.allowSelectAll]
+         * [descr:GridBaseSelection.allowSelectAll]
          */
         allowSelectAll?: boolean;
         /**
-         * [descr:GridBase.Options.selection.mode]
+         * [descr:GridBaseSelection.mode]
          */
         mode?: 'multiple' | 'none' | 'single';
     }
@@ -5395,19 +5395,19 @@ declare module DevExpress.ui {
      */
     export interface dxDataGridEditing extends GridBaseEditing {
         /**
-         * [descr:dxDataGrid.Options.editing.allowAdding]
+         * [descr:dxDataGridEditing.allowAdding]
          */
         allowAdding?: boolean;
         /**
-         * [descr:dxDataGrid.Options.editing.allowDeleting]
+         * [descr:dxDataGridEditing.allowDeleting]
          */
         allowDeleting?: boolean | ((options: { component?: dxDataGrid, row?: dxDataGridRowObject }) => boolean);
         /**
-         * [descr:dxDataGrid.Options.editing.allowUpdating]
+         * [descr:dxDataGridEditing.allowUpdating]
          */
         allowUpdating?: boolean | ((options: { component?: dxDataGrid, row?: dxDataGridRowObject }) => boolean);
         /**
-         * [descr:dxDataGrid.Options.editing.texts]
+         * [descr:dxDataGridEditing.texts]
          */
         texts?: any;
     }
@@ -5416,7 +5416,7 @@ declare module DevExpress.ui {
      */
     export interface dxDataGridScrolling extends GridBaseScrolling {
         /**
-         * [descr:dxDataGrid.Options.scrolling.mode]
+         * [descr:dxDataGridScrolling.mode]
          */
         mode?: 'infinite' | 'standard' | 'virtual';
     }
@@ -5425,15 +5425,15 @@ declare module DevExpress.ui {
      */
     export interface dxDataGridSelection extends GridBaseSelection {
         /**
-         * [descr:dxDataGrid.Options.selection.deferred]
+         * [descr:dxDataGridSelection.deferred]
          */
         deferred?: boolean;
         /**
-         * [descr:dxDataGrid.Options.selection.selectAllMode]
+         * [descr:dxDataGridSelection.selectAllMode]
          */
         selectAllMode?: 'allPages' | 'page';
         /**
-         * [descr:dxDataGrid.Options.selection.showCheckBoxesMode]
+         * [descr:dxDataGridSelection.showCheckBoxesMode]
          */
         showCheckBoxesMode?: 'always' | 'none' | 'onClick' | 'onLongTap';
     }
@@ -11851,28 +11851,28 @@ declare module DevExpress.ui {
      */
     export interface dxTreeListEditing extends GridBaseEditing {
         /**
-         * [descr:dxTreeList.Options.editing.allowAdding]
+         * [descr:dxTreeListEditing.allowAdding]
          */
         allowAdding?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
         /**
-         * [descr:dxTreeList.Options.editing.allowDeleting]
+         * [descr:dxTreeListEditing.allowDeleting]
          */
         allowDeleting?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
         /**
-         * [descr:dxTreeList.Options.editing.allowUpdating]
+         * [descr:dxTreeListEditing.allowUpdating]
          */
         allowUpdating?: boolean | ((options: { component?: dxTreeList, row?: dxTreeListRowObject }) => boolean);
         /**
-         * [descr:dxTreeList.Options.editing.texts]
+         * [descr:dxTreeListEditing.texts]
          */
         texts?: dxTreeListEditingTexts;
     }
     /**
-     * [descr:dxTreeList.Options.editing.texts]
+     * [descr:dxTreeListEditing.texts]
      */
     export interface dxTreeListEditingTexts extends GridBaseEditingTexts {
         /**
-         * [descr:dxTreeList.Options.editing.texts.addRowToNode]
+         * [descr:dxTreeListEditingTexts.addRowToNode]
          */
         addRowToNode?: string;
     }
@@ -11881,7 +11881,7 @@ declare module DevExpress.ui {
      */
     export interface dxTreeListPaging extends GridBasePaging {
         /**
-         * [descr:dxTreeList.Options.paging.enabled]
+         * [descr:dxTreeListPaging.enabled]
          */
         enabled?: boolean;
     }
@@ -11890,7 +11890,7 @@ declare module DevExpress.ui {
      */
     export interface dxTreeListScrolling extends GridBaseScrolling {
         /**
-         * [descr:dxTreeList.Options.scrolling.mode]
+         * [descr:dxTreeListScrolling.mode]
          */
         mode?: 'standard' | 'virtual';
     }
@@ -11899,7 +11899,7 @@ declare module DevExpress.ui {
      */
     export interface dxTreeListSelection extends GridBaseSelection {
         /**
-         * [descr:dxTreeList.Options.selection.recursive]
+         * [descr:dxTreeListSelection.recursive]
          */
         recursive?: boolean;
     }

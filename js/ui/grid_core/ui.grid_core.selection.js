@@ -470,7 +470,7 @@ export default {
                 selectAllMode: 'allPages',
 
                 /**
-                 * @name dxDataGridOptions.selection.maxFilterLengthInRequest
+                 * @name dxDataGridSelection.maxFilterLengthInRequest
                  * @type number
                  * @hidden
                  * @default 1500

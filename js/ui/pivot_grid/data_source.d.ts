@@ -99,11 +99,23 @@ export interface PivotGridDataSourceOptions {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    store?: Store | StoreOptions | XmlaStore | XmlaStoreOptions | Array<{ type?: 'array' | 'local' | 'odata' | 'xmla' }> | { type?: 'array' | 'local' | 'odata' | 'xmla' };
+    store?: Store | StoreOptions | XmlaStore | XmlaStoreOptions | Array<{
+      /**
+       * @docid
+       * @type Enums.PivotGridStoreType
+       */
+      type?: 'array' | 'local' | 'odata' | 'xmla'
+    }> | {
+      /**
+       * @docid
+       * @type Enums.PivotGridStoreType
+       */
+      type?: 'array' | 'local' | 'odata' | 'xmla'
+    };
 }
 export interface PivotGridDataSourceField {
     /**
-     * @docid PivotGridDataSourceOptions.fields.allowCrossGroupCalculation
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -111,7 +123,7 @@ export interface PivotGridDataSourceField {
      */
     allowCrossGroupCalculation?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.allowExpandAll
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -119,7 +131,7 @@ export interface PivotGridDataSourceField {
      */
     allowExpandAll?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.allowFiltering
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -127,7 +139,7 @@ export interface PivotGridDataSourceField {
      */
     allowFiltering?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.allowSorting
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -135,7 +147,7 @@ export interface PivotGridDataSourceField {
      */
     allowSorting?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.allowSortingBySummary
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -143,7 +155,7 @@ export interface PivotGridDataSourceField {
      */
     allowSortingBySummary?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.area
+     * @docid
      * @type Enums.PivotGridArea
      * @default undefined
      * @acceptValues undefined
@@ -152,7 +164,7 @@ export interface PivotGridDataSourceField {
      */
     area?: 'column' | 'data' | 'filter' | 'row' | undefined;
     /**
-     * @docid PivotGridDataSourceOptions.fields.areaIndex
+     * @docid
      * @type number
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -160,7 +172,7 @@ export interface PivotGridDataSourceField {
      */
     areaIndex?: number;
     /**
-     * @docid PivotGridDataSourceOptions.fields.calculateCustomSummary
+     * @docid
      * @type function(options)
      * @type_function_param1 options:object
      * @type_function_param1_field1 summaryProcess:string
@@ -171,7 +183,7 @@ export interface PivotGridDataSourceField {
      */
     calculateCustomSummary?: ((options: { summaryProcess?: string, value?: any, totalValue?: any }) => any);
     /**
-     * @docid PivotGridDataSourceOptions.fields.calculateSummaryValue
+     * @docid
      * @type function(e)
      * @type_function_param1 e:dxPivotGridSummaryCell
      * @type_function_return number
@@ -181,7 +193,7 @@ export interface PivotGridDataSourceField {
      */
     calculateSummaryValue?: ((e: dxPivotGridSummaryCell) => number);
     /**
-     * @docid PivotGridDataSourceOptions.fields.caption
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -189,7 +201,7 @@ export interface PivotGridDataSourceField {
      */
     caption?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.customizeText
+     * @docid
      * @type function(cellInfo)
      * @type_function_param1 cellInfo:object
      * @type_function_param1_field1 value:string|number|date
@@ -200,7 +212,7 @@ export interface PivotGridDataSourceField {
      */
     customizeText?: ((cellInfo: { value?: string | number | Date, valueText?: string }) => string);
     /**
-     * @docid PivotGridDataSourceOptions.fields.dataField
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -208,7 +220,7 @@ export interface PivotGridDataSourceField {
      */
     dataField?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.dataType
+     * @docid
      * @type Enums.PivotGridDataType
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -216,7 +228,7 @@ export interface PivotGridDataSourceField {
      */
     dataType?: 'date' | 'number' | 'string';
     /**
-     * @docid PivotGridDataSourceOptions.fields.displayFolder
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -224,7 +236,7 @@ export interface PivotGridDataSourceField {
      */
     displayFolder?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.expanded
+     * @docid
      * @type boolean
      * @default false
      * @prevFileNamespace DevExpress.ui
@@ -232,7 +244,7 @@ export interface PivotGridDataSourceField {
      */
     expanded?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.filterType
+     * @docid
      * @type Enums.FilterType
      * @default 'include'
      * @prevFileNamespace DevExpress.ui
@@ -240,7 +252,7 @@ export interface PivotGridDataSourceField {
      */
     filterType?: 'exclude' | 'include';
     /**
-     * @docid PivotGridDataSourceOptions.fields.filterValues
+     * @docid
      * @type Array<any>
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -248,7 +260,7 @@ export interface PivotGridDataSourceField {
      */
     filterValues?: Array<any>;
     /**
-     * @docid PivotGridDataSourceOptions.fields.format
+     * @docid
      * @type format
      * @default ''
      * @prevFileNamespace DevExpress.ui
@@ -256,7 +268,7 @@ export interface PivotGridDataSourceField {
      */
     format?: format;
     /**
-     * @docid PivotGridDataSourceOptions.fields.groupIndex
+     * @docid
      * @type number
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -264,7 +276,7 @@ export interface PivotGridDataSourceField {
      */
     groupIndex?: number;
     /**
-     * @docid PivotGridDataSourceOptions.fields.groupInterval
+     * @docid
      * @type Enums.PivotGridGroupInterval|number
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -272,7 +284,7 @@ export interface PivotGridDataSourceField {
      */
     groupInterval?: 'day' | 'dayOfWeek' | 'month' | 'quarter' | 'year' | number;
     /**
-     * @docid PivotGridDataSourceOptions.fields.groupName
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -280,14 +292,33 @@ export interface PivotGridDataSourceField {
      */
     groupName?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.headerFilter
+     * @docid
      * @type object
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    headerFilter?: { allowSearch?: boolean, height?: number, width?: number };
+    headerFilter?: {
+      /**
+      * @docid
+      * @type boolean
+      * @default undefined
+      */
+      allowSearch?: boolean,
+      /**
+      * @docid
+      * @type number
+      * @default undefined
+      */
+      height?: number,
+      /**
+      * @docid
+      * @type number
+      * @default undefined
+      */
+      width?: number
+    };
     /**
-     * @docid PivotGridDataSourceOptions.fields.isMeasure
+     * @docid
      * @type boolean
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -295,7 +326,7 @@ export interface PivotGridDataSourceField {
      */
     isMeasure?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.name
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -303,7 +334,7 @@ export interface PivotGridDataSourceField {
      */
     name?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.runningTotal
+     * @docid
      * @type Enums.PivotGridRunningTotalMode
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -311,7 +342,7 @@ export interface PivotGridDataSourceField {
      */
     runningTotal?: 'column' | 'row';
     /**
-     * @docid PivotGridDataSourceOptions.fields.selector
+     * @docid
      * @type function(data)
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -319,7 +350,7 @@ export interface PivotGridDataSourceField {
      */
     selector?: Function;
     /**
-     * @docid PivotGridDataSourceOptions.fields.showGrandTotals
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -327,7 +358,7 @@ export interface PivotGridDataSourceField {
      */
     showGrandTotals?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.showTotals
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -335,7 +366,7 @@ export interface PivotGridDataSourceField {
      */
     showTotals?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.showValues
+     * @docid
      * @type boolean
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -343,7 +374,7 @@ export interface PivotGridDataSourceField {
      */
     showValues?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.sortBy
+     * @docid
      * @type Enums.PivotGridSortBy
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -351,7 +382,7 @@ export interface PivotGridDataSourceField {
      */
     sortBy?: 'displayText' | 'value' | 'none';
     /**
-     * @docid PivotGridDataSourceOptions.fields.sortBySummaryField
+     * @docid
      * @type string
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -359,7 +390,7 @@ export interface PivotGridDataSourceField {
      */
     sortBySummaryField?: string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.sortBySummaryPath
+     * @docid
      * @type Array<number,string>
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -367,7 +398,7 @@ export interface PivotGridDataSourceField {
      */
     sortBySummaryPath?: Array<number | string>;
     /**
-     * @docid PivotGridDataSourceOptions.fields.sortOrder
+     * @docid
      * @type Enums.SortOrder
      * @default 'asc'
      * @prevFileNamespace DevExpress.ui
@@ -375,7 +406,7 @@ export interface PivotGridDataSourceField {
      */
     sortOrder?: 'asc' | 'desc';
     /**
-     * @docid PivotGridDataSourceOptions.fields.sortingMethod
+     * @docid
      * @type function(a, b)
      * @type_function_param1 a:object
      * @type_function_param1_field1 value:string|number
@@ -390,7 +421,7 @@ export interface PivotGridDataSourceField {
      */
     sortingMethod?: ((a: { value?: string | number, children?: Array<any> }, b: { value?: string | number, children?: Array<any> }) => number);
     /**
-     * @docid PivotGridDataSourceOptions.fields.summaryDisplayMode
+     * @docid
      * @type Enums.PivotGridSummaryDisplayMode
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -398,7 +429,7 @@ export interface PivotGridDataSourceField {
      */
     summaryDisplayMode?: 'absoluteVariation' | 'percentOfColumnGrandTotal' | 'percentOfColumnTotal' | 'percentOfGrandTotal' | 'percentOfRowGrandTotal' | 'percentOfRowTotal' | 'percentVariation';
     /**
-     * @docid PivotGridDataSourceOptions.fields.summaryType
+     * @docid
      * @type Enums.SummaryType|string
      * @default 'count'
      * @prevFileNamespace DevExpress.ui
@@ -406,7 +437,7 @@ export interface PivotGridDataSourceField {
      */
     summaryType?: 'avg' | 'count' | 'custom' | 'max' | 'min' | 'sum' | string;
     /**
-     * @docid PivotGridDataSourceOptions.fields.visible
+     * @docid
      * @type boolean
      * @default true
      * @prevFileNamespace DevExpress.ui
@@ -414,7 +445,7 @@ export interface PivotGridDataSourceField {
      */
     visible?: boolean;
     /**
-     * @docid PivotGridDataSourceOptions.fields.width
+     * @docid
      * @type number
      * @default undefined
      * @prevFileNamespace DevExpress.ui
@@ -422,7 +453,7 @@ export interface PivotGridDataSourceField {
      */
     width?: number;
     /**
-     * @docid PivotGridDataSourceOptions.fields.wordWrapEnabled
+     * @docid
      * @type boolean
      * @default undefined
      * @prevFileNamespace DevExpress.ui
