@@ -17,11 +17,8 @@ class DrawerStrategy {
         const template = drawer._getTemplate(drawer.option('template'));
         if(template) {
             template.render({
-                container: drawer.content(),
-                onRendered: () => {
-                    whenPanelContentRendered.resolve();
-                }
-            });
+                container: drawer.content()
+            }).then(() => { whenPanelContentRendered.resolve(); });
         }
     }
 

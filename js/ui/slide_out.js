@@ -218,8 +218,9 @@ const SlideOut = CollectionWidget.inherit({
         const itemsLength = this._itemContainer().html().length;
         this._getTemplateByOption('contentTemplate').render({
             container: getPublicElement(this._itemContainer())
+        }).then(() => {
+            this._singleContent = this._itemContainer().html().length !== itemsLength;
         });
-        this._singleContent = this._itemContainer().html().length !== itemsLength;
     },
 
     _itemClickHandler: noop,

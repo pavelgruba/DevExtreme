@@ -34,17 +34,15 @@ export class TemplateWrapper extends InfernoComponent<TemplateProps> {
       }
     });
 
-    const $template = $(
-      this.props.template.render({
-        container: getPublicElement($parent),
-        model: data,
-        ...(Number.isFinite(index) ? { index } : {}),
-      }),
-    );
-
-    if ($template.hasClass(TEMPLATE_WRAPPER_CLASS)) {
-      wrapElement($parent, $template);
-    }
+    this.props.template.render({
+      container: getPublicElement($parent),
+      model: data,
+      ...(Number.isFinite(index) ? { index } : {}),
+    }).then(($template) => {
+      if ($template.hasClass(TEMPLATE_WRAPPER_CLASS)) {
+        wrapElement($parent, $template);
+      }
+    });
 
     return (): void => {
       // NOTE: order is important

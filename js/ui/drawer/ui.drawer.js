@@ -255,18 +255,18 @@ const Drawer = Widget.inherit({
         const contentTemplate = this._getTemplate(contentTemplateOption);
 
         if(contentTemplate) {
-            const $viewTemplate = contentTemplate.render({
+            contentTemplate.render({
                 container: this.viewContent(),
                 noModel: true,
                 transclude: (this._templateManager.anonymousTemplateName === contentTemplateOption)
+            }).then($viewTemplate => {
+                if($viewTemplate.hasClass('ng-scope')) { // T864419
+                    $(this._$viewContentWrapper)
+                        .children()
+                        .not(`.${DRAWER_SHADER_CLASS}`)
+                        .replaceWith($viewTemplate);
+                }
             });
-
-            if($viewTemplate.hasClass('ng-scope')) { // T864419
-                $(this._$viewContentWrapper)
-                    .children()
-                    .not(`.${DRAWER_SHADER_CLASS}`)
-                    .replaceWith($viewTemplate);
-            }
         }
     },
 

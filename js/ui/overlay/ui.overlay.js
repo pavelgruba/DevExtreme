@@ -923,10 +923,9 @@ const Overlay = Widget.inherit({
         contentTemplate && contentTemplate.render({
             container: getPublicElement(this.$content()),
             noModel: true,
-            transclude,
-            onRendered: () => {
-                whenContentRendered.resolve();
-            }
+            transclude
+        }).then(() => {
+            whenContentRendered.resolve();
         });
 
         this._renderDrag();

@@ -906,10 +906,10 @@ const Draggable = DOMComponent.inherit({
         const template = this._getTemplateByOption('contentTemplate');
 
         if(template) {
-            $(template.render({
+            template.render({
                 container: this.element(),
                 transclude
-            }));
+            });
         }
     },
 

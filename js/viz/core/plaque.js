@@ -311,7 +311,7 @@ export class Plaque {
         };
 
         if(this.contentTemplate.render) {
-            this.contentTemplate.render({ model: options, container: this._contentGroup.element, onRendered: onRender });
+            this.contentTemplate.render({ model: options, container: this._contentGroup.element }).then(onRender);
         } else {
             return this.contentTemplate({ group: this._contentGroup, onRender, ...restProps });
         }

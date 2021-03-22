@@ -2,6 +2,7 @@ import config from '../config';
 import devices from '../devices';
 import Errors from '../errors';
 import $ from '../renderer';
+import { when } from '../utils/deferred';
 import { ChildDefaultTemplate } from '../templates/child_default_template';
 import { EmptyTemplate } from '../templates/empty_template';
 import { Template } from '../templates/template';
@@ -49,13 +50,15 @@ export const suitableTemplatesByName = (rawTemplates) => {
     return result;
 };
 
-export const addOneRenderedCall = (template) => {
+export const addOnRenderedCall = (template) => {
     const render = template.render.bind(template);
     return extend({}, template, {
         render(options) {
-            const templateResult = render(options);
-            options && options.onRendered && options.onRendered();
-            return templateResult;
+            return when(render(options)).then(result => {
+                options && options.onRendered && options.onRendered();
+                return result;
+            });
+
         }
     });
 };
@@ -92,7 +95,7 @@ export const acquireIntegrationTemplate = (templateSource, templates, isAsyncTem
     if(!skipTemplates || skipTemplates.indexOf(templateSource) === -1) {
         integrationTemplate = templates[templateSource];
         if(integrationTemplate && !(integrationTemplate instanceof TemplateBase) && !isAsyncTemplate) {
-            integrationTemplate = addOneRenderedCall(integrationTemplate);
+            integrationTemplate = addOnRenderedCall(integrationTemplate);
         }
     }
 
@@ -114,7 +117,7 @@ export const acquireTemplate = (templateSource, createTemplate, templates, isAsy
 
     // TODO: templateSource.render is needed for angular2 integration. Try to remove it after supporting TypeScript modules.
     if(isFunction(templateSource.render) && !isRenderer(templateSource)) {
-        return isAsyncTemplate ? templateSource : addOneRenderedCall(templateSource);
+        return isAsyncTemplate ? templateSource : addOnRenderedCall(templateSource);
     }
 
     if(templateSource.nodeType || isRenderer(templateSource)) {

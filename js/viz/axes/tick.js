@@ -1,6 +1,6 @@
 import { isDefined } from '../../core/utils/type';
 import { extend } from '../../core/utils/extend';
-import { Deferred } from '../../core/utils/deferred';
+import { Deferred, when } from '../../core/utils/deferred';
 
 function getPathStyle(options) {
     return { stroke: options.color, 'stroke-width': options.width, 'stroke-opacity': options.opacity, opacity: 1 };
@@ -149,18 +149,17 @@ function createTick(axis, renderer, tickOptions, gridOptions, skippedCategory, s
                     this.templateContainer = renderer.g().append(elementsGroup);
                     this._templateDef && this._templateDef.reject();
                     this._templateDef = new Deferred();
-                    template.render({
+                    when(template.render({
                         model: {
                             valueText: text,
                             value: this.value,
                             labelFontStyle: getLabelFontStyle(this),
                             labelStyle
                         },
-                        container: this.templateContainer.element,
-                        onRendered: () => {
-                            this.updateLabelPosition();
-                            this._templateDef.resolve();
-                        }
+                        container: this.templateContainer.element
+                    })).then(() => {
+                        this.updateLabelPosition();
+                        this._templateDef.resolve();
                     });
                 } else {
                     if(isDefined(text) && text !== '' && !emptyStrRegExp.test(text)) {

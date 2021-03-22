@@ -4,6 +4,7 @@ import Callbacks from '../utils/callbacks';
 import { contains } from '../utils/dom';
 import { triggerShownEvent } from '../../events/visibility_change';
 import errors from '../errors';
+import { when } from '../utils/deferred';
 
 export const renderedCallbacks = Callbacks({ syncStrategy: true });
 
@@ -14,13 +15,13 @@ export class TemplateBase {
         const onRendered = options.onRendered;
         delete options.onRendered;
 
-        const $result = this._renderCore(options);
+        return when(this._renderCore(options)).then(($result) => {
+            this._ensureResultInContainer($result, options.container);
+            renderedCallbacks.fire($result, options.container);
 
-        this._ensureResultInContainer($result, options.container);
-        renderedCallbacks.fire($result, options.container);
-
-        onRendered && onRendered();
-        return $result;
+            onRendered && onRendered();
+            return $result;
+        });
     }
 
     _ensureResultInContainer($result, container) {

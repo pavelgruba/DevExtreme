@@ -2,7 +2,7 @@ import domUtils from 'core/utils/dom';
 import type from 'core/utils/type';
 import renderer from 'core/renderer';
 import {
-    findTemplates, suitableTemplatesByName, addOneRenderedCall, templateKey,
+    findTemplates, suitableTemplatesByName, addOnRenderedCall, templateKey,
     getNormalizedTemplateArgs, validateTemplateSource,
     defaultCreateElement, acquireIntegrationTemplate, acquireTemplate,
 } from 'core/utils/template_manager';
@@ -103,10 +103,10 @@ QUnit.test('#suitableTemplatesByName', function(assert) {
     currentDeviceMethod.restore();
 });
 
-QUnit.test('#addOneRenderedCall', function(assert) {
+QUnit.test('#addOnRenderedCall', function(assert) {
     const render = sinon.spy();
     const template = { render, customField: 'customField' };
-    const nextTemplate = addOneRenderedCall(template);
+    const nextTemplate = addOnRenderedCall(template);
 
     assert.strictEqual(nextTemplate.customField, 'customField', 'should keep previous fields');
 

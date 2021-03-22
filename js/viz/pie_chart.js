@@ -1,5 +1,6 @@
 import consts from './components/consts';
 import { normalizeAngle, getVerticallyShiftedAngularCoords as _getVerticallyShiftedAngularCoords, patchFontOptions } from './core/utils';
+import { when } from '../core/utils/deferred';
 import { extend as _extend } from '../core/utils/extend';
 import { isNumeric } from '../core/utils/type';
 import { each as _each } from '../core/utils/iterator';
@@ -332,15 +333,14 @@ const dxPieChart = BaseChart.inherit({
 
         template = this._getTemplate(template);
 
-        template.render({
+        when(template.render({
             model: this,
-            container: this._centerTemplateGroup.element,
-            onRendered: ()=>{
-                const group = this._centerTemplateGroup;
-                const bBox = group.getBBox();
-                group.move(this._center.x - (bBox.x + bBox.width / 2), this._center.y - (bBox.y + bBox.height / 2));
-                group.attr({ visibility: 'visible' });
-            }
+            container: this._centerTemplateGroup.element
+        })).then(()=>{
+            const group = this._centerTemplateGroup;
+            const bBox = group.getBBox();
+            group.move(this._center.x - (bBox.x + bBox.width / 2), this._center.y - (bBox.y + bBox.height / 2));
+            group.attr({ visibility: 'visible' });
         });
     },
 

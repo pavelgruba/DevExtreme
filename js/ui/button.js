@@ -354,18 +354,19 @@ class Button extends Widget {
             .toggleClass('dx-button-icon-right', !!icon && iconPosition !== 'left')
             .toggleClass('dx-button-has-text', !!text);
 
-        const $template = $(this._getTemplateByOption('template').render({
+        this._getTemplateByOption('template').render({
             model: data,
             container: getPublicElement($content),
             transclude: this._templateManager.anonymousTemplateName === template
-        }));
+        }).then(result => {
+            const $template = $(result);
+            if($template.hasClass('dx-template-wrapper')) {
+                $template.addClass('dx-button-content');
+                $content.replaceWith($template);
+            }
 
-        if($template.hasClass('dx-template-wrapper')) {
-            $template.addClass('dx-button-content');
-            $content.replaceWith($template);
-        }
-
-        this._updateSubmitInput();
+            this._updateSubmitInput();
+        });
     }
 
     _updateSubmitInput() {

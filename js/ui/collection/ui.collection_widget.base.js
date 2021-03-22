@@ -826,7 +826,7 @@ const CollectionWidget = Widget.inherit({
         });
 
         const that = this;
-        when(renderContentPromise).done(function($itemContent) {
+        when(renderContentPromise).then(function($itemContent) {
             that._postprocessRenderItem({
                 itemElement: $itemFrame,
                 itemContent: $itemContent,
@@ -863,12 +863,13 @@ const CollectionWidget = Widget.inherit({
         const itemTemplate = this._getTemplate(itemTemplateName);
 
         this._addItemContentClasses(args);
-        const $templateResult = $(this._createItemByTemplate(itemTemplate, args));
-        if(!$templateResult.hasClass(TEMPLATE_WRAPPER_CLASS)) {
-            return args.container;
-        }
-
-        return this._renderItemContentByNode(args, $templateResult);
+        return this._createItemByTemplate(itemTemplate, args).then(result => {
+            const $templateResult = $(result);
+            if(!$templateResult.hasClass(TEMPLATE_WRAPPER_CLASS)) {
+                return args.container;
+            }
+            return this._renderItemContentByNode(args, $templateResult);
+        });
     },
 
     _renderItemContentByNode: function(args, $node) {

@@ -91,7 +91,7 @@ QUnit.module('dxDropDownEditor', testEnvironment, () => {
         const content = $('<div>test</div>');
         const dropDownEditor = this.dropDownEditor;
         dropDownEditor._renderPopupContent = function() {
-            return content.appendTo(dropDownEditor._popup.$content());
+            content.appendTo(dropDownEditor._popup.$content());
         };
         dropDownEditor.open();
         assert.strictEqual(dropDownEditor._$popup.dxPopup('$content').find(content)[0], content[0]);
@@ -1252,7 +1252,7 @@ QUnit.module('popup integration', () => {
             }).dxDropDownEditor('instance');
 
             dropDownEditor._renderPopupContent = function() {
-                return $('<div>')
+                $('<div>')
                     .css({ width: contentWidth })
                     .appendTo(dropDownEditor._popup.$content());
             };
@@ -1360,7 +1360,7 @@ QUnit.module('popup integration', () => {
                 .dxDropDownEditor('instance');
 
             dropDownEditor._renderPopupContent = function() {
-                return $('<div>')
+                $('<div>')
                     .css({ height: contentHeight })
                     .appendTo(dropDownEditor._popup.$content());
             };
@@ -1377,7 +1377,7 @@ QUnit.module('popup integration', () => {
                 .dxDropDownEditor('instance');
 
             dropDownEditor._renderPopupContent = function() {
-                return $('<div>')
+                $('<div>')
                     .css({ height: contentHeight })
                     .appendTo(dropDownEditor._popup.$content());
             };
@@ -1398,7 +1398,7 @@ QUnit.module('popup integration', () => {
             }).dxDropDownEditor('instance');
 
             dropDownEditor._renderPopupContent = function() {
-                return $('<div>')
+                $('<div>')
                     .css({ height: contentHeight })
                     .appendTo(dropDownEditor._popup.$content());
             };

@@ -194,29 +194,31 @@ const Accordion = CollectionWidget.inherit({
     },
 
     _renderItemContent: function(args) {
-        const itemTitle = this.callBase(extend({}, args, {
+        const itemTitlePromise = this.callBase(extend({}, args, {
             contentClass: ACCORDION_ITEM_TITLE_CLASS,
             templateProperty: 'titleTemplate',
             defaultTemplateName: this.option('itemTitleTemplate')
         }));
 
-        this._attachItemTitleClickAction(itemTitle);
+        when(itemTitlePromise).done((itemTitle) => {
+            this._attachItemTitleClickAction(itemTitle);
 
-        const deferred = new Deferred();
-        if(isDefined(this._deferredItems[args.index])) {
-            this._deferredItems[args.index] = deferred;
-        } else {
-            this._deferredItems.push(deferred);
-        }
+            const deferred = new Deferred();
+            if(isDefined(this._deferredItems[args.index])) {
+                this._deferredItems[args.index] = deferred;
+            } else {
+                this._deferredItems.push(deferred);
+            }
 
-        if(!this.option('deferRendering') || this._getSelectedItemIndices().indexOf(args.index) >= 0) {
-            deferred.resolve();
-        }
+            if(!this.option('deferRendering') || this._getSelectedItemIndices().indexOf(args.index) >= 0) {
+                deferred.resolve();
+            }
 
-        deferred.done(this.callBase.bind(this, extend({}, args, {
-            contentClass: ACCORDION_ITEM_BODY_CLASS,
-            container: getPublicElement($('<div>').appendTo($(itemTitle).parent()))
-        })));
+            deferred.done(this.callBase.bind(this, extend({}, args, {
+                contentClass: ACCORDION_ITEM_BODY_CLASS,
+                container: getPublicElement($('<div>').appendTo($(itemTitle).parent()))
+            })));
+        });
     },
 
     _attachItemTitleClickAction: function(itemTitle) {

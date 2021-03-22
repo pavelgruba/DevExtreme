@@ -308,7 +308,7 @@ const DropDownButton = Widget.inherit({
         this._popupContentId = 'dx-' + new Guid();
         this.setAria('id', this._popupContentId, $content);
 
-        return template.render({
+        template.render({
             container: getPublicElement($content),
             model: this.option('items') || this._dataSource
         });

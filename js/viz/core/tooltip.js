@@ -116,20 +116,22 @@ Tooltip.prototype = {
                 if(state.html || useTemplate) {
                     textGroupHtml.css({ color: state.textColor, width: DEFAULT_HTML_GROUP_WIDTH, 'pointerEvents': pointerEvents });
                     if(useTemplate) {
-                        template.render({ model: state.formatObject, container: textHtml, onRendered: () => {
-                            state.html = textHtml.html();
-                            if(textHtml.width() === 0 && textHtml.height() === 0) {
-                                this.plaque.clear();
-                                templateCallback(false);
-                                return;
-                            }
+                        template
+                            .render({ model: state.formatObject, container: textHtml })
+                            .then(() => {
+                                state.html = textHtml.html();
+                                if(textHtml.width() === 0 && textHtml.height() === 0) {
+                                    this.plaque.clear();
+                                    templateCallback(false);
+                                    return;
+                                }
 
-                            onRender();
-                            that._riseEvents(eventData);
-                            that._moveWrapper();
-                            that.plaque.customizeCloud({ fill: state.color, stroke: state.borderColor, 'pointer-events': pointerEvents });
-                            templateCallback(true);
-                        } });
+                                onRender();
+                                that._riseEvents(eventData);
+                                that._moveWrapper();
+                                that.plaque.customizeCloud({ fill: state.color, stroke: state.borderColor, 'pointer-events': pointerEvents });
+                                templateCallback(true);
+                            });
                         return;
                     } else {
                         that._text.attr({ text: '' });

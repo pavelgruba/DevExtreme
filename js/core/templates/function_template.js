@@ -1,5 +1,6 @@
 import { TemplateBase } from './template_base';
 import { normalizeTemplateElement } from '../utils/dom';
+import { when } from '../utils/deferred';
 
 export class FunctionTemplate extends TemplateBase {
     constructor(render) {
@@ -8,6 +9,6 @@ export class FunctionTemplate extends TemplateBase {
     }
 
     _renderCore(options) {
-        return normalizeTemplateElement(this._render(options));
+        return when(this._render(options)).then(normalizeTemplateElement);
     }
 }

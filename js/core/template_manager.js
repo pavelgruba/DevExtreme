@@ -1,4 +1,5 @@
 import $ from './renderer';
+import { when } from './utils/deferred';
 import { isDefined, isFunction, isRenderer } from './utils/type';
 import { noop } from './utils/common';
 import { extend } from './utils/extend';
@@ -153,9 +154,10 @@ export class TemplateManager {
                 return this._createTemplate(templateSource);
             }, templates, isAsyncTemplate, skipTemplates, this._defaultTemplates);
 
-            const result = template.render(options);
-            dispose && template.dispose && template.dispose();
-            return result;
+            return when(template.render(options)).then(result => {
+                dispose && template.dispose && template.dispose();
+                return result;
+            });
         });
     }
 }

@@ -9,7 +9,7 @@ import { processHatchingAttrs, getFuncIri } from '../core/renderers/renderer';
 ///#DEBUG
 import { debug } from '../../core/utils/console';
 ///#ENDDEBUG
-import { Deferred } from '../../core/utils/deferred';
+import { Deferred, when } from '../../core/utils/deferred';
 
 const _Number = Number;
 
@@ -564,11 +564,10 @@ extend(legendPrototype, {
                 renderMarker(state) {
                     dataItem.marker = getAttributes(item, state, dataItem.size);
                     markerGroup.clear();
-                    template.render({
+                    when(template.render({
                         model: dataItem,
-                        container: markerGroup.element,
-                        onRendered: that._deferredItems[i].resolve
-                    });
+                        container: markerGroup.element
+                    })).then(that._deferredItems[i].resolve);
                 }
             };
 

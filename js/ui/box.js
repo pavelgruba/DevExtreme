@@ -11,6 +11,7 @@ import { each } from '../core/utils/iterator';
 import browser from '../core/utils/browser';
 import CollectionWidgetItem from './collection/item';
 import CollectionWidget from './collection/ui.collection_widget.edit';
+import Promise from '../core/polyfills/promise';
 
 // STYLE box
 
@@ -620,7 +621,7 @@ class Box extends CollectionWidget {
 
     _createItemByTemplate(itemTemplate, args) {
         if(args.itemData.box) {
-            return itemTemplate.source ? itemTemplate.source() : $();
+            return Promise.resolve(itemTemplate.source ? itemTemplate.source() : $());
         }
         return super._createItemByTemplate(itemTemplate, args);
     }

@@ -115,11 +115,17 @@ const HtmlEditor = Editor.inherit({
         const template = this._getTemplate(ANONYMOUS_TEMPLATE_NAME);
         const transclude = true;
 
-        this._$templateResult = template && template.render({
-            container: getPublicElement(this._$htmlContainer),
-            noModel: true,
-            transclude
-        });
+        if(template) {
+            template.render({
+                container: getPublicElement(this._$htmlContainer),
+                noModel: true,
+                transclude
+            }).then(result => {
+                this._$templateResult = result;
+            });
+        } else {
+            this._$templateResult = undefined;
+        }
 
         this._renderSubmitElement();
         this.callBase();

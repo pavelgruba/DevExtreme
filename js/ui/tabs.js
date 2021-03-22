@@ -159,8 +159,10 @@ const Tabs = CollectionWidget.inherit({
         return itemTemplate.render({
             model: itemData,
             container,
-            index,
-            onRendered: () => this._deferredTemplates[index].resolve()
+            index
+        }).then((result) => {
+            this._deferredTemplates[index].resolve();
+            return result;
         });
     },
 

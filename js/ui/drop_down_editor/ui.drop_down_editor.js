@@ -341,17 +341,16 @@ const DropDownEditor = TextBox.inherit({
 
         fieldTemplate.render({
             model: data,
-            container: getPublicElement($templateWrapper),
-            onRendered: () => {
-                const $input = this._input();
+            container: getPublicElement($templateWrapper)
+        }).then(() => {
+            const $input = this._input();
 
-                if(!$input.length) {
-                    throw errors.Error('E1010');
-                }
-
-                this._integrateInput();
-                isFocused && eventsEngine.trigger($input, 'focus');
+            if(!$input.length) {
+                throw errors.Error('E1010');
             }
+
+            this._integrateInput();
+            isFocused && eventsEngine.trigger($input, 'focus');
         });
 
         $container.prepend(this._$beforeButtonsContainer);

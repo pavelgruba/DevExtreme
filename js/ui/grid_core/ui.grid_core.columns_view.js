@@ -402,8 +402,9 @@ export const ColumnsView = modules.View.inherit(columnStateMixin).inherit({
             renderingTemplate = {
                 allowRenderToDetachedContainer: template.allowRenderToDetachedContainer,
                 render: function(options) {
-                    template.render(options.container, options.model);
-                    options.deferred && options.deferred.resolve();
+                    when(template.render(options.container, options.model)).then(() => {
+                        options.deferred && options.deferred.resolve();
+                    });
                 }
             };
         } else if(isFunction(template)) {

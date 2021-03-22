@@ -283,10 +283,16 @@ const Popup = Overlay.inherit({
         if(showTitle || items.length > 0) {
             this._$title && this._$title.remove();
             const $title = $('<div>').addClass(POPUP_TITLE_CLASS).insertBefore(this.$content());
-            this._$title = this._renderTemplateByType('titleTemplate', items, $title).addClass(POPUP_TITLE_CLASS);
+            const titlePromise = this._renderTemplateByType('titleTemplate', items, $title)
+                .then(result => {
+                    return $(result).addClass(POPUP_TITLE_CLASS);
+                });
             this._renderDrag();
             this._executeTitleRenderAction(this._$title);
-            this._$title.toggleClass(POPUP_HAS_CLOSE_BUTTON_CLASS, this._hasCloseButton());
+            titlePromise.then($result => {
+                this._$title = $result;
+                this._$title.toggleClass(POPUP_HAS_CLOSE_BUTTON_CLASS, this._hasCloseButton());
+            });
         } else if(this._$title) {
             this._$title.detach();
         }
@@ -306,23 +312,28 @@ const Popup = Overlay.inherit({
                 integrationOptions
             });
 
-            this._getTemplate('dx-polymorph-widget').render({
+            return this._getTemplate('dx-polymorph-widget').render({
                 container: $container,
                 model: {
                     widget: 'dxToolbarBase',
                     options: toolbarOptions
                 }
+            }).then(() => {
+                const $toolbar = $container.children('div');
+                $container.replaceWith($toolbar);
+                return $toolbar;
             });
-            const $toolbar = $container.children('div');
-            $container.replaceWith($toolbar);
-            return $toolbar;
         } else {
-            const $result = $(template.render({ container: getPublicElement($container) }));
-            if($result.hasClass(TEMPLATE_WRAPPER_CLASS)) {
-                $container.replaceWith($result);
-                $container = $result;
-            }
-            return $container;
+            return template.render({
+                container: getPublicElement($container)
+            }).then(result => {
+                const $result = $(result);
+                if($result.hasClass(TEMPLATE_WRAPPER_CLASS)) {
+                    $container.replaceWith($result);
+                    $container = $result;
+                }
+                return $container;
+            });
         }
     },
 
@@ -458,8 +469,11 @@ const Popup = Overlay.inherit({
         if(items.length) {
             this._$bottom && this._$bottom.remove();
             const $bottom = $('<div>').addClass(POPUP_BOTTOM_CLASS).insertAfter(this.$content());
-            this._$bottom = this._renderTemplateByType('bottomTemplate', items, $bottom, { compactMode: true }).addClass(POPUP_BOTTOM_CLASS);
-            this._toggleClasses();
+            this._renderTemplateByType('bottomTemplate', items, $bottom, { compactMode: true }).then($result => {
+                $result.addClass(POPUP_BOTTOM_CLASS);
+                this._$bottom = $result;
+                this._toggleClasses();
+            });
         } else {
             this._$bottom && this._$bottom.detach();
         }
